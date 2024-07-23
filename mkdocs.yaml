@@ -126,3 +126,5 @@ plugins:
 nav:
   - 开始:
     - index.md
+  - 数据库:
+    - 绪论: 数据库/绪论.md
