@@ -59,8 +59,32 @@ SFW查询语句背后执行的是下列关系代数表达式: `πA1,A2,...,An(σ
     - `WHERE`语句后面包含条件, 可以使用逻辑运算符, 如`>`, `AND`等
     - SQL包含了一个字符串匹配机制, 类似于正则表达式. 我们可以使用`LIKE`来实现字符串的匹配. 如列出所有包含`COMP`的课程`SELECT title FROM UnitOfStudy WHERE uos_code LIKE 'COMP%'`. `%`表示匹配任何子字符串, `_`表示匹配任何单字符
     - SQL支持不少的字符串操作, 如`||`表示拼接字符串, 可以将字符串从大写转化为小写, 取出字符串长度, 切片等等
-    - SQL支持对属性和表进行重命名, 注意, 这只是对结果表生效, 无法改变原表的名称. 使用`AS`来实现. 如`SELECT a.uos_code AS course_code, a.credit_points FROM UnitOfStudy a WHERE a.uos = 'COMP5318'`
+    - SQL支持对属性进行重命名, 注意, 这只是对结果表生效, 无法改变原表的属性名称. 使用`AS`来实现. 如`SELECT a.uos_code AS course_code, a.credit_points FROM UnitOfStudy a WHERE a.uos = 'COMP5318'`
     - SQL支持对某一列进行排序, 使用`ORDER BY`语句.. 如`SELECT name FROM Student WHERE country='CN' ORDER BY name`. 注意有两个方向, 一个是`ASC`, 表示升序(默认), 一个是`DESC`, 表示降序. 可以在`ORDER BY`语句后面声明是降序还是升序, 如`ORDER BY country DESC, name ASC`
+    - SQL支持使用表的别名, 如`SELECT L.name, M.name FROM Lecturer L, Lecturer M, L.manager = M.empid`, 在这种情况下, `L`和`M`表示的其实是同一张表, 可以将其想象为`Lecturer`表的不同的两份副本
 
 ## 连接查询
 
+连接在SQL语句中分为隐式连接和显式连接. 
+
+### 隐式连接
+
+隐式连接使用到的是`FROM`和`WHERE`语句, `FROM`语句用于列出参与到查询中的表, 对应的是笛卡尔积中的表, 连接的条件在`WHERE`语句中列出. 如选出Student表和UnitOfStudy的笛卡尔积: `SELECT * FROM Student, UnitOfStudy`. 如[图](https://img.ricolxwz.io/2024/08/109682364bd058e45fc66e1c06fa8291.png).
+
+### 显式连接
+
+默认连接用到的是内连接, 关于四种连接的区别, 请见[这里](/数据库/关系代数/#条件连接). 显式连接用到的是`FROM`, `JOIN`和`ON`关键字.
+
+## 集合操作
+
+SQL语句中, `UNION`, `INTERSECT`, `EXCEPT`对应的是集合操作中的∪, ∩和−. 
+
+???+ tip "Tip"
+
+    要注意的是, 上述这几种操作会自动去除重复, 内部的原理是在操作之前会消除掉输入表的重复行, 然后再做集合操作. 如, 假设一个元组在R中出现了3次, 在S中出现了1次, 那么R-S这个操作之后的结果中将不含有这个元组. 若要保留所有的重复行, 则分别需要用到`UNION ALL`, `INTERSECT ALL`和`EXCEPT ALL`. 如, 假设一个元组在R中出现了m次, 在S中出现了n次, 那么:
+
+    - 在`R UNION ALL S`的结果中会出现m+n次
+    - 在`R INTERSECT ALL S`的结果中会出现min(m, n)次
+    - 在`R EXCEPT ALL S`的结果中会出现max(0, m-n)次
+
+例子如[图1](https://img.ricolxwz.io/2024/08/4ed0a2e07f06c175ee79d5858f3bca9a.png), [图2](https://img.ricolxwz.io/2024/08/ffa4171300b7c1ba9b17000bf4a96476.png).
