@@ -132,7 +132,7 @@ plugins:
       locale: zh
       enable_creation_date: true
   - git-committers:
-      repository: ricolxwz/ml
+      repository: ricolxwz/gk
       branch: master
 nav:
   - 开始:
