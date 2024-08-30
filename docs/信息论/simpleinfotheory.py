@@ -129,3 +129,64 @@ def mutualinformationempirical(xn,yn):
 	
     result = H_X + H_Y - H_XY;
     return result
+
+def conditionalentropyempirical(xn, yn):
+    
+    # First, error checking, and converting argument into standard form:    
+    xn = np.array(xn)
+    # Convert to column vectors if not already:
+    if xn.ndim == 1:
+        xn = np.reshape(xn,(len(xn),1))
+    yn = np.array(yn)
+    if yn.ndim == 1:
+        yn = np.reshape(yn,(len(yn),1))
+    [rx,cx] = xn.shape
+    [ry,cy] = yn.shape
+
+    # Should we check any potential error conditions on the input?
+    # Check that their number of rows are the same:
+    assert(rx == ry)
+    
+    # We need to compute H(X,Y) - H(X):
+    # 1. joint entropy: Can we re-use existing code?
+    (H_XY, xySymbols, xyProbs) = jointentropyempirical(xn, yn);
+    # 2. marginal entropy of Y: Can we re-use existing code?
+    (H_Y, ySymbols, yProbs) = entropyempirical(yn);
+	
+    result = H_XY - H_Y;
+    return result
+
+def conditionalmutualinformationempirical(xn, yn, zn):
+    
+    # First, error checking, and converting argument into standard form:    
+    xn = np.array(xn)
+    # Convert to column vectors if not already:
+    if xn.ndim == 1:
+        xn = np.reshape(xn,(len(xn),1))
+    yn = np.array(yn)
+    if yn.ndim == 1:
+        yn = np.reshape(yn,(len(yn),1))
+    zn = np.array(zn)
+    if zn.ndim == 1:
+        zn = np.reshape(zn,(len(zn),1))
+    [rx,cx] = xn.shape
+    [ry,cy] = yn.shape
+    [rz,cz] = zn.shape
+
+    # Should we check any potential error conditions on the input?
+    # Check that their number of rows are the same:
+    assert(rx == ry)
+    assert(rx == rz)
+
+    # We need to compute H(X|Z) + H(Y|Z) - H(X,Y|Z):
+    # 1. conditional joint entropy:
+    H_XY_given_Z = conditionalentropyempirical(np.append(xn, yn, axis=1),zn); # How to compute this empirically ...?
+    # 2. conditional entropy of Y:
+    H_Y_given_Z = conditionalentropyempirical(yn,zn) # How to compute this empirically ...?
+    # 3. conditional entropy of X:
+    H_X_given_Z = conditionalentropyempirical(xn,zn) # How to compute this empirically ...?
+    
+    # Alternatively, note that we could compute I(X;Y,Z) - I(X;Z)
+    
+    result = H_X_given_Z + H_Y_given_Z - H_XY_given_Z;
+    return result
