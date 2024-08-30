@@ -58,6 +58,19 @@ def entropyempirical(xn):
     
     return result, symbols, probabilities
 
+def jointentropy(p):
+    
+	# Should we check any potential error conditions on the input?
+
+	# We need to take the expectation value over the Shannon info content at
+	#  p(x) for each outcome x in the joint PDF:
+	# Hint: will your code for entropy(p) work, or can you alter it slightly
+	#  to make it work?
+    
+    joint_entropy = entropy(p)
+    
+    return joint_entropy
+
 def jointentropyempirical(xn, yn=[]):
     
     # First, error checking, and converting argument into standard form:    
