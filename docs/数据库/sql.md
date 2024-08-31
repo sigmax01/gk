@@ -69,7 +69,7 @@ SFW查询语句背后执行的是下列关系代数表达式: `πA1,A2,...,An(σ
 
 ### 隐式连接
 
-隐式连接使用到的是`FROM`和`WHERE`语句, `FROM`语句用于列出参与到查询中的表, 对应的是笛卡尔积中的表, 连接的条件在`WHERE`语句中列出. 如选出Student表和UnitOfStudy的笛卡尔积: `SELECT * FROM Student, UnitOfStudy`. 如[图](https://img.ricolxwz.io/2024/08/109682364bd058e45fc66e1c06fa8291.png).
+隐式连接使用到的是`FROM`和`WHERE`语句, `FROM`语句用于列出参与到查询中的表, 对应的是笛卡尔积中的表, 连接的条件在`WHERE`语句中列出. 如选出Student表和UnitOfStudy的笛卡尔积: `SELECT * FROM Student, UnitOfStudy`. 如[图](https://cdn.jsdelivr.net/gh/sigmax0124/img@master/2024/08/109682364bd058e45fc66e1c06fa8291.png).
 
 ### 显式连接
 
@@ -87,4 +87,4 @@ SQL语句中, `UNION`, `INTERSECT`, `EXCEPT`对应的是集合操作中的∪, �
     - 在`R INTERSECT ALL S`的结果中会出现min(m, n)次
     - 在`R EXCEPT ALL S`的结果中会出现max(0, m-n)次
 
-例子如[图1](https://img.ricolxwz.io/2024/08/4ed0a2e07f06c175ee79d5858f3bca9a.png), [图2](https://img.ricolxwz.io/2024/08/ffa4171300b7c1ba9b17000bf4a96476.png).
+例子如[图1](https://cdn.jsdelivr.net/gh/sigmax0124/img@master/2024/08/4ed0a2e07f06c175ee79d5858f3bca9a.png), [图2](https://cdn.jsdelivr.net/gh/sigmax0124/img@master/2024/08/ffa4171300b7c1ba9b17000bf4a96476.png).
