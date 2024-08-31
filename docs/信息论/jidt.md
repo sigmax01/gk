@@ -14,3 +14,7 @@ JIDT由Java写成, 但是可以在Matlab/Octave, Python, R, Julia, Clojure等语
 3. 解压安装包, 运行infodynamics.jar
 
 若需要在Python中运行Java, `pip install jpype1`.
+
+## 使用
+
+双击infodynamics.jar打开GUI界面, 然后选择Estimator, 选择Calculator Type, 提供Data file, 可以选择All variables, 表示包含所有列, 或者输入Variable column, 表示选择列. 
