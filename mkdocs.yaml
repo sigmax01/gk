@@ -124,6 +124,7 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
 plugins:
   - i18n:
+      enabled: !ENV [CI, false]
       docs_structure: suffix
       languages:
         - locale: zh
