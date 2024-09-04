@@ -2,6 +2,10 @@
 
 欢迎来到基础知石仓库.
 
+## 分析
+
+[https://umami.ricolxwz.io/share/6wIbVt7Xs0XdGKwB/gk.ricolxwz.de][https://umami.ricolxwz.io/share/6wIbVt7Xs0XdGKwB/gk.ricolxwz.de]
+
 ## 联动
 
 - [https://py.ricolxwz.de](https://py.ricolxwz.de)
