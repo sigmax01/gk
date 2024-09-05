@@ -4,7 +4,7 @@
 
 ## 分析
 
-https://link.ricolxwz.io/gkstatus
+https://link.ricolxwz.io/gkanalysis
 
 ## 联动
 
