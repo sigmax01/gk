@@ -4,7 +4,7 @@
 
 ## 分析
 
-[https://umami.ricolxwz.io/share/6wIbVt7Xs0XdGKwB/gk.ricolxwz.de](https://umami.ricolxwz.io/share/6wIbVt7Xs0XdGKwB/gk.ricolxwz.de)
+https://link.ricolxwz.io/gkstatus
 
 ## 联动
 
