@@ -8,10 +8,14 @@ permissions:
   contents: write
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
+    container: ghcr.io/sigmax01/runner:latest
+    defaults:
+      run:
+        shell: bash
     steps:
       - uses: actions/checkout@v4
-        with:
+        with: 
           fetch-depth: 0
       - name: Configure Git Credentials
         run: |
@@ -30,4 +34,4 @@ jobs:
       - run: pip install -r requirements.txt
       - run: mkdocs gh-deploy --force
         env:
-          MKDOCS_GIT_COMMITTERS_APIKEY: ${{ secrets.MKDOCS_GIT_COMMITTERS_APIKEY }}
+            MKDOCS_GIT_COMMITTERS_APIKEY: ${{ secrets.MKDOCS_GIT_COMMITTERS_APIKEY }}
