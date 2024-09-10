@@ -2,7 +2,7 @@
 title: 容器:dockerfile
 comments: true
 ---
-    
+
 ## `ENTRYPOINT`&`CMD`
 
 `ENTRYPOINT`定义了容器启动时启动的主命令. `docker run`容器启动的时候, `ENTRYPOINT`指令不会被忽略, 除非使用`--entrypoint`选项. 即使用户在启动容器的时候传递了参数, 也会将参数附加到`ENTRYPOINT`声明的命令后面, 而不是覆盖它, 但是`CMD`定义的参数会被覆盖. 
