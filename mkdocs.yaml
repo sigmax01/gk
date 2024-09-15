@@ -182,3 +182,5 @@ nav:
     - 账户: 版本控制/账户.md
   - 容器:
     - dockerfile: 容器/dockerfile.md
+  - k8s:
+    - 架构: k8s/架构.md
