@@ -184,3 +184,4 @@ nav:
     - dockerfile: 容器/dockerfile.md
   - k8s:
     - 架构: k8s/架构.md
+    - 命令: k8s/命令.md
