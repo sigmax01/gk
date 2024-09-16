@@ -43,3 +43,7 @@ https://link.ricolxwz.io/gkanalysis
     - [x] [账户](/版本控制/账户)
 - [ ] 容器
     - [ ] [dockerfile](/容器/dockerfile)
+- [ ] k8s
+    - [x] [架构](/k8s/架构)
+    - [x] [命令](/k8s/命令)
+    - [x] [示例](/k8s/示例)
