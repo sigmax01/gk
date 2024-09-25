@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.36">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.35">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.06209087.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.35f28582.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -914,6 +914,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#db-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      DB-API
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1607,6 +1616,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#db-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      DB-API
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1791,6 +1809,19 @@
 </tr>
 </tbody>
 </table>
+<h3 id="db-api">DB-API</h3>
+<p>DB-API是Python用于和支持SQL的数据库通信的API, 每个数据库引擎如Oracle, PostgreSQL, IBM DB2会有特定模块提供DB-API功能的实现. 即DB-API是Interface, 数据库引擎的相关模块是Implementation. 以下是一个SQL请求通过DB-API的执行过程.</p>
+<ol>
+<li>获取连接</li>
+<li>创建一个游标对象</li>
+<li>使用游标对象发送查询并获取结果</li>
+<li>处理异常</li>
+</ol>
+<details class="example" open="open">
+<summary>例子</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">import</span> <span class="nn">psycopg2</span>
+</code></pre></div>
+</details>
 
 
 
