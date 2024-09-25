@@ -916,6 +916,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      处理错误
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#javasql" class="md-nav__link">
     <span class="md-ellipsis">
       Java和SQL类型匹配
@@ -940,7 +949,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     <span class="md-ellipsis">
       常用游标方法
     </span>
@@ -960,6 +969,54 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      处理错误
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      安全
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="安全">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sql_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      SQL注入
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SQL注入">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      预处理语句
+    </span>
+  </a>
   
 </li>
         
@@ -1663,6 +1720,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      处理错误
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#javasql" class="md-nav__link">
     <span class="md-ellipsis">
       Java和SQL类型匹配
@@ -1687,7 +1753,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     <span class="md-ellipsis">
       常用游标方法
     </span>
@@ -1707,6 +1773,54 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      处理错误
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      安全
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="安全">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sql_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      SQL注入
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SQL注入">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      预处理语句
+    </span>
+  </a>
   
 </li>
         
@@ -1839,6 +1953,34 @@
 </ul>
 <h5 id="_10">流式处理</h5>
 <p>注意, 结果集<code>ResultSet</code>不会一次性fetch所有的数据, 关于什么是fetch, 在<a href="#流式处理">DB-API的流式处理</a>有非常详细的解释. 结果是随着你调用<code>next()</code>, <code>previous()</code>等方法的时候, 逐行从数据库服务器获取的.</p>
+<h4 id="_11">处理错误</h4>
+<p>许多SQL操作在发生错误的时候会抛出一个<code>SQLException</code>, 通过<code>catch(SQLException e){...}</code>抓取错误, 然后通过<code>e.getMessage()</code>, <code>e.getSQLState()</code>, <code>e.getErrorCode()</code>查看问题所在. 除了这个错误之外, 还可以抓取的子错误类型有<code>SQLTimeoutExceptino</code>, <code>SQLIntegrityConstraintViolationException</code>.</p>
+<p><code>SQLWaning</code>是<code>SQLException</code>的一个子类, 它不如<code>SQLException</code>那么严重. </p>
+<details class="example" open="open">
+<summary>例子</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">exampleEnrolment</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="n">Connection</span><span class="w"> </span><span class="n">conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="n">conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">openConnection</span><span class="p">();</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="n">Statement</span><span class="w"> </span><span class="n">stmt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conn</span><span class="p">.</span><span class="na">createStatement</span><span class="p">();</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="n">stmt</span><span class="p">.</span><span class="na">executeUpdate</span><span class="p">(</span><span class="s">&quot;INSERT INTO Transcript VALUES (123,’COMP9120&#39;, ‘S1&#39;, 2024,&#39;HD&#39;)&quot;</span><span class="p">);</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="p">}</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">SQLIntegrityConstraintViolationException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Violated a constraint!”);</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="s">}</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="s">catch (SQLTimeoutException e) {</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="s">    System.err.println(&quot;</span><span class="n">Operation</span><span class="w"> </span><span class="n">timed</span><span class="w"> </span><span class="n">out</span><span class="s">&quot;);</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="s">}</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="s">catch (SQLException e) {</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="s">    System.err.println(&quot;</span><span class="n">Other</span><span class="w"> </span><span class="n">problem</span><span class="s">&quot;);</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="s">}</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="s">finally {</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="s">    if (conn != null)</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="s">        try{conn.close();} catch(SQLException e) {//handle exception}</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="s">    }</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="s">}</span>
+</code></pre></div>
+</details>
 <h4 id="javasql">Java和SQL类型匹配</h4>
 <table>
 <thead>
@@ -1911,28 +2053,28 @@
 </ol>
 <details class="example" open="open">
 <summary>例子</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">import</span> <span class="nn">psycopg2</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">try</span><span class="p">:</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="c1"># 获取连接对象以连接数据库</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="n">conn</span> <span class="o">=</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">database</span><span class="o">=</span><span class="s2">&quot;postgres&quot;</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s2">&quot;secret&quot;</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s2">&quot;host&quot;</span><span class="p">)</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="c1"># 获取游标以准备查询数据库</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    <span class="n">curs</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    <span class="c1"># 执行SQL查询</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    <span class="n">curs</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT name</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>                <span class="n">FROM</span> <span class="n">Student</span> <span class="n">NATURAL</span> <span class="n">JOIN</span> <span class="n">Enrolled</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>                <span class="n">WHERE</span> <span class="n">uos_code</span> <span class="o">=</span> <span class="s2">&quot;COMP9120&quot;</span><span class="p">)</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>    <span class="c1"># 循环遍历结果, 每一行是一个元组</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>    <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">curs</span><span class="p">:</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;student: &quot;</span> <span class="o">+</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>    <span class="c1"># 释放游标和连接</span>
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>    <span class="n">curs</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>    <span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SQL error: unable to connect to database or execute query&quot;</span><span class="p">)</span>
-<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">import</span> <span class="nn">psycopg2</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="c1"># 获取连接对象以连接数据库</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="n">conn</span> <span class="o">=</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">database</span><span class="o">=</span><span class="s2">&quot;postgres&quot;</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s2">&quot;secret&quot;</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s2">&quot;host&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="c1"># 获取游标以准备查询数据库</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    <span class="n">curs</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    <span class="c1"># 执行SQL查询</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>    <span class="n">curs</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT name</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>                <span class="n">FROM</span> <span class="n">Student</span> <span class="n">NATURAL</span> <span class="n">JOIN</span> <span class="n">Enrolled</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>                <span class="n">WHERE</span> <span class="n">uos_code</span> <span class="o">=</span> <span class="s2">&quot;COMP9120&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>    <span class="c1"># 循环遍历结果, 每一行是一个元组</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>    <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">curs</span><span class="p">:</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;student: &quot;</span> <span class="o">+</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>    <span class="c1"># 释放游标和连接</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>    <span class="n">curs</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>    <span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SQL error: unable to connect to database or execute query&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 </code></pre></div>
 </details>
-<h4 id="_11">常用游标方法</h4>
+<h4 id="_12">常用游标方法</h4>
 <ul>
 <li><code>execute(&lt;operation&gt;, &lt;param1, param2, ...&gt;)</code>: 执行一个SQL查询或其他命令, <code>&lt;operation&gt;</code>是包含SQL语句的字符串, <code>&lt;pram1, param2, ...&gt;</code>是可选的参数, 用于在查询中替换占位符(参数化查询), 如<code>curs.execute("SELECT * FROM students WHERE id = %s", (123,))</code></li>
 <li><code>executemany</code>: 可以执行相同的查询或其他命令多次, 每次使用不同的参数, 适合批量插入或者更新数据. 如<code>curs.executemany("INSERT INTO students (name, age) VALUES (%s, %s), [('john', 20), ('Doe', 22)])</code></li>
@@ -1943,6 +2085,35 @@
 </ul>
 <h5 id="流式处理">流式处理</h5>
 <p>细心的同学可能会问: <code>curs</code>不是已经拿到结果了吗, 为什么还要fetch? 这是因为游标只是一个查询工具, 把命令发给数据库服务器. 结果其实是在数据库服务器生成的, 而不是在应用服务器生成的, 这个fetch相当于发出了一个请求, 请求数据库服务器把对应行的数据发过来, 而且如果数据库返回的结果非常大, 比如上百万行数据, 如果直接读取到应用服务器, 会占用大量的带宽, 而且会占用大量内存, 导致性能下降.</p>
+<h4 id="_13">处理错误</h4>
+<p>可以通过Python的异常处理机制处理错误. 用到的是<code>psycopg2.Warning</code>和<code>psycopg2.Error</code>两类. 可以进一步通过<code>e.pgerror</code>和<code>e.pgcode</code>分别查看数据库返回的错误消息和SQL状态代码.</p>
+<h2 id="_14">安全</h2>
+<h3 id="sql_2">SQL注入</h3>
+<p>SQL注入, SQL Injection是一种常见的网路攻击技术, 攻击者通过将恶意的SQL代码插入到应用程序的输入中, 从而改变原本预期的SQL查询执行行文, 这通常发生在未对用户输入进行充分验证和过滤的情况下, 导致攻击者能够执行任意的SQL命令, 如读取, 修改, 删除数据库中的数据, 甚至控制数据库服务器.</p>
+<p>SQL注入攻击的基本原理是利用应用程序将用户输入直接插入到SQL查询中的漏洞. 攻击者通过在输入中插入特定的SQL语句, 试图操纵SQL查询结构, 使其执行意图之外的操作.</p>
+<details class="example" open="open">
+<summary>例子</summary>
+<p>假设有一个简单的登录系统, 使用用户提供的用户名和密码来查询数据库中的数据验证登录.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">suers</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;user&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;pass&#39;</span><span class="p">;</span>
+</code></pre></div>
+<p>攻击者可以在输入框中输入以下内容来进行SQL注入:</p>
+<ul>
+<li>用户名: <code>' OR '1'='1</code></li>
+<li>密码: <code>' OR '1'='1</code></li>
+</ul>
+<p>生成的查询语句变为:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="o">=</span><span class="s1">&#39;1&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="o">=</span><span class="s1">&#39;1&#39;</span><span class="p">;</span>
+</code></pre></div>
+<p>在这种情况下, <code>'1'='1'</code>总是为真, SQL查询会返回数据库中的所有用户信息, 允许攻击者绕过身份验证.</p>
+</details>
+<p>常见的解决方法有:</p>
+<ul>
+<li>隐藏错误信息: 错误信息能够意外暴露底层数据库的一些敏感信息, 如数据库的结构, 代码</li>
+<li>存储加盐哈希后的密码: 详情见<a href="https://py.ricolxwz.de/%E5%B8%B8%E7%94%A8/hmac/">这里</a>, 使用常见的哈希算法, 如bcrypt, argon2, pbkdf2, 然后随机加入一个值(盐), 这会保护数据库免收彩虹表攻击, 确保密码一样的情况下, 存储在数据库的值都不同</li>
+<li>在Java中使用预处理语句</li>
+<li>在Python中使用匿名或者命名参数</li>
+</ul>
+<h4 id="_15">预处理语句</h4>
 
 
 
