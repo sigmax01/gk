@@ -2,23 +2,6 @@
 
 欢迎来到基础知石仓库.
 
-## 分析
-
-https://link.ricolxwz.io/gkanalysis
-
-## 联动
-
-- [https://py.ricolxwz.de](https://py.ricolxwz.de)
-- [https://ml.ricolxwz.de](https://ml.ricolxwz.de)
-- [https://js.ricolxwz.de](https://js.ricolxwz.de)
-- [https://rhce.ricolxwz.de](https://rhce.ricolxwz.de)
-- [https://gk.ricolxwz.de](https://gk.ricolxwz.de)
-- [https://go.ricolxwz.de](https://go.ricolxwz.de)
-- [https://ja.ricolxwz.de](https://ja.ricolxwz.de)
-- [https://pj.ricolxwz.de](https://pj.ricolxwz.de)
-- [https://misc.ricolxwz.de](https://misc.ricolxwz.de)
-
-
 ## 进度
 
 - [ ] 数据库
@@ -29,6 +12,7 @@ https://link.ricolxwz.io/gkanalysis
     - [x] [SQL](数据库/sql)
     - [x] [完整性约束](数据库/完整性约束)
     - [ ] [高级SQL](数据库/高级sql)
+    - [ ] [应用开发](数据库/应用开发)
 - [ ] 信息论
     - [x] [绪论](信息论/绪论)
     - [x] [不确定性和熵](信息论/不确定性和熵)
