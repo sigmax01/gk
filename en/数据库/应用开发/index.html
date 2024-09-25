@@ -875,6 +875,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="DB-API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      常用游标方法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1577,6 +1592,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="DB-API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      常用游标方法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1774,7 +1804,38 @@
 <details class="example" open="open">
 <summary>例子</summary>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">import</span> <span class="nn">psycopg2</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="c1"># 获取连接对象以连接数据库</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="n">conn</span> <span class="o">=</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">database</span><span class="o">=</span><span class="s2">&quot;postgres&quot;</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s2">&quot;secret&quot;</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s2">&quot;host&quot;</span><span class="p">)</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="c1"># 获取游标以准备查询数据库</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    <span class="n">curs</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    <span class="c1"># 执行SQL查询</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    <span class="n">curs</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT name</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>                <span class="n">FROM</span> <span class="n">Student</span> <span class="n">NATURAL</span> <span class="n">JOIN</span> <span class="n">Enrolled</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>                <span class="n">WHERE</span> <span class="n">uos_code</span> <span class="o">=</span> <span class="s2">&quot;COMP9120&quot;</span><span class="p">)</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>    <span class="c1"># 循环遍历结果, 每一行是一个元组</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>    <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">curs</span><span class="p">:</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;student: &quot;</span> <span class="o">+</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>    <span class="c1"># 释放游标和连接</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>    <span class="n">curs</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>    <span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SQL error: unable to connect to database or execute query&quot;</span><span class="p">)</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 </code></pre></div>
+</details>
+<h4 id="_10">常用游标方法</h4>
+<ul>
+<li><code>execute(&lt;operation&gt;, &lt;param1, param2, ...&gt;)</code>: 执行一个SQL查询或其他命令, <code>&lt;operation&gt;</code>是包含SQL语句的字符串, <code>&lt;pram1, param2, ...&gt;</code>是可选的参数, 用于在查询中替换占位符(参数化查询), 如<code>curs.execute("SELECT * FROM students WHERE id = %s", (123,))</code></li>
+<li><code>executemany</code>: 可以执行相同的查询或其他命令多次, 每次使用不同的参数, 适合批量插入或者更新数据. 如<code>curs.executemany("INSERT INTO students (name, age) VALUES (%s, %s), [('john', 20), ('Doe', 22)])</code></li>
+<li><code>fetchone()</code>: 从查询结果中获取下一行, 如果没有更多的数据的话返回<code>None</code>, 适合只获取单条结果的场景</li>
+<li><code>fetchmany(&lt;size=cursor.arraysize&gt;)</code>: 从查询结果中获取多行, <code>&lt;size&gt;</code>指定返回的行数, 如果不指定, 默认返回<code>cursor.arraysize</code>行, 适合需要一次性获取多行数据的场景</li>
+<li><code>fetchall()</code>: 获取查询结果中所有的剩余行</li>
+<li><code>close()</code>: 释放游标资源</li>
+</ul>
+<details class="tip" open="open">
+<summary>Tip</summary>
+<p>细心的同学可能会问: <code>curs</code>不是已经拿到结果了吗, 为什么还要fetch? 这是因为游标只是一个查询工具, 把命令发给数据库服务器. 结果其实是在数据库服务器生成的, 而不是在应用服务器生成的, 这个fetch相当于发出了一个请求, 请求数据库服务器把对应行的数据发过来, 而且如果数据库返回的结果非常大, 比如上百万行数据, 如果直接读取到应用服务器, 会占用大量的带宽, 而且会占用大量内存, 导致性能下降.</p>
 </details>
 
 
