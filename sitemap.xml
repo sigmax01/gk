@@ -127,6 +127,13 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://gk.ricolxwz.de/en/%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%BB%AA%E8%AE%BA/"/>
     </url>
     <url>
+        <loc>https://gk.ricolxwz.de/%E6%95%B0%E6%8D%AE%E5%BA%93/%E8%A7%84%E8%8C%83%E5%8C%96/</loc>
+        <lastmod>2024-09-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://gk.ricolxwz.de/%E6%95%B0%E6%8D%AE%E5%BA%93/%E8%A7%84%E8%8C%83%E5%8C%96/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://gk.ricolxwz.de/en/%E6%95%B0%E6%8D%AE%E5%BA%93/%E8%A7%84%E8%8C%83%E5%8C%96/"/>
+    </url>
+    <url>
         <loc>https://gk.ricolxwz.de/%E6%95%B0%E6%8D%AE%E5%BA%93/%E9%AB%98%E7%BA%A7sql/</loc>
         <lastmod>2024-09-26</lastmod>
         <changefreq>daily</changefreq>
@@ -293,6 +300,13 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://gk.ricolxwz.de/en/%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%BB%AA%E8%AE%BA/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://gk.ricolxwz.de/%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%BB%AA%E8%AE%BA/"/>
+    </url>
+    <url>
+        <loc>https://gk.ricolxwz.de/en/%E6%95%B0%E6%8D%AE%E5%BA%93/%E8%A7%84%E8%8C%83%E5%8C%96/</loc>
+        <lastmod>2024-09-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://gk.ricolxwz.de/en/%E6%95%B0%E6%8D%AE%E5%BA%93/%E8%A7%84%E8%8C%83%E5%8C%96/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://gk.ricolxwz.de/%E6%95%B0%E6%8D%AE%E5%BA%93/%E8%A7%84%E8%8C%83%E5%8C%96/"/>
     </url>
     <url>
         <loc>https://gk.ricolxwz.de/en/%E6%95%B0%E6%8D%AE%E5%BA%93/%E9%AB%98%E7%BA%A7sql/</loc>
