@@ -886,6 +886,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Armstrong公理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      附加规则
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -894,7 +909,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       闭包
     </span>
@@ -1549,6 +1564,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Armstrong公理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      附加规则
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1557,7 +1587,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       闭包
     </span>
@@ -1701,7 +1731,18 @@
 <li>根据传递性, Color, Category → Price, 所以Name, Category → Price</li>
 </ol>
 </details>
-<h3 id="_7">闭包</h3>
+<p>Armstrong公理具有:</p>
+<ul>
+<li>健全性: 当将其应用于函数依赖集F的时候, 只会生成在F+中的有效函数依赖</li>
+<li>完备性: 通过反复应用公理, 可以生成闭包F+中的所有函数依赖</li>
+</ul>
+<h5 id="_7">附加规则</h5>
+<p>基于Armstrong公理还能导出一些附加规则. </p>
+<ul>
+<li>分解: decomposition, 如果A → BC, 那么可以推导出A → B和A → C</li>
+<li>联合: union, 如果A → B且A → C, 则可以推导出A → BC</li>
+</ul>
+<h3 id="_8">闭包</h3>
 <p>能从函数依赖集F中推导出的所有函数依赖组成的集合, 成为F的闭包. 计算闭包方法如下:</p>
 <ol>
 <li>初始化: 设定初始闭包F+=F, 也就是闭包开始的时候等于原始的函数依赖集F</li>
@@ -1715,7 +1756,7 @@
 <p>在最坏情况下, 函数闭包会随着F中属性数量的增加而呈现指数级增长, 这意味着计算F+在某些情况下可能会非常耗时, 下面是一个简单的例子.</p>
 <details class="example" open="open">
 <summary>例子</summary>
-<p>假设我们在关系R中有三个属性A, B, C. 已知的函数依赖集F为F={A → B, B → C}. </p>
+<p>假设我们在关系R中有三个属性A, B, C. 已知的函数依赖集F为F={A → B, B → C}. 可以计算出F+如<a href="https://img.ricolxwz.io/b21b9f5c8611d9361bbd42a5902009a8.png">图</a>所示.</p>
 </details>
 <div class="footnote">
 <hr />
