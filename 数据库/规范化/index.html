@@ -1634,6 +1634,55 @@
 <li>增广性: augentation, 如果A → B, 那么对于任何属性集C, AC → BC; 例如cpoints → wload推导出cpoints, uos_name → wload, uos_name, 即在两侧同时增加uos_name</li>
 <li>传递性: transitivity, 如果A → B且B → C, 那么A → C; 例如uos_code → cpoints和cpoints → wload推导出uos_code → wload</li>
 </ul>
+<details class="example" open="open">
+<summary>例子</summary>
+<p>给定下列表:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Color</th>
+<th>Category</th>
+<th>Dept</th>
+<th>Price</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gizmo</td>
+<td>Green</td>
+<td>Gadget</td>
+<td>Toys</td>
+<td>49</td>
+</tr>
+<tr>
+<td>Widget</td>
+<td>Black</td>
+<td>Gadget</td>
+<td>Toys</td>
+<td>59</td>
+</tr>
+<tr>
+<td>Gizmo</td>
+<td>Green</td>
+<td>Whatsit</td>
+<td>Garden</td>
+<td>99</td>
+</tr>
+</tbody>
+</table>
+<p>已知的函数依赖:</p>
+<ul>
+<li>Name → Color</li>
+<li>Category → Dept</li>
+<li>Color, Category → Price</li>
+</ul>
+<p>根据给出的函数依赖, 我们推断Name, Category → Price对于所有的实例都成立, 现在利用Armstrong公理证明.</p>
+<ol>
+<li>根据增广性, 有Name, Category → Color, Category</li>
+<li>根据传递性, Color, Category → Price, 所以Name, Category → Price</li>
+</ol>
+</details>
 <div class="footnote">
 <hr />
 <ol>
