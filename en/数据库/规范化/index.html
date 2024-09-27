@@ -845,6 +845,39 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      解决方法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#函数依赖" class="md-nav__link">
+    <span class="md-ellipsis">
+      函数依赖
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="函数依赖">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      确定函数依赖
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1451,6 +1484,39 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      解决方法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#函数依赖" class="md-nav__link">
+    <span class="md-ellipsis">
+      函数依赖
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="函数依赖">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      确定函数依赖
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1515,6 +1581,18 @@
 <li>最小的冗余</li>
 <li>没有更新, 删除, 插入异常</li>
 </ul>
+<h3 id="_5">解决方法</h3>
+<p>规范化设计过程以避免异常. 规范化, Normalization是定义什么是好的关系型设计的过程. 其主要目的是解决数据库中的更新, 插入, 删除等操作时可能出现的异常, 避免不好的设计, 改善数据库的结构. 在了解规范化之前需要了解<a href="#函数依赖">函数依赖</a>, 因为它是规范化的核心工具.</p>
+<h2 id="函数依赖">函数依赖</h2>
+<p>函数依赖, Functional Dependencies, 用来捕捉属性之间的语义关系, 检测消除不良设计, 识别冗余数据. 其非正式的定义为属性X的值决定了属性Y的值. 例如每一门课都只会在一个教室上, COMP9120只会在R101房间上, 这里课程决定了房间号. 其正式的定义为: 假设X和Y是两组属性, X和Y之间的关系可以用一个函数来表示, 它的本质是, X的一个值不能映射到多个Y的值, 这意味着X和Y之间的关系是n对1或1对1的关系. 如UoS-&gt;Room.</p>
+<h3 id="_6">确定函数依赖</h3>
+<p>那么, 我们如何确定该函数依赖呢? 或者说, 如何发现函数依赖呢? </p>
+<p>主要通过两种方式:</p>
+<ul>
+<li>考虑属性的语义</li>
+<li>分析表中的实际数据</li>
+</ul>
+<p>在大多数情况下, 我们使用语义来判断函数依赖. 当使用数据来确定函数依赖的过程又被称为知识挖掘, knowledge mining.</p>
 <div class="footnote">
 <hr />
 <ol>
@@ -1545,7 +1623,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年9月26日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年9月27日</span>
   </span>
 
     
