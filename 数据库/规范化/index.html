@@ -893,6 +893,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      闭包
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1547,6 +1556,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      闭包
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1682,6 +1700,22 @@
 <li>根据增广性, 有Name, Category → Color, Category</li>
 <li>根据传递性, Color, Category → Price, 所以Name, Category → Price</li>
 </ol>
+</details>
+<h3 id="_7">闭包</h3>
+<p>能从函数依赖集F中推导出的所有函数依赖组成的集合, 成为F的闭包. 计算闭包方法如下:</p>
+<ol>
+<li>初始化: 设定初始闭包F+=F, 也就是闭包开始的时候等于原始的函数依赖集F</li>
+<li>循环迭代:<ol>
+<li>对于闭包F+中的每个函数依赖FD, 应用自反性和增广性规则, 推导出新的函数依赖, 将新推导出的函数依赖加入到F+中</li>
+<li>对于闭包F+中的每一对函数依赖F1和F2, 如果F1和F2可以通过传递性规则组合成新的函数依赖, 将结果加入到F+中</li>
+</ol>
+</li>
+<li>停止条件: 当闭包F+不再发生变化的时候, 算法终止</li>
+</ol>
+<p>在最坏情况下, 函数闭包会随着F中属性数量的增加而呈现指数级增长, 这意味着计算F+在某些情况下可能会非常耗时, 下面是一个简单的例子.</p>
+<details class="example" open="open">
+<summary>例子</summary>
+<p>假设我们在关系R中有三个属性A, B, C. 已知的函数依赖集F为F={A → B, B → C}. </p>
 </details>
 <div class="footnote">
 <hr />
