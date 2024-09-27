@@ -911,7 +911,25 @@
           <li class="md-nav__item">
   <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
-      闭包
+      函数依赖闭包
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      超键和候选键
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      属性闭包
     </span>
   </a>
   
@@ -1589,7 +1607,25 @@
           <li class="md-nav__item">
   <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
-      闭包
+      函数依赖闭包
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      超键和候选键
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      属性闭包
     </span>
   </a>
   
@@ -1742,7 +1778,7 @@
 <li>分解: decomposition, 如果A → BC, 那么可以推导出A → B和A → C</li>
 <li>联合: union, 如果A → B且A → C, 则可以推导出A → BC</li>
 </ul>
-<h3 id="_8">闭包</h3>
+<h3 id="_8">函数依赖闭包</h3>
 <p>能从函数依赖集F中推导出的所有函数依赖组成的集合, 成为F的闭包. 计算闭包方法如下:</p>
 <ol>
 <li>初始化: 设定初始闭包F+=F, 也就是闭包开始的时候等于原始的函数依赖集F</li>
@@ -1757,6 +1793,48 @@
 <details class="example" open="open">
 <summary>例子</summary>
 <p>假设我们在关系R中有三个属性A, B, C. 已知的函数依赖集F为F={A → B, B → C}. 可以计算出F+如<a href="https://img.ricolxwz.io/b21b9f5c8611d9361bbd42a5902009a8.png">图</a>所示.</p>
+</details>
+<h3 id="_9">超键和候选键</h3>
+<p>超键是一个能够唯一识别关系中的每个元组的属性的集合. 如果K是关系R的超键, 那么K → R, 即K决定了R中的所有的属性. 候选键是超键(或者直接叫做键)是属性最少的超键, 即候选键的子集不是候选键, 可能有很多的候选键, 但是其中只能有一个是主键.</p>
+<h3 id="_10">属性闭包</h3>
+<p>给定一个函数依赖集F和一个属性集X, 属性集X+(称为X的闭包)是所有由X在F下确定的属性的集合, 记作X → X+. 属性集合能够用于检查某个属性集是否是关系的键:</p>
+<ul>
+<li>如果一个属性集的闭包是整个关系的所有属性集合, 那么这个属性集就是超键</li>
+<li>如果一个超键是最小的, 即它的任何真子集都不是超键, 那么这个超键就是候选键</li>
+</ul>
+<p>算法:</p>
+<ol>
+<li>初始化: 将初始结果result设置为给定的属性集X={A1, A2, ..., An}</li>
+<li>迭代查找依赖项: 不断地查找形如A1A2...Am → C的函数依赖, 其中A1, A2, ..., Am已经包含在result中, 但是C不包含在result中</li>
+<li>更新闭包结果: 将C加入到result中</li>
+<li>重复步骤2, 直到没有更多的属性能够加入到result</li>
+<li>集合result就是X+</li>
+</ol>
+<details class="example" open="open">
+<summary>例子</summary>
+<p>找到下列关系中的候选键: </p>
+<p>PhD(sid, first, last, dept, advisor, award, description)</p>
+<p>已知下列函数依赖: </p>
+<ul>
+<li>sid → first, last</li>
+<li>advisor → dept</li>
+<li>description → award</li>
+<li>sid, dept → advisor, description</li>
+</ul>
+<p>设X=(sid, dept)我们来看一下X是不是候选键.</p>
+<p>不断地迭代查找依赖项: (sid, dept)+ = </p>
+<ol>
+<li>---&gt; sid, dept</li>
+<li>---&gt; sid, dept, first, last</li>
+<li>---&gt; sid, dept, first, last, advisor, description</li>
+<li>---&gt; sid, dept, first, last, advisor, description, award</li>
+</ol>
+<p>由于(sid, dept)+中的属性是关系的所有属性的集合, 所以它是一个超键. 那么它是一个候选键吗?</p>
+<ul>
+<li>(sid)+ ---&gt; sid, first, last, 不是一个超键</li>
+<li>(dept)+ ---&gt; dept, 不是一个超键</li>
+</ul>
+<p>所以(sid, dept)是一个候选键.</p>
 </details>
 <div class="footnote">
 <hr />
