@@ -1437,13 +1437,23 @@
   <h1>事务</h1>
 
 <p>不是所有的数据库操作都是原子性的. 我们需要更加复杂的多步骤的原子性操作. 如, 买房子, 银行转账, 网上交易等等. 没有事务会怎么样呢? A账户给B账户转账100美元, A账户上的前顺利更新-100美元, 但是B账户还没更新, 系统先坏了, 这个时候B账户上没有更新+100美元. 解决方法就是将操作"A账户上的钱-100美元", "B账户上的前+100美元"组成一个原子操作然后执行. </p>
-<p>数据库事务, Transaction, 是访问并可能操作各种数据项的一个数据库操作序列, 这些操作要么全部执行, 要么全部不执行, 是一个不可分割的工作单位. 事务由事务开始和事务结束之间执行的全部数据库操作组成. <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
-<h2 id="_1">属性</h2>
+<p>数据库事务, Transaction, 是访问并可能操作各种数据项的一个数据库操作序列, 这些操作要么全部执行, 要么全部不执行, 是一个不可分割的工作单位. 事务由事务开始和事务结束之间执行的全部数据库操作组成.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+<h2 id="_1">属性<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></h2>
+<p>事务需要有一些必须的属性, 被称为ACID.</p>
+<ul>
+<li>原子性, Atomicity: 一个事务要不全部执行, 要不全部不执行. 事务在执行过程中发生错误, 会被回滚到事务开始前的状态, 就像这个事务从来没有执行过一样</li>
+<li>一致性, Consistency: 在事务开始之前和事务结束之后, 数据库的完整性没有被破坏. 这表示写入的资料必须完全符合所有的预设约束, 触发器, 级联回滚等</li>
+<li>隔离性, Isolation: 数据库允许多个并发事务同时对其数据进行读写和修改的能力, 隔离性可以防止多个事务并发执行时由于交叉执行而导致数据的不一致. 即并发事务的结果和串行事务的结果是相同的. 事务隔离分为不同级别, 包括未提交读, 提交读, 可重复读和串行化</li>
+<li>持久性, Durability: 事务处理结束后, 对数据的修改是永久的, 即便系统故障也不会丢失</li>
+</ul>
 <div class="footnote">
 <hr />
 <ol>
 <li id="fn:1">
 <p>数据库事务. (不详). 百度百科. 取读于 2024年9月30日, 从 <a href="https://baike.baidu.hk/item/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BA%8B%E5%8A%A1/9744607">https://baike.baidu.hk/item/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BA%8B%E5%8A%A1/9744607</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>ACID. (2023). 收入 维基百科，自由的百科全书. <a href="https://zh.wikipedia.org/w/index.php?title=ACID&amp;oldid=76893082">https://zh.wikipedia.org/w/index.php?title=ACID&amp;oldid=76893082</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
