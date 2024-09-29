@@ -935,6 +935,75 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      平凡/非平凡函数依赖
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#完全部分依赖" class="md-nav__link">
+    <span class="md-ellipsis">
+      完全/部分函数依赖
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      传递函数依赖
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      范式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="范式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一范式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      第二范式
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1631,6 +1700,75 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      平凡/非平凡函数依赖
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#完全部分依赖" class="md-nav__link">
+    <span class="md-ellipsis">
+      完全/部分函数依赖
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      传递函数依赖
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      范式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="范式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一范式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      第二范式
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1836,11 +1974,51 @@
 </ul>
 <p>所以(sid, dept)是一个候选键.</p>
 </details>
+<h3 id="_11">类型 <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></h3>
+<h3 id="_12">平凡/非平凡函数依赖</h3>
+<ul>
+<li>平凡函数依赖: 当关系中属性集合Y是属性集合X的子集的时候, 即Y ⊆ X, 存在函数依赖X → Y, 即一组属性函数决定了它的所有子集</li>
+<li>非平凡函数依赖: 当关系中属性集合Y不是属性集合X的子集的时候, 存在函数依赖X → Y</li>
+</ul>
+<h3 id="完全部分依赖">完全/部分函数依赖</h3>
+<ul>
+<li>完全函数依赖: 设X, Y是关系R的两个属性集合, X'是X的真子集, 存在X → Y, 但对于每一个X', 都有X' !→ Y</li>
+<li>部分函数依赖: 设X, Y是关系R的两个属性集合, 存在X → Y, 若X'是X的真子集, 存在X' → Y, 如<a href="https://img.ricolxwz.io/3f6628e1effaa6ad0a07f37bea85de93.png">图</a></li>
+</ul>
+<h3 id="_13">传递函数依赖</h3>
+<p>设X, Y, Z是关系R中互不相同的属性集合, 存在X → Y(Y !→ X), Y → Z, 则称Z传递函数依赖于X.</p>
+<h2 id="_14">范式</h2>
+<p>范式, normal form是关系型数据库设计中的一种结构化标准, 用于组织数据以减少冗余, 提高数据一致性和查询效率. 范式的目的是通过满足一系列规则和限制, 确保数据库设计的合理性, 并避免数据冗余和数据异常. </p>
+<h3 id="_15">第一范式</h3>
+<p>第一范式, 1NF, 要求数据表中的每个字段都必须是不可再分的原子值. 其目的是确保数据的基本结构化, 使表中单元格只能存储一个数据项. </p>
+<details class="example" open="open">
+<summary>例子</summary>
+<p>如假设一个学生表中有一列"联系方式", 其中既存储了学生的手机号码, 也存储了电子邮件地址, 这不符合第一范式. 要符合第一范式, 应该将手机号和电子邮件分成两个独立的字段, 如<a href="https://img.ricolxwz.io/c74a86751954e772ea874b35a64fcf75.png">图</a>.</p>
+</details>
+<h3 id="_16">第二范式</h3>
+<p>第二范式, 2NF, 是在1NF的基础上, 没有<a href="#完全部分依赖">部分依赖</a>. </p>
+<p>非主属性: non-prime attribute, 是关系数据库中的一种属性, 它不属于候选键的一部分. 主属性: prime attribute, 属于候选键的一部分. 第二范式要求非主属性<a href="#完全部分依赖">完全依赖</a>于主键.</p>
+<details class="example" open="open">
+<summary>例子</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">例子1</label><label for="__tabbed_1_2">例子2</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>例如假设有一个成绩表有三个字段(学生ID, 课程) → 成绩, 并且还有学生姓名字段, 因为学生姓名只依赖于学生ID, 而与课程无关, 所以它违反了2NF. 解决的方法是将学生信息分离到另一个表中. </p>
+</div>
+<div class="tabbed-block">
+<p>假设有<a href="https://img.ricolxwz.io/74915bbea717584c16c54c9d8388e614.png">表</a>, 这样就会造成重复, 这个老师所教的所有的UoS中, Teacher_position这个信息都会被重复. 解决的方法是将拆分为两个关系, 然后检查拆分后的关系是否符合2NF. 可以拆为R1(Teacher_name, Teacher_position)和R2(Teacher_name, UnitOfStudy).</p>
+</div>
+</div>
+</div>
+</details>
 <div class="footnote">
 <hr />
 <ol>
 <li id="fn:1">
 <p>数据冗余（data redundant）现象介绍-CSDN博客. (n.d.). Retrieved September 26, 2024, from <a href="https://blog.csdn.net/Dontla/article/details/134932405">https://blog.csdn.net/Dontla/article/details/134932405</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>levon. (2019, December 10). 数据库范式和函数依赖. Levon’s Blog. <a href="https://www.liuvv.com/p/2e33702e.html">https://www.liuvv.com/p/2e33702e.html</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -1866,7 +2044,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年9月27日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年9月29日</span>
   </span>
 
     
