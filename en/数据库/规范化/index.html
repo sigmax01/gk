@@ -2292,6 +2292,77 @@
 <hr />
 <p>第四范式, 4NF, 用于处理由于多值依赖, MVD导致的数据冗余问题. </p>
 <p>在上面的例子中, 对于每个人来说, 如果它们有多个专业和会多种语言, 那么需要列出这个人会的每种语言对于每一个专业的组合, 这种重复信息会导致冗余.</p>
+<p>一个表要符合4NF, 至少需要满足以下一个条件:</p>
+<ul>
+<li>X ↠ Y是平凡多值依赖, 即Y ⊆ X或X ∪ Y = R</li>
+<li>X是R的一个超键</li>
+</ul>
+<details class="example" open="open">
+<summary>例子</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">例子1</label><label for="__tabbed_3_2">例子2</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>在这个表格中:</p>
+<table>
+<thead>
+<tr>
+<th>名字</th>
+<th>专业</th>
+<th>语言</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>John</td>
+<td>Electron</td>
+<td>French</td>
+</tr>
+<tr>
+<td>John</td>
+<td>Electron</td>
+<td>Korean</td>
+</tr>
+<tr>
+<td>John</td>
+<td>Plumber</td>
+<td>French</td>
+</tr>
+<tr>
+<td>John</td>
+<td>Plumber</td>
+<td>Korean</td>
+</tr>
+<tr>
+<td>Mary</td>
+<td>Doctor</td>
+<td>Spanish</td>
+</tr>
+<tr>
+<td>Mary</td>
+<td>Doctor</td>
+<td>Chinese</td>
+</tr>
+<tr>
+<td>Mary</td>
+<td>Author</td>
+<td>Spanish</td>
+</tr>
+<tr>
+<td>Mary</td>
+<td>Author</td>
+<td>Chinese</td>
+</tr>
+</tbody>
+</table>
+<p>名字 ↠ 专业, 名字 ↠ 语言都是非平凡的多值依赖. 并且, 名字这个属性不是超键, 所以它不符合4NF的条件. 解决方法是将表格一分为二, R1(名字, 专业), R2(名字, 语言).</p>
+</div>
+<div class="tabbed-block">
+<p>这个<a href="https://img.ricolxwz.io/6b4a8749c4a62f3cae138d95a3a2e8e1.png">表格</a>是否符合4NF?</p>
+<p>答案是不符合, 因为employee_name不是一个超键, 而且employee_name ↠ project_id是非平凡的多值依赖. 解决方法是将上述表一分为二. R1(employee_name, project_id), R2(employee_name, personal_phone_number).</p>
+</div>
+</div>
+</div>
+</details>
 <div class="footnote">
 <hr />
 <ol>
