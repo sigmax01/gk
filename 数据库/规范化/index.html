@@ -942,10 +942,11 @@
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="类型">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#平凡非平凡函数依赖" class="md-nav__link">
     <span class="md-ellipsis">
       平凡/非平凡函数依赖
     </span>
@@ -975,9 +976,23 @@
     </nav>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#非主属性主属性" class="md-nav__link">
+    <span class="md-ellipsis">
+      非主属性/主属性
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     <span class="md-ellipsis">
       范式
     </span>
@@ -987,7 +1002,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     <span class="md-ellipsis">
       第一范式
     </span>
@@ -996,7 +1011,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
+  <a href="#_14" class="md-nav__link">
     <span class="md-ellipsis">
       第二范式
     </span>
@@ -1005,9 +1020,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_16" class="md-nav__link">
+  <a href="#_15" class="md-nav__link">
     <span class="md-ellipsis">
       第三范式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boyce-codd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boyce-Codd范式
     </span>
   </a>
   
@@ -1716,10 +1740,11 @@
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="类型">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#平凡非平凡函数依赖" class="md-nav__link">
     <span class="md-ellipsis">
       平凡/非平凡函数依赖
     </span>
@@ -1749,9 +1774,23 @@
     </nav>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#非主属性主属性" class="md-nav__link">
+    <span class="md-ellipsis">
+      非主属性/主属性
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     <span class="md-ellipsis">
       范式
     </span>
@@ -1761,7 +1800,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     <span class="md-ellipsis">
       第一范式
     </span>
@@ -1770,7 +1809,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
+  <a href="#_14" class="md-nav__link">
     <span class="md-ellipsis">
       第二范式
     </span>
@@ -1779,9 +1818,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_16" class="md-nav__link">
+  <a href="#_15" class="md-nav__link">
     <span class="md-ellipsis">
       第三范式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boyce-codd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boyce-Codd范式
     </span>
   </a>
   
@@ -1993,29 +2041,33 @@
 <p>所以(sid, dept)是一个候选键.</p>
 </details>
 <h3 id="_11">类型 <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></h3>
-<h3 id="_12">平凡/非平凡函数依赖</h3>
+<h4 id="平凡非平凡函数依赖">平凡/非平凡函数依赖</h4>
 <ul>
 <li>平凡函数依赖: 当关系中属性集合Y是属性集合X的子集的时候, 即Y ⊆ X, 存在函数依赖X → Y, 即一组属性函数决定了它的所有子集</li>
 <li>非平凡函数依赖: 当关系中属性集合Y不是属性集合X的子集的时候, 存在函数依赖X → Y</li>
 </ul>
-<h3 id="完全部分依赖">完全/部分函数依赖</h3>
+<h4 id="完全部分依赖">完全/部分函数依赖</h4>
 <ul>
 <li>完全函数依赖: 设X, Y是关系R的两个属性集合, X'是X的真子集, 存在X → Y, 但对于每一个X', 都有X' !→ Y</li>
 <li>部分函数依赖: 设X, Y是关系R的两个属性集合, 存在X → Y, 若X'是X的真子集, 存在X' → Y, 如<a href="https://img.ricolxwz.io/3f6628e1effaa6ad0a07f37bea85de93.png">图</a></li>
 </ul>
-<h3 id="传递函数依赖">传递函数依赖</h3>
+<h4 id="传递函数依赖">传递函数依赖</h4>
 <p>设X, Y, Z是关系R中互不相同的属性集合, 存在X → Y(Y !→ X), Y → Z, 则称Z传递函数依赖于X.</p>
-<h2 id="_13">范式</h2>
+<h3 id="非主属性主属性">非主属性/主属性</h3>
+<ul>
+<li>非主属性: non-prime attribute, 是关系数据库中的一种属性, 它不属于候选键的一部分 </li>
+<li>主属性: prime attribute, 属于候选键的一部分</li>
+</ul>
+<h2 id="_12">范式</h2>
 <p>范式, normal form是关系型数据库设计中的一种结构化标准, 用于组织数据以减少冗余, 提高数据一致性和查询效率. 范式的目的是通过满足一系列规则和限制, 确保数据库设计的合理性, 并避免数据冗余和数据异常. </p>
-<h3 id="_14">第一范式</h3>
+<h3 id="_13">第一范式</h3>
 <p>第一范式, 1NF, 要求数据表中的每个字段都必须是不可再分的原子值. 其目的是确保数据的基本结构化, 使表中单元格只能存储一个数据项. </p>
 <details class="example" open="open">
 <summary>例子</summary>
 <p>如假设一个学生表中有一列"联系方式", 其中既存储了学生的手机号码, 也存储了电子邮件地址, 这不符合第一范式. 要符合第一范式, 应该将手机号和电子邮件分成两个独立的字段, 如<a href="https://img.ricolxwz.io/c74a86751954e772ea874b35a64fcf75.png">图</a>.</p>
 </details>
-<h3 id="_15">第二范式</h3>
-<p>第二范式, 2NF, 是在1NF的基础上, 没有<a href="#完全部分依赖">部分依赖</a>. </p>
-<p>非主属性: non-prime attribute, 是关系数据库中的一种属性, 它不属于候选键的一部分. 主属性: prime attribute, 属于候选键的一部分. 第二范式要求非主属性<a href="#完全部分依赖">完全依赖</a>于主键.</p>
+<h3 id="_14">第二范式</h3>
+<p>第二范式, 2NF, 是在1NF的基础上, 没有<a href="#完全部分依赖">部分依赖</a>, 要求<a href="#非主属性主属性">非主属性</a><a href="#完全部分依赖">完全依赖</a>于主键. </p>
 <details class="example" open="open">
 <summary>例子</summary>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">例子1</label><label for="__tabbed_1_2">例子2</label></div>
@@ -2029,7 +2081,7 @@
 </div>
 </div>
 </details>
-<h3 id="_16">第三范式</h3>
+<h3 id="_15">第三范式</h3>
 <p>第三范式, 3NF, 是在2NF的基础上, 非主属性不能依赖于其他非主属性. 换句话说, 就是所有的非主属性必须直接依赖于主键, 而不是通过其他非主属性间接依赖主键, 消除了<a href="#传递函数依赖">传递依赖</a>.</p>
 <details class="example" open="open">
 <summary>例子</summary>
@@ -2043,6 +2095,16 @@
 </div>
 </div>
 </div>
+</details>
+<h3 id="boyce-codd">Boyce-Codd范式</h3>
+<p>Boyce-Codd范式, BCNF, 是3NF的增强版. 一个关系R满足BCNF当且仅当所有的<a href="#平凡非平凡函数依赖">非平凡函数依赖</a>中的左侧必须是R的超键. 换句话说, 表中所有的属性必须完全依赖于超键. 更加正式地说, 对于所有的非平凡依赖X → Y, X必须是R的超键, 如<a href="https://img.ricolxwz.io/88db93437b3a505a3f91d3048755edff.png">图</a>所示.</p>
+<details class="example" open="open">
+<summary>例子</summary>
+<p>假设有<a href="https://img.ricolxwz.io/e75a079e0516a4d4a7e4c7d4c05457d4.png">表</a>, 其中Address → Teacher_name违反了BCNF. 需要分开为两个表R1(Address, Teacher_name), R2(Address, UnitofStudy).</p>
+</details>
+<details class="tip" open="open">
+<summary>Tip</summary>
+<p>由于BCNF是基于3NF的, 所以任何违反1NF, 2NF, 3NF的都是违反BCNF的.</p>
 </details>
 <div class="footnote">
 <hr />
