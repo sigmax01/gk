@@ -1029,7 +1029,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#boyce-codd" class="md-nav__link">
+  <a href="#BCNF" class="md-nav__link">
     <span class="md-ellipsis">
       Boyce-Codd范式
     </span>
@@ -1089,6 +1089,15 @@
   <a href="#_18" class="md-nav__link">
     <span class="md-ellipsis">
       检查无损连接
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bcnf" class="md-nav__link">
+    <span class="md-ellipsis">
+      分解BCNF
     </span>
   </a>
   
@@ -1884,7 +1893,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#boyce-codd" class="md-nav__link">
+  <a href="#BCNF" class="md-nav__link">
     <span class="md-ellipsis">
       Boyce-Codd范式
     </span>
@@ -1944,6 +1953,15 @@
   <a href="#_18" class="md-nav__link">
     <span class="md-ellipsis">
       检查无损连接
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bcnf" class="md-nav__link">
+    <span class="md-ellipsis">
+      分解BCNF
     </span>
   </a>
   
@@ -2210,7 +2228,7 @@
 </div>
 </div>
 </details>
-<h3 id="boyce-codd">Boyce-Codd范式</h3>
+<h3 id="BCNF">Boyce-Codd范式</h3>
 <p>Boyce-Codd范式, BCNF, 是3NF的增强版. 一个关系R满足BCNF当且仅当所有的<a href="#平凡非平凡函数依赖">非平凡函数依赖</a>中的左侧必须是R的超键. 换句话说, 表中所有的属性必须完全依赖于超键. 更加正式地说, 对于所有的非平凡依赖X → Y, X必须是R的超键, 如<a href="https://img.ricolxwz.io/88db93437b3a505a3f91d3048755edff.png">图</a>所示.</p>
 <details class="example" open="open">
 <summary>例子</summary>
@@ -2443,6 +2461,13 @@
 <details class="example" open="open">
 <summary>例子</summary>
 <p>假设我们两个关系R1, R2. R1(A, B), R2(B, C). 由于R1 ​∩ R2​ = {B}, 而B是R2(B, C)的候选键, 因此满足无损连接的条件, 当通过自然连接R1, R2的时候, 能够恢复原始R(A, B, C)的关系.  </p>
+</details>
+<h3 id="bcnf">分解BCNF</h3>
+<details class="example" open="open">
+<summary>例子</summary>
+<p>假设我们有一个关系R和一个非平凡依赖X → Y, 其中X不是超键, 这违反了<a href="#BCNF">BCNF</a>. 我们需要将其分解为两个关系.</p>
+<p>我们需要R分解为两个子关系, R1 = X ∪ Y; R2 = R - Y.</p>
+<p>假设有一个关系login_info = (customer_id, loan_number, amount). 有一个非平凡依赖loan_bumber → amount, 由于loan_number不是超键的一部分, 所以不符合BCNF. 我们将其分解为R1 = (loan_number, amount); R2 = (customer_id, loan_number), 现在, 两个都符合BCNF.</p>
 </details>
 <div class="footnote">
 <hr />
