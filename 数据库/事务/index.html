@@ -834,6 +834,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      一致性
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      原子性
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1401,6 +1419,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      一致性
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      原子性
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1446,6 +1482,28 @@
 <li>隔离性, Isolation: 数据库允许多个并发事务同时对其数据进行读写和修改的能力, 隔离性可以防止多个事务并发执行时由于交叉执行而导致数据的不一致. 即并发事务的结果和串行事务的结果是相同的. 事务隔离分为不同级别, 包括未提交读, 提交读, 可重复读和串行化</li>
 <li>持久性, Durability: 事务处理结束后, 对数据的修改是永久的, 即便系统故障也不会丢失</li>
 </ul>
+<h2 id="_2">一致性</h2>
+<p>假设数据库在初始状态是一致的(即满足所有的约束), 当事务结束的时候, 若:</p>
+<ul>
+<li>所有的约束都被满足</li>
+<li>状态满足预期效果</li>
+</ul>
+<p>则称事务是一致的.</p>
+<p>每个事务都应该保持数据库的一致性. 确保事务的一致性是应用开发者的责任, 数据库无法修正编写不良的逻辑, 例如, 从账户A中取出100美元, 只向账户B中存入90美元, 而数据库系统是无法自动修正这个问题的.</p>
+<details class="tip" open="open">
+<summary>Tip</summary>
+<p>我们可以设置什么时间点确保数据库一致. 如<a href="https://img.ricolxwz.io/a42d73224cbdf35a36d1fa913bd09ca7.png">图</a>, 参考<a href="/数据库/完整性约束/#约束检查的时间">约束检查的时间</a>.</p>
+</details>
+<h2 id="_3">原子性</h2>
+<p>在现实世界中, 事务都是要不完全发生, 要不完全不发生, 就如银行转账, 要不取款和存款都发生, 要不两者都不发生, 部分完成的事务可能造成不正确的数据库状态. </p>
+<p>DBMS实现原子性的方法就是记录所有的可能需要撤销/重做的操作. 例如, 在发生故障的时候, 所有未提交的事务操作都会被撤销(undo), 将已经执行的操作回滚到事务开始之前的状态. 在某些情况下, 还可以重做(redo), 这是指在事务已经提交后, 由于系统奔溃等原因, 数据库中的数据没有正确保存, 此时通过重做操作, 重新应用已提交的事务所做的更改.</p>
+<details class="abstract" open="open">
+<summary>总结</summary>
+<ul>
+<li>撤销: 用于未提交的事务, 是回滚事务的更改</li>
+<li>重做: 用于已提交的事务, 是重新应用事务的更改</li>
+</ul>
+</details>
 <div class="footnote">
 <hr />
 <ol>
@@ -1479,7 +1537,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年9月29日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年9月30日</span>
   </span>
 
     
