@@ -885,6 +885,114 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      隔离性
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="隔离性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      三种问题
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三种问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      更新丢失
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      临时更新
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      不正确摘要
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      级别
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="级别">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      读未提交
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      读提交
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      可重复读
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      可串行化
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1503,6 +1611,114 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      隔离性
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="隔离性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      三种问题
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三种问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      更新丢失
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      临时更新
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      不正确摘要
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      级别
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="级别">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      读未提交
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      读提交
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      可重复读
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      可串行化
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1686,7 +1902,39 @@
 </details>
 <h2 id="_5">持久性</h2>
 <p>一旦事务被提交, 它的效果应该持续存在于数据库中, 并且即使系统奔溃, 这些效果也是永久存在的. 即如果出现软件或者硬件故障, 部分数据库可能会被删除或已损坏, 这种情况下, 数据库应当具有恢复到最后的一致状态的能力.</p>
-<p>我们可以使用日志的方式来实现持久性. 使用可靠的存储设备(如硬盘)来持久保存日志, 日志记录了事务执行过程中对数据库的修改. 每个事务都有一个与他关联的日志, 记录了该事务所做的所有更改. 如果事务中止, 根据具体的恢复协议, 系统可以使用日志来撤销或者重做该事务的操作.</p>
+<p>我们可以使用日志的方式来实现持久性. 使用可靠的存储设备(如硬盘)来持久保存日志, 日志记录了事务执行过程中对数据库的修改. 每个事务都有一个与他关联的日志, 记录了该事务所做的所有更改. 如果事务中止, 根据具体的恢复协议, 系统可以使用日志来撤销或重做该事务的操作.</p>
+<h2 id="_6">隔离性</h2>
+<p>事务是可以并发执行的, 即它们的操作可以交错执行. 交错通常由主机操作系统基于某种调度算法决定. 如果事务管理器没有干预, 数据库可能由于并发执行导致处于不正确和不一致的状态. 因此, 有必要控制对数据库的并发访问, 以确保正确性和效率.</p>
+<h3 id="_7">三种问题</h3>
+<p>若没有隔离性, 可能导致三种问题.</p>
+<h4 id="_8">更新丢失</h4>
+<p>当两个事务并发执行的时候, 一个事务的更新会被另一个事务的更新覆盖, 从而导致最终的值不正确. 例如, 事务A读取数据项X的值为100, 并将其修改为200. 事务B也读取了X的值为100, 并将其修改为150. 最后事务A提交了, 但是事务B的提交覆盖了A的更新, 导致A的修改丢失. 另一个例子如<a href="https://img.ricolxwz.io/06b07c13ab478bebe66957ff9a377933.png">图</a></p>
+<h4 id="_9">临时更新</h4>
+<p>也称为脏读问题, 发生在一个事务更新了数据项但是未提交的时候, 该事务失败回滚, 而另一个事务读取了这个未提交的更新. 这样, 第二个事务在基于无效数据的情况下执行操作, 可能导致错误的结果. 例如, 事务A修改数据项X的值为200, 随后事务A失败并回滚, X的值恢复到原始状态100, 在A失败回滚前, 事务B读取了X的临时更新值200, 导致B基于错误的数据进行后续操作. 另一个例子如<a href="https://img.ricolxwz.io/5686361770cb30cf5befb964be2a3a22.png">图</a>.</p>
+<h4 id="_10">不正确摘要</h4>
+<p>这个问题发生在事务对一组记录进行汇总操作的时候, 另一个事务还在处理部分数据. 例如, 事务A正在对多个记录求和, 总和的部分数据已经被事务B更新, 但是另一部分仍是旧数据. 由于事务A在汇总过程中读取到了新旧混合的数据, 导致其计算结果不正确. 另一个例子如<a href="https://img.ricolxwz.io/c5dbc64ac45a78b1987f26a433c24e12.png">图</a>.</p>
+<h3 id="_11">级别</h3>
+<p>在SQL标准中, 有四种事务隔离级别. PostgreSQL不实现"读未提交", 因此当请求次类型的隔离级别时, 会默认使用"读提交".</p>
+<h4 id="_12">读未提交</h4>
+<p>读未提交, Read Uncommitted 事务可以读取由其他并发事务写入的未提交数据, 这称为脏读.</p>
+<h4 id="_13">读提交</h4>
+<p>读提交, Read Committed, 数据库不会读取任何未提交的值, 也就是说, 没有脏读.</p>
+<h4 id="_14">可重复读</h4>
+<p>可重复读, Repeatable Read, 事务只能看到事务开始之前提交的数据, 在执行期间, 它不会看到未提交的数据或者其他事务提交的更改.</p>
+<h4 id="_15">可串行化</h4>
+<p>这种是最高级别的隔离, 确保事务执行的效果等同于顺序执行相同事务的结果.</p>
+<hr />
+<p>这四个隔离级别可以分别处理:</p>
+<ul>
+<li>读未提交: 允许脏读</li>
+<li>读提交: 解决临时更新问题</li>
+<li>可重复读: 解决不正确摘要问题</li>
+<li>可串行化: 解决更新丢失问题</li>
+</ul>
+<p>可以通过以下语句为当前的事务设置隔离级别:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">SET</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="w"> </span><span class="k">ISOLATION</span><span class="w"> </span><span class="k">LEVEL</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="err">{</span><span class="w"> </span><span class="k">SERIALIZABLE</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">REPEATABLE</span><span class="w"> </span><span class="k">READ</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">READ</span><span class="w"> </span><span class="k">COMMITTED</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">READ</span><span class="w"> </span><span class="k">UNCOMMITTED</span><span class="w"> </span><span class="err">}</span><span class="p">;</span>
+</code></pre></div>
 <div class="footnote">
 <hr />
 <ol>
