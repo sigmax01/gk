@@ -914,7 +914,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#隔离级别" class="md-nav__link">
     <span class="md-ellipsis">
       级别
     </span>
@@ -923,7 +923,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       冲突
     </span>
@@ -935,18 +935,33 @@
           <li class="md-nav__item">
   <a href="#冲突等价" class="md-nav__link">
     <span class="md-ellipsis">
-      冲突等价
+      冲突等价调度
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#冲突可串行化调度" class="md-nav__link">
     <span class="md-ellipsis">
       冲突可串行化调度
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="冲突可串行化调度">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      判断
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1607,7 +1622,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#隔离级别" class="md-nav__link">
     <span class="md-ellipsis">
       级别
     </span>
@@ -1616,7 +1631,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       冲突
     </span>
@@ -1628,18 +1643,33 @@
           <li class="md-nav__item">
   <a href="#冲突等价" class="md-nav__link">
     <span class="md-ellipsis">
-      冲突等价
+      冲突等价调度
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#冲突可串行化调度" class="md-nav__link">
     <span class="md-ellipsis">
       冲突可串行化调度
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="冲突可串行化调度">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      判断
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1867,13 +1897,13 @@
 <li>临时更新: 也称为脏读问题, 发生在一个事务更新了数据项但是未提交的时候, 该事务失败回滚, 而另一个事务读取了这个未提交的更新. 这样, 第二个事务在基于无效数据的情况下执行操作, 可能导致错误的结果. 例如, 事务A修改数据项X的值为200, 随后事务A失败并回滚, X的值恢复到原始状态100, 在A失败回滚前, 事务B读取了X的临时更新值200, 导致B基于错误的数据进行后续操作. 另一个例子如<a href="https://img.ricolxwz.io/5686361770cb30cf5befb964be2a3a22.png">图</a>.</li>
 <li>不正确摘要: 这个问题发生在事务对一组记录进行汇总操作的时候, 另一个事务还在处理部分数据. 例如, 事务A正在对多个记录求和, 总和的部分数据已经被事务B更新, 但是另一部分仍是旧数据. 由于事务A在汇总过程中读取到了新旧混合的数据, 导致其计算结果不正确. 另一个例子如<a href="https://img.ricolxwz.io/c5dbc64ac45a78b1987f26a433c24e12.png">图</a>.</li>
 </ul>
-<h3 id="_8">级别</h3>
+<h3 id="隔离级别">级别</h3>
 <p>在SQL标准中, 有四种事务隔离级别. PostgreSQL不实现"读未提交", 因此当请求次类型的隔离级别时, 会默认使用"读提交".</p>
 <ul>
 <li>读未提交, Read Uncommitted 事务可以读取由其他并发事务写入的未提交数据, 脏读.</li>
 <li>读提交, Read Committed, 数据库不会读取任何未提交的值, 也就是说, 没有脏读.</li>
 <li>可重复读, Repeatable Read, 事务只能看到事务开始之前提交的数据, 在执行期间, 它不会看到未提交的数据或者其他事务提交的更改.</li>
-<li>可串行化, Serializable, 确保事务执行的效果等同于顺序执行相同事务的结果.</li>
+<li>可串行化, Serializable, 确保事务执行的效果等同于顺序执行相同事务的结果, 见<a href="#冲突可串行化调度">冲突可串行化调度</a></li>
 </ul>
 <p>这四个隔离级别可以分别处理:</p>
 <ul>
@@ -1886,7 +1916,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">SET</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="w"> </span><span class="k">ISOLATION</span><span class="w"> </span><span class="k">LEVEL</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="err">{</span><span class="w"> </span><span class="k">SERIALIZABLE</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">REPEATABLE</span><span class="w"> </span><span class="k">READ</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">READ</span><span class="w"> </span><span class="k">COMMITTED</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">READ</span><span class="w"> </span><span class="k">UNCOMMITTED</span><span class="w"> </span><span class="err">}</span><span class="p">;</span>
 </code></pre></div>
-<h3 id="_9">冲突</h3>
+<h3 id="_8">冲突</h3>
 <p>冲突是指两个或者多个事务在执行时访问相同的数据项, 并且这些访问操作的顺序会影响最终的结果. 换句话说, 冲突意味着某些操作的顺序不能随意更改, 否则会改变整个事务的执行效果.</p>
 <p>冲突有三种. </p>
 <ul>
@@ -1900,10 +1930,27 @@
 <li>属于不同的事务</li>
 <li>至少有一个操作是对X写入</li>
 </ol>
-<h4 id="冲突等价">冲突等价<sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">3</a></sup></h4>
+<h4 id="冲突等价">冲突等价调度<sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">3</a></sup><sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup></h4>
 <p>两个调度冲突等价, 如果这两个调度涉及相同事务的相同操作, 即每一对冲突的操作在两个调度中的顺序都相同.</p>
-<h4 id="_10">冲突可串行化调度<sup id="fnref3:3"><a class="footnote-ref" href="#fn:3">3</a></sup></h4>
+<p>来复习一遍冲突. 假设I, J是分别来自两个不同事务的两个操作. 它们的关系有以下五种情况:</p>
+<ol>
+<li>I和J的目标数据项不一样或者没有任何共同的数据项, 这种情况下, 无论是I先执行还是J先执行, 结果都是一样的, 所以I和J的相对顺序不重要 </li>
+<li>I=read(Q), J=read(Q), I和J的相对顺序也不重要, 因为不管是哪种顺序, 它们读到的都是数据想Q的相同值</li>
+<li>I=read(Q), J=write(Q), 如果I先执行, 则I读到的是Q被J修改之前的值, 如果J先执行, 则I读到的是J更新之后的Q值, 所以I和J的相对顺序很重要</li>
+<li>I=write(Q), J=read(Q), 上一种情况的对称版</li>
+<li>I=write(Q), J=write(Q), 两者都是写操作, 后者的写回覆盖先写的值, 导致后续的读操作只能读取到后写的值. 如果I和J的相对顺序不一样, 则后续读操作读取的值也不一样. 所以I和J的相对顺序很重要</li>
+</ol>
+<p>将调度S1中的任意两个相邻的不冲突操作调换顺序就可以得到一个新的调度S2, 在S2中继续这种调换, 就可以得到更多的调度, 由于只是调换了不冲突的相邻操作, 对执行结果没有影响, 所以这些经过调换相邻非冲突操作得到的调度都是冲突等价的. </p>
+<details class="example" open="open">
+<summary>例子</summary>
+<p>考虑<a href="https://img.ricolxwz.io/78787546f767a1e75643720691eea746.webp">调度S1</a>.</p>
+<p>我们可以将其不冲突的相邻操作read1[B], write2[A]进行调换, 注意, 由于read1[B]和write2[A]操作的是不同的数据项A和B, 所以两者不冲突. 同理, 我们可以继续进行不冲突的调换, 得到更多的调度. 如<a href="https://img.ricolxwz.io/4b6309b8e9a7737709d3bea015dc1c7e.webp">图</a>.</p>
+<p>可以发现, 最终经过四次调换相邻的不冲突操作, 得到了一个串行的调度, 我们称这个调度是<a href="#冲突可串行化调度">冲突可串行化</a>的.</p>
+</details>
+<h4 id="冲突可串行化调度">冲突可串行化调度<sup id="fnref3:3"><a class="footnote-ref" href="#fn:3">3</a></sup><sup id="fnref2:4"><a class="footnote-ref" href="#fn:4">4</a></sup></h4>
 <p>如果一个调度冲突等价于某个串行调度, 则该调度是冲突可串行化调度. 什么是冲突等价, 请见<a href="#冲突等价">这里</a>; 什么是可串行化调度, 请见<a href="#调度">这里</a>.</p>
+<p>冲突可串行化非常重要, 如果能证明并发事务的调度是冲突可串行化的, 则其执行效果和串行执行事务是一样的, 绝对不会出现并发异常. 如果能证明某个并发控制方案能让并发事务都生成冲突可视化的调度, 则说明该并发控制方案达到了可串行化隔离的级别, 详情见<a href="#隔离级别">隔离级别</a>.</p>
+<h5 id="_9">判断</h5>
 <div class="footnote">
 <hr />
 <ol>
@@ -1915,6 +1962,9 @@
 </li>
 <li id="fn:3">
 <p>冲突等价(ConﬂictEquivalence) 可串行化调度(Serializable Schedules)-CSDN博客. (不详). 取读于 2024年10月1日, 从 <a href="https://blog.csdn.net/u013288190/article/details/121276904">https://blog.csdn.net/u013288190/article/details/121276904</a>&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>冲突可串行化、事务优先图. (n.d.). 知乎专栏. Retrieved October 1, 2024, from <a href="https://zhuanlan.zhihu.com/p/516557516">https://zhuanlan.zhihu.com/p/516557516</a>&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
