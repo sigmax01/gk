@@ -977,7 +977,7 @@
           <li class="md-nav__item">
   <a href="#_15" class="md-nav__link">
     <span class="md-ellipsis">
-      可串行化
+      可序列化
     </span>
   </a>
   
@@ -1703,7 +1703,7 @@
           <li class="md-nav__item">
   <a href="#_15" class="md-nav__link">
     <span class="md-ellipsis">
-      可串行化
+      可序列化
     </span>
   </a>
   
@@ -1921,15 +1921,28 @@
 <p>读提交, Read Committed, 数据库不会读取任何未提交的值, 也就是说, 没有脏读.</p>
 <h4 id="_14">可重复读</h4>
 <p>可重复读, Repeatable Read, 事务只能看到事务开始之前提交的数据, 在执行期间, 它不会看到未提交的数据或者其他事务提交的更改.</p>
-<h4 id="_15">可串行化</h4>
+<h4 id="_15">可序列化</h4>
 <p>这种是最高级别的隔离, 确保事务执行的效果等同于顺序执行相同事务的结果.</p>
+<details class="example" open="open">
+<summary>例子</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">可序列化</label><label for="__tabbed_2_2">不可序列化</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>如<a href="https://img.ricolxwz.io/e587ae92bf9334716c80365d76673fd8.png">图</a>展示的一个可序列化的Schedule. 由于这个Schedule和其中一个串行执行的结果相同, 所以称之为可序列化, 注意, 图片的最下方还有另一个串行执行的Schedule, 我们的要求是只要和其中的一个串行的Schedule结果一样就可以.</p>
+</div>
+<div class="tabbed-block">
+<p>如<a href="https://img.ricolxwz.io/80d8747bf9623747bdc41af153cfaaba.png">图</a>展示的一个不可序列化的Schedule. 由于这个Schedule和两个串行执行的结果都不同, 称之为不可序列化.</p>
+</div>
+</div>
+</div>
+</details>
 <hr />
 <p>这四个隔离级别可以分别处理:</p>
 <ul>
 <li>读未提交: 允许脏读</li>
 <li>读提交: 解决临时更新问题</li>
 <li>可重复读: 解决不正确摘要问题</li>
-<li>可串行化: 解决更新丢失问题</li>
+<li>可序列化: 解决更新丢失问题</li>
 </ul>
 <p>可以通过以下语句为当前的事务设置隔离级别:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">SET</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="w"> </span><span class="k">ISOLATION</span><span class="w"> </span><span class="k">LEVEL</span>
@@ -1968,7 +1981,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年9月30日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年10月1日</span>
   </span>
 
     
