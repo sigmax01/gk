@@ -952,9 +952,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#冲突可串行化调度判断" class="md-nav__link">
     <span class="md-ellipsis">
-      判断
+      判断冲突可串行化
     </span>
   </a>
   
@@ -962,6 +962,15 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      基于锁的并发控制
+    </span>
+  </a>
   
 </li>
         
@@ -1660,9 +1669,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#冲突可串行化调度判断" class="md-nav__link">
     <span class="md-ellipsis">
-      判断
+      判断冲突可串行化
     </span>
   </a>
   
@@ -1670,6 +1679,15 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      基于锁的并发控制
+    </span>
+  </a>
   
 </li>
         
@@ -1889,6 +1907,9 @@
 </div>
 </details>
 </li>
+<li>
+<p>冲突可串行化/冲突不可串行化调度: 请见<a href="#冲突可串行化调度">这里</a>, 如何判断, 请见<a href="#冲突可串行化调度判断">这里</a></p>
+</li>
 </ul>
 <h3 id="_7">问题</h3>
 <p>若没有隔离性, 可能导致三种问题.</p>
@@ -1950,7 +1971,7 @@
 <h4 id="冲突可串行化调度">冲突可串行化调度<sup id="fnref3:3"><a class="footnote-ref" href="#fn:3">3</a></sup><sup id="fnref2:4"><a class="footnote-ref" href="#fn:4">4</a></sup></h4>
 <p>如果一个调度冲突等价于某个串行调度, 则该调度是冲突可串行化调度. 什么是冲突等价, 请见<a href="#冲突等价">这里</a>; 什么是可串行化调度, 请见<a href="#调度">这里</a>.</p>
 <p>冲突可串行化非常重要, 如果能证明并发事务的调度是冲突可串行化的, 则其执行效果和串行执行事务是一样的, 绝对不会出现并发异常. 如果能证明某个并发控制方案能让并发事务都生成冲突可视化的调度, 则说明该并发控制方案达到了可串行化隔离的级别, 详情见<a href="#隔离级别">隔离级别</a>.</p>
-<h5 id="_9">判断</h5>
+<h5 id="冲突可串行化调度判断">判断冲突可串行化</h5>
 <p>现在我们知道了并发事务调度中相邻的非冲突操作可以调换相对顺序而不影响执行结果. 所以我们在尝试将并发事务串行化的时候, 可以不用考虑非冲突操作, 而只需要保持冲突操作的相对顺序. 如果操作来自事务1的操作I和来做事务2的操作J冲突, 则尝试串行化时必须保持I, J原来的顺序.</p>
 <p>如果I在J之前, 则尝试串行化时I也必须在J之前, 由于串行化后之只能等一个事务执行完之后才能执行下一个事务, 所以I所属的事务1必须在J所属的事务2之前执行. 也就是事务2必须等事务1执行完后才开始执行, 相当于事务2依赖了事务1, 对于这种先后的依赖关系, 适合用优先图分析. </p>
 <p>为调度构建优先图的过程如下:</p>
@@ -1976,8 +1997,12 @@
 </details>
 <details class="tip" open="open">
 <summary>Tip</summary>
-<p>事务优先图对应的串行化方案可能有多个. 对事务优先图进行拓扑排序就能得到事务的串行化方案, 单对应的串行化方案可能有多个. 如<a href="https://img.ricolxwz.io/2babc772d875ddf2a9d601d0168ff9bf.webp">图</a>所示, 四个事务构成的优先图等价的串行化方案有两个. 这是因为事务2和事务3之间没有依赖, 哪个先执行都行.</p>
+<ul>
+<li>事务优先图对应的串行化方案可能有多个. 对事务优先图进行拓扑排序就能得到事务的串行化方案, 单对应的串行化方案可能有多个. 如<a href="https://img.ricolxwz.io/2babc772d875ddf2a9d601d0168ff9bf.webp">图</a>所示, 四个事务构成的优先图等价的串行化方案有两个. 这是因为事务2和事务3之间没有依赖, 哪个先执行都行</li>
+<li>如果一个调度是冲突可串行化的, 那么它一定可串行化, 但是反过来不一定成立. 考虑一个可可串行化的调度S, 如<a href="https://img.ricolxwz.io/dbf37141b3b12a15ca52fb5871eeee2b.png">图</a>所示. 这个调度和<a href="https://img.ricolxwz.io/4283449cd0d3096f7926b3438765c68e.png">这个</a>串行化的调度是一致的, A的值最后是事务3决定的, B的值最后是事务2决定的. 但是反过来看, 它是否可冲突串行化? 答案是否定的, 因为考虑它的优先图, 如<a href="https://img.ricolxwz.io/e9d474951f84e85b5e35281e73037611.png">图</a>所示, 是有环的</li>
+</ul>
 </details>
+<h4 id="_9">基于锁的并发控制</h4>
 <div class="footnote">
 <hr />
 <ol>
