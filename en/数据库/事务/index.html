@@ -1002,6 +1002,24 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      释放锁
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      死锁
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1752,6 +1770,24 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      释放锁
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      死锁
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2074,7 +2110,7 @@
 <p>之前讨论了乐观策略, Optimistic Protocol, 重点是冲突检测, 乐观策略假设大多数操作不会冲突, 因此允许事务自由执行, 不提前加锁. 在提交的时候, 系统会进行优先图检测, 查看是否有环, 如果有环, 说明这是非冲突可串行化调度, 回滚事务, 重新来一遍. </p>
 <p>但是, 如果频繁有环出现, 事务可能会反复回滚, 导致性能下降. 所以, 乐观策略适合冲突较少的场景, 特别是读多写少的情况, 如在线查询系统. 假设冲突会经常发生, 需要采用悲观策略, 防止冲突的发生, 一般用加锁的方式实现.</p>
 <hr />
-<p>为了避免冲突, 基于锁的协议需要一种锁定机制, 即在事务使用资源之前锁定该资源, 当一个资源被一个事务锁定之后, 其他需要访问相同资源的事务必须等待, 直到该资源被解锁. 锁管理器, Lock Manager负责维护一个锁表, Lock Table, 记录当前哪些资源处于锁定状态.</p>
+<p>为了避免冲突, 基于锁的协议需要一种锁定机制, 即在事务使用资源之前锁定该资源, 当一个资源被一个事务锁定之后, 其他需要访问相同资源的事务必须等待, 直到该资源被解锁, 从而达到冲突可串行化的效果. 锁管理器, Lock Manager负责维护一个锁表, Lock Table, 记录当前哪些资源处于锁定状态.</p>
 <h5 id="_11">粒度控制</h5>
 <p>锁的粒度决定了一个锁能控制多大范围的资源, 选择适当的锁粒度是设计时需要考虑的关键问题: </p>
 <ul>
@@ -2100,6 +2136,29 @@
 </ul>
 </li>
 </ul>
+<h5 id="_13">释放锁</h5>
+<p>当逻辑处理完成后, 需要释放锁. 释放锁的一种方法是使用完数据项就立即释放锁, 这种方法虽然可以提高并发性, 但可能会导致数据库进入不一致的状态.</p>
+<details class="example" open="open">
+<summary>例子</summary>
+<p>如<a href="https://img.ricolxwz.io/1fa98acec9bd743e46f0ac84189b5bf8.png">图</a>是两个航空公司中介试图预约同一个作为的过程, 展示了在不恰当释放锁的情况下, 调度可能导致错误结果.</p>
+<ol>
+<li>T1开始, 锁定资源X, 读取X的值, 并立即释放锁</li>
+<li>T2开始, 锁定资源X, 读取X的值, 并立即释放锁</li>
+<li>T1开始, 锁定资源X, X的值加一, 并立即释放锁</li>
+<li>T2开始, 锁定资源X, X的值加一, 并立即释放锁</li>
+</ol>
+<p>由于T1和T2的锁释放时间不对, 所以导致产生了两个预订, 数据库的一致性被破坏. </p>
+</details>
+<p>另一种方法是两阶段锁, 2PL, Two-Phase Locking. </p>
+<p>如果一个事务想要读取X, 那么它必须加上X的共享锁. 如果一个事务想要读取X, 那么它必须加上X的排它锁, 如果一个事务释放了它所持有的任意一个锁, 那么它就再也不能获取任何锁.</p>
+<p>明白了上述规则, 我们也就明白了2PL协议的名字由来, 在2PL下, 每个事务都会经过两个阶段, 在第一个阶段里, 事务根据需要不断地获取锁, 叫作Growing Phase, 在第二个阶段里, 事务开始释放其所持有的锁, 根据2PL的规则, 这个事务不能再获得新的锁, 所以它持有的锁逐渐减少, 叫作Shrinking Phase. </p>
+<h5 id="_14">死锁</h5>
+<p>死锁, Deadlock指的是当两个或多个事务互相等待对方释放资源, 而没有任何一个事务能够继续执行的状态. </p>
+<p>例如, T1事务持有数据项A的锁, 并请求数据项B的锁. T2事务持有数据项B的锁, 并请求数据项A的锁. 由于两个事务都在等待对方释放锁, 而没有任何一方能够继续前进, 因此产生了死锁. 这种情况可能导致数据库系统进入无限期的等待, 无法完成事务的执行.</p>
+<p>两阶段锁虽然保证了冲突可串行化, 但是不能保证没有死锁. 如<a href="https://img.ricolxwz.io/94dff989d8ab5675ce5f72c70ed3d7ae.png">图</a>, 是一个典型的例子.</p>
+<p>有两种方法处理死锁, 死锁预防和死锁检测.</p>
+<p>死锁预防要求在事务开始执行之前预先声明它所需要的所有锁, 包括共享锁和排它锁. 只有当事务能够同时获得所有需要的锁时, 才能开始执行. 如果事务不能同时获得所有锁, 则必须等待, 进而避免死锁的发生.</p>
+<p>在死锁检测中, DBMS会主动监控事务之间的依赖关系, 寻找可能的等待循环. 一旦检测到死锁, 系统会中止其中一个事务来打断死锁, 并释放其持有的锁, 使其他事务能继续执行.</p>
 <div class="footnote">
 <hr />
 <ol>
@@ -2114,6 +2173,9 @@
 </li>
 <li id="fn:4">
 <p>冲突可串行化、事务优先图. (n.d.). 知乎专栏. Retrieved October 1, 2024, from <a href="https://zhuanlan.zhihu.com/p/516557516">https://zhuanlan.zhihu.com/p/516557516</a>&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p>Transaction management：两阶段锁（two-phase locking）. (不详). 知乎专栏. 取读于 2024年10月2日, 从 <a href="https://zhuanlan.zhihu.com/p/59535337">https://zhuanlan.zhihu.com/p/59535337</a>&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -2139,7 +2201,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年10月1日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年10月2日</span>
   </span>
 
     
