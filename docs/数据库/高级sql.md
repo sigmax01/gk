@@ -113,3 +113,39 @@ SQL支持数种聚合操作. 包括`COUNT`, `SUM`, `AVG`, `MAX`, `MIN`, 除了`C
 
     如[图](https://img.ricolxwz.io/91083d1329e274f2bb2ae9ad93942e52.png)--->[图](https://img.ricolxwz.io/c0f6aab1c5ef2e998cb5a7f64e7133b1.png).
 
+## 空值
+
+一个元组可能有空值, 用`NULL`表示. `NULL`表示一个值不存在或者不可表示, 并不意味着值是`0`或者`blank`. `IS NULL`和`IS NOT NULL`可用于检测空值. 
+
+???+ example "例子"
+
+    ```sql
+    SELECT sid
+    FROM enrolled
+    WHERE marks IS NULL
+    ```
+
+???+ tip "Tip"
+
+    - 任何含有`NULL`的表达式的结果是`NULL`
+    - 任何含有`NULL`的比较的结果是`unkown`
+    - 如果`WHERE`表达式的结果是`unkown`, 则会被当作`false`处理
+
+### 三值逻辑
+
+三值逻辑, Three-valued logic, 是一种非经典逻辑系统. 其中命题不仅仅有"真"和"假"两个值, 还引入了第三个逻辑值, 通常称为"未定"或者"未知". 这个逻辑系统用来处理传统二值逻辑无法应对的一些情况, 例如不完全信息, 不确定性或者模糊性.
+
+- `OR`:
+    - `(unknown OR true) = true`
+    - `(unknown OR false) = unknown`
+    - `(unknown OR unknown) = unknown`
+- `AND`:
+    - `(true AND unknown) = unknown`
+    - `(false AND unknown) = false`
+    - `(unknown AND unknown) = unknown`
+- `NOT`:
+    - `(NOT unknown) = unknown`
+
+???+ tip "Tip"
+
+    除了`COUNT(*)`, 像`MIN`, `MAX`, ...这些聚合函数都不会考虑`NULL`值, 也就是说, 它们只会计算不为`NULL`的数据. 若没有非`NULL`的值供聚合函数计算, 结果会返回`NULL`.
