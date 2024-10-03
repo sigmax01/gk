@@ -843,6 +843,30 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      空值
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="空值">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      三值逻辑
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1545,6 +1569,30 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      空值
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="空值">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      三值逻辑
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1674,6 +1722,47 @@
 <details class="example" open="open">
 <summary>例子</summary>
 <p>如<a href="https://img.ricolxwz.io/91083d1329e274f2bb2ae9ad93942e52.png">图</a>---&gt;<a href="https://img.ricolxwz.io/c0f6aab1c5ef2e998cb5a7f64e7133b1.png">图</a>.</p>
+</details>
+<h2 id="_8">空值</h2>
+<p>一个元组可能有空值, 用<code>NULL</code>表示. <code>NULL</code>表示一个值不存在或者不可表示, 并不意味着值是<code>0</code>或者<code>blank</code>. <code>IS NULL</code>和<code>IS NOT NULL</code>可用于检测空值. </p>
+<details class="example" open="open">
+<summary>例子</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">sid</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">FROM</span><span class="w"> </span><span class="n">enrolled</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">marks</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span>
+</code></pre></div>
+</details>
+<details class="tip" open="open">
+<summary>Tip</summary>
+<ul>
+<li>任何含有<code>NULL</code>的表达式的结果是<code>NULL</code></li>
+<li>任何含有<code>NULL</code>的比较的结果是<code>unkown</code></li>
+<li>如果<code>WHERE</code>表达式的结果是<code>unkown</code>, 则会被当作<code>false</code>处理</li>
+</ul>
+</details>
+<h3 id="_9">三值逻辑</h3>
+<p>三值逻辑, Three-valued logic, 是一种非经典逻辑系统. 其中命题不仅仅有"真"和"假"两个值, 还引入了第三个逻辑值, 通常称为"未定"或者"未知". 这个逻辑系统用来处理传统二值逻辑无法应对的一些情况, 例如不完全信息, 不确定性或者模糊性.</p>
+<ul>
+<li><code>OR</code>:<ul>
+<li><code>(unknown OR true) = true</code></li>
+<li><code>(unknown OR false) = unknown</code></li>
+<li><code>(unknown OR unknown) = unknown</code></li>
+</ul>
+</li>
+<li><code>AND</code>:<ul>
+<li><code>(true AND unknown) = unknown</code></li>
+<li><code>(false AND unknown) = false</code></li>
+<li><code>(unknown AND unknown) = unknown</code></li>
+</ul>
+</li>
+<li><code>NOT</code>:<ul>
+<li><code>(NOT unknown) = unknown</code></li>
+</ul>
+</li>
+</ul>
+<details class="tip" open="open">
+<summary>Tip</summary>
+<p>除了<code>COUNT(*)</code>, 像<code>MIN</code>, <code>MAX</code>, ...这些聚合函数都不会考虑<code>NULL</code>值, 也就是说, 它们只会计算不为<code>NULL</code>的数据. 若没有非<code>NULL</code>的值供聚合函数计算, 结果会返回<code>NULL</code>.</p>
 </details>
 
 
