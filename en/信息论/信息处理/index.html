@@ -1087,7 +1087,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#块向量" class="md-nav__link">
     <span class="md-ellipsis">
       块向量
     </span>
@@ -1096,7 +1096,16 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#块熵" class="md-nav__link">
+    <span class="md-ellipsis">
+      块熵
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       熵率
     </span>
@@ -1532,7 +1541,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#块向量" class="md-nav__link">
     <span class="md-ellipsis">
       块向量
     </span>
@@ -1541,7 +1550,16 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#块熵" class="md-nav__link">
+    <span class="md-ellipsis">
+      块熵
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       熵率
     </span>
@@ -1683,12 +1701,20 @@
 <p>前面我们提到了信息动态和时间序列的分析方式, 这些不仅仅是理论, 而且可以实际应用在像是"剪刀-石头-布"这类的游戏和元胞自动机这种系统中.</p>
 <h3 id="_3">时间序列</h3>
 <p>有数个时间序列过程<span class="arithmatex">\(\bm{X}, \bm{Y}, \bm{Z}\)</span>, 可以代表不同的随机想想在不同时间点的表现, 例如: <span class="arithmatex">\(\bm{X}\)</span>可以表示某个地区的每日温度, <span class="arithmatex">\(\bm{Y}\)</span>可以表示同一时刻下该地区的湿度, <span class="arithmatex">\(\bm{Z}\)</span>可以表示某种市场指标如股价指数的变化. 每个过程如<span class="arithmatex">\(X\)</span>由随机变量<span class="arithmatex">\(\{..., X_{n-1}, X_{n}, X_{n+1}, ...\}\)</span>组成, 这些随机变量按照时间<span class="arithmatex">\(n\)</span>进行计数. 而它们的实际值可以用<span class="arithmatex">\(\{..., x_{n-1}, x_n, x_{n+1}\}\)</span>表示.</p>
-<h3 id="_4">块向量</h3>
-<p>块向量<span class="arithmatex">\(\bm{X}_{Z_n^{(k)}}\)</span>表示从<span class="arithmatex">\(n-k\)</span>到<span class="arithmatex">\(n\)</span>的一系列连续随机变量, 即<span class="arithmatex">\(\bm{X}^{(k)}=\{X_{n-k+1, ..., X_n}\}\)</span>. 而它的实际值用<span class="arithmatex">\(x_n^{(k)}=\{x_{n-k+1}, ..., x_n\}\)</span>表示.</p>
+<h3 id="块向量">块向量</h3>
+<p>块向量<span class="arithmatex">\(\bm{X}_{n^{(k)}}\)</span>表示从<span class="arithmatex">\(n-k\)</span>到<span class="arithmatex">\(n\)</span>的一系列连续随机变量, 即<span class="arithmatex">\(\bm{X}^{(k)}=\{X_{n-k+1}, ..., X_n\}\)</span>. 而它的实际值用<span class="arithmatex">\(x_n^{(k)}=\{x_{n-k+1}, ..., x_n\}\)</span>表示.</p>
 <hr />
 <p>这里, 我们产生了一个问题, 随机变量<span class="arithmatex">\(X_{n+1}\)</span>中的信息是从哪里来的? 它是如何从其他变量<span class="arithmatex">\(Y_m, Z_m, ...\)</span>中获得的. 尤其对于<span class="arithmatex">\(m\leq n\)</span>的情况.</p>
-<h3 id="_5">熵率</h3>
-<p>熵率是时间序列信息理论中一个重要概念.</p>
+<h3 id="块熵">块熵</h3>
+<p>块熵, block entropy是用来衡量一段固定长度的序列中包含的信息量或者不确定性. 它扩展了单步熵的概念, 后者只是衡量单个状态的熵.</p>
+<details class="example" open="open">
+<summary>例子</summary>
+<p>假设我们在观察一个二进制序列, 如果这个序列完全随机, 那么没增加一个<span class="arithmatex">\(1\)</span>或者<span class="arithmatex">\(0\)</span>, 整个序列的块熵就会增长, 因为每个新状态都是不确定的, 包含新的信息. 但是, 如果序列是完全确定的, 或者有规律的, 那么块熵就不会增长, 因为你已经知道接下来是什么, 没什么新信息可以获得.</p>
+</details>
+<p>块熵<span class="arithmatex">\(H(X_1, X_2, ..., X_n)\)</span>是前<span class="arithmatex">\(n\)</span>个状态的联合熵, 它表示这<span class="arithmatex">\(n\)</span>个状态共同带来的总信息量. <span class="arithmatex">\(H(X_1, X_2, ..., X_n)=-\sum_{x_1, x_2, ..., x_n}p(x_1, x_2, ..., x_n)\log p(x_1, x_2, ..., x_n)\)</span>.</p>
+<h3 id="_4">熵率</h3>
+<p>熵率可以度量当块的长度增加的时候, <a href="#块熵">块熵</a>的增长速率. <span class="arithmatex">\(H'_{\mu \bm{X}}=\lim_{n\rightarrow \infty}\frac{1}{n}H(X_1, X_2, ..., X_n)\)</span>. 这表示随着块长度<span class="arithmatex">\(n\)</span>的增大, 每个块长度熵每个状态上带来的平均不确定性. 或者也可以用<a href="#块向量">块向量</a>来表示<span class="arithmatex">\(H'_{\mu \bm{X}}=\lim_{n\rightarrow \infty}\frac{1}{n}H(X_n^{(n)})\)</span>, 更加简洁.</p>
+<p>熵率不仅度量块长度变化的熵增量, 也可以度量下一个随机变量在给定之前变量的情况下的熵增量. <span class="arithmatex">\(H_{\mu \bm{X}}=\lim_{n\rightarrow \infty}\frac{1}{n}H(X_n|X_1, X_2, ..., X_{n-1})\)</span>. 同样也可以用<a href="#块向量">块向量</a>来表示<span class="arithmatex">\(H_{\mu \bm{X}}=\lim_{n\rightarrow \infty}H(X_n|X_{n-1}^{(n-1)})\)</span>.</p>
 
 
 
