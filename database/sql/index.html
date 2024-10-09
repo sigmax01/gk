@@ -1704,6 +1704,7 @@
 <li>SQL支持对属性进行重命名, 注意, 这只是对结果表生效, 无法改变原表的属性名称. 使用<code>AS</code>来实现. 如<code>SELECT a.uos_code AS course_code, a.credit_points FROM UnitOfStudy a WHERE a.uos = 'COMP5318'</code></li>
 <li>SQL支持对某一列进行排序, 使用<code>ORDER BY</code>语句.. 如<code>SELECT name FROM Student WHERE country='CN' ORDER BY name</code>. 注意有两个方向, 一个是<code>ASC</code>, 表示升序(默认), 一个是<code>DESC</code>, 表示降序. 可以在<code>ORDER BY</code>语句后面声明是降序还是升序, 如<code>ORDER BY country DESC, name ASC</code></li>
 <li>SQL支持使用表的别名, 如<code>SELECT L.name, M.name FROM Lecturer L, Lecturer M, L.manager = M.empid</code>, 在这种情况下, <code>L</code>和<code>M</code>表示的其实是同一张表, 可以将其想象为<code>Lecturer</code>表的不同的两份副本</li>
+<li><code>FROM</code>子句如果不加任何<code>JOIN</code>的话默认使用的是笛卡尔积</li>
 </ul>
 </details>
 <h2 id="_2">连接查询</h2>
