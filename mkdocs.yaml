@@ -133,7 +133,7 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
 plugins:
   - i18n:
-      enabled: !ENV [CI, false]
+      enabled: !ENV [EN, CI, false]
       docs_structure: suffix
       reconfigure_material: true
       reconfigure_search: true
@@ -145,6 +145,8 @@ plugins:
         - locale: en
           name: English
           build: true
+          nav_translations:
+            事务: Transactions
   - search:
       separator: '[\s\u200b\-]'
   - open-in-new-tab
