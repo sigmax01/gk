@@ -3,6 +3,24 @@ title: 数据库:关系模型
 comments: true
 ---
 
+???+ quote "考察"
+
+    - Key topics:
+        - Relations
+        - NULL values
+        - Integrity constraints
+            - Keys
+            - Domain constraints
+        - SQL DDL
+    - The relational model
+        - Design a relational schema for a given UoD
+        - Identity candidate and primary keys for a relational schema
+        - Explain the basic rules and restrictions of the relational data model
+        - Explain the difference between candidate, primary and foreign keys
+        - Create and modify a relational database schema using SQL
+            - Including domain types, NULL constraints and PKs/FKs
+        - Map an ERD to a relational database schemea
+
 关系模型(Relational Model)是一种逻辑模型(Logical Model), 逻辑模型是什么详见[这里](/database/conceptual-model/#两类conceptual-model).
 
 ## 历史

@@ -61,7 +61,7 @@ SFW查询语句背后执行的是下列关系代数表达式: `πA1,A2,...,An(σ
 
     - SQL语句对大小写不敏感
     - 对于字符串使用单引号
-    - 字符串对大小写是敏感的\pi
+    - 字符串对大小写是敏感的
     - SFW返回的结果也是关系/表
     - SFW返回的结果表中可以包含重复元组, 事实上, RDBMS在任何表中都可以允许存在重复值的. SFW返回的结果会保留原始数据中重复的元组, 如果要使返回的表中不含有任何的重复元组的话, 可以使用`DISTINCT`命令, 如`SELECT DISTINCT country FROM Student`
     - 可以包含算数运算, 如`SELECT uos_code, title, points*2 FROM UnitOsStudy`
@@ -84,7 +84,7 @@ SFW查询语句背后执行的是下列关系代数表达式: `πA1,A2,...,An(σ
 
 默认连接用到的是内连接, 关于四种连接的区别, 请见[这里](/database/relational-algebra/#条件连接). 显式连接用到的是`FROM`, `JOIN`和`ON`关键字.
 
-## 集合操作
+## 集合操作 {#set-operations}
 
 SQL语句中, `UNION`, `INTERSECT`, `EXCEPT`对应的是集合操作中的∪, ∩和−. 
 
