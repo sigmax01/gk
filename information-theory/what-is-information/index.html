@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="zh" class="no-js">
   <head>
     
       <meta charset="utf-8">
@@ -12,26 +12,28 @@
         <meta name="author" content="ricolxwz">
       
       
-        <link rel="canonical" href="https://gk.ricolxwz.de/en/">
+        <link rel="canonical" href="https://gk.ricolxwz.de/information-theory/what-is-information/">
       
       
+        <link rel="prev" href="../uncertainty-and-entropy/">
       
-        <link rel="next" href="database/">
+      
+        <link rel="next" href="../jidt/">
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
     
     
       
-        <title>开始 - 基石库</title>
+        <title>信息论:什么是信息 - 基石库</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.8c3ca2c6.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8c3ca2c6.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -58,9 +60,9 @@
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -71,7 +73,7 @@
 <link href="https://cdn.jsdelivr.net/npm/@fontsource/mononoki@5.1.0/index.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ayahub/webfont-harmony-sans-sc@1.0.0/css/index.min.css">
 
-   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
     .gslide-title { margin-top: 0px; user-select: text; }
     .gslide-desc { color: #666; user-select: text; }
@@ -80,7 +82,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -99,8 +101,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
-          Skip to content
+        <a href="#KL散度" class="md-skip">
+          跳转至
         </a>
       
     </div>
@@ -112,8 +114,8 @@
       
 
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="./" title="基石库" class="md-header__button md-logo" aria-label="基石库" data-md-component="logo">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="基石库" class="md-header__button md-logo" aria-label="基石库" data-md-component="logo">
       <!--
   Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
 
@@ -154,7 +156,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              开始
+              信息论:什么是信息
             
           </span>
         </div>
@@ -204,20 +206,20 @@
       <div class="md-header__option">
   <div class="md-select">
     
-    <button class="md-header__button md-icon" aria-label="Select language">
+    <button class="md-header__button md-icon" aria-label="选择当前语言">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
     </button>
     <div class="md-select__inner">
       <ul class="md-select__list">
         
           <li class="md-select__item">
-            <a href="/" hreflang="zh" class="md-select__link">
+            <a href="./" hreflang="zh" class="md-select__link">
               中文
             </a>
           </li>
         
           <li class="md-select__item">
-            <a href="/en/" hreflang="en" class="md-select__link">
+            <a href="../../en/information-theory/what-is-information/" hreflang="en" class="md-select__link">
               English
             </a>
           </li>
@@ -236,21 +238,21 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Search">
+      <nav class="md-search__options" aria-label="查找">
         
-          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
             
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
           </a>
         
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
@@ -263,7 +265,7 @@
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Initializing search
+            正在初始化搜索引擎
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -283,20 +285,18 @@
         
           
             
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
       
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
           
   
     
@@ -316,7 +316,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="database/" class="md-tabs__link">
+        <a href="../../database/" class="md-tabs__link">
           
   
     
@@ -332,11 +332,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="information-theory/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
     
@@ -356,7 +358,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="version-control/area-and-status/" class="md-tabs__link">
+        <a href="../../version-control/area-and-status/" class="md-tabs__link">
           
   
     
@@ -376,7 +378,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="containerization/dockerfile/" class="md-tabs__link">
+        <a href="../../containerization/dockerfile/" class="md-tabs__link">
           
   
     
@@ -396,7 +398,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="k8s/architecture/" class="md-tabs__link">
+        <a href="../../k8s/architecture/" class="md-tabs__link">
           
   
     
@@ -429,9 +431,9 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="./" title="基石库" class="md-nav__button md-logo" aria-label="基石库" data-md-component="logo">
+    <a href="../.." title="基石库" class="md-nav__button md-logo" aria-label="基石库" data-md-component="logo">
       <!--
   Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
 
@@ -467,8 +469,6 @@
       
   
   
-    
-  
   
   
     
@@ -481,22 +481,21 @@
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="./" class="md-nav__link md-nav__link--active">
+            <a href="../.." class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -508,7 +507,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             开始
@@ -572,7 +571,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="database/" class="md-nav__link ">
+            <a href="../../database/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -605,7 +604,7 @@
   
   
     <li class="md-nav__item">
-      <a href="database/conceptual-model/" class="md-nav__link">
+      <a href="../../database/conceptual-model/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -626,7 +625,7 @@
   
   
     <li class="md-nav__item">
-      <a href="database/relational-model/" class="md-nav__link">
+      <a href="../../database/relational-model/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -647,7 +646,7 @@
   
   
     <li class="md-nav__item">
-      <a href="database/relational-algebra/" class="md-nav__link">
+      <a href="../../database/relational-algebra/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -668,7 +667,7 @@
   
   
     <li class="md-nav__item">
-      <a href="database/sql/" class="md-nav__link">
+      <a href="../../database/sql/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -689,7 +688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="database/integrity-constraints/" class="md-nav__link">
+      <a href="../../database/integrity-constraints/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -710,7 +709,7 @@
   
   
     <li class="md-nav__item">
-      <a href="database/advanced-sql/" class="md-nav__link">
+      <a href="../../database/advanced-sql/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -731,7 +730,7 @@
   
   
     <li class="md-nav__item">
-      <a href="database/app-dev/" class="md-nav__link">
+      <a href="../../database/app-dev/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -752,7 +751,7 @@
   
   
     <li class="md-nav__item">
-      <a href="database/normalization/" class="md-nav__link">
+      <a href="../../database/normalization/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -773,11 +772,11 @@
   
   
     <li class="md-nav__item">
-      <a href="database/transaction/" class="md-nav__link">
+      <a href="../../database/transaction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Transactions
+    事务
   </span>
   
 
@@ -798,6 +797,8 @@
       
   
   
+    
+  
   
   
     
@@ -824,21 +825,22 @@
     
     
       
+        
+        
+      
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="information-theory/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -849,13 +851,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             信息论
@@ -871,7 +873,7 @@
   
   
     <li class="md-nav__item">
-      <a href="information-theory/uncertainty-and-entropy/" class="md-nav__link">
+      <a href="../uncertainty-and-entropy/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -889,10 +891,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="information-theory/what-is-information/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    什么是信息
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -901,6 +921,144 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#KL散度" class="md-nav__link">
+    <span class="md-ellipsis">
+      KL散度
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#交叉熵" class="md-nav__link">
+    <span class="md-ellipsis">
+      交叉熵
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#互信息" class="md-nav__link">
+    <span class="md-ellipsis">
+      互信息
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="互信息">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      自互信息
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#KL散度和互信息的关系" class="md-nav__link">
+    <span class="md-ellipsis">
+      KL散度和互信息的关系
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      点互信息
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      条件互信息
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="条件互信息">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      点互信息
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      冗余和协同
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      链式法则
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      点互信息
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      应用
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -913,7 +1071,7 @@
   
   
     <li class="md-nav__item">
-      <a href="information-theory/jidt/" class="md-nav__link">
+      <a href="../jidt/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -934,7 +1092,7 @@
   
   
     <li class="md-nav__item">
-      <a href="information-theory/estimator/" class="md-nav__link">
+      <a href="../estimator/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -955,7 +1113,7 @@
   
   
     <li class="md-nav__item">
-      <a href="information-theory/statistical-significance/" class="md-nav__link">
+      <a href="../statistical-significance/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -976,7 +1134,7 @@
   
   
     <li class="md-nav__item">
-      <a href="information-theory/self-organisation/" class="md-nav__link">
+      <a href="../self-organisation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -997,7 +1155,7 @@
   
   
     <li class="md-nav__item">
-      <a href="information-theory/information-processing/" class="md-nav__link">
+      <a href="../information-processing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1077,7 +1235,7 @@
   
   
     <li class="md-nav__item">
-      <a href="version-control/area-and-status/" class="md-nav__link">
+      <a href="../../version-control/area-and-status/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1098,7 +1256,7 @@
   
   
     <li class="md-nav__item">
-      <a href="version-control/add-and-commit/" class="md-nav__link">
+      <a href="../../version-control/add-and-commit/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1119,7 +1277,7 @@
   
   
     <li class="md-nav__item">
-      <a href="version-control/revert/" class="md-nav__link">
+      <a href="../../version-control/revert/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1140,7 +1298,7 @@
   
   
     <li class="md-nav__item">
-      <a href="version-control/config/" class="md-nav__link">
+      <a href="../../version-control/config/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1161,7 +1319,7 @@
   
   
     <li class="md-nav__item">
-      <a href="version-control/account/" class="md-nav__link">
+      <a href="../../version-control/account/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1233,7 +1391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="containerization/dockerfile/" class="md-nav__link">
+      <a href="../../containerization/dockerfile/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1309,7 +1467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="k8s/architecture/" class="md-nav__link">
+      <a href="../../k8s/architecture/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1330,7 +1488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="k8s/command/" class="md-nav__link">
+      <a href="../../k8s/command/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1351,7 +1509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="k8s/example/" class="md-nav__link">
+      <a href="../../k8s/example/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1385,34 +1543,134 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
-  
-    
   
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      目录
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#KL散度" class="md-nav__link">
     <span class="md-ellipsis">
-      进度
+      KL散度
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#交叉熵" class="md-nav__link">
     <span class="md-ellipsis">
-      贡献
+      交叉熵
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#互信息" class="md-nav__link">
+    <span class="md-ellipsis">
+      互信息
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="互信息">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      自互信息
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#KL散度和互信息的关系" class="md-nav__link">
+    <span class="md-ellipsis">
+      KL散度和互信息的关系
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      点互信息
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      条件互信息
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="条件互信息">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      点互信息
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      冗余和协同
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      链式法则
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      点互信息
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      应用
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1433,7 +1691,7 @@
                   
 
   
-    <a href="https://github.com/ricolxwz/gk/edit/master/docs/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/ricolxwz/gk/edit/master/docs/information-theory/what-is-information.md" title="编辑此页" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1442,62 +1700,147 @@
     
       
     
-    <a href="https://github.com/ricolxwz/gk/raw/master/docs/index.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/ricolxwz/gk/raw/master/docs/information-theory/what-is-information.md" title="查看本页的源代码" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-<h1 id="_1">开始</h1>
-<p>欢迎来到基础知石仓库.</p>
-<h2 id="_2">进度</h2>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 数据库<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="database/index">绪论</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="database/conceptual-model">数据模型</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="database/conceptual-model">关系模型</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="database/relational-algebra">关系代数</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="database/sql">SQL</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="database/integrity-constraints">完整性约束</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="database/advanced-sql">高级SQL</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="database/app-dev">应用开发</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="database/normalization">规范化</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="/database/transaction">事务</a></li>
+  <h1>什么是信息</h1>
+
+<h2 id="KL散度">KL散度<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></h2>
+<p>相对熵, 又称为KL散度. 如果我们对于同一个随机变量<span class="arithmatex">\(X\)</span>有两个单独的概率分布<span class="arithmatex">\(P(X)\)</span>和<span class="arithmatex">\(Q(X)\)</span>(我们通常用<span class="arithmatex">\(P\)</span>来表示真实的概率分布, <span class="arithmatex">\(Q\)</span>来表示模型所预测的概率分布), 我们可以使用KL散度(Kullback-Leibler Divergence)来衡量这两个分布之间的差异. 在机器学习中, 我们需要衡量标签和预测值之间的差距, 用KL散度就刚刚好, 即<span class="arithmatex">\(D(y||\hat{y})\)</span>.</p>
+<p>KL散度的计算公式为: <span class="arithmatex">\(D(p||q)=\sum_{i=1}^n p(x_i)\log_2 \frac{p(x_i)}{q(x_i)}\)</span>, 其中<span class="arithmatex">\(n\)</span>为事件的所有可能性. KL散度的值越小, 表示<span class="arithmatex">\(Q\)</span>分布和<span class="arithmatex">\(P\)</span>分布越接近. 当KL散度等于<span class="arithmatex">\(0\)</span>的时候, 意味着概率分布<span class="arithmatex">\(Q\)</span>和概率分布<span class="arithmatex">\(P\)</span>是相同的.</p>
+<h2 id="交叉熵">交叉熵<sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup></h2>
+<p>对与上述KL散度的计算公式进行变形:</p>
+<p><span class="arithmatex">\(D(p||q)=\sum_{i=1}^n p(x_i)\log_2 \frac{p(x_i)}{q(x_i)} = \sum_{i=1}^n p(x_i)\log_2 p(x_i)-\sum_{i=1}^np(x_i)\log_2 q(x_i)=-H(p(x))+[-\sum_{i=1}^n p(x_i)\log_2 q(x_i)]\)</span></p>
+<p>可以观察到等式的前一部分恰好就是<span class="arithmatex">\(p\)</span>的熵的负数<span class="arithmatex">\(-H(p(x))\)</span>, 等式的后一部分, 就是交叉熵: <span class="arithmatex">\(G(p||q)=-\sum_{i=1}^n p(x_i)\log_2 q(x_i)\)</span>. 由于在优化的过程中, 真实的概率分布永远是不变的, 即<span class="arithmatex">\(-H(p(x))\)</span>永远保持不变, 所以一般只需要关注交叉熵就可以了.</p>
+<p>也就是说, 交叉熵和KL散度衡量的都是你使用一个错误的概率分布的时候付出的"额外代价". KL散度/交叉熵绝对值越大, 说明必须额外传输更多的信息才能进行正确编码数据, 因为你得到的概率分布和实际的分布不符.</p>
+<h2 id="互信息">互信息<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></h2>
+<p>互信息, Mutual Information. 是描述一个随机变量中包含的关于另一个随机变量的信息. 用Venn图表示如下(注意中间的那个部分):</p>
+<p><a class="glightbox" href="https://img.ricolxwz.io/9cd4d2a8fc2d099426208f752376e8b7.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://img.ricolxwz.io/9cd4d2a8fc2d099426208f752376e8b7.png" /></a></p>
+<p>从Venn图中, 可以看出:</p>
+<ul>
+<li><span class="arithmatex">\(I(X;Y)=H(X)+H(Y)-H(X,Y)\)</span></li>
+<li><span class="arithmatex">\(I(X;Y)=H(X)-H(X|Y)\)</span></li>
+<li><span class="arithmatex">\(I(X;Y)=H(Y)-H(Y|X)\)</span></li>
+<li><span class="arithmatex">\(I(X;Y)=I(Y;X)\)</span></li>
 </ul>
+<p>有如下属性:</p>
+<ul>
+<li><span class="arithmatex">\(0\leq I(X;Y)\leq min(H(X), H(Y))\)</span></li>
+<li>在<span class="arithmatex">\(X\)</span>和<span class="arithmatex">\(Y\)</span>中是对称的</li>
+<li><span class="arithmatex">\(I(X;Y)=H(X)\rightarrow H(X|Y)=0\)</span></li>
+<li>是非线性的</li>
+</ul>
+<details class="example" open="open">
+<summary>例子</summary>
+<p>可以用赌博来解释互信息.</p>
+<p>如果你对比赛的结果没有任何额外的信息, 那么最好的策略就是根据结果<span class="arithmatex">\(X=x\)</span>的概率<span class="arithmatex">\(p(x)\)</span>来分配你的赌注. 例如, 如果某个结果的<span class="arithmatex">\(x\)</span>的概率更高, 那么你应该在这个结果中投入更多的资金. 如果有额外的信息<span class="arithmatex">\(Y\)</span>, 最佳策略是根据<span class="arithmatex">\(p(X|Y)\)</span>分配投资, 为什么? 因为如果你有额外的信息<span class="arithmatex">\(Y\)</span>, 并且这个<span class="arithmatex">\(Y\)</span>和<span class="arithmatex">\(X\)</span>有关系, 即<span class="arithmatex">\(Y\)</span>中包含了<span class="arithmatex">\(X\)</span>的一些信息, 互信息大于<span class="arithmatex">\(0\)</span>. 换句话说, 互信息 <span class="arithmatex">\(I(X;Y)\)</span>量化了利用额外信息<span class="arithmatex">\(Y\)</span>进行投资相比于没有额外信息时的优势.</p>
+</details>
+<h3 id="_1">自互信息</h3>
+<p>一个随机变量和自己的互信息就是它的熵.</p>
+<p><span class="arithmatex">\(I(X;X)=H(X)+H(X)-H(X,X)\)</span>, 可以简化为<span class="arithmatex">\(I(X;X)=H(X)\)</span>. 这种情况下, 互信息测量的就是变量<span class="arithmatex">\(X\)</span>对自身提供的信息量. 因为<span class="arithmatex">\(X\)</span>完全了解自己, 所以它对自身的自互信息就等于它的熵<span class="arithmatex">\(H(X)\)</span>. 即这个随机变量包含这个随机变量的信息就是它自己包含的信息.</p>
+<p><a class="glightbox" href="https://img.ricolxwz.io/944041a23df4e876dd8050b45aed57ca.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://img.ricolxwz.io/944041a23df4e876dd8050b45aed57ca.png" /></a></p>
+<h3 id="KL散度和互信息的关系">KL散度和互信息的关系</h3>
+<p>来看两个随机变量, 对于两个随机变量<span class="arithmatex">\(X\)</span>和<span class="arithmatex">\(Y\)</span>, 我们要探究这两个随机变量之间的关联关系, 即这两个随机变量是否是独立的, 即在Venn图中是否有相交的部分, 我们知道, 这个相交的程度就是互信息. 我们将会尝试将KL散度的那套理论搬到这里, 真实的概率分布<span class="arithmatex">\(P\)</span>就是真实情况下的联合分布, 现在假设这两个变量之间是独立的, 即<span class="arithmatex">\(p(x, y)=p(x)p(y)\)</span>. 所以KL散度<span class="arithmatex">\(D(p(x, y)||p(x)p(y))=\sum_{x\in A_x, y\in A_y}p(x, y)\log_2 \frac{p(x, y)}{p(x)p(y)}\)</span>. 套用贝叶斯公式, <span class="arithmatex">\(\frac{p(x|y)}{p(x)}=\frac{p(x, y)}{p(x)p(y)}\)</span>, 可以得到KL散度<span class="arithmatex">\(D(p(x, y)||p(x)p(y))=\sum_{x\in A_x, y\in A_y}p(x, y)\log_2\frac{p(x|y)}{p(x)}\)</span>. 而这个KL散度就是我们要求的互信息, 即<span class="arithmatex">\(I(X; Y)=D(p(x, y)||p(x)p(y))\)</span>, 因为根据KL散度的定义: KL散度衡量的是一个错误的概率分布的时候付出的"额外代价", 即我们假设<span class="arithmatex">\(X\)</span>和<span class="arithmatex">\(Y\)</span>独立的"惩罚", 我们的错误的概率分布假设的是它们之间没有关系, 所以计算出来的KL散度就是那部分"额外代价", 即互信息. 若这两个变量之间没有关系, "额外代价"等于<span class="arithmatex">\(0\)</span>, 互信息等于<span class="arithmatex">\(0\)</span>, 这两个量之间是独立的. </p>
+<details class="tip" open="open">
+<summary>Tip</summary>
+<p>我们也可以这么来理解KL散度和互信息: 如果<span class="arithmatex">\(p(x, y)/p(x)p(y)\)</span>这个值较大的话, 说明两个变量之间的依赖程度较高, 然后在乘上一个这种情况发生的概率<span class="arithmatex">\(p(x, y)\)</span>, 做一个加权平均, 就得到了一个总的依赖性. </p>
+</details>
+<h3 id="_2">点互信息</h3>
+<p>上面我们讨论的是一个两个随机变量的互信息, 而现在我们要讨论的是两个随机变量结果的互信息, 即点互信息, 用<span class="arithmatex">\(i(x;y)\)</span>表示. 它的含义是某个随机变量的结果中包含的关于另一个随机变量的结果的信息. </p>
+<p>它的属性和随机变量的差不多:</p>
+<ul>
+<li><span class="arithmatex">\(i(x;y)=h(x)+h(y)-h(x,y)\)</span></li>
+<li><span class="arithmatex">\(i(x;y)=h(x)-h(x|y)\)</span></li>
+<li><span class="arithmatex">\(i(x;y)=h(y)-h(y|x)\)</span></li>
+<li><span class="arithmatex">\(i(x;y)=\log_2 \frac{p(x|y)}{p(x)}\)</span></li>
+<li><span class="arithmatex">\(I(X;Y)=&lt;i(x;y)&gt;\)</span></li>
+</ul>
+<p>随机变量的互信息一定大于等于<span class="arithmatex">\(0\)</span>, 但是某个随机变量结果的互信息可以大于<span class="arithmatex">\(0\)</span>, 也可以小于<span class="arithmatex">\(0\)</span>:</p>
+<ul>
+<li><span class="arithmatex">\(i(x;y)&gt;0\)</span>说明<span class="arithmatex">\(y\)</span>的发生增加了<span class="arithmatex">\(x\)</span>发生的可能</li>
+<li><span class="arithmatex">\(i(x;y)&lt;0\)</span>说明<span class="arithmatex">\(y\)</span>的发生减小了<span class="arithmatex">\(x\)</span>发生的可能</li>
+<li><span class="arithmatex">\(i(x;y)=0\)</span>说明<span class="arithmatex">\(y\)</span>的发生和<span class="arithmatex">\(x\)</span>没有关系, 没有增加也没有减少<span class="arithmatex">\(x\)</span>发生的可能</li>
+</ul>
+<h3 id="_3">条件互信息</h3>
+<p>条件互信息<span class="arithmatex">\(I(X;Y|Z)\)</span>是给出另一个随机变量<span class="arithmatex">\(Z\)</span>的分布的前提下, 一个随机变量包含另一个随机变量的信息.</p>
+<p>属性如下:</p>
+<ul>
+<li><span class="arithmatex">\(I(X;Y|Z)=H(X|Z)+H(Y|Z)-H(X,Y|Z)\)</span></li>
+<li><span class="arithmatex">\(I(X;Y|Z)=H(X|Z)-H(X|Y,Z)\)</span></li>
+<li><span class="arithmatex">\(I(X;Y|Z)=H(Y|Z)-H(Y|X,Z)\)</span></li>
+<li><span class="arithmatex">\(I(X;Y|Z)=I(Y;X|Z)\)</span></li>
+<li><span class="arithmatex">\(I(X;Y|Z)=I(X;Y,Z)-I(X;Z)\)</span></li>
+<li><span class="arithmatex">\(0\leq I(X;Y|Z)\leq min(H(X|Z), H(Y|Z))\)</span></li>
+<li><span class="arithmatex">\(I(X;Y|Z)=H(X|Z)\rightarrow H(X|Y,Z)=0\)</span></li>
+</ul>
+<p>用Venn图可以表示如下:</p>
+<p><a class="glightbox" href="https://img.ricolxwz.io/b9216e1ae398ea0593d69d0331a7f719.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://img.ricolxwz.io/b9216e1ae398ea0593d69d0331a7f719.png" /></a></p>
+<p>使用KL散度可以解释为:</p>
+<ul>
+<li><span class="arithmatex">\(I(X;Y|Z)=\sum_{x\in A_x, y\in A_y, z\in A_z}p(x, y, z)\log_2\frac{p(x, y|z)}{p(x|z)p(y|z)}\)</span></li>
+<li><span class="arithmatex">\(I(X;Y|Z)=\sum_{x\in A_x, y\in A_y, z\in A_z}p(x, y, z)\log_2\frac{p(x|y, z)}{p(x|z)}\)</span></li>
+<li><span class="arithmatex">\(I(X;Y|Z)=D(p(x, y|z)||p(x|z)p(y|z))\)</span></li>
+</ul>
+<p><span class="arithmatex">\(CMI\)</span>是衡量两个随机变量<span class="arithmatex">\(X\)</span>和<span class="arithmatex">\(Y\)</span>在给定的第三个变量<span class="arithmatex">\(Z\)</span>条件下的依赖程度. 如果<span class="arithmatex">\(X\)</span>和<span class="arithmatex">\(Y\)</span>在<span class="arithmatex">\(Z\)</span>的条件下是独立的, 那么<span class="arithmatex">\(CMI(X;Y|Z)=0\)</span>, 如果这个假设是错误的, 那么我们就要付出额外的代价, 这个就是条件互信息, 即"惩罚". 所以, 参考<a href="#KL散度和互信息的关系">KL散度和互信息的关系</a>. 我们可以假设在<span class="arithmatex">\(Z\)</span>发生的条件下, <span class="arithmatex">\(X\)</span>和<span class="arithmatex">\(Y\)</span>是独立的, 即<span class="arithmatex">\(p(x,y|z)=p(x|z)p(y|z)\)</span>, 那么我们要计算的就是真实的概率分布<span class="arithmatex">\(p(x,y|z)\)</span>和我们在假设条件下概率分布的差异, 即KL散度<span class="arithmatex">\(D(p(x, y|z)||p(x|z)p(y|z))=\sum_{x\in A_x, y\in A_y, z\in A_z}p(x,y,z)\log_2\frac{p(x, y|z)}{p(x|z)p(y|z)}\)</span>. 细心的同学可以发现, 这个公式中间是<span class="arithmatex">\(p(x,y,z)\)</span>而不是<span class="arithmatex">\(p(x,y|z)\)</span>, 这是因为<span class="arithmatex">\(z\)</span>的取值会对<span class="arithmatex">\(x\)</span>和<span class="arithmatex">\(y\)</span>的依赖程度造成影响, 所以我们要做的就是取一个加权平均数, 权就是<span class="arithmatex">\(z\)</span>的概率<span class="arithmatex">\(p(z)\)</span>, 也就是说不同的<span class="arithmatex">\(z\)</span>对互信息的贡献是不同的, 需要取一个平均值: <span class="arithmatex">\(I(X;Y|Z)=\sum_{z\in A_z}p(z)I(X;Y|Z=z)\)</span>.</p>
+<p>使用统计学可以解释为:</p>
+<ul>
+<li><span class="arithmatex">\(I(X;Y|Z)=\sum_{x\in A_x, y\in A_y, z\in A_z}p(x, y, z)\log_2\frac{p(x|y, z)}{p(x|z)}\)</span></li>
+</ul>
+<h4 id="_4">点互信息</h4>
+<p>某个随机变量结果的条件互信息, 即条件点互信息:</p>
+<ul>
+<li><span class="arithmatex">\(i(x;y|z)=h(x|z)+h(y|z)-h(x,y|z)\)</span></li>
+<li><span class="arithmatex">\(i(x;y|z)=h(x|z)-h(x|y,z)\)</span></li>
+<li><span class="arithmatex">\(i(x;y|z)=h(y|z)-h(y|x,z)\)</span></li>
+<li><span class="arithmatex">\(i(x;y|z)=\log_2\frac{p(x|y,z)}{p(x|z)}\)</span></li>
+<li><span class="arithmatex">\(I(X;Y|Z)=&lt;i(x;y|z)&gt;\)</span></li>
+</ul>
+<h4 id="_5">冗余和协同</h4>
+<p>条件互信息实际上就是在互信息的基础上加了一个<span class="arithmatex">\(Z\)</span>的条件. 那么如果我们在互信息上施加<span class="arithmatex">\(Z\)</span>这个条件, 与<span class="arithmatex">\(I(X;Y)\)</span>相比, 会发生什么变化呢, 是增大, 还是减少, 还是不变? </p>
+<ul>
+<li>无影响: 如果<span class="arithmatex">\(X, Y, Z\)</span>是相互独立的话, 那么<span class="arithmatex">\(I(X;Y)\)</span>和<span class="arithmatex">\(I(X;Y|Z)\)</span>是没有区别的</li>
+<li>冗余: <span class="arithmatex">\(I(X;Y|Z)\)</span>相比于<span class="arithmatex">\(I(X;Y)\)</span>会减少, 因为<span class="arithmatex">\(Z\)</span>可以解释掉一些<span class="arithmatex">\(Y\)</span>中关于<span class="arithmatex">\(X\)</span>的信息, 导致<span class="arithmatex">\(Y\)</span>对<span class="arithmatex">\(X\)</span>的贡献减少. 例如, 如果<span class="arithmatex">\(X\)</span>, <span class="arithmatex">\(Y\)</span>和<span class="arithmatex">\(Z\)</span>是独立同分布的随机比特, 即<span class="arithmatex">\(X=Y=Z\)</span>, 则<span class="arithmatex">\(I(X;Y|Z)=0\)</span>. 由于<span class="arithmatex">\(X\)</span>和<span class="arithmatex">\(Y\)</span>是相同的, 所以它们共享全部的信息量, 这就是为什么<span class="arithmatex">\(I(X;Y)=1\)</span>; 当我们引入条件<span class="arithmatex">\(Z\)</span>的时候, 由于<span class="arithmatex">\(Z\)</span>已经完全描述了<span class="arithmatex">\(X\)</span>和<span class="arithmatex">\(Y\)</span>, 所以在已知<span class="arithmatex">\(Z\)</span>的情况下, <span class="arithmatex">\(Y\)</span>不再提供任何关于<span class="arithmatex">\(X\)</span>的新信息, 即<span class="arithmatex">\(I(X;Y|Z)=0\)</span></li>
+<li>协同: <span class="arithmatex">\(I(X;Y|Z)\)</span>相比于<span class="arithmatex">\(I(X;Y)\)</span>会增加. 这种情况发生在<span class="arithmatex">\(Y\)</span>和<span class="arithmatex">\(Z\)</span>一起提供关于<span class="arithmatex">\(X\)</span>的信息, 单独知道任何一个都无法获取到关于<span class="arithmatex">\(X\)</span>的信息. 例如, <span class="arithmatex">\(X=Y\oplus Z\)</span>, <span class="arithmatex">\(Y\)</span>和<span class="arithmatex">\(Z\)</span>是独立同分布的随机比特, <span class="arithmatex">\(\oplus\)</span>表示异或运算, 对于两个二进制位, 如果不同, 结果为<span class="arithmatex">\(1\)</span>, 否则为<span class="arithmatex">\(0\)</span>. <span class="arithmatex">\(I(X;Y)=0\)</span>, 因为仅仅知道<span class="arithmatex">\(Y\)</span>的值, 无法获取到关于<span class="arithmatex">\(X\)</span>的任何信息. <span class="arithmatex">\(I(X;Y|Z)=1\)</span>, 因为在已知<span class="arithmatex">\(Z\)</span>的情况下, <span class="arithmatex">\(Y\)</span>提供了关于<span class="arithmatex">\(X\)</span>的全部信息, 也就是说一旦我们知道了<span class="arithmatex">\(Z\)</span>的值, <span class="arithmatex">\(Y\)</span>的值就完全决定了<span class="arithmatex">\(X\)</span>的值</li>
+</ul>
+<h4 id="_6">链式法则</h4>
+<p>从Venn图中, 我们可以清晰的观察到链式法则.</p>
+<ul>
+<li><span class="arithmatex">\(I(X;Y,Z)=I(X;Y)+I(X;Z|Y)\)</span></li>
+<li><span class="arithmatex">\(I(X;Y,Z)=I(X;Z)+I(X;Y|Z)\)</span></li>
+</ul>
+<p>更一般的形式: <span class="arithmatex">\(I(X_1, X_2, ..., X_n; Y)=\sum_{i=1}^n I(X_i;Y|X_1, ..., X_{i-1})\)</span>. 这就是一个信息回归. </p>
+<h3 id="_7">点互信息</h3>
+<p>点互信息衡量的是在给定<span class="arithmatex">\(y\)</span>的条件下, 观察到<span class="arithmatex">\(x\)</span>这一具体值提供了多少信息, 公式为<span class="arithmatex">\(i(x;y)=\log_2\frac{p(x|y)}{p(x)}\)</span>. 这里, <span class="arithmatex">\(p(x|y)\)</span>是在给定<span class="arithmatex">\(y\)</span>条件下出现<span class="arithmatex">\(x\)</span>的概率, <span class="arithmatex">\(p(x)\)</span>是<span class="arithmatex">\(x\)</span>自身的概率. </p>
+<p>随机变量之间的互信息可以通过点互信息取期望得到. 即<span class="arithmatex">\(I(X;Y)=&lt;i(x;y)&gt;\)</span>. </p>
+<p>点互信息满足4个公理:</p>
+<ol>
+<li>可微性: <span class="arithmatex">\(i(x;y)\)</span>对<span class="arithmatex">\(p(x)\)</span>和<span class="arithmatex">\(p(y)\)</span>是可微的</li>
+<li>条件形式: <span class="arithmatex">\(i(x;y)\)</span>和<span class="arithmatex">\(i(x;y|z)\)</span>的形式相同, 即它们两的计算公式形式相同. 不同的是<span class="arithmatex">\(i(x;y|z)\)</span>中所有的概率都基于<span class="arithmatex">\(z\)</span>条件化了</li>
+<li>可加性: 即<span class="arithmatex">\(i(x;y;z)=i(x;z)+i(x;y|z)\)</span></li>
+<li>独立集合的分离: 对于独立的集合<span class="arithmatex">\((x,y)\)</span>和<span class="arithmatex">\((u,v)\)</span>, 如果<span class="arithmatex">\(p(x,y,u,v)=p(x,y)p(u,v)\)</span>, 那么点互信息也满足这种分离性, 即<span class="arithmatex">\(i(x,u;y,v)=i(x;y)+i(u;v)\)</span></li>
+</ol>
+<h3 id="_8">应用</h3>
+<p>互信息可以用于:</p>
+<ul>
+<li>变量之间的关系检测</li>
+<li>机器学习中的特征选择, 比如决策树, 互信息和信息增量是一个概念</li>
+<li>...</li>
+</ul>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>一文搞懂交叉熵在机器学习中的使用，透彻理解交叉熵背后的直觉-CSDN博客. (n.d.). Retrieved August 14, 2024, from <a href="https://blog.csdn.net/tsyccnh/article/details/79163834">https://blog.csdn.net/tsyccnh/article/details/79163834</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 信息论<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="information-theory/index">绪论</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="information-theory/uncertainty-and-entropy">不确定性和熵</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="information-theory/what-is-information">什么是信息</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="information-theory/jidt">JIDT</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="information-theory/estimator">估计器</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="/information-theory/statistical-significance">统计显著性</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="/information-theory/self-organisation">自组织</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="/information-theory/information-processing">信息处理</a></li>
-</ul>
+<li id="fn:2">
+<p>什么是互信息Mutual information-CSDN博客. (n.d.). Retrieved August 14, 2024, from <a href="https://blog.csdn.net/qq_40210586/article/details/131699236">https://blog.csdn.net/qq_40210586/article/details/131699236</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 版本控制<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="/version-control/area-and-status">区域和状态</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="/version-control/add-and-commit">添加和提交</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="/version-control/revert">回退</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="/version-control/config">配置</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="/version-control/account">账户</a></li>
-</ul>
-</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 容器<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="/containerization/dockerfile">dockerfile</a></li>
-</ul>
-</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> k8s<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="/k8s/architecture">架构</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="/k8s/command">命令</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="/k8s/example">示例</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="_3">贡献</h2>
-<p>朋友们! 这个文档还缺英文(虽然大部分内容都是从英文翻译过来的), 但是还是需要兼顾一下学习英文的同学, 欢迎大家前往<a href="https://github.com/sigmax01/gk">https://github.com/sigmax01/gk</a>提交PR! 🦀🦀</p>
+</ol>
+</div>
 
 
 
@@ -1517,7 +1860,7 @@
     
       
   <span class="md-source-file__fact">
-    <span class="md-icon" title="Last update">
+    <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
     <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年10月9日</span>
@@ -1527,10 +1870,10 @@
     
       
   <span class="md-source-file__fact">
-    <span class="md-icon" title="Created">
+    <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年7月23日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年8月14日</span>
   </span>
 
     
@@ -1540,7 +1883,7 @@
   <span class="md-source-file__fact">
     
       
-  <span class="md-icon" title="Contributors">
+  <span class="md-icon" title="贡献者">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
   </span>
   <span>GitHub</span>
@@ -1565,6 +1908,60 @@
 
 
 
+  <h2 id="__comments">评论</h2>
+  <script src="https://giscus.app/client.js"
+        data-repo="sigmax01/gk"
+        data-repo-id="R_kgDOMZ6IeA"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOMZ6IeM4ChF-C"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+
+  <!-- Synchronize Giscus theme with palette -->
+  <script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    // Set palette on initial load
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      var theme = palette.color.scheme === "slate"
+        ? "transparent_dark"
+        : "light"
+
+      // Instruct Giscus to set theme
+      giscus.setAttribute("data-theme", theme) 
+    }
+
+    // Register event handlers after documented loaded
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate"
+            ? "transparent_dark"
+            : "light"
+
+          // Instruct Giscus to change theme
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+  </script>
+
                 
 
               </article>
@@ -1579,7 +1976,7 @@
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
-  Back to top
+  回到页面顶部
 </button>
         
       </main>
@@ -1674,22 +2071,20 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate", "content.code.copy", "content.code.select", "content.tabs.link", "content.footnote.tooltips", "content.tooltips", "content.action.edit", "content.action.view", "navigation.tabs", "navitation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "navigation.tracking"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.code.copy", "content.code.select", "content.tabs.link", "content.footnote.tooltips", "content.tooltips", "content.action.edit", "content.action.view", "navigation.tabs", "navitation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.525ec568.min.js"></script>
+      <script src="../../assets/javascripts/bundle.525ec568.min.js"></script>
       
-        <script src="../javascripts/favicon.js"></script>
+        <script src="../../javascripts/favicon.js"></script>
       
-        <script src="../javascripts/katex.js"></script>
+        <script src="../../javascripts/katex.js"></script>
       
         <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
       
         <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
       
-        <script src="../javascripts/analysis.js"></script>
-      
-        <script src="/js/open_in_new_tab.js"></script>
+        <script src="../../javascripts/analysis.js"></script>
       
         <script src="/js/open_in_new_tab.js"></script>
       

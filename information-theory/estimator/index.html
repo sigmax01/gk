@@ -12,26 +12,28 @@
         <meta name="author" content="ricolxwz">
       
       
-        <link rel="canonical" href="https://gk.ricolxwz.de/">
+        <link rel="canonical" href="https://gk.ricolxwz.de/information-theory/estimator/">
       
       
+        <link rel="prev" href="../jidt/">
       
-        <link rel="next" href="database/">
+      
+        <link rel="next" href="../statistical-significance/">
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
     
     
       
-        <title>开始 - 基石库</title>
+        <title>信息论:估计器 - 基石库</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.8c3ca2c6.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8c3ca2c6.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -58,9 +60,9 @@
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
     
-      <link rel="stylesheet" href="stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -71,7 +73,7 @@
 <link href="https://cdn.jsdelivr.net/npm/@fontsource/mononoki@5.1.0/index.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ayahub/webfont-harmony-sans-sc@1.0.0/css/index.min.css">
 
-   <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
     .gslide-title { margin-top: 0px; user-select: text; }
     .gslide-desc { color: #666; user-select: text; }
@@ -80,7 +82,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="assets/javascripts/glightbox.min.js"></script></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -113,7 +115,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="." title="基石库" class="md-header__button md-logo" aria-label="基石库" data-md-component="logo">
+    <a href="../.." title="基石库" class="md-header__button md-logo" aria-label="基石库" data-md-component="logo">
       <!--
   Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
 
@@ -154,7 +156,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              开始
+              信息论:估计器
             
           </span>
         </div>
@@ -211,13 +213,13 @@
       <ul class="md-select__list">
         
           <li class="md-select__item">
-            <a href="/" hreflang="zh" class="md-select__link">
+            <a href="./" hreflang="zh" class="md-select__link">
               中文
             </a>
           </li>
         
           <li class="md-select__item">
-            <a href="/en/" hreflang="en" class="md-select__link">
+            <a href="../../en/information-theory/estimator/" hreflang="en" class="md-select__link">
               English
             </a>
           </li>
@@ -290,13 +292,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="." class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
           
   
     
@@ -316,7 +316,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="database/" class="md-tabs__link">
+        <a href="../../database/" class="md-tabs__link">
           
   
     
@@ -332,11 +332,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="information-theory/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
     
@@ -356,7 +358,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="version-control/area-and-status/" class="md-tabs__link">
+        <a href="../../version-control/area-and-status/" class="md-tabs__link">
           
   
     
@@ -376,7 +378,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="containerization/dockerfile/" class="md-tabs__link">
+        <a href="../../containerization/dockerfile/" class="md-tabs__link">
           
   
     
@@ -396,7 +398,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="k8s/architecture/" class="md-tabs__link">
+        <a href="../../k8s/architecture/" class="md-tabs__link">
           
   
     
@@ -431,7 +433,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="基石库" class="md-nav__button md-logo" aria-label="基石库" data-md-component="logo">
+    <a href="../.." title="基石库" class="md-nav__button md-logo" aria-label="基石库" data-md-component="logo">
       <!--
   Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
 
@@ -467,8 +469,6 @@
       
   
   
-    
-  
   
   
     
@@ -481,22 +481,21 @@
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="." class="md-nav__link md-nav__link--active">
+            <a href="../.." class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -508,7 +507,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             开始
@@ -572,7 +571,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="database/" class="md-nav__link ">
+            <a href="../../database/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -605,7 +604,7 @@
   
   
     <li class="md-nav__item">
-      <a href="database/conceptual-model/" class="md-nav__link">
+      <a href="../../database/conceptual-model/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -626,7 +625,7 @@
   
   
     <li class="md-nav__item">
-      <a href="database/relational-model/" class="md-nav__link">
+      <a href="../../database/relational-model/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -647,7 +646,7 @@
   
   
     <li class="md-nav__item">
-      <a href="database/relational-algebra/" class="md-nav__link">
+      <a href="../../database/relational-algebra/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -668,7 +667,7 @@
   
   
     <li class="md-nav__item">
-      <a href="database/sql/" class="md-nav__link">
+      <a href="../../database/sql/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -689,7 +688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="database/integrity-constraints/" class="md-nav__link">
+      <a href="../../database/integrity-constraints/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -710,7 +709,7 @@
   
   
     <li class="md-nav__item">
-      <a href="database/advanced-sql/" class="md-nav__link">
+      <a href="../../database/advanced-sql/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -731,7 +730,7 @@
   
   
     <li class="md-nav__item">
-      <a href="database/app-dev/" class="md-nav__link">
+      <a href="../../database/app-dev/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -752,7 +751,7 @@
   
   
     <li class="md-nav__item">
-      <a href="database/normalization/" class="md-nav__link">
+      <a href="../../database/normalization/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -773,7 +772,7 @@
   
   
     <li class="md-nav__item">
-      <a href="database/transaction/" class="md-nav__link">
+      <a href="../../database/transaction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -798,6 +797,8 @@
       
   
   
+    
+  
   
   
     
@@ -824,21 +825,22 @@
     
     
       
+        
+        
+      
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="information-theory/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -849,13 +851,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             信息论
@@ -871,7 +873,7 @@
   
   
     <li class="md-nav__item">
-      <a href="information-theory/uncertainty-and-entropy/" class="md-nav__link">
+      <a href="../uncertainty-and-entropy/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -892,7 +894,7 @@
   
   
     <li class="md-nav__item">
-      <a href="information-theory/what-is-information/" class="md-nav__link">
+      <a href="../what-is-information/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -913,7 +915,7 @@
   
   
     <li class="md-nav__item">
-      <a href="information-theory/jidt/" class="md-nav__link">
+      <a href="../jidt/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -931,10 +933,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="information-theory/estimator/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    估计器
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -943,6 +963,165 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      最大似然估计器
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="最大似然估计器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      离散和连续
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      方差和偏差
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#分箱" class="md-nav__link">
+    <span class="md-ellipsis">
+      分箱
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="分箱">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      方式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      粒度
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      微分熵
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      协方差
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="协方差">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      协方差矩阵
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#相关系数" class="md-nav__link">
+    <span class="md-ellipsis">
+      相关系数
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      高斯模型
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      核密度估计
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="核密度估计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ksg" class="md-nav__link">
+    <span class="md-ellipsis">
+      KSG
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -955,7 +1134,7 @@
   
   
     <li class="md-nav__item">
-      <a href="information-theory/statistical-significance/" class="md-nav__link">
+      <a href="../statistical-significance/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -976,7 +1155,7 @@
   
   
     <li class="md-nav__item">
-      <a href="information-theory/self-organisation/" class="md-nav__link">
+      <a href="../self-organisation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -997,7 +1176,7 @@
   
   
     <li class="md-nav__item">
-      <a href="information-theory/information-processing/" class="md-nav__link">
+      <a href="../information-processing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1077,7 +1256,7 @@
   
   
     <li class="md-nav__item">
-      <a href="version-control/area-and-status/" class="md-nav__link">
+      <a href="../../version-control/area-and-status/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1098,7 +1277,7 @@
   
   
     <li class="md-nav__item">
-      <a href="version-control/add-and-commit/" class="md-nav__link">
+      <a href="../../version-control/add-and-commit/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1119,7 +1298,7 @@
   
   
     <li class="md-nav__item">
-      <a href="version-control/revert/" class="md-nav__link">
+      <a href="../../version-control/revert/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1140,7 +1319,7 @@
   
   
     <li class="md-nav__item">
-      <a href="version-control/config/" class="md-nav__link">
+      <a href="../../version-control/config/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1161,7 +1340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="version-control/account/" class="md-nav__link">
+      <a href="../../version-control/account/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1233,7 +1412,7 @@
   
   
     <li class="md-nav__item">
-      <a href="containerization/dockerfile/" class="md-nav__link">
+      <a href="../../containerization/dockerfile/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1309,7 +1488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="k8s/architecture/" class="md-nav__link">
+      <a href="../../k8s/architecture/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1330,7 +1509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="k8s/command/" class="md-nav__link">
+      <a href="../../k8s/command/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1351,7 +1530,7 @@
   
   
     <li class="md-nav__item">
-      <a href="k8s/example/" class="md-nav__link">
+      <a href="../../k8s/example/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1389,8 +1568,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1399,20 +1576,143 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      进度
+      最大似然估计器
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="最大似然估计器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      离散和连续
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      贡献
+      方差和偏差
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#分箱" class="md-nav__link">
+    <span class="md-ellipsis">
+      分箱
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="分箱">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      方式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      粒度
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      微分熵
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      协方差
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="协方差">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      协方差矩阵
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#相关系数" class="md-nav__link">
+    <span class="md-ellipsis">
+      相关系数
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      高斯模型
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      核密度估计
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="核密度估计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ksg" class="md-nav__link">
+    <span class="md-ellipsis">
+      KSG
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1433,7 +1733,7 @@
                   
 
   
-    <a href="https://github.com/ricolxwz/gk/edit/master/docs/index.md" title="编辑此页" class="md-content__button md-icon">
+    <a href="https://github.com/ricolxwz/gk/edit/master/docs/information-theory/estimator.md" title="编辑此页" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1442,62 +1742,170 @@
     
       
     
-    <a href="https://github.com/ricolxwz/gk/raw/master/docs/index.md" title="查看本页的源代码" class="md-content__button md-icon">
+    <a href="https://github.com/ricolxwz/gk/raw/master/docs/information-theory/estimator.md" title="查看本页的源代码" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-<h1 id="_1">开始</h1>
-<p>欢迎来到基础知石仓库.</p>
-<h2 id="_2">进度</h2>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 数据库<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="database/index">绪论</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="database/conceptual-model">数据模型</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="database/conceptual-model">关系模型</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="database/relational-algebra">关系代数</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="database/sql">SQL</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="database/integrity-constraints">完整性约束</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="database/advanced-sql">高级SQL</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="database/app-dev">应用开发</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="database/normalization">规范化</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="/database/transaction">事务</a></li>
+  <h1>估计器</h1>
+
+<p>估计器, Estimator是一种用于从观测数据中推断未知参数或者数量的统计工具. 在机器学习中, "估计器"一词广泛用于指代模型和算法, 像线性回归, 支持向量机, 神经网络等模型都是不同类型的估计器. 估计器是一个更广义的词语, 它可以指代用于分类, 回归或者其他类型的模型; 而分类器是一种估计器的特殊形式, 专门用于分类任务, 输出的是离散的标签. 估计器的一些可能的特征包括: </p>
+<ul>
+<li>无偏性: 若估计器的期望等于真实参数值, 则称估计器是无偏的. 即当对一个无偏估计器进行反复独立采样的时候, 长期来看, 得到的估计值的平均值应该等于真实参数</li>
+<li>一致性: 若随着样本量的增加, 估计值收敛到真实参数值, 则称估计器是一致的</li>
+<li>效率: 在无偏估计器中, 方差最小的估计器被认为是最有效的</li>
+<li>充分性: 若估计器中包含了样本中关于未知参数的所有信息, 则称其为充分统计量</li>
 </ul>
+<details class="warning" open="open">
+<summary>注意</summary>
+<p>无偏性不能保证一致性: 一个无偏估计器的期望值等于真实参数值, 但是这并不能保证每次采样的估计值都等于真实值. 假设我们有一个无偏估计器, 其期望值等于真实值, 但是它的方差不随着采样的样本量增加而减少, 那么即使在较大样本量的情况下, 估计器的估计值可能仍然会和真实值有很大偏差, 因此, 这种估计器是无偏的, 但是它并不具有一致性. 如果一个估计器是一致的, 意味着当样本量增加的时候, 估计值不仅期望需要接近真实值, 即需要接近于是一个无偏估计器, 还需要其方差收敛到<span class="arithmatex">\(0\)</span>. </p>
+</details>
+<h2 id="_1">最大似然估计器</h2>
+<p>最大似然估计器, Maximum Likelihood Estimator, MLE是一种通过最大似然估计, Maximum Likelihood Extimation, MLE找到模型参数的估计器. 它的核心思想是:</p>
+<ol>
+<li>给定一组观测数据, 我们假设数据来自某个概率分布(例如正态分布, 泊松分布等)</li>
+<li>设定模型的参数<span class="arithmatex">\(\theta\)</span>, 通过定义似然函数来衡量这些参数下观测数据出现的可能性</li>
+<li>最大化似然函数: 即找到能够最佳模拟/贴合观测数据(观测数据出现可能性最大)的参数<span class="arithmatex">\(\theta\)</span>, 这些参数再代入到我们假设的分布中, 得到的就是最大似然估计器</li>
+</ol>
+<p>最大似然估计器在机器学习中有很多应用. 逻辑回归分类器就是一种典型的最大似然估计器. 在逻辑回归中, 我们选择的对数似然函数是<span class="arithmatex">\(\log p(D)=\sum_{i=1}^n(y_i\log\sigma(\bm{w}^T\bm{x_i})+(1-y_i)\log[1-\sigma(\bm{w}^T\bm{x_i})])\)</span>, 我们通过最大化这个对数似然函数, 找到了能够最佳描述观测数据(即训练集样本标签)的参数<span class="arithmatex">\(\bm{w}\)</span>. </p>
+<h3 id="_2">离散和连续</h3>
+<p>对于离散数据的情况, 最大似然估计的推导过程非常直观, 当我们通过观测数据计算出每个符号出现的频率的时候, 这些频率就是使得观测数据出现概率最大的参数. 这是因为在离散的情况下, 我们已经知道了数据的分布, 对比连续, 我们还要取拟合正态分布曲线, 高斯分布曲线... </p>
+<p>如假设你掷色子<span class="arithmatex">\(100\)</span>次, 结果是: <span class="arithmatex">\(1\)</span>出现<span class="arithmatex">\(15\)</span>次, <span class="arithmatex">\(2\)</span>出现<span class="arithmatex">\(20\)</span>次, <span class="arithmatex">\(3\)</span>出现<span class="arithmatex">\(10\)</span>次, <span class="arithmatex">\(4\)</span>出现<span class="arithmatex">\(25\)</span>次, <span class="arithmatex">\(5\)</span>出现<span class="arithmatex">\(15\)</span>次, <span class="arithmatex">\(6\)</span>出现<span class="arithmatex">\(15\)</span>次. 在这种情况下, 我们已经知道了概率分布, 无须进一步拟合复杂的分布. 直接计算其频率即可. </p>
+<p>假设你测量某个物体的长度, 得到了一组连续的值, 比如<span class="arithmatex">\(X_1=10.2\)</span>, <span class="arithmatex">\(X_2=9.8\)</span>, <span class="arithmatex">\(X_3=10.0\)</span>等等, 你假设这些数据服从正态分布, 在这种情况下, 你需要通过最大似然估计来拟合这组数据, 找到正态分布的两个参数<span class="arithmatex">\(\mu\)</span>和<span class="arithmatex">\(\sigma\)</span>, 使得该分布能够最大的拟合观测数据.</p>
+<p>其实, 在离散的情况下, 最大化/拟合这个似然函数的过程就是我们计算每个符号频率的过程, 当我们计算出所有符号的频率的时候, 其结果就是似然函数最大了.</p>
+<h2 id="_3">方差和偏差</h2>
+<p>当我们计算从经验值计算信息论的测量值如熵的时候, 我们计算的其实是真实值<span class="arithmatex">\(H\)</span>的估计<span class="arithmatex">\(\hat{H}\)</span>.</p>
+<p>如投硬币, 我们投<span class="arithmatex">\(6\)</span>次是正面, <span class="arithmatex">\(4\)</span>次是反面, 计算得到的估计熵是<span class="arithmatex">\(-\frac{2}{5}\log_2\frac{2}{5}-\frac{3}{5}\log_2\frac{3}{5}\)</span>. 但是真实值是<span class="arithmatex">\(-\frac{1}{2}\log_2\frac{1}{2}-\frac{1}{2}\log_2\frac{1}{2}\)</span>. 在这里, 我们的估计器是最大似然估计器. 当我们进行多次这样的独立的投硬币实验之后(每组10次), 我们就会得到一个估计熵的平均值, 即<span class="arithmatex">\(&lt;\hat{H}&gt;\)</span>, 然后, 我们就可以计算偏差, 即<span class="arithmatex">\(B=&lt;\hat{H}&gt;-H\)</span>. 还可以得到方差<span class="arithmatex">\(v(\hat{H})\)</span>.</p>
+<p>在数据量有限的时候, 估计器的偏差和方差会更加显著. 如熵在有限数据下往往会被低估, 即观测到的熵值通常比真实的熵值要小; 互信息往往会被高估, 即观测到的互信息通常比真实值要大.</p>
+<p>当我们计算离散随机变量的熵的时候, 如果样本量<span class="arithmatex">\(N\)</span>不够大, 直接使用频率估计的熵可能会偏低, 通过下列公式, 我们可以对熵的估计值进行修正, 补偿因为有限样本引入的偏差, 从而得到更接近真实值随机变量的高斯分布</p>
+<h2 id="分箱">分箱</h2>
+<p>在很多情况下, 我们面对的是连续数据, 而我们希望通过离散的统计方法进行处理, 为了做到这一点, 我们可以对连续数据进行离散化, 也就是通过分箱, binning的方式将连续的数据分成多个离散的区间或者类别. 这其实是机器学习预处理的一种. 如图所示.</p>
+<figure>
+<p><a class="glightbox" href="https://img.ricolxwz.io/d497a05e2096fd85dfc4dcf04ffffd62.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="https://img.ricolxwz.io/d497a05e2096fd85dfc4dcf04ffffd62.png" width="400" /></a></p>
+</figure>
+<p>在图中展示的是在二维平面中, 对连续数据进行分箱. 每个箱📦代表的是某个<span class="arithmatex">\(x\)</span>和<span class="arithmatex">\(y\)</span>范围内的数据, 在同一个箱中的数据点被视为同类数据, 例如, 在图中这个红色的箱有<span class="arithmatex">\(2\)</span>个数据点, 因此<span class="arithmatex">\(2/18\)</span>用来表示该箱的频率. 计算箱的频率的过程就是最大似然估计器来拟合这组观测数据(即计算它的频率)的过程.</p>
+<h3 id="_4">方式</h3>
+<p>一般来说, 有多种方式进行分箱, 其中的两种分箱方式为:</p>
+<ul>
+<li>等大小分箱: 所有箱的大小相同, 这是最简单的方式, 但有时会忽略数据中的细微结构</li>
+<li>最大熵分箱: 分箱后使数据分布的熵最大. 如果数据在某些特定区域有密集分布, 而其他区域较少, 采用等宽分箱可能会导致部分箱中的数据点的数量非常小, 熵也较小, 最大分箱可以在这种情况下使数据更加均匀地分配到每个箱中, 使分箱后的离散数据包含的信息更多</li>
+</ul>
+<h3 id="_5">粒度</h3>
+<p>分箱的粒度(bin size)会对结果有显著影响:</p>
+<ul>
+<li>粒度过大: 如果箱的数量过少, 可能会掩盖数据中重要细节</li>
+<li>粒度过小: 如果箱的数量过多, 可能会导致过拟合, 数据的噪声会显著影响最终的结果</li>
+</ul>
+<h2 id="_6">微分熵</h2>
+<p>刚才我们讲到了可以利用分箱的方式将连续数据转为离散数据然后计算它们的熵, 那么有没有一种方式可以直接计算连续数据的熵呢? 是有的, 那就是微分熵. 微分熵的公式类似于离散熵的定义, 但是它是对于概率密度函数<span class="arithmatex">\(f(x)\)</span>进行积分, 而不是求和. 其公式为<span class="arithmatex">\(H_D(X)=-\int_{S_X}f(x)\log f(x)dx\)</span>, 其中<span class="arithmatex">\(x\)</span>是连续型随机变量, <span class="arithmatex">\(f(x)\)</span>是概率密度函数, <span class="arithmatex">\(f(x)&gt;0\)</span>.</p>
+<p><span class="arithmatex">\(H_D(X)\)</span>有一些有趣的性质:</p>
+<ul>
+<li><span class="arithmatex">\(H_D(X+a)=H_D(X)\)</span></li>
+<li><span class="arithmatex">\(H_D(aX)=H_D(X)+\log a\)</span></li>
+<li><span class="arithmatex">\(H_D(X)\)</span>可以是负数</li>
+<li><span class="arithmatex">\(H_D(X)=\lim_{\Delta\rightarrow 0}H^{\Delta(X)}+\log\Delta\)</span>, 这里的<span class="arithmatex">\(\Delta\)</span>是离散化后箱的大小</li>
+</ul>
+<p>还可以通过对微分熵的加减形成其他信息量, 如微分互信息<span class="arithmatex">\(I_D(X;Y)\)</span>. 微分互信息继承了<a href="/information-theory/what-is-information/#互信息">离散互信息的性质</a>, 如<span class="arithmatex">\(I_D(X;Y)&gt;0\)</span>, 还有一些额外的性质: </p>
+<ul>
+<li><span class="arithmatex">\(I_D(aX;bY)=I_D(X;Y)\)</span></li>
+<li><span class="arithmatex">\(I_D(X;Y)=\lim_{\Delta\rightarrow 0}I^{\Delta}(X;Y)\)</span>, 这里的<span class="arithmatex">\(\Delta\)</span>是离散化后箱的大小 </li>
+</ul>
+<p>可以看出, 计算熵的过程中, 最重要的就是要知道PDF函数是什么, 这个时候就要用到最大似然估计器, 找到最优的参数以描述观测数据.</p>
+<p>在JIDT中, 有三种估计方法可供选择: </p>
+<ul>
+<li>高斯模型</li>
+<li>核模型</li>
+<li>最临近模型</li>
+</ul>
+<h2 id="_7">协方差<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></h2>
+<p>假设有两个随机变量<span class="arithmatex">\(X\)</span>和<span class="arithmatex">\(Y\)</span>, 它们之间的协方差是<span class="arithmatex">\(Cov(X,Y)=E[(X-E(X))(Y-E(Y))]\)</span>. 公式简单的翻译就是, 每个时刻的<span class="arithmatex">\(X\)</span>与其均值<span class="arithmatex">\(E(X)\)</span>之差乘以每个时刻的<span class="arithmatex">\(Y\)</span>与其均值<span class="arithmatex">\(E(Y)\)</span>之差, 再对每个时刻的乘积求和之后求一个均值.</p>
+<p>这可以通俗的理解为: 两个变量在变化的过程中是同方向变化? 还是反方向变化? 同向或反向程度如何?</p>
+<ul>
+<li>你变大, 同时我也变大, 说明两个变量是同向变化的, 这个时候协方差就是正的</li>
+<li>你变大, 同时我变小, 说明两个变量是反向变化的, 这个时候协方差就是负的</li>
+</ul>
+<p>从数值上来看, 协方差的数值越大, 两个变量的同向程度也就越大, 反之亦然. 如果接近<span class="arithmatex">\(0\)</span>, 说明<span class="arithmatex">\(X\)</span>和<span class="arithmatex">\(Y\)</span>之间的运动是不规律的, 很有可能某个时刻<span class="arithmatex">\(X-E(X)\)</span>的值和<span class="arithmatex">\(Y-E(Y)\)</span>的乘积为正, 另外一个时刻的乘积为负.</p>
+<h3 id="_8">协方差矩阵</h3>
+<p>协方差矩阵用于衡量多个随机变量的协方差, 对于一个包含<span class="arithmatex">\(d\)</span>个随机变量<span class="arithmatex">\(X_1, X_2, ..., X_d\)</span>的向量 <span class="arithmatex">\(\bm{X}=(X_1, X_2, ..., X_d)^T\)</span>, 协方差矩阵是一个<span class="arithmatex">\(d\times d\)</span>的对称矩阵, 每个元素<span class="arithmatex">\(Cov(X_i, X_j)\)</span>表示第<span class="arithmatex">\(i\)</span>个元素和第<span class="arithmatex">\(j\)</span>个随机变量的协方差.</p>
+<h2 id="相关系数">相关系数<sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup></h2>
+<p>对于相关系数, 它和协方差很像, 公式为<span class="arithmatex">\(\rho=\frac{Cov(X,Y)}{\sigma_X\sigma_Y}\)</span>. 相关系数可以被看为一种特殊的协方差: 剔除了两个变量量纲的影响, 标准化之后的协方差.</p>
+<p>很多时候, <span class="arithmatex">\(X\)</span>和<span class="arithmatex">\(Y\)</span>虽然是同向变化, 但是它们变化的幅度不一样, 如<a href="https://img.ricolxwz.io/ef6d91e949fa6691ef2eae243a51a766.png">图</a>所示, 情况一的协方差会远远大于情况二的协方差.</p>
+<p>于是, 为了能准确研究两个变量在变化过程中的相似程度, 我们要把变化幅度对协方差的影响, 从协方差里面剔除掉, 于是就有了相关系数的公式.</p>
+<p>标准差是方差开方之后得到的, <span class="arithmatex">\(\sigma_X=\sqrt{E((X-E(X)^2)}\)</span>. 越偏离平均值其方差/标准差就越大.</p>
+<p>由于标准差的作用, 相关系数总是在<span class="arithmatex">\(1\)</span>和<span class="arithmatex">\(-1\)</span>之间.</p>
+<h2 id="_9">高斯模型</h2>
+<details class="info" open="open">
+<summary>信息</summary>
+<p>高斯分布就是正态分布. 下面全部都用高斯分布代替.</p>
+</details>
+<figure>
+<p><a class="glightbox" href="https://img.ricolxwz.io/6d1ea415085ecd372aa60f6bdbf63fae.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="https://img.ricolxwz.io/6d1ea415085ecd372aa60f6bdbf63fae.png" width="800" /></a></p>
+</figure>
+<p>使用高斯模型的前提是数据或转换后的数据要近似符合高斯分布. 可以通过Shapiro-Wilk检验或者Kolmogorov-Smirnov检验数据是否近似符合高斯分布. 若数据近似符合高斯分布, 我们可以使用最大似然估计法找到高斯分布的参数, 即每一个随机变量的期望和标准差, 进而可以计算协方差矩阵<span class="arithmatex">\(\Omega_{\bm{X}}=\bm{X}\bm{X}^T\)</span>.</p>
+<p>假设一个随机变量<span class="arithmatex">\(X\)</span>符合高斯分布, 那么它的微分熵为<span class="arithmatex">\(H(\bm{X}=\frac{1}{2}\ln[(2\pi e)^d|\Omega_{\bm{X}}|])\)</span>.</p>
+<p>同样的, 还可以通过对微分熵的加减形成其他信息量, 如微分互信息.</p>
+<p>对于单个符合高斯分布的随机变量<span class="arithmatex">\(X\)</span>, 其标准差为<span class="arithmatex">\(\sigma\)</span>, 其熵的计算公式为<span class="arithmatex">\(H(X)=\ln((2\pi e)^{1/2}\sigma)\)</span>.; </p>
+<p>对于两个符合高斯分布的随机变量<span class="arithmatex">\(X\)</span>和<span class="arithmatex">\(Y\)</span>, 两者之间的<a href="#相关系数">相关系数</a>为<span class="arithmatex">\(\rho\)</span>, 其互信息的计算公式为<span class="arithmatex">\(I(X;Y)=-\frac{1}{2}\ln(1-\rho^2)\)</span>.</p>
+<p>要注意的是, 使用上述计算公式的前提是在模型中, 我们假设随机变量之间是通过线性关系进行耦合的, 也就是说假设它们之间的影响是线性的. 这个是协方差用于熵计算的基本假设, 因为协方差描述的是两个随机变量之间的线性相关性. 若两个变量在线性上无关, 但是存在非常复杂的非线性关系, 如二次, 指数等, <strong>协方差就无法反映非线性关系中两个随机变量的相关性</strong>, 也就无法表示真实的熵和互信息等信息量. 说白了, 按照上面公式算出来的信息量度量值只考虑了在线性上的关系, 没有考虑非线性.</p>
+<p>优缺点:</p>
+<ul>
+<li>优点: 很快(<span class="arithmatex">\(O(Nd^2)\)</span>), 无需考虑其他的参数, 只需要考虑期望和标准差</li>
+<li>缺点: <span class="arithmatex">\(H(\bm{X})\)</span>反映的是线性关系的不确定性</li>
+</ul>
+<h2 id="_10">核密度估计</h2>
+<p>机器学习中的<a href="https://ml.ricolxwz.de/%E7%AE%97%E6%B3%95/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/#%E9%9D%9E%E7%BA%BF%E6%80%A7%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA">非线性支持向量机</a>用到了核函数, 我们通过一个变换<span class="arithmatex">\(\phi\)</span>将原始特征空间映射到新的特征空间, 在新的特征空间中, 决策边界可能会变成线性的. 其中我们使用<a href="https://ml.ricolxwz.de/%E7%AE%97%E6%B3%95/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/#%E6%A0%B8%E6%96%B9%E6%B3%95">核函数</a>在原始特征空间计算点积, 从而减少了算力消耗.  </p>
+<p>注意的点来了, 这个小节里面的核函数和机器学习里面的核函数是<strong>不一样的</strong>. 机器学习里面的核函数是核方法的核函数, 但是这里用的是核密度估计(KDE)中的核函数.</p>
+<ul>
+<li>核密度估计中的核函数: 主要用于定义一个权重函数, 在一定区域内给数据点分配权重, 以估计局部密度或者平滑数据, 并不计算点积</li>
+<li>核方法的核函数: 主要用于计算点积, 以便在隐式高维特征空间中衡量样本点的相似性</li>
+</ul>
+<details class="quote" open="open">
+<summary>教授回复</summary>
+<p>A kernel function is simply a function which we apply to each data point, centring the function on it and effectively summing the value of that function at surrounding data points, to compute some implicit feature of the data point and how it relates to nearby points (e.g. usually a probability estimate for that point or a computation of how similar it is to other points in the data set). The box kernel is simply a function which is constant in a radius (or box) around the focus point, and when applying it we just then count other data points which fall within this radius (or box). This is useful for probability density estimation. There are of course more complex kernel functions that we can apply in order to approximate other quantities, e.g. RBF and polynomial functions, which are useful in machine learning.</p>
+</details>
+<p>这里, 我们用到的是矩形核函数, 如果两个点在原始空间中的距离不超过<span class="arithmatex">\(r\)</span>, 那么它们在新的特征空间中被归为同一个矩形, 值为<span class="arithmatex">\(0\)</span>, 如果两个点的距离超过<span class="arithmatex">\(r\)</span>, 那么它们在特征空间中被归为不同矩形, 值为<span class="arithmatex">\(1\)</span>. 我们可以利用这个矩形核函数计算映射到新的特征空间后, 样本<span class="arithmatex">\((x_n, y_n)\)</span>的周围的矩形框(宽度为<span class="arithmatex">\(r\)</span>)内的点在所有点中的占比, 首先计算没有归一化的密度: <span class="arithmatex">\(\hat{p}(x_n, y_n)=\frac{1}{N}\sum_{n'=1}^N\Theta(\left|\begin{smallmatrix}
+x_n - x_{n'} \\
+y_n - y_{n'}
+\end{smallmatrix}\right|-r)\)</span>, <span class="arithmatex">\(\left|\begin{smallmatrix}
+x_n - x_{n'} \\
+y_n - y_{n'}
+\end{smallmatrix}\right|-r\)</span>表示的是样本点<span class="arithmatex">\((x_n, y_n)\)</span>和另一个样本点<span class="arithmatex">\((x'_n, y'_n)的距离\)</span>. 这个结果需要经过归一化, <span class="arithmatex">\(\hat{f}(x_n, y_n)=\frac{\hat{p}(x_n, y_n)}{2r}\)</span>, 因为它衡量的是<span class="arithmatex">\((x_n, y_n)\)</span>所属的宽度为<span class="arithmatex">\(r\)</span>的矩形内的点的数量在所有点中的占比, 然后将这个概率近似看作是<span class="arithmatex">\((x_n, y_n)\)</span>的概率密度, 或者说衡量的是其他点落在以<span class="arithmatex">\((x_n, y_n)\)</span>所在的宽度为<span class="arithmatex">\(r\)</span>的矩形区域里的概率.</p>
+<figure>
+<p><a class="glightbox" href="https://img.ricolxwz.io/705268d17c4514bc1de00244c0c0d1a4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="https://img.ricolxwz.io/705268d17c4514bc1de00244c0c0d1a4.png" width="300" /></a></p>
+</figure>
+<p>熵可以计算为<span class="arithmatex">\(H(X)=\frac{1}{N}\sum_{n'=1}^N\log \hat{f}(x_n)\)</span>. 互信息的问题就转化为如果我们知道某一个点落在宽度为<span class="arithmatex">\(r\)</span>的矩形区域内对另一个点落在宽度为<span class="arithmatex">\(r\)</span>的矩形区域内的影响.</p>
+<p>优缺点:</p>
+<ul>
+<li>优点: 无模型, 不依赖任何特定的概率分布假设, 如高斯模型, 它假设数据符合高斯分布, 它是一种非参数方法, 可以适用于多种不同的分布</li>
+<li>缺点: 对<span class="arithmatex">\(r\)</span>的取值很敏感</li>
+</ul>
+<h3 id="ksg">KSG</h3>
+<p>矩形核函数使用一个固定大小的矩形区域来计算样本点周围的密度, 如果其他点落在这个区域内, 给他赋予权重<span class="arithmatex">\(1\)</span>, 超出则赋予权重<span class="arithmatex">\(0\)</span>. </p>
+<p>KSG, Kraskov-Stogbauer-Grassberger, 是一种与矩形核函数类似的估计概率密度的方法, KSG使用KNN算法来估计样本点周围的局部密度, 对于每个样本点, 它找到最近的<span class="arithmatex">\(k\)</span>个邻居, 并根据这些邻居的分布情况来估计概率密度.</p>
+<figure>
+<p><a class="glightbox" href="https://img.ricolxwz.io/86a4b3bfa5544f950d82cfa4292110fe.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="https://img.ricolxwz.io/86a4b3bfa5544f950d82cfa4292110fe.png" width="350" /></a></p>
+</figure>
+<p>KSG相较于矩形核密度有更低的偏差, 其一是因为可以利用Kozachenko-Leonenko熵估计器对偏差进行修正, 其二是因为在联合空间中使用固定数量的<span class="arithmatex">\(k\)</span>个邻居的最邻近计数能够更好的抵消偏差.</p>
+<p>KSG有两种算法, 算法1的互信息计算公式为<span class="arithmatex">\(I^{(1)}(X;Y)=\psi(K)-&lt;\psi(n_x+1)+\psi(n_y+1)&gt;+\psi(N)\)</span>.</p>
+<ul>
+<li>算法1的方差小, 但是偏差大</li>
+<li>算法2的方差大, 但是偏差小</li>
+</ul>
+<p>优缺点:</p>
+<ul>
+<li>优点: 无模型, 不依赖任何特定的概率分布假设, 如高斯模型, 它假设数据符合高斯分布, 它是一种非参数方法, 可以适用于多种不同的分布. 通过基于最邻近的密度估计方法, KSG对传统互信息估计中的系统性偏差进行了修正, 保证估计结果更加接近真实值. 能够以较少的数据给出准确的互信息估计结果. 它对参数<span class="arithmatex">\(K\)</span>非常稳定, 意味着我们不需要精准调节这个参数, 可以认为KSG是参数无关的</li>
+<li>缺点: KSG依赖最邻近搜索, 它的计算复杂度较高, 特别是在高维数据上, 寻找最邻近点需要耗费较多的计算资源, 因此时间效率较低; 虽然KSG的事件复杂度较高, 但是可以利用快速的最邻近搜索算法, 如KD树等数据结构, 将时间复杂度降低为<span class="arithmatex">\(O(KN\log N)\)</span></li>
+</ul>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>如何通俗易懂地解释「协方差」与「相关系数」的概念？ - 知乎. (n.d.). Retrieved September 8, 2024, from <a href="https://www.zhihu.com/question/20852004">https://www.zhihu.com/question/20852004</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 信息论<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="information-theory/index">绪论</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="information-theory/uncertainty-and-entropy">不确定性和熵</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="information-theory/what-is-information">什么是信息</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="information-theory/jidt">JIDT</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="information-theory/estimator">估计器</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="/information-theory/statistical-significance">统计显著性</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="/information-theory/self-organisation">自组织</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="/information-theory/information-processing">信息处理</a></li>
-</ul>
-</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 版本控制<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="/version-control/area-and-status">区域和状态</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="/version-control/add-and-commit">添加和提交</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="/version-control/revert">回退</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="/version-control/config">配置</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="/version-control/account">账户</a></li>
-</ul>
-</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 容器<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="/containerization/dockerfile">dockerfile</a></li>
-</ul>
-</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> k8s<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="/k8s/architecture">架构</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="/k8s/command">命令</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="/k8s/example">示例</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="_3">贡献</h2>
-<p>朋友们! 这个文档还缺英文(虽然大部分内容都是从英文翻译过来的), 但是还是需要兼顾一下学习英文的同学, 欢迎大家前往<a href="https://github.com/sigmax01/gk">https://github.com/sigmax01/gk</a>提交PR! 🦀🦀</p>
+</ol>
+</div>
 
 
 
@@ -1530,7 +1938,7 @@
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年7月23日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年9月4日</span>
   </span>
 
     
@@ -1564,6 +1972,60 @@
 
 
 
+
+  <h2 id="__comments">评论</h2>
+  <script src="https://giscus.app/client.js"
+        data-repo="sigmax01/gk"
+        data-repo-id="R_kgDOMZ6IeA"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOMZ6IeM4ChF-C"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+
+  <!-- Synchronize Giscus theme with palette -->
+  <script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    // Set palette on initial load
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      var theme = palette.color.scheme === "slate"
+        ? "transparent_dark"
+        : "light"
+
+      // Instruct Giscus to set theme
+      giscus.setAttribute("data-theme", theme) 
+    }
+
+    // Register event handlers after documented loaded
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate"
+            ? "transparent_dark"
+            : "light"
+
+          // Instruct Giscus to change theme
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+  </script>
 
                 
 
@@ -1674,20 +2136,20 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["content.code.annotate", "content.code.copy", "content.code.select", "content.tabs.link", "content.footnote.tooltips", "content.tooltips", "content.action.edit", "content.action.view", "navigation.tabs", "navitation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "navigation.tracking"], "search": "assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.code.copy", "content.code.select", "content.tabs.link", "content.footnote.tooltips", "content.tooltips", "content.action.edit", "content.action.view", "navigation.tabs", "navitation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="assets/javascripts/bundle.525ec568.min.js"></script>
+      <script src="../../assets/javascripts/bundle.525ec568.min.js"></script>
       
-        <script src="javascripts/favicon.js"></script>
+        <script src="../../javascripts/favicon.js"></script>
       
-        <script src="javascripts/katex.js"></script>
+        <script src="../../javascripts/katex.js"></script>
       
         <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
       
         <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
       
-        <script src="javascripts/analysis.js"></script>
+        <script src="../../javascripts/analysis.js"></script>
       
         <script src="/js/open_in_new_tab.js"></script>
       

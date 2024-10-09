@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="zh" class="no-js">
   <head>
     
       <meta charset="utf-8">
@@ -12,22 +12,28 @@
         <meta name="author" content="ricolxwz">
       
       
+        <link rel="canonical" href="https://gk.ricolxwz.de/information-theory/information-processing/">
       
       
+        <link rel="prev" href="../self-organisation/">
       
-      <link rel="icon" href="/assets/images/favicon.png">
+      
+        <link rel="next" href="../../version-control/area-and-status/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
     
     
       
-        <title>基石库</title>
+        <title>信息论:信息处理 - 基石库</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.8c3ca2c6.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8c3ca2c6.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -54,9 +60,9 @@
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
     
-      <link rel="stylesheet" href="/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -67,7 +73,16 @@
 <link href="https://cdn.jsdelivr.net/npm/@fontsource/mononoki@5.1.0/index.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ayahub/webfont-harmony-sans-sc@1.0.0/css/index.min.css">
 
-  </head>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -85,6 +100,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -94,8 +114,8 @@
       
 
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/en/" title="基石库" class="md-header__button md-logo" aria-label="基石库" data-md-component="logo">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="基石库" class="md-header__button md-logo" aria-label="基石库" data-md-component="logo">
       <!--
   Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
 
@@ -136,7 +156,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              信息论:信息处理
             
           </span>
         </div>
@@ -186,20 +206,20 @@
       <div class="md-header__option">
   <div class="md-select">
     
-    <button class="md-header__button md-icon" aria-label="Select language">
+    <button class="md-header__button md-icon" aria-label="选择当前语言">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
     </button>
     <div class="md-select__inner">
       <ul class="md-select__list">
         
           <li class="md-select__item">
-            <a href="/version-control/revert/" hreflang="zh" class="md-select__link">
+            <a href="./" hreflang="zh" class="md-select__link">
               中文
             </a>
           </li>
         
           <li class="md-select__item">
-            <a href="/en/version-control/revert/" hreflang="en" class="md-select__link">
+            <a href="../../en/information-theory/information-processing/" hreflang="en" class="md-select__link">
               English
             </a>
           </li>
@@ -218,21 +238,21 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Search">
+      <nav class="md-search__options" aria-label="查找">
         
-          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
             
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
           </a>
         
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
@@ -245,7 +265,7 @@
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Initializing search
+            正在初始化搜索引擎
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -265,7 +285,7 @@
         
           
             
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
       
@@ -276,7 +296,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/en/" class="md-tabs__link">
+        <a href="../.." class="md-tabs__link">
           
   
     
@@ -296,7 +316,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/en/database/" class="md-tabs__link">
+        <a href="../../database/" class="md-tabs__link">
           
   
     
@@ -312,11 +332,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="/en/information-theory/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
     
@@ -336,7 +358,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/en/version-control/area-and-status/" class="md-tabs__link">
+        <a href="../../version-control/area-and-status/" class="md-tabs__link">
           
   
     
@@ -356,7 +378,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/en/containerization/dockerfile/" class="md-tabs__link">
+        <a href="../../containerization/dockerfile/" class="md-tabs__link">
           
   
     
@@ -376,7 +398,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/en/k8s/architecture/" class="md-tabs__link">
+        <a href="../../k8s/architecture/" class="md-tabs__link">
           
   
     
@@ -409,9 +431,9 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/en/" title="基石库" class="md-nav__button md-logo" aria-label="基石库" data-md-component="logo">
+    <a href="../.." title="基石库" class="md-nav__button md-logo" aria-label="基石库" data-md-component="logo">
       <!--
   Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
 
@@ -473,7 +495,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/en/" class="md-nav__link ">
+            <a href="../.." class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -549,7 +571,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/en/database/" class="md-nav__link ">
+            <a href="../../database/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -582,7 +604,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/en/database/conceptual-model/" class="md-nav__link">
+      <a href="../../database/conceptual-model/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -603,7 +625,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/en/database/relational-model/" class="md-nav__link">
+      <a href="../../database/relational-model/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -624,7 +646,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/en/database/relational-algebra/" class="md-nav__link">
+      <a href="../../database/relational-algebra/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -645,7 +667,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/en/database/sql/" class="md-nav__link">
+      <a href="../../database/sql/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -666,7 +688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/en/database/integrity-constraints/" class="md-nav__link">
+      <a href="../../database/integrity-constraints/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -687,7 +709,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/en/database/advanced-sql/" class="md-nav__link">
+      <a href="../../database/advanced-sql/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -708,7 +730,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/en/database/app-dev/" class="md-nav__link">
+      <a href="../../database/app-dev/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -729,7 +751,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/en/database/normalization/" class="md-nav__link">
+      <a href="../../database/normalization/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -750,11 +772,11 @@
   
   
     <li class="md-nav__item">
-      <a href="/en/database/transaction/" class="md-nav__link">
+      <a href="../../database/transaction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Transactions
+    事务
   </span>
   
 
@@ -775,6 +797,8 @@
       
   
   
+    
+  
   
   
     
@@ -801,21 +825,22 @@
     
     
       
+        
+        
+      
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/en/information-theory/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -826,13 +851,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             信息论
@@ -848,7 +873,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/en/information-theory/uncertainty-and-entropy/" class="md-nav__link">
+      <a href="../uncertainty-and-entropy/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -869,7 +894,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/en/information-theory/what-is-information/" class="md-nav__link">
+      <a href="../what-is-information/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -890,7 +915,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/en/information-theory/jidt/" class="md-nav__link">
+      <a href="../jidt/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -911,7 +936,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/en/information-theory/estimator/" class="md-nav__link">
+      <a href="../estimator/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -932,7 +957,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/en/information-theory/statistical-significance/" class="md-nav__link">
+      <a href="../statistical-significance/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -953,7 +978,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/en/information-theory/self-organisation/" class="md-nav__link">
+      <a href="../self-organisation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -971,10 +996,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/en/information-theory/information-processing/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    信息处理
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -983,6 +1026,84 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      背景
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      信息动力学
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="信息动力学">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      时间序列
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#块向量" class="md-nav__link">
+    <span class="md-ellipsis">
+      块向量
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#块熵" class="md-nav__link">
+    <span class="md-ellipsis">
+      块熵
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      熵率
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1054,7 +1175,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/en/version-control/area-and-status/" class="md-nav__link">
+      <a href="../../version-control/area-and-status/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1075,7 +1196,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/en/version-control/add-and-commit/" class="md-nav__link">
+      <a href="../../version-control/add-and-commit/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1096,7 +1217,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/en/version-control/revert/" class="md-nav__link">
+      <a href="../../version-control/revert/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1117,7 +1238,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/en/version-control/config/" class="md-nav__link">
+      <a href="../../version-control/config/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1138,7 +1259,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/en/version-control/account/" class="md-nav__link">
+      <a href="../../version-control/account/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1210,7 +1331,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/en/containerization/dockerfile/" class="md-nav__link">
+      <a href="../../containerization/dockerfile/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1286,7 +1407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/en/k8s/architecture/" class="md-nav__link">
+      <a href="../../k8s/architecture/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1307,7 +1428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/en/k8s/command/" class="md-nav__link">
+      <a href="../../k8s/command/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1328,7 +1449,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/en/k8s/example/" class="md-nav__link">
+      <a href="../../k8s/example/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1362,10 +1483,78 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
   
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      背景
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      信息动力学
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="信息动力学">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      时间序列
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#块向量" class="md-nav__link">
+    <span class="md-ellipsis">
+      块向量
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#块熵" class="md-nav__link">
+    <span class="md-ellipsis">
+      块熵
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      熵率
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1377,7 +1566,263 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+
+
+                  
+
+  
+    <a href="https://github.com/ricolxwz/gk/edit/master/docs/information-theory/information-processing.md" title="编辑此页" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/ricolxwz/gk/raw/master/docs/information-theory/information-processing.md" title="查看本页的源代码" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+  <h1>信息处理</h1>
+
+<details class="info" open="open">
+<summary>信息</summary>
+<p>本节课是信息动力学的第一节课, 具体目标包括:</p>
+<ul>
+<li>研究信息动力学的哲学背景: 需要了解信息动力学如何解释复杂系统中的信息流动和处理. 信息是如何生成, 传递, 消化和消散的, 通过信息动力学来了解系统的行为和变化</li>
+<li>理解熵率: 熵率是信息论中度量信息生成速率的重要指标, 反映了系统的随机性和不确定性. 通过研究熵率, 可以了解系统的动态行为, 尤其是长期行为的复杂性和不可预测性</li>
+</ul>
+</details>
+<h2 id="_1">背景</h2>
+<p>考虑一个问题, 我们能否将生物计算适用到主流的冯诺依曼架构的计算机科学计算范式中?</p>
+<p>Mitchell提出了如下对比:</p>
+<table>
+<thead>
+<tr>
+<th>问题</th>
+<th>计算机科学</th>
+<th>生物计算</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>信息的角色是什么</td>
+<td>数字化静态存储介质</td>
+<td>模拟状态, 空间和时间上分布的模式, 通过统计采样收集信息</td>
+</tr>
+<tr>
+<td>信息如何传递处理</td>
+<td>确定性, 串行, 零误差, 集中的规则</td>
+<td>去中心化, 并行, 本地, 细粒度的随机交互, 利用随机性</td>
+</tr>
+<tr>
+<td>信息如何获得功能和意义</td>
+<td>由人类设计</td>
+<td>自然选择</td>
+</tr>
+</tbody>
+</table>
+<p>它还指出, "language of dynamical systems may be more useful than language of computation", 即"动态系统的语言可能比计算语言更有用". 这意味着在理解复杂系统的时候, 传统的计算范式可能不足以解释解释系统中的信息流动. 相反, 动态系统理论, 一种通过研究系统随时间变化的行为来解释信息处理, 可能更加适合复杂系统的本质.</p>
+<figure>
+<p><a class="glightbox" href="https://img.ricolxwz.io/bcbe3e386fa8b1a7ed14771b66760ddc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="https://img.ricolxwz.io/bcbe3e386fa8b1a7ed14771b66760ddc.png" width="400" /></a></p>
+</figure>
+<p>图中展示了一个系统(🧠)如何通过动态过程, 将初始状态(左脑, 带有输入)通过某种动态变化, 转变为最终状态(右脑, 带有输出). 输入通过这个动态过程被转换, 最终得到输出. </p>
+<p>它的观点强调, 内在的信息处理发生在系统经历动态过程时, 即当系统通过接受输入并转变为初始状态为某种晚期状态时. 这意味着系统的信息处理并不是通过离散的步骤或者预定的规则来完成的, 而是通过连续的, 动态的状态变化来实现的.</p>
+<p>生物计算或者类生物信息计算有如下特点:</p>
+<ul>
+<li>
+<p>分布式, distributed, 与图灵机不同, 生物信息计算不是集中在某个地方的, 而是分布式的, 这意味着信息在整个系统中分布和处理, 可能没有单一的控制中心</p>
+<details class="note" open="open">
+<summary>笔记</summary>
+<p>所谓的分布式计算, 是指任何系统中多个部分一起处理信息的方式:</p>
+<ul>
+<li>大脑处理信息是通过多个神经元一起工作</li>
+<li>鸟群集体决定飞行方向</li>
+<li>蚂蚁寻找食物通过相互交流找到最佳路线</li>
+<li>甚至可以说, 整个宇宙通过自然法则在"计算"它的未来</li>
+</ul>
+</details>
+</li>
+<li>
+<p>持续性, ongoing, 与图灵机的确定性程序不同, 生物信息计算是持续的, 内在计算, intrinsic computation, 或者信息处理并不一定有明确的结束点. 生物系统的信息计算可能是不断进行的, 不像计算机程序那样可以明确完成任务并结束</p>
+</li>
+</ul>
+<p>我们可以从一下的几个方面描述一个生物系统的信息处理:</p>
+<ul>
+<li>信息存储: 系统如何存储信息</li>
+<li>信息传递: 系统中的信息如何从一个地方传递到另一个地方</li>
+<li>信息修改: 系统如何对存储和传递的信息进行修改和操作</li>
+</ul>
+<p>在传统的计算机系统中, 这些信息处理操作的元素(例如存储器, 处理器, 总线等)是清晰可见的, 便于识别. 然而, 在生物计算中, 这些信息处理过程往往更加复杂和隐含, 不易清晰地识别出来.</p>
+<p>即, 通过使用系统本身的语言来量化其内在的计算过程, 我们可以理解自然界是如何"计算"的, 并且了解这些计算过程为何如此复杂. </p>
+<details class="note" open="open">
+<summary>笔记</summary>
+<p>什么是"系统本身的语言"? 系统本身的语言指的是我们用来描述和理解一个特定系统的规则和模式. 例如:</p>
+<ul>
+<li>大脑的语言: 在大脑中, 神经元通过电信号和化学信号进行信息传递, 因此我们需要使用神经科学的术语, 如突触, 神经元, 神经网络等来描述大脑的信息处理方式</li>
+<li>基因调控网络的语言: 在基因调控网络中, 基因表达收到各种调节因子的控制, 因此基因表达, 蛋白质调控, 转录因子等就是系统的语言用来描述基因如何影响细胞行为</li>
+<li>蚁群的语言: 蚂蚁通过信息素进行沟通和决策, 因此, 信息素浓度, 路径选择, 分布式决策等术语就是描述蚁群行为的语言</li>
+</ul>
+</details>
+<h2 id="_2">信息动力学</h2>
+<p>信息动力学研究的是如何通过存储, 传递和修改来研究复杂系统的下一个状态, 即<span class="arithmatex">\(x_{n+1}\)</span>.</p>
+<figure>
+<p><a class="glightbox" href="https://img.ricolxwz.io/2d81d2714fc7e8dfc51484daa6b037b9.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="https://img.ricolxwz.io/2d81d2714fc7e8dfc51484daa6b037b9.png" width="400" /></a></p>
+</figure>
+<p>图中展示了一个复杂系统, 由多个节点(<span class="arithmatex">\(Y_1, A, X, Y_2, B\)</span>)组成. 这些节点相互作用, 影响着系统的演变, 箭头表示信息或者影响的传递路径. 下方是时间序列示意图, 展示了每个时刻变量的状态(用<span class="arithmatex">\(0\)</span>和<span class="arithmatex">\(1\)</span>表示). 时间是自上而下推进的, 表示状态随时间的演化. 图中系统的绿色竖条代表的是<span class="arithmatex">\(X\)</span>的时间序列, 显示了从<span class="arithmatex">\(n-k+1\)</span>到<span class="arithmatex">\(n+1\)</span>的所有信息.</p>
+<p>从图中, 我们产生了一些疑问:</p>
+<ul>
+<li>信息从哪里来, 如何测量? <span class="arithmatex">\(x_{n+1}\)</span>的信息来源是什么, 如何测量变量状态的变化? 我们应该在哪些节点(如<span class="arithmatex">\(Y_1, A\)</span>等)或交互中寻找信息的来源?</li>
+<li>如何建模信息处理? 主要关注系统如何存储先前的信息, 以及信息在节点之间是如何传递的? 信息的传递如何归因与特定的路径或者节点?</li>
+<li>能否对信息进行划分? 如何判断它们之间是否有重叠?</li>
+</ul>
+<p>前面我们提到了信息动态和时间序列的分析方式, 这些不仅仅是理论, 而且可以实际应用在像是"剪刀-石头-布"这类的游戏和元胞自动机这种系统中.</p>
+<h3 id="_3">时间序列</h3>
+<p>有数个时间序列过程<span class="arithmatex">\(\bm{X}, \bm{Y}, \bm{Z}\)</span>, 可以代表不同的随机想想在不同时间点的表现, 例如: <span class="arithmatex">\(\bm{X}\)</span>可以表示某个地区的每日温度, <span class="arithmatex">\(\bm{Y}\)</span>可以表示同一时刻下该地区的湿度, <span class="arithmatex">\(\bm{Z}\)</span>可以表示某种市场指标如股价指数的变化. 每个过程如<span class="arithmatex">\(X\)</span>由随机变量<span class="arithmatex">\(\{..., X_{n-1}, X_{n}, X_{n+1}, ...\}\)</span>组成, 这些随机变量按照时间<span class="arithmatex">\(n\)</span>进行计数. 而它们的实际值可以用<span class="arithmatex">\(\{..., x_{n-1}, x_n, x_{n+1}\}\)</span>表示.</p>
+<h3 id="块向量">块向量</h3>
+<p>块向量<span class="arithmatex">\(\bm{X}_{n^{(k)}}\)</span>表示从<span class="arithmatex">\(n-k\)</span>到<span class="arithmatex">\(n\)</span>的一系列连续随机变量, 即<span class="arithmatex">\(\bm{X}^{(k)}=\{X_{n-k+1}, ..., X_n\}\)</span>. 而它的实际值用<span class="arithmatex">\(x_n^{(k)}=\{x_{n-k+1}, ..., x_n\}\)</span>表示.</p>
+<hr />
+<p>这里, 我们产生了一个问题, 随机变量<span class="arithmatex">\(X_{n+1}\)</span>中的信息是从哪里来的? 它是如何从其他变量<span class="arithmatex">\(Y_m, Z_m, ...\)</span>中获得的. 尤其对于<span class="arithmatex">\(m\leq n\)</span>的情况.</p>
+<h3 id="块熵">块熵</h3>
+<p>块熵, block entropy是用来衡量一段固定长度的序列中包含的信息量或者不确定性. 它扩展了单步熵的概念, 后者只是衡量单个状态的熵.</p>
+<details class="example" open="open">
+<summary>例子</summary>
+<p>假设我们在观察一个二进制序列, 如果这个序列完全随机, 那么没增加一个<span class="arithmatex">\(1\)</span>或者<span class="arithmatex">\(0\)</span>, 整个序列的块熵就会增长, 因为每个新状态都是不确定的, 包含新的信息. 但是, 如果序列是完全确定的, 或者有规律的, 那么块熵就不会增长, 因为你已经知道接下来是什么, 没什么新信息可以获得.</p>
+</details>
+<p>块熵<span class="arithmatex">\(H(X_1, X_2, ..., X_n)\)</span>是前<span class="arithmatex">\(n\)</span>个状态的联合熵, 它表示这<span class="arithmatex">\(n\)</span>个状态共同带来的总信息量. <span class="arithmatex">\(H(X_1, X_2, ..., X_n)=-\sum_{x_1, x_2, ..., x_n}p(x_1, x_2, ..., x_n)\log p(x_1, x_2, ..., x_n)\)</span>.</p>
+<h3 id="_4">熵率</h3>
+<p>熵率可以度量当块的长度增加的时候, <a href="#块熵">块熵</a>的增长速率. <span class="arithmatex">\(H'_{\mu \bm{X}}=\lim_{n\rightarrow \infty}\frac{1}{n}H(X_1, X_2, ..., X_n)\)</span>. 这表示随着块长度<span class="arithmatex">\(n\)</span>的增大, 每个块长度熵每个状态上带来的平均不确定性. 或者也可以用<a href="#块向量">块向量</a>来表示<span class="arithmatex">\(H'_{\mu \bm{X}}=\lim_{n\rightarrow \infty}\frac{1}{n}H(X_n^{(n)})\)</span>, 更加简洁.</p>
+<p>熵率不仅度量块长度变化的熵增量, 也可以度量下一个随机变量在给定之前变量的情况下的熵增量. <span class="arithmatex">\(H_{\mu \bm{X}}=\lim_{n\rightarrow \infty}\frac{1}{n}H(X_n|X_1, X_2, ..., X_{n-1})\)</span>. 同样也可以用<a href="#块向量">块向量</a>来表示<span class="arithmatex">\(H_{\mu \bm{X}}=\lim_{n\rightarrow \infty}H(X_n|X_{n-1}^{(n-1)})\)</span>.</p>
+<figure>
+<p><a class="glightbox" href="https://img.ricolxwz.io/1ff61a6c75d9e4df8e1b1eb4dc22f575.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="https://img.ricolxwz.io/1ff61a6c75d9e4df8e1b1eb4dc22f575.png" width="200" /></a></p>
+</figure>
+<p>对于平稳增长来说, <span class="arithmatex">\(H'_{\mu \bm{X}}=H_{\mu X}\)</span>.</p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年10月9日</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="创建日期">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年10月4日</span>
+  </span>
+
+    
+    
+    
+      
+  <span class="md-source-file__fact">
+    
+      
+  <span class="md-icon" title="贡献者">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
+  </span>
+  <span>GitHub</span>
+
+    
+    <nav>
+      
+        <a href="https://github.com/ricolxwz" class="md-author" title="@ricolxwz">
+          
+          <img src="https://avatars.githubusercontent.com/u/92409532?v=4&size=72" alt="ricolxwz">
+        </a>
+      
+      
+      
+    </nav>
+  </span>
+
+    
+  </aside>
+
+
+
+
+
+  <h2 id="__comments">评论</h2>
+  <script src="https://giscus.app/client.js"
+        data-repo="sigmax01/gk"
+        data-repo-id="R_kgDOMZ6IeA"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOMZ6IeM4ChF-C"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+
+  <!-- Synchronize Giscus theme with palette -->
+  <script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    // Set palette on initial load
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      var theme = palette.color.scheme === "slate"
+        ? "transparent_dark"
+        : "light"
+
+      // Instruct Giscus to set theme
+      giscus.setAttribute("data-theme", theme) 
+    }
+
+    // Register event handlers after documented loaded
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate"
+            ? "transparent_dark"
+            : "light"
+
+          // Instruct Giscus to change theme
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+  </script>
+
+                
 
               </article>
             </div>
@@ -1391,7 +1836,7 @@
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
-  Back to top
+  回到页面顶部
 </button>
         
       </main>
@@ -1486,25 +1931,25 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "/", "features": ["content.code.annotate", "content.code.copy", "content.code.select", "content.tabs.link", "content.footnote.tooltips", "content.tooltips", "content.action.edit", "content.action.view", "navigation.tabs", "navitation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "navigation.tracking"], "search": "/assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.code.copy", "content.code.select", "content.tabs.link", "content.footnote.tooltips", "content.tooltips", "content.action.edit", "content.action.view", "navigation.tabs", "navitation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="/assets/javascripts/bundle.525ec568.min.js"></script>
+      <script src="../../assets/javascripts/bundle.525ec568.min.js"></script>
       
-        <script src="/javascripts/favicon.js"></script>
+        <script src="../../javascripts/favicon.js"></script>
       
-        <script src="/javascripts/katex.js"></script>
+        <script src="../../javascripts/katex.js"></script>
       
         <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
       
         <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
       
-        <script src="/javascripts/analysis.js"></script>
-      
-        <script src="/js/open_in_new_tab.js"></script>
+        <script src="../../javascripts/analysis.js"></script>
       
         <script src="/js/open_in_new_tab.js"></script>
       
     
-  </body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>
