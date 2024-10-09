@@ -311,7 +311,7 @@ RDBMS在默认情况下允许用`null`表示缺失/不相关. 对于某一些应
 
 #### 映射有键约束和参与约束的关系
 
-什么是键约束, 见[这里](/database/conceptual-model/#键约束). 什么是参与约束, 见[这里](/database/conceptual-model/#参与约束).
+什么是键约束, 见[这里](/database/conceptual-model/#键约束). 什么是参与约束, 见[这里](/database/conceptual-model/#participation-constraints).
 
 我们以两侧都有键约束为例, 现在在一侧加入一个参与约束, 要实现将这个参与约束映射到关系中, 就要使得这个外键不为空, 即为`NOT NULL`. 根据上面讲到的, 要实现两侧的键约束, 外键还需要是唯一的, 所以外键: 1. 既是唯一的; 2. 又是非空的. 见[图](https://img.ricolxwz.io/fca7486e063b1bc75f1ef25d31873e46.png).
 
