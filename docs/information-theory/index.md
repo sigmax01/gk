@@ -52,15 +52,15 @@ comments: true
 
 |周数|主题|
 |-|-|
-|第一周|[不确定性和熵](/信息论/不确定性和熵)|
-|第二周|[不确定性和熵](/信息论/不确定性和熵)|
-|第三周|[什么是信息](/信息论/什么是信息)|
-|第四周|[什么是信息](/信息论/什么是信息)|
-|第五周|[JIDT](/信息论/jidt)|
-|第六周|[估计器](/信息论/估计器)|
-|第七周|[统计显著性](/信息论/统计显著性)|
-|第八周|[自组织](/信息论/自组织)|
-|第九周|[信息处理](/信息论/信息处理)|
+|第一周|[不确定性和熵](/information-theory/uncertainty-and-entropy)|
+|第二周|[不确定性和熵](/information-theory/uncertainty-and-entropy)|
+|第三周|[什么是信息](/information-theory/what-is-information)|
+|第四周|[什么是信息](/information-theory/what-is-information)|
+|第五周|[JIDT](/information-theory/jidt)|
+|第六周|[估计器](/information-theory/estimator)|
+|第七周|[统计显著性](/information-theory/statistical-significance)|
+|第八周|[自组织](/information-theory/self-organisation)|
+|第九周|[信息处理](/information-theory/information-processing)|
 
 ### 备注
 

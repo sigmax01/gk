@@ -56,14 +56,14 @@ comments: true
 |周数|主题|
 |-|-|
 |第一周|绪论|
-|第二周|[数据模型](/数据库/数据模型)|
-|第三周|[关系模型](/数据库/关系模型)|
-|第四周|[关系代数](/数据库/关系代数)+[SQL](/数据库/sql)|
-|第五周|[完整性约束](/数据库/完整性约束)|
-|第六周|[高级SQL](/数据库/高级sql)|
-|第七周|[应用开发](/数据库/应用开发)|
-|第八周|[规范化](/数据库/规范化)|
-|第九周|[事务](/数据库/事务)|
+|第二周|[数据模型](/database/conceptual-model)|
+|第三周|[关系模型](/database/conceptual-model)|
+|第四周|[关系代数](/database/relational-algebra)+[SQL](/database/sql)|
+|第五周|[完整性约束](/database/integrity-constraints)|
+|第六周|[高级SQL](/database/advanced-sql)|
+|第七周|[应用开发](/database/app-dev)|
+|第八周|[规范化](/database/normalization)|
+|第九周|[事务](/database/transaction)|
 
 ### 学习资源
 

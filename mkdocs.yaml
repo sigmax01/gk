@@ -163,34 +163,34 @@ nav:
   - 开始:
     - index.md
   - 数据库:
-    - 绪论: 数据库/绪论.md
-    - 数据模型: 数据库/数据模型.md
-    - 关系模型: 数据库/关系模型.md
-    - 关系代数: 数据库/关系代数.md
-    - SQL: 数据库/sql.md
-    - 完整性约束: 数据库/完整性约束.md
-    - 高级SQL: 数据库/高级sql.md
-    - 应用开发: 数据库/应用开发.md
-    - 规范化: 数据库/规范化.md
-    - 事务: 数据库/事务.md
+    - 绪论: database/index.md
+    - 数据模型: database/conceptual-model.md
+    - 关系模型: database/relational-model.md
+    - 关系代数: database/relational-algebra.md
+    - SQL: database/sql.md
+    - 完整性约束: database/integrity-constraints.md
+    - 高级SQL: database/advanced-sql.md
+    - 应用开发: database/app-dev.md
+    - 规范化: database/normalization.md
+    - 事务: database/transaction.md
   - 信息论:
-    - 绪论: 信息论/绪论.md
-    - 不确定性和熵: 信息论/不确定性和熵.md
-    - 什么是信息: 信息论/什么是信息.md
-    - JIDT: 信息论/jidt.md
-    - 估计器: 信息论/估计器.md
-    - 统计显著性: 信息论/统计显著性.md
-    - 自组织: 信息论/自组织.md
-    - 信息处理: 信息论/信息处理.md
+    - 绪论: information-theory/index.md
+    - 不确定性和熵: information-theory/uncertainty-and-entropy.md
+    - 什么是信息: information-theory/what-is-information.md
+    - JIDT: information-theory/jidt.md
+    - 估计器: information-theory/estimator.md
+    - 统计显著性: information-theory/statistical-significance.md
+    - 自组织: information-theory/self-organisation.md
+    - 信息处理: information-theory/information-processing.md
   - 版本控制:
-    - 区域和状态: 版本控制/区域和状态.md
-    - 添加和提交: 版本控制/添加和提交.md
-    - 回退: 版本控制/回退.md
-    - 配置: 版本控制/配置.md
-    - 账户: 版本控制/账户.md
+    - 区域和状态: version-control/area-and-status.md
+    - 添加和提交: version-control/add-and-commit.md
+    - 回退: version-control/revert.md
+    - 配置: version-control/config.md
+    - 账户: version-control/account.md
   - 容器:
-    - dockerfile: 容器/dockerfile.md
+    - dockerfile: containerization/dockerfile.md
   - k8s:
-    - 架构: k8s/架构.md
-    - 命令: k8s/命令.md
-    - 示例: k8s/示例.md
+    - 架构: k8s/architecture.md
+    - 命令: k8s/command.md
+    - 示例: k8s/example.md

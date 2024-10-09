@@ -79,7 +79,7 @@ $H_D(X)$有一些有趣的性质:
 - $H_D(X)$可以是负数
 - $H_D(X)=\lim_{\Delta\rightarrow 0}H^{\Delta(X)}+\log\Delta$, 这里的$\Delta$是离散化后箱的大小
 
-还可以通过对微分熵的加减形成其他信息量, 如微分互信息$I_D(X;Y)$. 微分互信息继承了[离散互信息的性质](/信息论/什么是信息/#互信息), 如$I_D(X;Y)>0$, 还有一些额外的性质: 
+还可以通过对微分熵的加减形成其他信息量, 如微分互信息$I_D(X;Y)$. 微分互信息继承了[离散互信息的性质](/information-theory/what-is-information/#互信息), 如$I_D(X;Y)>0$, 还有一些额外的性质: 
 
 - $I_D(aX;bY)=I_D(X;Y)$
 - $I_D(X;Y)=\lim_{\Delta\rightarrow 0}I^{\Delta}(X;Y)$, 这里的$\Delta$是离散化后箱的大小 

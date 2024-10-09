@@ -29,7 +29,7 @@ comments: true
 
 ???+ tip "Tip"
 
-    我们可以设置什么时间点确保数据库一致. 如[图](https://img.ricolxwz.io/a42d73224cbdf35a36d1fa913bd09ca7.png), 参考[约束检查的时间](/数据库/完整性约束/#约束检查的时间).
+    我们可以设置什么时间点确保数据库一致. 如[图](https://img.ricolxwz.io/a42d73224cbdf35a36d1fa913bd09ca7.png), 参考[约束检查的时间](/database/integrity-constraints/#约束检查的时间).
 
 ## 原子性
 
