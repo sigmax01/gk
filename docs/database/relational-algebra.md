@@ -1,5 +1,5 @@
 ---
-title: 信息论:关系代数
+title: 数据库:关系代数
 comments: true
 ---
 
