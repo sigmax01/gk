@@ -26,7 +26,7 @@
     
     
       
-        <title>数据库:事务 - 基石库</title>
+        <title>Database:Transaction - 基石库</title>
       
     
     
@@ -100,11 +100,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#_1" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -156,7 +151,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              数据库:事务
+              Database:Transaction
             
           </span>
         </div>
@@ -791,253 +786,15 @@
       
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    事务
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    事务
+    Transactions
   </span>
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      属性
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      一致性
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      原子性
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="原子性">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      提交和中止
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sql" class="md-nav__link">
-    <span class="md-ellipsis">
-      SQL写事务
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      持久性
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      隔离性
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="隔离性">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#调度" class="md-nav__link">
-    <span class="md-ellipsis">
-      调度
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      问题
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#隔离级别" class="md-nav__link">
-    <span class="md-ellipsis">
-      级别
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      冲突
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="冲突">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#冲突等价" class="md-nav__link">
-    <span class="md-ellipsis">
-      冲突等价调度
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#冲突可串行化调度" class="md-nav__link">
-    <span class="md-ellipsis">
-      冲突可串行化调度
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="冲突可串行化调度">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#冲突可串行化调度判断" class="md-nav__link">
-    <span class="md-ellipsis">
-      判断冲突可串行化
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      基于锁的并发控制
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="基于锁的并发控制">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    <span class="md-ellipsis">
-      乐观策略和悲观策略
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    <span class="md-ellipsis">
-      粒度控制
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    <span class="md-ellipsis">
-      锁的类型
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
-    <span class="md-ellipsis">
-      释放锁
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
-    <span class="md-ellipsis">
-      死锁
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -1656,224 +1413,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      属性
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      一致性
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      原子性
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="原子性">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      提交和中止
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sql" class="md-nav__link">
-    <span class="md-ellipsis">
-      SQL写事务
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      持久性
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      隔离性
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="隔离性">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#调度" class="md-nav__link">
-    <span class="md-ellipsis">
-      调度
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      问题
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#隔离级别" class="md-nav__link">
-    <span class="md-ellipsis">
-      级别
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      冲突
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="冲突">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#冲突等价" class="md-nav__link">
-    <span class="md-ellipsis">
-      冲突等价调度
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#冲突可串行化调度" class="md-nav__link">
-    <span class="md-ellipsis">
-      冲突可串行化调度
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="冲突可串行化调度">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#冲突可串行化调度判断" class="md-nav__link">
-    <span class="md-ellipsis">
-      判断冲突可串行化
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      基于锁的并发控制
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="基于锁的并发控制">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    <span class="md-ellipsis">
-      乐观策略和悲观策略
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    <span class="md-ellipsis">
-      粒度控制
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    <span class="md-ellipsis">
-      锁的类型
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
-    <span class="md-ellipsis">
-      释放锁
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
-    <span class="md-ellipsis">
-      死锁
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1889,7 +1428,7 @@
                   
 
   
-    <a href="https://github.com/ricolxwz/gk/edit/master/docs/数据库/事务.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/ricolxwz/gk/edit/master/docs/数据库/事务.en.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1898,356 +1437,16 @@
     
       
     
-    <a href="https://github.com/ricolxwz/gk/raw/master/docs/数据库/事务.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/ricolxwz/gk/raw/master/docs/数据库/事务.en.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-  <h1>事务</h1>
+  <h1>Transactions</h1>
 
-<p>不是所有的数据库操作都是原子性的. 我们需要更加复杂的多步骤的原子性操作. 如, 买房子, 银行转账, 网上交易等等. 没有事务会怎么样呢? A账户给B账户转账100美元, A账户上的前顺利更新-100美元, 但是B账户还没更新, 系统先坏了, 这个时候B账户上没有更新+100美元. 解决方法就是将操作"A账户上的钱-100美元", "B账户上的前+100美元"组成一个原子操作然后执行. </p>
-<p>数据库事务, Transaction, 是访问并可能操作各种数据项的一个数据库操作序列, 这些操作要么全部执行, 要么全部不执行, 是一个不可分割的工作单位. 事务由事务开始和事务结束之间执行的全部数据库操作组成.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
-<h2 id="_1">属性<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></h2>
-<p>事务需要有一些必须的属性, 被称为ACID.</p>
-<ul>
-<li>原子性, Atomicity: 一个事务要不全部执行, 要不全部不执行. 事务在执行过程中发生错误, 会被回滚到事务开始前的状态, 就像这个事务从来没有执行过一样</li>
-<li>一致性, Consistency: 在事务开始之前和事务结束之后, 数据库的完整性没有被破坏. 这表示写入的资料必须完全符合所有的预设约束, 触发器, 级联回滚等</li>
-<li>隔离性, Isolation: 数据库允许多个并发事务同时对其数据进行读写和修改的能力, 隔离性可以防止多个事务并发执行时由于交叉执行而导致数据的不一致. 即并发事务的结果和串行事务的结果是相同的. 事务隔离分为不同级别, 包括未提交读, 提交读, 可重复读和串行化</li>
-<li>持久性, Durability: 事务处理结束后, 对数据的修改是永久的, 即便系统故障也不会丢失</li>
-</ul>
-<h2 id="_2">一致性</h2>
-<p>假设数据库在初始状态是一致的(即满足所有的约束), 当事务结束的时候, 若:</p>
-<ul>
-<li>所有的约束都被满足</li>
-<li>状态满足预期效果</li>
-</ul>
-<p>则称事务是一致的.</p>
-<p>每个事务都应该保持数据库的一致性. 确保事务的一致性是应用开发者的责任, 数据库无法修正编写不良的逻辑, 例如, 从账户A中取出100美元, 只向账户B中存入90美元, 而数据库系统是无法自动修正这个问题的.</p>
-<details class="tip" open="open">
-<summary>Tip</summary>
-<p>我们可以设置什么时间点确保数据库一致. 如<a href="https://img.ricolxwz.io/a42d73224cbdf35a36d1fa913bd09ca7.png">图</a>, 参考<a href="/数据库/完整性约束/#约束检查的时间">约束检查的时间</a>.</p>
-</details>
-<h2 id="_3">原子性</h2>
-<p>在现实世界中, 事务都是要不完全发生, 要不完全不发生, 就如银行转账, 要不取款和存款都发生, 要不两者都不发生, 部分完成的事务可能造成不正确的数据库状态. </p>
-<p>DBMS实现原子性的方法就是记录所有的可能需要撤销/重做的操作. 例如, 在发生故障的时候, 所有未提交的事务操作都会被撤销(undo), 将已经执行的操作回滚到事务开始之前的状态. 在某些情况下, 还可以重做(redo), 这是指在事务已经提交后, 由于系统奔溃等原因, 数据库中的数据没有正确保存, 此时通过重做操作, 重新应用已提交的事务所做的更改.</p>
-<details class="abstract" open="open">
-<summary>总结</summary>
-<ul>
-<li>撤销: 用于未提交的事务, 是回滚事务的更改</li>
-<li>重做: 用于已提交的事务, 是重新应用事务的更改</li>
-</ul>
-</details>
-<h3 id="_4">提交和中止</h3>
-<ul>
-<li>提交: 如果一个事务顺利结束, 则称之为已经提交</li>
-<li>中止: 如果一个事务没有顺利结束, 则称之为已经中止</li>
-</ul>
-<p>中止的原因有:</p>
-<ul>
-<li>系统故障, 如断电</li>
-<li>事务由系统中止, 如<ul>
-<li>死锁</li>
-<li>连接超时</li>
-<li>不符合约束</li>
-</ul>
-</li>
-<li>事务要求回滚</li>
-</ul>
-<h3 id="sql">SQL写事务</h3>
-<p>在SQL中, 与事务有关的命令有三个:</p>
-<ul>
-<li><code>BEGIN</code></li>
-<li><code>COMMIT</code>: 用于请求提交当前的事务</li>
-<li><code>ROLLBACK/ABORT</code>: 造成当前的事务中止</li>
-</ul>
-<details class="example" open="open">
-<summary>例子1</summary>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">例子1</label><label for="__tabbed_1_2">例子2</label><label for="__tabbed_1_3">例子3</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p>初始表:</p>
-<table>
-<thead>
-<tr>
-<th>UoS</th>
-<th>LecturerID</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>COMP9120</td>
-<td>3456</td>
-</tr>
-<tr>
-<td>INFO1234</td>
-<td>4567</td>
-</tr>
-</tbody>
-</table>
-<p>执行:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">BEGIN</span><span class="p">;</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">UPDATE</span><span class="w"> </span><span class="n">Course</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">lecturerId</span><span class="o">=</span><span class="mi">1234</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">uosCode</span><span class="o">=</span><span class="err">‘</span><span class="n">COMP9120</span><span class="err">’</span><span class="p">;</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">COMMIT</span><span class="p">;</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">lecturerId</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Course</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">uosCode</span><span class="o">=</span><span class="err">‘</span><span class="n">COMP9120</span><span class="err">’</span><span class="p">;</span>
-</code></pre></div>
-<p>最终的结果是<code>1234</code>.</p>
-</div>
-<div class="tabbed-block">
-<p>初始表:</p>
-<table>
-<thead>
-<tr>
-<th>UoS</th>
-<th>LecturerID</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>COMP9120</td>
-<td>3456</td>
-</tr>
-<tr>
-<td>INFO1234</td>
-<td>4567</td>
-</tr>
-</tbody>
-</table>
-<p>执行:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">BEGIN</span><span class="p">;</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">UPDATE</span><span class="w"> </span><span class="n">Course</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">lecturerId</span><span class="o">=</span><span class="mi">1234</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">uosCode</span><span class="o">=</span><span class="err">‘</span><span class="n">COMP9120</span><span class="err">’</span><span class="p">;</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">ROLLBACK</span><span class="p">;</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">lecturerId</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Course</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">uosCode</span><span class="o">=</span><span class="err">‘</span><span class="n">COMP9120</span><span class="p">;</span>
-</code></pre></div>
-<p>最终的结果是<code>3456</code>.</p>
-</div>
-<div class="tabbed-block">
-<p>初始表:</p>
-<table>
-<thead>
-<tr>
-<th>UoS</th>
-<th>LecturerID</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>COMP9120</td>
-<td>3456</td>
-</tr>
-<tr>
-<td>INFO1234</td>
-<td>4567</td>
-</tr>
-</tbody>
-</table>
-<p>执行:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">BEGIN</span><span class="p">;</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">UPDATE</span><span class="w"> </span><span class="n">Course</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">lecturerId</span><span class="o">=</span><span class="mi">4567</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">uosCode</span><span class="o">=</span><span class="err">‘</span><span class="n">COMP9120</span><span class="err">’</span><span class="p">;</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">lecturerId</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Course</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">uosCode</span><span class="o">=</span><span class="err">‘</span><span class="n">COMP9120</span><span class="err">’</span><span class="p">;</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">COMMIT</span><span class="p">;</span>
-</code></pre></div>
-<p>最终的结果是<code>3456</code>.       </p>
-</div>
-</div>
-</div>
-</details>
-<h2 id="_5">持久性</h2>
-<p>一旦事务被提交, 它的效果应该持续存在于数据库中, 并且即使系统奔溃, 这些效果也是永久存在的. 即如果出现软件或者硬件故障, 部分数据库可能会被删除或已损坏, 这种情况下, 数据库应当具有恢复到最后的一致状态的能力.</p>
-<p>我们可以使用日志的方式来实现持久性. 使用可靠的存储设备(如硬盘)来持久保存日志, 日志记录了事务执行过程中对数据库的修改. 每个事务都有一个与他关联的日志, 记录了该事务所做的所有更改. 如果事务中止, 根据具体的恢复协议, 系统可以使用日志来撤销或重做该事务的操作.</p>
-<h2 id="_6">隔离性</h2>
-<p>事务是可以并发执行的, 即它们的操作可以交错执行. 交错通常由主机操作系统基于某种调度算法决定. 如果事务管理器没有干预, 数据库可能由于并发执行导致处于不正确和不一致的状态. 因此, 有必要控制对数据库的并发访问, 以确保正确性和效率.</p>
-<h3 id="调度">调度<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></h3>
-<p>调度分为好几种类型:</p>
-<ul>
-<li>串行/非串行调度: Serial/Nonserial Schedule, 不同事务之间的操作没有交叉为串行调度; 不同事务之间的操作有交叉为非串行调度</li>
-<li>
-<p>可串行化/不可串行化调度: Serializable/Nonserializable Schedule, 如果一个调度等价于某串行调度, 则称该调度是可串行化调度; 如果一个调度不等价于任何一个串行调度, 则称该调度为不可串行化调度</p>
-<details class="example" open="open">
-<summary>例子</summary>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">可串行化调度</label><label for="__tabbed_2_2">不可串行化调度</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p>如<a href="https://img.ricolxwz.io/e587ae92bf9334716c80365d76673fd8.png">图</a>展示的一个可串行化的调度. 由于这个调度和其中一个串行执行的结果相同, 所以称之为可串行化, 注意, 图片的最下方还有另一个串行执行的调度, 我们的要求是只要和其中的一个串行的调度结果一样就可以.</p>
-</div>
-<div class="tabbed-block">
-<p>如<a href="https://img.ricolxwz.io/80d8747bf9623747bdc41af153cfaaba.png">图</a>展示的一个不可串行化的调度. 由于这个调度和两个串行执行的结果都不同, 称之为不可串行化.</p>
-</div>
-</div>
-</div>
-</details>
-</li>
-<li>
-<p>冲突可串行化/冲突不可串行化调度: 请见<a href="#冲突可串行化调度">这里</a>, 如何判断, 请见<a href="#冲突可串行化调度判断">这里</a></p>
-</li>
-</ul>
-<h3 id="_7">问题</h3>
-<p>若没有隔离性, 可能导致三种问题.</p>
-<ul>
-<li>更新丢失: 当两个事务并发执行的时候, 一个事务的更新会被另一个事务的更新覆盖, 从而导致最终的值不正确. 例如, 事务A读取数据项X的值为100, 并将其修改为200. 事务B也读取了X的值为100, 并将其修改为150. 最后事务A提交了, 但是事务B的提交覆盖了A的更新, 导致A的修改丢失. 另一个例子如<a href="https://img.ricolxwz.io/06b07c13ab478bebe66957ff9a377933.png">图</a></li>
-<li>临时更新: 也称为脏读问题, 发生在一个事务更新了数据项但是未提交的时候, 该事务失败回滚, 而另一个事务读取了这个未提交的更新. 这样, 第二个事务在基于无效数据的情况下执行操作, 可能导致错误的结果. 例如, 事务A修改数据项X的值为200, 随后事务A失败并回滚, X的值恢复到原始状态100, 在A失败回滚前, 事务B读取了X的临时更新值200, 导致B基于错误的数据进行后续操作. 另一个例子如<a href="https://img.ricolxwz.io/5686361770cb30cf5befb964be2a3a22.png">图</a>.</li>
-<li>不正确摘要: 这个问题发生在事务对一组记录进行汇总操作的时候, 另一个事务还在处理部分数据. 例如, 事务A正在对多个记录求和, 总和的部分数据已经被事务B更新, 但是另一部分仍是旧数据. 由于事务A在汇总过程中读取到了新旧混合的数据, 导致其计算结果不正确. 另一个例子如<a href="https://img.ricolxwz.io/c5dbc64ac45a78b1987f26a433c24e12.png">图</a>.</li>
-</ul>
-<h3 id="隔离级别">级别</h3>
-<p>在SQL标准中, 有四种事务隔离级别. PostgreSQL不实现"读未提交", 因此当请求次类型的隔离级别时, 会默认使用"读提交".</p>
-<ul>
-<li>读未提交, Read Uncommitted 事务可以读取由其他并发事务写入的未提交数据, 脏读.</li>
-<li>读提交, Read Committed, 数据库不会读取任何未提交的值, 也就是说, 没有脏读.</li>
-<li>可重复读, Repeatable Read, 事务只能看到事务开始之前提交的数据, 在执行期间, 它不会看到未提交的数据或者其他事务提交的更改.</li>
-<li>可串行化, Serializable, 确保事务执行的效果等同于顺序执行相同事务的结果, 见<a href="#冲突可串行化调度">冲突可串行化调度</a></li>
-</ul>
-<p>这四个隔离级别可以分别处理:</p>
-<ul>
-<li>读未提交: 允许脏读</li>
-<li>读提交: 解决临时更新问题</li>
-<li>可重复读: 解决不正确摘要问题</li>
-<li>可串行化: 解决更新丢失问题</li>
-</ul>
-<p>可以通过以下语句为当前的事务设置隔离级别:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">SET</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="w"> </span><span class="k">ISOLATION</span><span class="w"> </span><span class="k">LEVEL</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="err">{</span><span class="w"> </span><span class="k">SERIALIZABLE</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">REPEATABLE</span><span class="w"> </span><span class="k">READ</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">READ</span><span class="w"> </span><span class="k">COMMITTED</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">READ</span><span class="w"> </span><span class="k">UNCOMMITTED</span><span class="w"> </span><span class="err">}</span><span class="p">;</span>
-</code></pre></div>
-<h3 id="_8">冲突</h3>
-<p>冲突是指两个或者多个事务在执行时访问相同的数据项, 并且这些访问操作的顺序会影响最终的结果. 换句话说, 冲突意味着某些操作的顺序不能随意更改, 否则会改变整个事务的执行效果.</p>
-<p>冲突有三种. </p>
-<ul>
-<li>读-读冲突, Read-Read Conflict. 如果两个事务只是读取相同的数据项, 不会造成冲突, 因为读取操作不会改变数据的状态.</li>
-<li>读-写冲突, Read-Write Conflict. 如果一个事务读取某个数据项, 而另一个事务写入该数据项, 操作顺序就很重要, 先读后写和先写后读的结果不同, 因此这类情况会产生冲突.</li>
-<li>写-写冲突, Write-Write Conflict. 如果两个事务都尝试写入同一个数据项, 那么写操作的顺序决定了数据项的最终值. 不同的写入顺序会产生不同的结果, 因此这是冲突的情况.</li>
-</ul>
-<p>总结一下, 假设现在有两个操作ai和aj分别属于两个事务Ti和Tj. 它们会冲突, 如果:</p>
-<ol>
-<li>都访问同一个数据X</li>
-<li>属于不同的事务</li>
-<li>至少有一个操作是对X写入</li>
-</ol>
-<h4 id="冲突等价">冲突等价调度<sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">3</a></sup><sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup></h4>
-<p>两个调度冲突等价, 如果这两个调度涉及相同事务的相同操作, 即每一对冲突的操作在两个调度中的顺序都相同.</p>
-<p>来复习一遍冲突. 假设I, J是分别来自两个不同事务的两个操作. 它们的关系有以下五种情况:</p>
-<ol>
-<li>I和J的目标数据项不一样或者没有任何共同的数据项, 这种情况下, 无论是I先执行还是J先执行, 结果都是一样的, 所以I和J的相对顺序不重要 </li>
-<li>I=read(Q), J=read(Q), I和J的相对顺序也不重要, 因为不管是哪种顺序, 它们读到的都是数据想Q的相同值</li>
-<li>I=read(Q), J=write(Q), 如果I先执行, 则I读到的是Q被J修改之前的值, 如果J先执行, 则I读到的是J更新之后的Q值, 所以I和J的相对顺序很重要</li>
-<li>I=write(Q), J=read(Q), 上一种情况的对称版</li>
-<li>I=write(Q), J=write(Q), 两者都是写操作, 后者的写回覆盖先写的值, 导致后续的读操作只能读取到后写的值. 如果I和J的相对顺序不一样, 则后续读操作读取的值也不一样. 所以I和J的相对顺序很重要</li>
-</ol>
-<p>将调度S1中的任意两个相邻的不冲突操作调换顺序就可以得到一个新的调度S2, 在S2中继续这种调换, 就可以得到更多的调度, 由于只是调换了不冲突的相邻操作, 对执行结果没有影响, 所以这些经过调换相邻非冲突操作得到的调度都是冲突等价的. </p>
-<details class="example" open="open">
-<summary>例子</summary>
-<p>考虑<a href="https://img.ricolxwz.io/78787546f767a1e75643720691eea746.webp">调度S1</a>.</p>
-<p>我们可以将其不冲突的相邻操作read1[B], write2[A]进行调换, 注意, 由于read1[B]和write2[A]操作的是不同的数据项A和B, 所以两者不冲突. 同理, 我们可以继续进行不冲突的调换, 得到更多的调度. 如<a href="https://img.ricolxwz.io/4b6309b8e9a7737709d3bea015dc1c7e.webp">图</a>.</p>
-<p>可以发现, 最终经过四次调换相邻的不冲突操作, 得到了一个串行的调度, 我们称这个调度是<a href="#冲突可串行化调度">冲突可串行化</a>的.</p>
-</details>
-<h4 id="冲突可串行化调度">冲突可串行化调度<sup id="fnref3:3"><a class="footnote-ref" href="#fn:3">3</a></sup><sup id="fnref2:4"><a class="footnote-ref" href="#fn:4">4</a></sup></h4>
-<p>如果一个调度冲突等价于某个串行调度, 则该调度是冲突可串行化调度. 什么是冲突等价, 请见<a href="#冲突等价">这里</a>; 什么是可串行化调度, 请见<a href="#调度">这里</a>.</p>
-<p>冲突可串行化非常重要, 如果能证明并发事务的调度是冲突可串行化的, 则其执行效果和串行执行事务是一样的, 绝对不会出现并发异常. 如果能证明某个并发控制方案能让并发事务都生成冲突可串行化的调度, 则说明该并发控制方案达到了可串行化隔离的级别, 详情见<a href="#隔离级别">隔离级别</a>.</p>
-<p><strong>冲突可串行化调度的目的就是让事务自由执行, 而不用考虑冲突带来的不一致性问题</strong>.</p>
-<h5 id="冲突可串行化调度判断">判断冲突可串行化</h5>
-<p>现在我们知道了并发事务调度中相邻的非冲突操作可以调换相对顺序而不影响执行结果. 所以我们在尝试将并发事务串行化的时候, 可以不用考虑非冲突操作, 而只需要保持冲突操作的相对顺序. 如果操作来自事务1的操作I和来做事务2的操作J冲突, 则尝试串行化时必须保持I, J原来的顺序.</p>
-<p>如果I在J之前, 则尝试串行化时I也必须在J之前, 由于串行化后之只能等一个事务执行完之后才能执行下一个事务, 所以I所属的事务1必须在J所属的事务2之前执行. 也就是事务2必须等事务1执行完后才开始执行, 相当于事务2依赖了事务1, 对于这种先后的依赖关系, 适合用优先图分析. </p>
-<p>为调度构建优先图的过程如下:</p>
-<ol>
-<li>涉及到的每个事务在优先图中都是一个节点</li>
-<li>如果事务1中的操作I和事务2中的操作J冲突, 且操作I在操作J之前, 则从事务1连一条指向事务2的有向边; 如果操作I在操作J之后, 则从事务2连一条指向事务1的有向边</li>
-</ol>
-<p>如果事务1和事务2中有多对操作冲突且都是事务1中的操作在前, 只需要一条从事务1指向事务2的有向边, 不需要多条. 因为优先图中的有向边只是用来表示是否存在依赖关系的, 不用于表示数量.</p>
-<p>如果存在一条从事务1指向事务2的有向边, 则说明事务在串行执行的时候需要先执行事务1再执行事务2. 如果同时存在从事务1指向事务2的有向边或者从事务2指向事务1的有向边, 则说明事务1和事务2形成了环, 这种情况下, 如果尝试串行化, 无论执行哪个事务都满足不了这种依赖. 同理, 多个事务节点形成的环也没法串行化. </p>
-<p>所以, 可以得出一个简单的判断方法: 如果调度的优先图中不存在环, 则调度是冲突可串行化的, 否则调度不是冲突可串行化的.</p>
-<details class="example" open="open">
-<summary>例子</summary>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">满足冲突可串行化的调度</label><label for="__tabbed_3_2">不满足冲突可串行化的调度</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p>如<a href="https://img.ricolxwz.io/11286467d0fddfb507bcd43a8f7b4a45.webp">图</a>. 是一个调度及其对应的优先图. 考虑数据项A, 事务1中的read1[A]和事务2中的write2[A]冲突, 事务1中的write1[A]和事务2中的read2[A], write2[A]冲突. 但是冲突的操作对中, 都是事务1中的操作在前. 同理对于数据项B来说也是事务1中的操作在前. 所以优先图中只存在一条从事务A到事务2的有向边. 由于优先图中没有环, 所以该调度是冲突可串行化的.</p>
-</div>
-<div class="tabbed-block">
-<p>如<a href="https://img.ricolxwz.io/edd0830d330c3ec1ff811ab3cf1f9d51.webp">图</a>. 是一个调度及其对应的优先图. 考虑数据项A, 事务1中的read1[A]和事务2中的write2[A]冲突, 且read1[A]在前, 所以优先图中存在一条从事务1指向事务2的有向边. 事务1中的write1[A]和事务2中的read2[A]中途, 且read2[A]在前, 所以优先图中存在一条从事务2指向事务1的有向边. 事务1和事务2以及两条有向边形成了一个环, 所以调度不满足冲突可串行化.</p>
-</div>
-</div>
-</div>
-</details>
-<details class="tip" open="open">
-<summary>Tip</summary>
-<ul>
-<li>事务优先图对应的串行化方案可能有多个. 对事务优先图进行拓扑排序就能得到事务的串行化方案, 单对应的串行化方案可能有多个. 如<a href="https://img.ricolxwz.io/2babc772d875ddf2a9d601d0168ff9bf.webp">图</a>所示, 四个事务构成的优先图等价的串行化方案有两个. 这是因为事务2和事务3之间没有依赖, 哪个先执行都行</li>
-<li>如果一个调度是冲突可串行化的, 那么它一定可串行化, 但是反过来不一定成立. 考虑一个可可串行化的调度S, 如<a href="https://img.ricolxwz.io/dbf37141b3b12a15ca52fb5871eeee2b.png">图</a>所示. 这个调度和<a href="https://img.ricolxwz.io/4283449cd0d3096f7926b3438765c68e.png">这个</a>串行化的调度是一致的, A的值最后是事务3决定的, B的值最后是事务2决定的. 但是反过来看, 它是否可冲突串行化? 答案是否定的, 因为考虑它的优先图, 如<a href="https://img.ricolxwz.io/e9d474951f84e85b5e35281e73037611.png">图</a>所示, 是有环的</li>
-</ul>
-</details>
-<h4 id="_9">基于锁的并发控制</h4>
-<h5 id="_10">乐观策略和悲观策略</h5>
-<p>之前讨论了乐观策略, Optimistic Protocol, 重点是冲突检测, 乐观策略假设大多数操作不会冲突, 因此允许事务自由执行, 不提前加锁. 在提交的时候, 系统会进行优先图检测, 查看是否有环, 如果有环, 说明这是非冲突可串行化调度, 回滚事务, 重新来一遍. </p>
-<p>但是, 如果频繁有环出现, 事务可能会反复回滚, 导致性能下降. 所以, 乐观策略适合冲突较少的场景, 特别是读多写少的情况, 如在线查询系统. 假设冲突会经常发生, 需要采用悲观策略, 防止冲突的发生, 一般用加锁的方式实现.</p>
-<hr />
-<p>为了避免冲突, 基于锁的协议需要一种锁定机制, 即在事务使用资源之前锁定该资源, 当一个资源被一个事务锁定之后, 其他需要访问相同资源的事务必须等待, 直到该资源被解锁, 从而达到冲突可串行化的效果. 锁管理器, Lock Manager负责维护一个锁表, Lock Table, 记录当前哪些资源处于锁定状态.</p>
-<h5 id="_11">粒度控制</h5>
-<p>锁的粒度决定了一个锁能控制多大范围的资源, 选择适当的锁粒度是设计时需要考虑的关键问题: </p>
-<ul>
-<li>如果锁的粒度过大, 如锁能锁住整个数据库或大范围的数据, 那么会导致并发性差</li>
-<li>如果锁的粒度过小, 如锁住单个数据项, 则锁的管理开销会非常高, 导致系统性能的下降</li>
-</ul>
-<h5 id="_12">锁的类型</h5>
-<p>锁分为:</p>
-<ul>
-<li>共享锁(S): 允许多个事务同时持有该锁</li>
-<li>排它锁(X): 只能由一个事务持有</li>
-</ul>
-<p>如<a href="https://img.ricolxwz.io/37692655b36c0524f17f621a104e9cbd.png">表</a>展示了当事务T1持有某种锁的时候, 另一个事务T2请求相同的数据项的不同锁时的结果.</p>
-<ul>
-<li>T1持有共享锁<ul>
-<li>T2请求共享锁: 可以并发操作, Ok</li>
-<li>T2请求排它锁: T2需要等待, 因为持有排它锁的事务会进行写操作, 此时, 其他事务不能持有共享锁去读</li>
-</ul>
-</li>
-<li>T1持有排它锁<ul>
-<li>T2请求共享锁: T2需要等待, 因为T1持有排它锁正在写, 其他事务不能持有共享锁去读</li>
-<li>T2请求排它锁: T2需要等待, 因为T1持有排它锁正在写, 其他事务不能持有排它锁去写</li>
-</ul>
-</li>
-</ul>
-<h5 id="_13">释放锁</h5>
-<p>当逻辑处理完成后, 需要释放锁. 释放锁的一种方法是使用完数据项就立即释放锁, 这种方法虽然可以提高并发性, 但可能会导致数据库进入不一致的状态.</p>
-<details class="example" open="open">
-<summary>例子</summary>
-<p>如<a href="https://img.ricolxwz.io/1fa98acec9bd743e46f0ac84189b5bf8.png">图</a>是两个航空公司中介试图预约同一个作为的过程, 展示了在不恰当释放锁的情况下, 调度可能导致错误结果.</p>
-<ol>
-<li>T1开始, 锁定资源X, 读取X的值, 并立即释放锁</li>
-<li>T2开始, 锁定资源X, 读取X的值, 并立即释放锁</li>
-<li>T1开始, 锁定资源X, X的值加一, 并立即释放锁</li>
-<li>T2开始, 锁定资源X, X的值加一, 并立即释放锁</li>
-</ol>
-<p>由于T1和T2的锁释放时间不对, 所以导致产生了两个预订, 数据库的一致性被破坏. </p>
-</details>
-<p>另一种方法是两阶段锁, 2PL, Two-Phase Locking. </p>
-<p>如果一个事务想要读取X, 那么它必须加上X的共享锁. 如果一个事务想要读取X, 那么它必须加上X的排它锁, 如果一个事务释放了它所持有的任意一个锁, 那么它就再也不能获取任何锁.</p>
-<p>明白了上述规则, 我们也就明白了2PL协议的名字由来, 在2PL下, 每个事务都会经过两个阶段, 在第一个阶段里, 事务根据需要不断地获取锁, 叫作Growing Phase, 在第二个阶段里, 事务开始释放其所持有的锁, 根据2PL的规则, 这个事务不能再获得新的锁, 所以它持有的锁逐渐减少, 叫作Shrinking Phase. </p>
-<h5 id="_14">死锁</h5>
-<p>死锁, Deadlock指的是当两个或多个事务互相等待对方释放资源, 而没有任何一个事务能够继续执行的状态. </p>
-<p>例如, T1事务持有数据项A的锁, 并请求数据项B的锁. T2事务持有数据项B的锁, 并请求数据项A的锁. 由于两个事务都在等待对方释放锁, 而没有任何一方能够继续前进, 因此产生了死锁. 这种情况可能导致数据库系统进入无限期的等待, 无法完成事务的执行.</p>
-<p>两阶段锁虽然保证了冲突可串行化, 但是不能保证没有死锁. 如<a href="https://img.ricolxwz.io/94dff989d8ab5675ce5f72c70ed3d7ae.png">图</a>, 是一个典型的例子.</p>
-<p>有两种方法处理死锁, 死锁预防和死锁检测.</p>
-<p>死锁预防要求在事务开始执行之前预先声明它所需要的所有锁, 包括共享锁和排它锁. 只有当事务能够同时获得所有需要的锁时, 才能开始执行. 如果事务不能同时获得所有锁, 则必须等待, 进而避免死锁的发生.</p>
-<p>在死锁检测中, DBMS会主动监控事务之间的依赖关系, 寻找可能的等待循环. 一旦检测到死锁, 系统会中止其中一个事务来打断死锁, 并释放其持有的锁, 使其他事务能继续执行.</p>
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:1">
-<p>数据库事务. (不详). 百度百科. 取读于 2024年9月30日, 从 <a href="https://baike.baidu.hk/item/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BA%8B%E5%8A%A1/9744607">https://baike.baidu.hk/item/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BA%8B%E5%8A%A1/9744607</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-<li id="fn:2">
-<p>ACID. (2023). 收入 维基百科，自由的百科全书. <a href="https://zh.wikipedia.org/w/index.php?title=ACID&amp;oldid=76893082">https://zh.wikipedia.org/w/index.php?title=ACID&amp;oldid=76893082</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
-</li>
-<li id="fn:3">
-<p>冲突等价(ConﬂictEquivalence) 可串行化调度(Serializable Schedules)-CSDN博客. (不详). 取读于 2024年10月1日, 从 <a href="https://blog.csdn.net/u013288190/article/details/121276904">https://blog.csdn.net/u013288190/article/details/121276904</a>&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
-</li>
-<li id="fn:4">
-<p>冲突可串行化、事务优先图. (n.d.). 知乎专栏. Retrieved October 1, 2024, from <a href="https://zhuanlan.zhihu.com/p/516557516">https://zhuanlan.zhihu.com/p/516557516</a>&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
-</li>
-<li id="fn:5">
-<p>Transaction management：两阶段锁（two-phase locking）. (不详). 知乎专栏. 取读于 2024年10月2日, 从 <a href="https://zhuanlan.zhihu.com/p/59535337">https://zhuanlan.zhihu.com/p/59535337</a>&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>
+
 
 
 
@@ -2270,7 +1469,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年10月2日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 9, 2024</span>
   </span>
 
     
@@ -2280,7 +1479,7 @@
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年9月29日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 9, 2024</span>
   </span>
 
     
@@ -2493,9 +1692,9 @@
       
         <script src="../../../javascripts/analysis.js"></script>
       
-        <script src="../../../js/open_in_new_tab.js"></script>
+        <script src="/js/open_in_new_tab.js"></script>
       
-        <script src="../../../js/open_in_new_tab.js"></script>
+        <script src="/js/open_in_new_tab.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
