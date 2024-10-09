@@ -854,6 +854,78 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conflict" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conflict
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conflict">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conflict-equivalent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conflict Equivalent
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schedule" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schedule
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Schedule">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conflict-serializability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conflict Serializability
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conflict Serializability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Check?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1520,6 +1592,78 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conflict" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conflict
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conflict">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conflict-equivalent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conflict Equivalent
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schedule" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schedule
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Schedule">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conflict-serializability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conflict Serializability
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conflict Serializability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Check?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1580,8 +1724,40 @@
 <h4 id="interface-issues">Interface Issues</h4>
 <ul>
 <li>Lost update: A: 100, B: 200, the value is overwitten by B</li>
-<li>Temporary update: A: 100 -&gt; 50, B is unaware of this change, still read 100</li>
+<li>Temporary update: A: 100 -&gt; 50 (rollback), B is unaware of this change, still read 100</li>
+<li>Incorrect summary problem: A is updating an aggregation of records while B is writing some part of the records</li>
 </ul>
+<h4 id="level">Level</h4>
+<ul>
+<li>Read uncommitted: A transaction can read data written by a concurrent uncommitted
+transaction. This is a called a dirty read</li>
+<li>Read committed: The database will not read any of the uncommitted values, i.e., no
+dirty reads</li>
+<li>Repeatable read: A transaction only sees data committed before the transaction began; It never sees either uncommitted data or changes committed by concurrent transactions while it is executing</li>
+<li>Setializable: Highest level of isolation - serializable execution is defined to be an execution of the operations of concurrently executing transactions that produce the same effect as some serial execution of those same transactions</li>
+</ul>
+<h4 id="conflict">Conflict</h4>
+<ul>
+<li>Read-Read conflict</li>
+<li>Read-Write conflict</li>
+<li>Write-Write conflict</li>
+</ul>
+<h5 id="conflict-equivalent">Conflict Equivalent</h5>
+<p>Two schedules are said to be conflict equivalent when one can be transformed to another by swapping non-conflicting operations. </p>
+<h4 id="schedule">Schedule</h4>
+<ul>
+<li>Serial/Nonserial schedule: A serial scheduel is a schedule in which all transactions are executed from start to finish, without any interleaving</li>
+<li>Serializable/Nonserializable schedule: If a schedule is identical to one serial schedule, then it's serializable</li>
+</ul>
+<h5 id="conflict-serializability">Conflict Serializability</h5>
+<p>A schedule is conflict serializable if it is confliect equivalent to some serial schedule.</p>
+<h6 id="how-to-check">How to Check?</h6>
+<p>Use precedence graph! </p>
+<ul>
+<li>Every transaction is considered as a node</li>
+<li>Asume I from transaction 1 and J from transaction 2 conflicts, then if I is executed before J, then there is a edge from 1 to 2</li>
+</ul>
+<p>If the final graph is acyclic, then it's conflict serializable.</p>
 
 
 
