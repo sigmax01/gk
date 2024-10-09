@@ -39,4 +39,4 @@
 
 ## 贡献
 
-朋友们! 这个文档还缺英文(虽然大部分内容都是从英文翻译过来的), 但是还是需要兼顾一下学习英文的同学, 欢迎大家前往[https://github.com/sigmax01/gk](https://github.com/sigmax01/gk)提交PR!
+朋友们! 这个文档还缺英文(虽然大部分内容都是从英文翻译过来的), 但是还是需要兼顾一下学习英文的同学, 欢迎大家前往[https://github.com/sigmax01/gk](https://github.com/sigmax01/gk)提交PR! 🦀🦀
