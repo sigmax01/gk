@@ -71,6 +71,7 @@ SFW查询语句背后执行的是下列关系代数表达式: `πA1,A2,...,An(σ
     - SQL支持对属性进行重命名, 注意, 这只是对结果表生效, 无法改变原表的属性名称. 使用`AS`来实现. 如`SELECT a.uos_code AS course_code, a.credit_points FROM UnitOfStudy a WHERE a.uos = 'COMP5318'`
     - SQL支持对某一列进行排序, 使用`ORDER BY`语句.. 如`SELECT name FROM Student WHERE country='CN' ORDER BY name`. 注意有两个方向, 一个是`ASC`, 表示升序(默认), 一个是`DESC`, 表示降序. 可以在`ORDER BY`语句后面声明是降序还是升序, 如`ORDER BY country DESC, name ASC`
     - SQL支持使用表的别名, 如`SELECT L.name, M.name FROM Lecturer L, Lecturer M, L.manager = M.empid`, 在这种情况下, `L`和`M`表示的其实是同一张表, 可以将其想象为`Lecturer`表的不同的两份副本
+    - `FROM`子句如果不加任何`JOIN`的话默认使用的是笛卡尔积
 
 ## 连接查询
 
