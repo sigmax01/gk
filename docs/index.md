@@ -4,8 +4,7 @@
 
 ## 进度
 
-- [ ] 数据库
-    - [x] [绪论](database/index)
+- [ ] [数据库](/database/index)
     - [x] [数据模型](database/conceptual-model)
     - [x] [关系模型](database/conceptual-model)
     - [x] [关系代数](database/relational-algebra)
@@ -15,8 +14,7 @@
     - [x] [应用开发](database/app-dev)
     - [x] [规范化](database/normalization)
     - [x] [事务](/database/transaction)
-- [ ] 信息论
-    - [x] [绪论](information-theory/index)
+- [ ] [信息论](/information-theory/index)
     - [x] [不确定性和熵](information-theory/uncertainty-and-entropy)
     - [x] [什么是信息](information-theory/what-is-information)
     - [x] [JIDT](information-theory/jidt)
