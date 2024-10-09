@@ -787,7 +787,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#set-operations" class="md-nav__link">
     <span class="md-ellipsis">
       集合操作
     </span>
@@ -1594,7 +1594,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#set-operations" class="md-nav__link">
     <span class="md-ellipsis">
       集合操作
     </span>
@@ -1694,7 +1694,7 @@
 <ul>
 <li>SQL语句对大小写不敏感</li>
 <li>对于字符串使用单引号</li>
-<li>字符串对大小写是敏感的\pi</li>
+<li>字符串对大小写是敏感的</li>
 <li>SFW返回的结果也是关系/表</li>
 <li>SFW返回的结果表中可以包含重复元组, 事实上, RDBMS在任何表中都可以允许存在重复值的. SFW返回的结果会保留原始数据中重复的元组, 如果要使返回的表中不含有任何的重复元组的话, 可以使用<code>DISTINCT</code>命令, 如<code>SELECT DISTINCT country FROM Student</code></li>
 <li>可以包含算数运算, 如<code>SELECT uos_code, title, points*2 FROM UnitOsStudy</code></li>
@@ -1712,7 +1712,7 @@
 <p>隐式连接使用到的是<code>FROM</code>和<code>WHERE</code>语句, <code>FROM</code>语句用于列出参与到查询中的表, 对应的是笛卡尔积中的表, 连接的条件在<code>WHERE</code>语句中列出. 如选出Student表和UnitOfStudy的笛卡尔积: <code>SELECT * FROM Student, UnitOfStudy</code>. 如<a href="https://img.ricolxwz.io/109682364bd058e45fc66e1c06fa8291.png">图</a>.</p>
 <h3 id="_4">显式连接</h3>
 <p>默认连接用到的是内连接, 关于四种连接的区别, 请见<a href="/database/relational-algebra/#条件连接">这里</a>. 显式连接用到的是<code>FROM</code>, <code>JOIN</code>和<code>ON</code>关键字.</p>
-<h2 id="_5">集合操作</h2>
+<h2 id="set-operations">集合操作</h2>
 <p>SQL语句中, <code>UNION</code>, <code>INTERSECT</code>, <code>EXCEPT</code>对应的是集合操作中的∪, ∩和−. </p>
 <details class="tip" open="open">
 <summary>Tip</summary>
