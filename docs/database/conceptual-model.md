@@ -47,8 +47,7 @@ comments: true
 
 弱实体的存在取决于一个识别拥有者实体(Identifying Owner Entity)的存在. 换句话说, 如果没有与之相关的强实体存在, 弱实体本身就无法存在. 弱实体集必须通过一个一对多/多对一的识别关系和强实体集相联系. 在这种关系中, 强实体集通过主键来识别和关联弱实体集. 弱实体集必须全部参与到关系中(即[完全参与约束](/database/conceptual-model/#participation-constraints)), 弱实体集中的每一个实体必须参与这个关系. 弱实体集在ERD中表现为一个嵌套的方形(方形外面套一个方形).  强弱实体的关系集在ERD中表现为一个嵌套的菱形(菱形外面套一个菱形).
 
-区分符(discriminator)或部分\bm{jk}
-如, 贷款和还款. "贷款"是一个强实体集, "还款"是一个弱实体集. 每一个贷款可以有多个还款, 这是一个一对多的关系. 所有的还款必须参与到关系中. Load_ID是贷款的主键, Repayment_ID是还款的编号, 是区分符, 用于区分同一笔贷款中的不同还款. 还款表的主键应该是(Loan_ID, Repayment_Number). 如[图](https://img.ricolxwz.io/e75dfbf672dd913e0347777af2d9bd14.png).
+区分符(discriminator): 如, 贷款和还款. "贷款"是一个强实体集, "还款"是一个弱实体集. 每一个贷款可以有多个还款, 这是一个一对多的关系. 所有的还款必须参与到关系中. Load_ID是贷款的主键, Repayment_ID是还款的编号, 是区分符, 用于区分同一笔贷款中的不同还款. 还款表的主键应该是(Loan_ID, Repayment_Number). 如[图](https://img.ricolxwz.io/e75dfbf672dd913e0347777af2d9bd14.png).
 
 #### 属性[^3]
 
