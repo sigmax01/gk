@@ -1855,7 +1855,7 @@
 <li>缺点: <span class="arithmatex">\(H(\bm{X})\)</span>反映的是线性关系的不确定性</li>
 </ul>
 <h2 id="_10">核密度估计</h2>
-<p>机器学习中的<a href="https://ml.ricolxwz.de/%E7%AE%97%E6%B3%95/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/#%E9%9D%9E%E7%BA%BF%E6%80%A7%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA">非线性支持向量机</a>用到了核函数, 我们通过一个变换<span class="arithmatex">\(\phi\)</span>将原始特征空间映射到新的特征空间, 在新的特征空间中, 决策边界可能会变成线性的. 其中我们使用<a href="https://ml.ricolxwz.de/%E7%AE%97%E6%B3%95/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/#%E6%A0%B8%E6%96%B9%E6%B3%95">核函数</a>在原始特征空间计算点积, 从而减少了算力消耗.  </p>
+<p>机器学习中的<a href="https://ml.ricolxwz.de/algorithm/svm/#non-linear-svm">非线性支持向量机</a>用到了核函数, 我们通过一个变换<span class="arithmatex">\(\phi\)</span>将原始特征空间映射到新的特征空间, 在新的特征空间中, 决策边界可能会变成线性的. 其中我们使用<a href="https://ml.ricolxwz.de/algorithm/svm/#kernel-function">核函数</a>在原始特征空间计算点积, 从而减少了算力消耗.  </p>
 <p>注意的点来了, 这个小节里面的核函数和机器学习里面的核函数是<strong>不一样的</strong>. 机器学习里面的核函数是核方法的核函数, 但是这里用的是核密度估计(KDE)中的核函数.</p>
 <ul>
 <li>核密度估计中的核函数: 主要用于定义一个权重函数, 在一定区域内给数据点分配权重, 以估计局部密度或者平滑数据, 并不计算点积</li>
