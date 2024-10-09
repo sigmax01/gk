@@ -100,6 +100,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#acid" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -786,6 +791,17 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Transactions
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -795,6 +811,62 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#acid" class="md-nav__link">
+    <span class="md-ellipsis">
+      ACID
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ACID">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#isolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Isolation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Isolation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interface-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interface Issues
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1413,6 +1485,53 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#acid" class="md-nav__link">
+    <span class="md-ellipsis">
+      ACID
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ACID">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#isolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Isolation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Isolation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interface-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interface Issues
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1446,7 +1565,23 @@
 
   <h1>Transactions</h1>
 
-
+<h2 id="acid">ACID</h2>
+<ul>
+<li>Atomicity: A transaction is either performed entirely or not performed at all</li>
+<li>Consistency: <ul>
+<li>All database constraints are satisfied</li>
+<li>The new database state satisfies the specification of the transaction</li>
+</ul>
+</li>
+<li>Isolation: Effect of multiple transaction running concurrently, the effect of the execution is such that it is as if they are running sequentially</li>
+<li>Durability: Once the transactions are committed, they must be persist even if there is a system failure</li>
+</ul>
+<h3 id="isolation">Isolation</h3>
+<h4 id="interface-issues">Interface Issues</h4>
+<ul>
+<li>Lost update: A: 100, B: 200, the value is overwitten by B</li>
+<li>Temporary update: A: 100 -&gt; 50, B is unaware of this change, still read 100</li>
+</ul>
 
 
 
