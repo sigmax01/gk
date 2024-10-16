@@ -1044,6 +1044,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      归一化
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1564,6 +1573,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      归一化
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1628,6 +1646,9 @@
 <li>具有方向性: 在上面, 我们生成替代分布的时候, 替代的是<span class="arithmatex">\(p(x|y, z)\)</span>, 然后将其替换为<span class="arithmatex">\(p(x|z)\)</span>, 这个过程中我们实际上破坏了<span class="arithmatex">\(X\)</span>和<span class="arithmatex">\(Y\)</span>的关系, 同时保留了<span class="arithmatex">\(X\)</span>和<span class="arithmatex">\(Z\)</span>的关系. 这种处理方法意味着我们在测试"给定<span class="arithmatex">\(Z\)</span>的情况下, <span class="arithmatex">\(Y\)</span>对<span class="arithmatex">\(X\)</span>的影响是否显著". 如果我们反过来替代<span class="arithmatex">\(p(y|x, z)\)</span>为<span class="arithmatex">\(p(y|z)\)</span>, 则是在测试"给定<span class="arithmatex">\(Z\)</span>的情况下, <span class="arithmatex">\(X\)</span>对<span class="arithmatex">\(Y\)</span>的影响是否显著, 这时我们就有了不同的方向性, 即信息传递的方向(<span class="arithmatex">\(X\rightarrow Y\)</span>或者<span class="arithmatex">\(Y\rightarrow X\)</span>).</li>
 <li>渐进无关性: 在渐进的情况下(即大量数据样本的情形), 对<span class="arithmatex">\(X\)</span>或者<span class="arithmatex">\(Y\)</span>的重采样效果相同, 不受方向性影响</li>
 </ul>
+<h2 id="_5">归一化</h2>
+<p>当我们使用有限的样本数据来估计互信息<span class="arithmatex">\(I(X;Y)\)</span>的时候, 结果可能会收到样本数量的影响, 即使<span class="arithmatex">\(X\)</span>和<span class="arithmatex">\(Y\)</span>是独立的, 估计的互信息也可能会大于零. </p>
+<p>为了消除有限样本导致的偏差, 可以使用归一化的方法, 这里的归一化是指从原始互信息<span class="arithmatex">\(I(X;Y)\)</span>中减去替代分布的平均互信息<span class="arithmatex">\(&lt;I(X;Y^S)&gt;\)</span>, 替代分布如上面👆所说, 是通过多次重采样<span class="arithmatex">\(Y\)</span>生成的. 公式为<span class="arithmatex">\(I^n(X;Y)=I(X;Y)-&lt;I(X;Y^S)&gt;\)</span>. 这样做可以去除由于样本量有限导致的偏差, 使得<span class="arithmatex">\(I^n(X;Y)\)</span>接近于真实的互信息.</p>
 
 
 
