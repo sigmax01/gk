@@ -61,6 +61,8 @@ comments: true
 |第七周|[统计显著性](/information-theory/statistical-significance)|
 |第八周|[自组织](/information-theory/self-organisation)|
 |第九周|[信息处理](/information-theory/information-processing)|
+|第十周|[信息存储](/information-theory/information-storage)|
+|第十一周|[信息传递](/information-theory/information-transfer)|
 
 ### 备注
 

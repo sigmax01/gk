@@ -182,6 +182,8 @@ nav:
     - 统计显著性: information-theory/statistical-significance.md
     - 自组织: information-theory/self-organisation.md
     - 信息处理: information-theory/information-processing.md
+    - 信息存储: information-theory/information-storage.md
+    - 信息传递: information-theory/information-transfer.md
   - 版本控制:
     - 区域和状态: version-control/area-and-status.md
     - 添加和提交: version-control/add-and-commit.md
