@@ -1005,7 +1005,7 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      互信息
+      背景
     </span>
   </a>
   
@@ -1017,6 +1017,30 @@
       统计性检验
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="统计性检验">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      互信息
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      条件互信息
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1501,7 +1525,7 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      互信息
+      背景
     </span>
   </a>
   
@@ -1513,6 +1537,30 @@
       统计性检验
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="统计性检验">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      互信息
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      条件互信息
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1551,7 +1599,7 @@
 
   <h1>统计显著性</h1>
 
-<h2 id="_1">互信息</h2>
+<h2 id="_1">背景</h2>
 <p>互信息<span class="arithmatex">\(I(X; Y)\)</span>衡量的是两个变量<span class="arithmatex">\(X\)</span>和<span class="arithmatex">\(Y\)</span>的依赖关系, 如果<span class="arithmatex">\(I(X;Y)=0\)</span>, 意味着<span class="arithmatex">\(X\)</span>和<span class="arithmatex">\(Y\)</span>是独立的, 没有任何信息共享. 这在理论上是正确的, 但是在实际事件中, 对于经验数据来说, 即使<span class="arithmatex">\(X\)</span>和<span class="arithmatex">\(Y\)</span>是独立的, 我们依然可能会观测到<span class="arithmatex">\(I(X;Y)\neq 0\)</span>. 这是因为现实中的数据可能存在噪声或者误差, 从而导致互信息的估计不等于<span class="arithmatex">\(0\)</span>. </p>
 <p>所以, 在现实中, 我们要考虑两个问题:</p>
 <ol>
@@ -1559,11 +1607,27 @@
 <li>为了准确地估计<span class="arithmatex">\(I(X;Y)\)</span>, 我们需要多少样本? 即, 需要多少数据点来确定互信息的真实性或者接近真实值</li>
 </ol>
 <h2 id="_2">统计性检验</h2>
-<p>对于第一个问题, 可以使用统计方法检验互信息. 设原假设<span class="arithmatex">\(H_0\)</span>为<span class="arithmatex">\(X\)</span>与<span class="arithmatex">\(Y\)</span>独立, 备择假设为<span class="arithmatex">\(X\)</span>与<span class="arithmatex">\(Y\)</span>存在依赖关系. 为了检验<span class="arithmatex">\(H_0\)</span>, 需要估计在假设<span class="arithmatex">\(H_0\)</span>成立的时候, 采样统计量<span class="arithmatex">\(I(X;Y)\)</span>的概率分布, 这可以通过构建替代分布实现, 具体地说, 就是构建替代分布数据<span class="arithmatex">\(Y^s\)</span>, 使得<span class="arithmatex">\(Y^s\)</span>和<span class="arithmatex">\(X\)</span>独立, 但是保留<span class="arithmatex">\(Y\)</span>的统计特性, 形成一个替代的分布.</p>
+<h3 id="_3">互信息</h3>
+<p>对于第一个问题, 可以使用统计方法检验互信息. 设原假设<span class="arithmatex">\(H_0\)</span>为<span class="arithmatex">\(X\)</span>与<span class="arithmatex">\(Y\)</span>独立, 备择假设为<span class="arithmatex">\(X\)</span>与<span class="arithmatex">\(Y\)</span>存在依赖关系. 为了检验<span class="arithmatex">\(H_0\)</span>, 需要估计在假设<span class="arithmatex">\(H_0\)</span>成立的时候, 采样统计量<span class="arithmatex">\(I(X;Y)\)</span>的概率分布, 这可以通过构建替代分布实现, 具体地说, 就是构建替代分布数据<span class="arithmatex">\(Y^s\)</span>, 使得<span class="arithmatex">\(Y^s\)</span>和<span class="arithmatex">\(X\)</span>独立, 但是保留<span class="arithmatex">\(Y\)</span>的统计特性, 形成一个替代的分布, surrogate distribution.</p>
 <details class="example" open="open">
 <summary>例子</summary>
 <p>假设我们正在研究学生的学习时间<span class="arithmatex">\(X\)</span>和考试成绩<span class="arithmatex">\(Y\)</span>之间的关系, 为了判断学习时间是否和考试成绩相关, 我们可以计算<span class="arithmatex">\(I(X;Y)\)</span>. 原假设<span class="arithmatex">\(H_0\)</span>为学习时间和考试成绩独立, 即<span class="arithmatex">\(I(X;Y)=0\)</span>, 然后构建替代分布, 随机打乱考试成绩<span class="arithmatex">\(Y\)</span>的顺序, 生成一组"替代成绩"<span class="arithmatex">\(Y^s\)</span>, 这些成绩保留了原始的分布特性, 但是不再与原来的学习时间<span class="arithmatex">\(X\)</span>相关. 计算打乱后的<span class="arithmatex">\(I(X;Y^s)\)</span>, 重复生成多次替代分布. 将实际计算的互信息<span class="arithmatex">\(I(X;Y)\)</span>和替代分布计算得到的互信息进行比较, 计算<span class="arithmatex">\(p\)</span>值. 如果<span class="arithmatex">\(I(X;Y)\)</span>显著大于替代分布的互信息, 就可以认为学习时间和考试成绩之间存在统计学上的显著依赖关系, 拒绝原假设.</p>
 </details>
+<p>如下图所示, 是一个构建替代分布的过程.</p>
+<figure>
+<p><a class="glightbox" href="https://img.ricolxwz.io/e338ef1c8544a6b116d2cfd5f9222da9.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="https://img.ricolxwz.io/e338ef1c8544a6b116d2cfd5f9222da9.png" width="300" /></a></p>
+</figure>
+<p>计算替代分布的互信息, 进行p检验. </p>
+<figure>
+<p><a class="glightbox" href="https://img.ricolxwz.io/4ab1b34488bc3977132f2b5dbf28b213.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="https://img.ricolxwz.io/4ab1b34488bc3977132f2b5dbf28b213.png" width="300" /></a></p>
+</figure>
+<h3 id="_4">条件互信息</h3>
+<p>对于条件互信息<span class="arithmatex">\(I(X;Y|Z)\)</span>来说, 它的估计和普通互信息类似, 都需要生成替代分布. 在生成替代分布的时候, 需要通过将条件分布<span class="arithmatex">\(p(x|y, z)\)</span>作为<span class="arithmatex">\(p(x|z)\)</span>来进行, 这意味着, 在固定条件<span class="arithmatex">\(Z\)</span>的情况下, 对<span class="arithmatex">\(Y\)</span>进行重采样.</p>
+<p>它与普通的互信息的区别是:</p>
+<ul>
+<li>具有方向性: 在上面, 我们生成替代分布的时候, 替代的是<span class="arithmatex">\(p(x|y, z)\)</span>, 然后将其替换为<span class="arithmatex">\(p(x|z)\)</span>, 这个过程中我们实际上破坏了<span class="arithmatex">\(X\)</span>和<span class="arithmatex">\(Y\)</span>的关系, 同时保留了<span class="arithmatex">\(X\)</span>和<span class="arithmatex">\(Z\)</span>的关系. 这种处理方法意味着我们在测试"给定<span class="arithmatex">\(Z\)</span>的情况下, <span class="arithmatex">\(Y\)</span>对<span class="arithmatex">\(X\)</span>的影响是否显著". 如果我们反过来替代<span class="arithmatex">\(p(y|x, z)\)</span>为<span class="arithmatex">\(p(y|z)\)</span>, 则是在测试"给定<span class="arithmatex">\(Z\)</span>的情况下, <span class="arithmatex">\(X\)</span>对<span class="arithmatex">\(Y\)</span>的影响是否显著, 这时我们就有了不同的方向性, 即信息传递的方向(<span class="arithmatex">\(X\rightarrow Y\)</span>或者<span class="arithmatex">\(Y\rightarrow X\)</span>).</li>
+<li>渐进无关性: 在渐进的情况下(即大量数据样本的情形), 对<span class="arithmatex">\(X\)</span>或者<span class="arithmatex">\(Y\)</span>的重采样效果相同, 不受方向性影响</li>
+</ul>
 
 
 
