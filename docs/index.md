@@ -19,7 +19,7 @@
     - [x] [什么是信息](information-theory/what-is-information)
     - [x] [JIDT](information-theory/jidt)
     - [x] [估计器](information-theory/estimator)
-    - [ ] [统计显著性](/information-theory/statistical-significance)
+    - [x] [统计显著性](/information-theory/statistical-significance)
     - [x] [自组织](/information-theory/self-organisation)
     - [x] [信息处理](/information-theory/information-processing)
     - [ ] [信息存储](/information-theory/information-storage)
