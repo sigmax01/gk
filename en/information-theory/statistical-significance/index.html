@@ -1012,28 +1012,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#a1" class="md-nav__link">
     <span class="md-ellipsis">
-      统计性检验
+      A1: 统计性检验
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="统计性检验">
+    <nav class="md-nav" aria-label="A1: 统计性检验">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      互信息
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      条件互信息
+      解析方法
     </span>
   </a>
   
@@ -1045,7 +1036,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       归一化
     </span>
@@ -1541,28 +1532,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#a1" class="md-nav__link">
     <span class="md-ellipsis">
-      统计性检验
+      A1: 统计性检验
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="统计性检验">
+    <nav class="md-nav" aria-label="A1: 统计性检验">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      互信息
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      条件互信息
+      解析方法
     </span>
   </a>
   
@@ -1574,7 +1556,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       归一化
     </span>
@@ -1624,8 +1606,7 @@
 <li>给定的<span class="arithmatex">\(I(X;Y)\)</span>的估计值与<span class="arithmatex">\(0\)</span>是否有显著差异? 也就是说, 我们是否可以认为观测到的互信息实际上表明了某种依赖性, 而不是由噪声引起的</li>
 <li>为了准确地估计<span class="arithmatex">\(I(X;Y)\)</span>, 我们需要多少样本? 即, 需要多少数据点来确定互信息的真实性或者接近真实值</li>
 </ol>
-<h2 id="_2">统计性检验</h2>
-<h3 id="_3">互信息</h3>
+<h2 id="a1">A1: 统计性检验</h2>
 <p>对于第一个问题, 可以使用统计方法检验互信息. 设原假设<span class="arithmatex">\(H_0\)</span>为<span class="arithmatex">\(X\)</span>与<span class="arithmatex">\(Y\)</span>独立, 备择假设为<span class="arithmatex">\(X\)</span>与<span class="arithmatex">\(Y\)</span>存在依赖关系. 为了检验<span class="arithmatex">\(H_0\)</span>, 需要估计在假设<span class="arithmatex">\(H_0\)</span>成立的时候, 采样统计量<span class="arithmatex">\(I(X;Y)\)</span>的概率分布, 这可以通过构建替代分布实现, 具体地说, 就是构建替代分布数据<span class="arithmatex">\(Y^s\)</span>, 使得<span class="arithmatex">\(Y^s\)</span>和<span class="arithmatex">\(X\)</span>独立, 但是保留<span class="arithmatex">\(Y\)</span>的统计特性, 形成一个替代的分布, surrogate distribution.</p>
 <details class="example" open="open">
 <summary>例子</summary>
@@ -1639,14 +1620,20 @@
 <figure>
 <p><a class="glightbox" href="https://img.ricolxwz.io/4ab1b34488bc3977132f2b5dbf28b213.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="https://img.ricolxwz.io/4ab1b34488bc3977132f2b5dbf28b213.png" width="300" /></a></p>
 </figure>
-<h3 id="_4">条件互信息</h3>
 <p>对于条件互信息<span class="arithmatex">\(I(X;Y|Z)\)</span>来说, 它的估计和普通互信息类似, 都需要生成替代分布. 在生成替代分布的时候, 需要通过将条件分布<span class="arithmatex">\(p(x|y, z)\)</span>作为<span class="arithmatex">\(p(x|z)\)</span>来进行, 这意味着, 在固定条件<span class="arithmatex">\(Z\)</span>的情况下, 对<span class="arithmatex">\(Y\)</span>进行重采样.</p>
 <p>它与普通的互信息的区别是:</p>
 <ul>
 <li>具有方向性: 在上面, 我们生成替代分布的时候, 替代的是<span class="arithmatex">\(p(x|y, z)\)</span>, 然后将其替换为<span class="arithmatex">\(p(x|z)\)</span>, 这个过程中我们实际上破坏了<span class="arithmatex">\(X\)</span>和<span class="arithmatex">\(Y\)</span>的关系, 同时保留了<span class="arithmatex">\(X\)</span>和<span class="arithmatex">\(Z\)</span>的关系. 这种处理方法意味着我们在测试"给定<span class="arithmatex">\(Z\)</span>的情况下, <span class="arithmatex">\(Y\)</span>对<span class="arithmatex">\(X\)</span>的影响是否显著". 如果我们反过来替代<span class="arithmatex">\(p(y|x, z)\)</span>为<span class="arithmatex">\(p(y|z)\)</span>, 则是在测试"给定<span class="arithmatex">\(Z\)</span>的情况下, <span class="arithmatex">\(X\)</span>对<span class="arithmatex">\(Y\)</span>的影响是否显著, 这时我们就有了不同的方向性, 即信息传递的方向(<span class="arithmatex">\(X\rightarrow Y\)</span>或者<span class="arithmatex">\(Y\rightarrow X\)</span>).</li>
 <li>渐进无关性: 在渐进的情况下(即大量数据样本的情形), 对<span class="arithmatex">\(X\)</span>或者<span class="arithmatex">\(Y\)</span>的重采样效果相同, 不受方向性影响</li>
 </ul>
-<h2 id="_5">归一化</h2>
+<h3 id="_2">解析方法</h3>
+<p>某些情况下, 替代分布的互信息的分布经过适当变换后服从卡方分布. 卡方分布的形状是由自由度, degrees of freedom, 决定的. 在<a href="/algorithm/estimator">估计器</a>章节中, 我们讲了用于预测离散, 连续随机变量信息统计量的估计器, 不同的估计器的自由度计算方法不同, 如下表所示.</p>
+<figure>
+<p><a class="glightbox" href="https://img.ricolxwz.io/b7065e4909ebd15cac035d26c8d8b7e1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="https://img.ricolxwz.io/b7065e4909ebd15cac035d26c8d8b7e1.png" width="500" /></a></p>
+</figure>
+<p>其中, <span class="arithmatex">\(dim(X)\)</span>的含义是<span class="arithmatex">\(X\)</span>的纬度. <span class="arithmatex">\(|A_X|\)</span>表示的是<span class="arithmatex">\(A_X\)</span>可能的取值数量. 替代分布的互信息经过的转换可以表示为<span class="arithmatex">\(2N\times I(X;Y^S)\)</span>, 或者是<span class="arithmatex">\(2N\times I(X;Y^S|Z)\)</span>. 注意, 单位是Nats. Nats是一种用于度量信息量的单位. 类似于比特, 但它是用自然对数来计算的信息量单位, 使用Nats做单位的时候, 信息量的计算公式为<span class="arithmatex">\(I(X)=-\ln p(X)\)</span>. 在JIDT中, 虽然计算使用的单位是Nats, 但是最终的结果会被转换为bits. </p>
+<p>使用解析方法的优点是不用像常规的使用极大似然估计法找到替代分布的互信息的分布的参数, 节省了很多的计算时间. 但是它只在样本量无限大的时候才完全准确, 对于有限样本, 可能会产生偏差. 并且在下列情况下会显著偏离经验值: 1. 当分析的分布是高纬度的; 2. 对于离散估计器, 其随机变量的分布严重倾斜.</p>
+<h2 id="_3">归一化</h2>
 <p>当我们使用有限的样本数据来估计互信息<span class="arithmatex">\(I(X;Y)\)</span>的时候, 结果可能会收到样本数量的影响, 即使<span class="arithmatex">\(X\)</span>和<span class="arithmatex">\(Y\)</span>是独立的, 估计的互信息也可能会大于零. </p>
 <p>为了消除有限样本导致的偏差, 可以使用归一化的方法, 这里的归一化是指从原始互信息<span class="arithmatex">\(I(X;Y)\)</span>中减去替代分布的平均互信息<span class="arithmatex">\(&lt;I(X;Y^S)&gt;\)</span>, 替代分布如上面👆所说, 是通过多次重采样<span class="arithmatex">\(Y\)</span>生成的. 公式为<span class="arithmatex">\(I^n(X;Y)=I(X;Y)-&lt;I(X;Y^S)&gt;\)</span>. 这样做可以去除由于样本量有限导致的偏差, 使得<span class="arithmatex">\(I^n(X;Y)\)</span>接近于真实的互信息.</p>
 
@@ -1671,7 +1658,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年10月16日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年10月17日</span>
   </span>
 
     
