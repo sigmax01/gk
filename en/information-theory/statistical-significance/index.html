@@ -1044,6 +1044,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#a2" class="md-nav__link">
+    <span class="md-ellipsis">
+      A2: 样本量
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A2: 样本量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      统计性检验
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      避免欠采样
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1564,6 +1597,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#a2" class="md-nav__link">
+    <span class="md-ellipsis">
+      A2: 样本量
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A2: 样本量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      统计性检验
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      避免欠采样
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1636,6 +1702,13 @@
 <h2 id="_3">归一化</h2>
 <p>当我们使用有限的样本数据来估计互信息<span class="arithmatex">\(I(X;Y)\)</span>的时候, 结果可能会收到样本数量的影响, 即使<span class="arithmatex">\(X\)</span>和<span class="arithmatex">\(Y\)</span>是独立的, 估计的互信息也可能会大于零. </p>
 <p>为了消除有限样本导致的偏差, 可以使用归一化的方法, 这里的归一化是指从原始互信息<span class="arithmatex">\(I(X;Y)\)</span>中减去替代分布的平均互信息<span class="arithmatex">\(&lt;I(X;Y^S)&gt;\)</span>, 替代分布如上面👆所说, 是通过多次重采样<span class="arithmatex">\(Y\)</span>生成的. 公式为<span class="arithmatex">\(I^n(X;Y)=I(X;Y)-&lt;I(X;Y^S)&gt;\)</span>. 这样做可以去除由于样本量有限导致的偏差, 使得<span class="arithmatex">\(I^n(X;Y)\)</span>接近于真实的互信息.</p>
+<h2 id="a2">A2: 样本量</h2>
+<p>样本量的数量取决于当前所问的问题. </p>
+<h3 id="_4">统计性检验</h3>
+<p>在统计性检验的时候, 样本的数量取决于变量之间的关系的强度. 如果两个变量之间的关系很强, 则在统计检验的时候需要的样本量较少, 因为这种关系即使在较少的样本中也能被检测出来. 相反, 如果两个变量之间的关系很弱. 就需要更多的样本检测出这种关系. 从整体上来说, 样本量数量的增加有助于提高检验的灵敏度. 减少因为随机噪声产生的误差.</p>
+<h3 id="_5">避免欠采样</h3>
+<p>假设所有的状态配置都有相同的概率被采样到. 一个经验法则是样本量至少应该是状态配置数量的三倍, 状态配置数量<span class="arithmatex">\(|A_X|\times |A_Y|\)</span>表示<span class="arithmatex">\(X\)</span>和<span class="arithmatex">\(Y\)</span>所有可能取值的组合数. 对于两个二元变量, 其组合数是<span class="arithmatex">\(2\times 2=4\)</span>. 如果变量有更多的取值或者变成多向量, 状态配置数量会显著增加.</p>
+<p>但是上述假设在实际情况下并不成立. 尤其是在高维数据或者变量分布不均匀的情况下, 有些状态配置可能会频繁出现, 而另一些可能是很少甚至不出现. </p>
 
 
 
