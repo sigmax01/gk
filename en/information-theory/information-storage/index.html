@@ -100,6 +100,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1026,6 +1031,17 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    信息存储
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1035,6 +1051,41 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      背景
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      主动信息存储
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1441,6 +1492,32 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      背景
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      主动信息存储
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1474,7 +1551,16 @@
 
   <h1>信息存储</h1>
 
-
+<h2 id="_1">背景</h2>
+<p>试着考虑如下的问题: 我们需要从历史的变量中知晓多少数据才能帮助我们做出准确的预测. 在建立时间序列等动态模型的时候, 模型中需要存储多少的过去的信息, 以便正确描述该变量未来的动态?</p>
+<p>对于人来说, 我们可以用肉眼或者说是直觉根据过去的值判断下一个值.</p>
+<figure>
+<p><a class="glightbox" href="https://img.ricolxwz.io/6a17f69ad6bd7041781666e8eafdb028.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="https://img.ricolxwz.io/6a17f69ad6bd7041781666e8eafdb028.png" width="500" /></a></p>
+</figure>
+<p>如上面的图片, 需要根据已经给出的数据来预测<span class="arithmatex">\(x(n)\)</span>的下一个值. 在这个过程中, 做了什么假设呢? 例如, 我们可能假设这些值在后续的<span class="arithmatex">\(n\)</span>中继续保持不变, 或者呈现某种趋势/规律. 具体是从哪里获取信息来做出这个假设的呢? 例如, 我们可能会说基于所有的数据点保持不变这一信息, 做出了下一个值也不变的假设. 那么这个从过去获取信息的量是多少呢? </p>
+<h2 id="_2">主动信息存储</h2>
+<p>主动信息存储, Active Information Storage, 探讨的是变量的过去状态中平均存储了多少信息可以用于预测下一次观测值.</p>
+<p>整个过去状态对未来的贡献可以被表示为<span class="arithmatex">\(A_X = \lim_{k\rightarrow \infty}I(\bm{X}_n^{(k)};X_{n+1})\)</span>, 其中<span class="arithmatex">\(\bm{X}_n^{(k)}=\{X_{n-k+1}, ..., X_{n-1}, X_n\}\)</span>, 表示过去的<span class="arithmatex">\(k\)</span>个状态, <span class="arithmatex">\(k\)</span>趋近于无穷大表示我们考虑的是整个过去的状态, 最终得到的互信息表示的就是整个过去状态对未来的贡献. 或者也可以写为<span class="arithmatex">\(k\)</span>个过去状态对未来的贡献, 这个时候<span class="arithmatex">\(k\)</span>就不是趋近于无穷了, 是一个值, <span class="arithmatex">\(A_X(k)=I(\bm{X}_n^{(k)};X_{n+1})\)</span>. </p>
 
 
 
@@ -1497,7 +1583,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年10月16日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年10月20日</span>
   </span>
 
     
