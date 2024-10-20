@@ -119,4 +119,4 @@ Mitchell提出了如下对比:
 ![](https://img.ricolxwz.io/1ff61a6c75d9e4df8e1b1eb4dc22f575.png){ loading=lazy width='200' }
 </figure>
 
-对于平稳增长来说, $H'_{\mu \bm{X}}=H_{\mu X}$, 即条件
+对于平稳增长来说, $H'_{\mu \bm{X}}=H_{\mu X}$, 即条件熵和熵率是相同的, 随着时间步的增加, 每个时间步带来的平均不确定性(熵率)和当前时间步给定之前所有的时间步带来的不确定性(条件熵)趋于相等.
