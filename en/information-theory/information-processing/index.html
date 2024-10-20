@@ -1091,7 +1091,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#entropy-rate" class="md-nav__link">
     <span class="md-ellipsis">
       熵率
     </span>
@@ -1587,7 +1587,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#entropy-rate" class="md-nav__link">
     <span class="md-ellipsis">
       熵率
     </span>
@@ -1740,7 +1740,7 @@
 <p>假设我们在观察一个二进制序列, 如果这个序列完全随机, 那么没增加一个<span class="arithmatex">\(1\)</span>或者<span class="arithmatex">\(0\)</span>, 整个序列的块熵就会增长, 因为每个新状态都是不确定的, 包含新的信息. 但是, 如果序列是完全确定的, 或者有规律的, 那么块熵就不会增长, 因为你已经知道接下来是什么, 没什么新信息可以获得.</p>
 </details>
 <p>块熵<span class="arithmatex">\(H(X_1, X_2, ..., X_n)\)</span>是前<span class="arithmatex">\(n\)</span>个状态的联合熵, 它表示这<span class="arithmatex">\(n\)</span>个状态共同带来的总信息量. <span class="arithmatex">\(H(X_1, X_2, ..., X_n)=-\sum_{x_1, x_2, ..., x_n}p(x_1, x_2, ..., x_n)\log p(x_1, x_2, ..., x_n)\)</span>.</p>
-<h3 id="_4">熵率</h3>
+<h3 id="entropy-rate">熵率</h3>
 <p>熵率可以度量当块的长度增加的时候, <a href="#块熵">块熵</a>对于单位长度的增长速率. <span class="arithmatex">\(H'_{\mu \bm{X}}=\lim_{n\rightarrow \infty}\frac{1}{n}H(X_1, X_2, ..., X_n)\)</span>. 这表示随着块长度<span class="arithmatex">\(n\)</span>的增大, 单位长度上带来的平均不确定性. 或者也可以用<a href="#块向量">块向量</a>来表示<span class="arithmatex">\(H'_{\mu \bm{X}}=\lim_{n\rightarrow \infty}\frac{1}{n}H(X_n^{(n)})\)</span>, 更加简洁.</p>
 <details class="tip" open="open">
 <summary>Tip</summary>

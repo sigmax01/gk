@@ -1561,6 +1561,8 @@
 <h2 id="_2">主动信息存储</h2>
 <p>主动信息存储, Active Information Storage, 探讨的是变量的过去状态中平均存储了多少信息可以用于预测下一次观测值.</p>
 <p>整个过去状态对未来的贡献可以被表示为<span class="arithmatex">\(A_X = \lim_{k\rightarrow \infty}I(\bm{X}_n^{(k)};X_{n+1})\)</span>, 其中<span class="arithmatex">\(\bm{X}_n^{(k)}=\{X_{n-k+1}, ..., X_{n-1}, X_n\}\)</span>, 表示过去的<span class="arithmatex">\(k\)</span>个状态, <span class="arithmatex">\(k\)</span>趋近于无穷大表示我们考虑的是整个过去的状态, 最终得到的互信息表示的就是整个过去状态对未来的贡献. 或者也可以写为<span class="arithmatex">\(k\)</span>个过去状态对未来的贡献, 这个时候<span class="arithmatex">\(k\)</span>就不是趋近于无穷了, 是一个值, <span class="arithmatex">\(A_X(k)=I(\bm{X}_n^{(k)};X_{n+1})\)</span>. </p>
+<p><span class="arithmatex">\(A_X\)</span>还可以表示为<span class="arithmatex">\(A_X=H(X_{n+1})-H_{\mu X}\)</span>, 其中, <span class="arithmatex">\(H_{\mu X}\)</span>是<a href="/information-theory/information-processing/#entropy-rate">熵率</a>, 表示的是每个时间步所带来的平均熵, 或者说是单位块长度的熵增量; <span class="arithmatex">\(H(X_{n+1})\)</span>表示的是对未来状态的全部不确定性. 这个公式可以理解为去掉预测的不确定性后, 所带来的信息增益.</p>
+<p><span class="arithmatex">\(A_X(k)\)</span>可以表示在有限的历史长度<span class="arithmatex">\(k\)</span>下, 当前状态对未来状态的预测能力的平均值, 还可以被表示为<span class="arithmatex">\(A_X(k)=&lt;\log_2 (\frac{p(x_{n+1}|x_n^{(k)})}{p(x_{n+1})})&gt;\)</span>, 其中<span class="arithmatex">\(a_X(k)=\log_2 (\frac{p(x_{n+1}|x_n^{(k)})}{p(x_{n+1})})\)</span>, 表示的是在特定过去状态<span class="arithmatex">\(x_n^{(k)}\)</span>下, 对未来状态<span class="arithmatex">\(x_{n+1}\)</span>的贡献(pointwise).</p>
 
 
 
