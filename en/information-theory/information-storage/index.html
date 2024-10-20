@@ -1091,6 +1091,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="如何设置历史长度">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ragwitz" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ragwitz准则
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ais" class="md-nav__link">
+    <span class="md-ellipsis">
+      最大化偏差矫正的AIS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1539,6 +1563,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="如何设置历史长度">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ragwitz" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ragwitz准则
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ais" class="md-nav__link">
+    <span class="md-ellipsis">
+      最大化偏差矫正的AIS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1605,6 +1653,11 @@
 <p><span class="arithmatex">\(\bm{X}_n^{(k)}=\{\}X_{n-k+1}, ..., X_{n-1}, X_n\)</span>是一种<span class="arithmatex">\(X\)</span>的过去状态的<a href="https://blog.csdn.net/u012267725/article/details/77828974">Takens嵌入</a>. 也可以是延迟嵌入<span class="arithmatex">\(\bm{X}_n^{(k, \tau)}=\{X_{n-(k-1)\tau}, ..., X_{n-\tau}, X_n\}\)</span>, 即每个过去的值之间间隔<span class="arithmatex">\(\tau\)</span>个时间点.</p>
 <p>我们的目的是找到最佳的<span class="arithmatex">\(k\)</span>, 使得能够最佳地预测下一个值<span class="arithmatex">\(X_{n+1}\)</span>. 也就是说<span class="arithmatex">\(p(X_{n+1}|\bm{x}_n^{(k)}, \bm{x}_{n-k})=p(x_{n+1}|\bm{x}_n^{(k)})\)</span>, 意思就是说已经有了过去<span class="arithmatex">\(k\)</span>个时刻的信息<span class="arithmatex">\(\bm{x}_n^{(k)}\)</span>, 那么进一步增加更早的时间点的信息<span class="arithmatex">\(\bm{x}_{n-k}\)</span>不会再对预测未来的状态产生影响.</p>
 <p>一方面, 我们希望<span class="arithmatex">\(k\)</span>尽可能大, 以捕获所有的潜在记忆; 但是另一方面, 增加<span class="arithmatex">\(k\)</span>会存在过度采样的风险. 理想状态下, 存在一个"甜蜜点", sweet spot. 如果我们增加历史值, 冗余的信息没有帮助, 或者由于数据不足, 无法验证过去的信息对当前的影响.</p>
+<p>主要有三种方法设置历史长度.</p>
+<h4 id="ragwitz">Ragwitz准则</h4>
+<p>Ragwitz准则用于最小化系统预测的误差.</p>
+<p>具体做法是, 对于每一个Takens嵌入向量<span class="arithmatex">\(\bm{x}_n^{(k)}\)</span>, 在嵌入空间中寻找它的<span class="arithmatex">\(m\)</span>个最近邻向量, 也就是与当前嵌入向量最接近的<span class="arithmatex">\(m\)</span>个嵌入向量. 对于每个找到的近邻向量, 都对未来时刻的值<span class="arithmatex">\(x_{n+1}\)</span>进行预测, 然后对<span class="arithmatex">\(m\)</span>个预测结果取平均. 平均的结果和实际的<span class="arithmatex">\(x_{n+1}\)</span>值进行比较, 计算它们之间的差异, 这就是误差. 对于所有不同长度<span class="arithmatex">\(k\)</span>, 不同延迟<span class="arithmatex">\(\tau\)</span>的嵌入向量走一遍上述流程, 使得误差最小化.</p>
+<h4 id="ais">最大化偏差矫正的AIS</h4>
 
 
 
