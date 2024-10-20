@@ -1081,6 +1081,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="主动信息存储">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      如何设置历史长度
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1514,6 +1529,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="主动信息存储">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      如何设置历史长度
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1563,6 +1593,18 @@
 <p>整个过去状态对未来的贡献可以被表示为<span class="arithmatex">\(A_X = \lim_{k\rightarrow \infty}I(\bm{X}_n^{(k)};X_{n+1})\)</span>, 其中<span class="arithmatex">\(\bm{X}_n^{(k)}=\{X_{n-k+1}, ..., X_{n-1}, X_n\}\)</span>, 表示过去的<span class="arithmatex">\(k\)</span>个状态, <span class="arithmatex">\(k\)</span>趋近于无穷大表示我们考虑的是整个过去的状态, 最终得到的互信息表示的就是整个过去状态对未来的贡献. 或者也可以写为<span class="arithmatex">\(k\)</span>个过去状态对未来的贡献, 这个时候<span class="arithmatex">\(k\)</span>就不是趋近于无穷了, 是一个值, <span class="arithmatex">\(A_X(k)=I(\bm{X}_n^{(k)};X_{n+1})\)</span>. </p>
 <p><span class="arithmatex">\(A_X\)</span>还可以表示为<span class="arithmatex">\(A_X=H(X_{n+1})-H_{\mu X}\)</span>, 其中, <span class="arithmatex">\(H_{\mu X}\)</span>是<a href="/information-theory/information-processing/#entropy-rate">熵率</a>, 表示的是每个时间步所带来的平均熵, 或者说是单位块长度的熵增量; <span class="arithmatex">\(H(X_{n+1})\)</span>表示的是对未来状态的全部不确定性. 这个公式可以理解为去掉预测的不确定性后, 所带来的信息增益.</p>
 <p><span class="arithmatex">\(A_X(k)\)</span>可以表示在有限的历史长度<span class="arithmatex">\(k\)</span>下, 当前状态对未来状态的预测能力的平均值, 还可以被表示为<span class="arithmatex">\(A_X(k)=&lt;\log_2 (\frac{p(x_{n+1}|x_n^{(k)})}{p(x_{n+1})})&gt;\)</span>, 其中<span class="arithmatex">\(a_X(k)=\log_2 (\frac{p(x_{n+1}|x_n^{(k)})}{p(x_{n+1})})\)</span>, 表示的是在特定过去状态<span class="arithmatex">\(x_n^{(k)}\)</span>下, 对未来状态<span class="arithmatex">\(x_{n+1}\)</span>的贡献(pointwise).</p>
+<p>主动信息存储能够捕捉系统中的复杂的, 非线性的变化. 而<a href="https://zh.wikipedia.org/wiki/%E8%87%AA%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0">自相关性</a>只是从每个过去的值中单独提取出来的线形部分.</p>
+<p>那么, 这个<span class="arithmatex">\(A_X\)</span>能够捕获哪些信息呢?</p>
+<ul>
+<li>在动态中的主动存储: 系统在动态变化时主动保留信息, 而不是被动地受环境影响. 例如, 在自驾车系统中, 系统会主动记录前方障碍物的信息, 并利用这些信息在未来做出避让决策. 而被动存储是系统被动地保存信息, 不会主动选择或分析, 这种存储不考虑是否对未来有用, 只是机械地记录, 例如一个安保摄像头会被动地记录下所有经过的人和车, 无论这些信息是否有用, 它都不会进行任何处理, 只是把信息保存下来</li>
+<li>内部因果信息: 保存的是系统内部各部分之间的因果关系, 也就是记录之前的状态如何导致当前状态, 以便推导出未来的状态</li>
+<li>分布式信息: 保存的是系统内部不同部分相互影响的信息, 通过网络或者反馈回路, 多个节点协作存储和共享信息, 例如, 递归神经网络</li>
+<li>输入驱动存储: 系统根据外部输入的变化存储的信息</li>
+</ul>
+<h3 id="_3">如何设置历史长度</h3>
+<p><span class="arithmatex">\(\bm{X}_n^{(k)}=\{\}X_{n-k+1}, ..., X_{n-1}, X_n\)</span>是一种<span class="arithmatex">\(X\)</span>的过去状态的<a href="https://blog.csdn.net/u012267725/article/details/77828974">Takens嵌入</a>. 也可以是延迟嵌入<span class="arithmatex">\(\bm{X}_n^{(k, \tau)}=\{X_{n-(k-1)\tau}, ..., X_{n-\tau}, X_n\}\)</span>, 即每个过去的值之间间隔<span class="arithmatex">\(\tau\)</span>个时间点.</p>
+<p>我们的目的是找到最佳的<span class="arithmatex">\(k\)</span>, 使得能够最佳地预测下一个值<span class="arithmatex">\(X_{n+1}\)</span>. 也就是说<span class="arithmatex">\(p(X_{n+1}|\bm{x}_n^{(k)}, \bm{x}_{n-k})=p(x_{n+1}|\bm{x}_n^{(k)})\)</span>, 意思就是说已经有了过去<span class="arithmatex">\(k\)</span>个时刻的信息<span class="arithmatex">\(\bm{x}_n^{(k)}\)</span>, 那么进一步增加更早的时间点的信息<span class="arithmatex">\(\bm{x}_{n-k}\)</span>不会再对预测未来的状态产生影响.</p>
+<p>一方面, 我们希望<span class="arithmatex">\(k\)</span>尽可能大, 以捕获所有的潜在记忆; 但是另一方面, 增加<span class="arithmatex">\(k\)</span>会存在过度采样的风险. 理想状态下, 存在一个"甜蜜点", sweet spot. 如果我们增加历史值, 冗余的信息没有帮助, 或者由于数据不足, 无法验证过去的信息对当前的影响.</p>
 
 
 
