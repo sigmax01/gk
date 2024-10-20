@@ -1746,11 +1746,11 @@
 <summary>Tip</summary>
 <p>在时间序列中, 你可以将其理解为每一个时间步的所带来的平均熵. 举一个例子, 熵表示的是整个天气时间序列中天气状况的不确定性, 例如前三天的天气联合熵<span class="arithmatex">\(H\)</span>可能是<span class="arithmatex">\(H(X_1, X_2, X_3)=1.5\)</span>. 熵率<span class="arithmatex">\(H'\)</span>表示平均每天(每个时间步)天气的平均不确定性, 即<span class="arithmatex">\(\frac{1.5}{3} = 0.5\)</span>, 表示平均每天带来了<span class="arithmatex">\(0.5\)</span>比特的信息量.</p>
 </details>
-<p>熵率不仅度量块长度变化的熵增量, 也可以度量下一个随机变量在给定之前变量的情况下的熵增量. <span class="arithmatex">\(H_{\mu \bm{X}}=\lim_{n\rightarrow \infty}\frac{1}{n}H(X_n|X_1, X_2, ..., X_{n-1})\)</span>. 同样也可以用<a href="#块向量">块向量</a>来表示<span class="arithmatex">\(H_{\mu \bm{X}}=\lim_{n\rightarrow \infty}H(X_n|X_{n-1}^{(n-1)})\)</span>.</p>
+<p>不仅仅是熵率可以度量块长度变化的熵增量, 条件熵也可以度量下一个随机变量在给定之前变量的情况下的熵增量. <span class="arithmatex">\(H_{\mu \bm{X}}=\lim_{n\rightarrow \infty}\frac{1}{n}H(X_n|X_1, X_2, ..., X_{n-1})\)</span>. 同样也可以用<a href="#块向量">块向量</a>来表示<span class="arithmatex">\(H_{\mu \bm{X}}=\lim_{n\rightarrow \infty}H(X_n|X_{n-1}^{(n-1)})\)</span>.</p>
 <figure>
 <p><a class="glightbox" href="https://img.ricolxwz.io/1ff61a6c75d9e4df8e1b1eb4dc22f575.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="https://img.ricolxwz.io/1ff61a6c75d9e4df8e1b1eb4dc22f575.png" width="200" /></a></p>
 </figure>
-<p>对于平稳增长来说, <span class="arithmatex">\(H'_{\mu \bm{X}}=H_{\mu X}\)</span>.</p>
+<p>对于平稳增长来说, <span class="arithmatex">\(H'_{\mu \bm{X}}=H_{\mu X}\)</span>, 即条件熵和熵率是相同的, 随着时间步的增加, 每个时间步带来的平均不确定性(熵率)和当前时间步给定之前所有的时间步带来的不确定性(条件熵)趋于相等.</p>
 
 
 
