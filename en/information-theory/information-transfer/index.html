@@ -1095,6 +1095,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      传递熵
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1498,6 +1507,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      传递熵
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1549,6 +1567,11 @@
 <li>根据过去信息做出预测: 你需要根据目标变量过去的信息和你对系统的理解, 对目标的下一个状态做出预测. 并且, 用<span class="arithmatex">\(1\)</span>到<span class="arithmatex">\(10\)</span>来打分记录你的确幸程度✅</li>
 <li>结合源变量更新预测: 在你基于目标变量的过去状态做出初步预测后, 结合源变量的状态来更新你的预测, 同样用<span class="arithmatex">\(1\)</span>到<span class="arithmatex">\(10\)</span>来打分记录你的确幸程度✅</li>
 </ul>
+<p>思考源变量在什么情况下对目标变量的预测最有帮助, 在哪些情况下帮助较少.</p>
+<h2 id="_2">传递熵</h2>
+<p>传递熵, Transfer Entropy, TE, 衡量了在已经考虑了目标过程<span class="arithmatex">\(X\)</span>的过去状态<span class="arithmatex">\(\bm{X}_n^{(k)}=\{X_{n-k+1}, ..., X_{n-1}, X_n\}\)</span>的情况下, 源过程<span class="arithmatex">\(Y\)</span>中的观察值<span class="arithmatex">\(Y_n\)</span>能够在多大程度上帮助预测目标过程<span class="arithmatex">\(X\)</span>的下一个状态<span class="arithmatex">\(X_{n+1}\)</span>. 换句话说, TE描述的是在已知目标变量过去状态的条件下, 源变量过去的信息对预测目标变量未来状态所提供的额外帮助.</p>
+<p>传递熵的计算公式为<span class="arithmatex">\(T_{Y\rightarrow X}=\lim_{k\rightarrow \infty}I(Y_n;X_{n+1}|\bm{x}_n^{(k)})\)</span>. 或者考虑<span class="arithmatex">\(k\)</span>个目标变量的历史记录<span class="arithmatex">\(T_{Y\rightarrow X}(k)=I(Y_n;X_{n+1}|\bm{x}_n^{(k)})\)</span>. 它还可以表示为<span class="arithmatex">\(T_{Y\rightarrow X}(k)=&lt;\log_2\frac{p(x_{n+1}|\bm{x}_n^{(k)}, y_n)}{p(x_{n+1}|\bm{x}_n^{(k)})}&gt;\)</span>. <span class="arithmatex">\(t_{Y\rightarrow X}(k)=\log_2\frac{p(x_{n+1}|\bm{x}_n^{(k)}, y_n)}{p(x_{n+1}|\bm{x}_n^{(k)})}\)</span>.</p>
+<p>那么, 如果我们不考虑目标过程<span class="arithmatex">\(X\)</span>的过去状态<span class="arithmatex">\(\bm{X}_n^{(k)}\)</span>, 只考虑源过程的<span class="arithmatex">\(Y_n\)</span>呢? 即<span class="arithmatex">\(I(Y_n;X_{n+1}|\bm{X}_n^{(k)})\)</span>和<span class="arithmatex">\(I(Y_n;X_{n+1})\)</span>的区别在哪里. 首先, 两个都是具有方向性的(?个人看法后者是没有方向性的), 但是前者的条件性使得TE具有动态性. 而且条件化会对互信息的值产生两种不同的影响: </p>
 
 
 
