@@ -1,6 +1,6 @@
 ---
 title: 信息论:信息传递
-comments: false
+comments: true
 ---
 
 ## 背景
@@ -94,3 +94,20 @@ TE和存储信息的关系可以用下图来表示:
     <figure markdown='1'>
     ![](https://img.ricolxwz.io/b0dcb14f8456a3a5d15f59f0198158a0.png){ loading=lazy width='180' }
     </figure>
+
+## 信息回归
+
+当我们考虑目标变量的未来状态$X_{n+1}$的时候, 有两个信源$Y_n$和$Z_n$(后者是选择性的, 可有可无), 再加上历史信息$\bm{X}_n^{(k)}$, 我们能够分解$X_{n+1}$的信息来源. 
+
+<figure markdown='1'>
+![](https://img.ricolxwz.io/55d4376cb94e5e341d9ed3382f3b3329.png){ loading=lazy width='500' }
+</figure>
+
+其中, 主要的概念有:
+
+- AIS: 存储信息
+- Pairwise Transfer Entropy: 两个变量之间的传递熵
+- Collective Transfer Entropy: 是从多个来源(如$Y_n$和$Z_n$)共同传递到目标变量的传递熵
+- Conditional Transfer Entropy: 是相对于某个条件下的传递熵
+
+可以看到, $H(X_{n+1})$拆分的方式有很多种.
