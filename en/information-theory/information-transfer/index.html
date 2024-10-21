@@ -1572,6 +1572,10 @@
 <p>传递熵, Transfer Entropy, TE, 衡量了在已经考虑了目标过程<span class="arithmatex">\(X\)</span>的过去状态<span class="arithmatex">\(\bm{X}_n^{(k)}=\{X_{n-k+1}, ..., X_{n-1}, X_n\}\)</span>的情况下, 源过程<span class="arithmatex">\(Y\)</span>中的观察值<span class="arithmatex">\(Y_n\)</span>能够在多大程度上帮助预测目标过程<span class="arithmatex">\(X\)</span>的下一个状态<span class="arithmatex">\(X_{n+1}\)</span>. 换句话说, TE描述的是在已知目标变量过去状态的条件下, 源变量过去的信息对预测目标变量未来状态所提供的额外帮助.</p>
 <p>传递熵的计算公式为<span class="arithmatex">\(T_{Y\rightarrow X}=\lim_{k\rightarrow \infty}I(Y_n;X_{n+1}|\bm{x}_n^{(k)})\)</span>. 或者考虑<span class="arithmatex">\(k\)</span>个目标变量的历史记录<span class="arithmatex">\(T_{Y\rightarrow X}(k)=I(Y_n;X_{n+1}|\bm{x}_n^{(k)})\)</span>. 它还可以表示为<span class="arithmatex">\(T_{Y\rightarrow X}(k)=&lt;\log_2\frac{p(x_{n+1}|\bm{x}_n^{(k)}, y_n)}{p(x_{n+1}|\bm{x}_n^{(k)})}&gt;\)</span>. <span class="arithmatex">\(t_{Y\rightarrow X}(k)=\log_2\frac{p(x_{n+1}|\bm{x}_n^{(k)}, y_n)}{p(x_{n+1}|\bm{x}_n^{(k)})}\)</span>.</p>
 <p>那么, 如果我们不考虑目标过程<span class="arithmatex">\(X\)</span>的过去状态<span class="arithmatex">\(\bm{X}_n^{(k)}\)</span>, 只考虑源过程的<span class="arithmatex">\(Y_n\)</span>呢? 即<span class="arithmatex">\(I(Y_n;X_{n+1}|\bm{X}_n^{(k)})\)</span>和<span class="arithmatex">\(I(Y_n;X_{n+1})\)</span>的区别在哪里. 首先, 两个都是具有方向性的(?个人看法后者是没有方向性的), 但是前者的条件性使得TE具有动态性. 而且条件化会对互信息的值产生两种不同的影响: </p>
+<ul>
+<li>减少冗余信息: 互信息度量的是两个随机变量之间的总体依赖性, 然而, 这种依赖性可能包含冗余信息, 例如这两个变量通过第三个变量共享的信息, 条件互信息通过引入一个条件变量来量化两个变量在给定第三个变量的情况下的依赖关系, 从而排除了由该条件变量所引入的冗余信息. 在上述的例子中, 可以看到, 目标变量其实有相当一大部分都是由自身之前的状态决定的, 因此<span class="arithmatex">\(Y_n\)</span>提供的信息在相当大的程度上是多余, 而条件互信息更加专注于源状态<span class="arithmatex">\(Y_n\)</span>提供的额外信息</li>
+<li>增加协同效应: 尽管目标历史<span class="arithmatex">\(\bm{X}_n^{(k)}\)</span>对<span class="arithmatex">\(X_{n+1}\)</span>有强烈的影响, 但是源过程<span class="arithmatex">\(Y_n\)</span>能够提供无法由目标历史解释的额外预测能力. 这表明源过程在系统中的作用是能够和目标历史协作, 产生额外的信息增益</li>
+</ul>
 
 
 
