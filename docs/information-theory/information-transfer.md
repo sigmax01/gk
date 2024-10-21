@@ -86,4 +86,11 @@ TE和存储信息的关系可以用下图来表示:
 
 引入条件$Z$产生的影响主要有:
 
-- 
+- 冗余去除: 如果源变量$Y$和条件变量$Z$之间共享某些信息, 这种冗余信息会被条件化消除
+    <figure markdown='1'>
+    ![](https://img.ricolxwz.io/ea71b0c1bb9bd1601d1d87a06bf026eb.png){ loading=lazy width='280' }
+    </figure>
+- 协同效应: 当$Y$和$Z$共同作用影响$X$的时候, 能够捕捉到这种协同信息
+    <figure markdown='1'>
+    ![](https://img.ricolxwz.io/b0dcb14f8456a3a5d15f59f0198158a0.png){ loading=lazy width='180' }
+    </figure>
