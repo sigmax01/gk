@@ -1607,7 +1607,7 @@
 </figure>
 <p>左侧是源变量, 右侧是目标变量. 在这种情况下, 目标变量只是简单地复制源变量的消息. 源变量的消息状态的转变符合泊松分布. 将源变量记为<span class="arithmatex">\(s\)</span>, 目标变量记为<span class="arithmatex">\(t\)</span>, 有<span class="arithmatex">\(t_{n+1}=s_n\)</span>.</p>
 <figure>
-<p><a class="glightbox" href="https://img.ricolxwz.io/dab1a772c5a6d3dc55345d9dfb1465ea.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="https://img.ricolxwz.io/dab1a772c5a6d3dc55345d9dfb1465ea.png" width="200" /></a></p>
+<p><a class="glightbox" href="https://img.ricolxwz.io/dab1a772c5a6d3dc55345d9dfb1465ea.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="https://img.ricolxwz.io/dab1a772c5a6d3dc55345d9dfb1465ea.png" width="250" /></a></p>
 </figure>
 <p>由于<span class="arithmatex">\(\lambda_1, \lambda_2 &lt;&lt; 0.5\)</span>, 且<span class="arithmatex">\(\lambda_1 &lt; \lambda_0\)</span>, 所以原变量的状态基本上是<span class="arithmatex">\(0\)</span>.</p>
 <p>现在, 你需要建模目标变量, 预测目标变量的下一个状态, 从两个角度出发:</p>
@@ -1631,6 +1631,12 @@
 <p>图中, 整个椭圆表示的是总体的互信息量, 表示源变量<span class="arithmatex">\(Y\)</span>和目标变量的过去状态<span class="arithmatex">\(M\)</span>共同对目标未来状态提供的信息. AIS对应的是白色部分, <span class="arithmatex">\(\{M\}\)</span>表示的是目标变量过去的信息, 就是存储信息. 可以看到, 存储信息<span class="arithmatex">\(\{M\}\)</span>是和源变量对于目标变量的贡献<span class="arithmatex">\(\{Y\}\)</span>是有重叠部分的, 即<span class="arithmatex">\(\{M\}\{Y\}\)</span>, 这个重叠部分就是被条件互信息中的条件给消除掉了, 是冗余信息. </p>
 <p>传递熵对应的是整个绿色部分, 可以看到, 它不仅仅包含来自源变量的信息, 还包含源变量和目标变量过去状态共同作用的协同信息<span class="arithmatex">\(\{MY\}\)</span>. </p>
 <h3 id="_4">和因果效应的区别</h3>
+<p>因果效应是关于干预的效果. 意思是, 如果你改变了某个变量, 比如<span class="arithmatex">\(Y\)</span>, 会不会导致另一个变量, 比如<span class="arithmatex">\(X\)</span>发生变化. 这是通过主动干预(如让一组人喝咖啡, 另一组人不喝咖啡, 然后观察他们的睡眠质量变化)来确定因果关系的, 重点在于一个变量的变化是否导致了另一个变量的变化. 信息传递关注的是信息如何流动. 并不需要对系统进行干预, 而是观察两个变量在时间上的变化关系, 看一个变量是否能传递信息给另一个变量.</p>
+<p>如下面的这个例子:</p>
+<figure>
+<p><a class="glightbox" href="https://img.ricolxwz.io/33fbfbc509e98244e8dd31f7e903cc30.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="https://img.ricolxwz.io/33fbfbc509e98244e8dd31f7e903cc30.png" width="280" /></a></p>
+</figure>
+<p>过程1中<span class="arithmatex">\(Y\)</span>和<span class="arithmatex">\(X\)</span>的值交替变化, 过程2中<span class="arithmatex">\(Y\)</span>和<span class="arithmatex">\(X\)</span>的值各自独立变化. 因果效应分析会认为过程1中<span class="arithmatex">\(Y\)</span>有可能影响X, 过程2可能没有影响. 但是信息传递模型可能认为这两个过程都没有真正的信息传递, 更多的是参考自己的历史信息, 即存储信息.</p>
 
 
 
