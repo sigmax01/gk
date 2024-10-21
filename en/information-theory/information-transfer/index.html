@@ -1128,6 +1128,30 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      条件传递熵
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="条件传递熵">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      额外条件的影响
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1564,6 +1588,30 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      条件传递熵
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="条件传递熵">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      额外条件的影响
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1645,6 +1693,14 @@
 <li>源嵌入: 这里我们对刚才的公式做一个扩展, 我们的传递上不仅仅以来源变量当前的值, 与目标变量历史嵌入类似, 我们也有<span class="arithmatex">\(l\)</span>阶源变量目标历史信息, 以及延迟<span class="arithmatex">\(\tau_Y\)</span>, <span class="arithmatex">\(T_{Y\rightarrow X}(k, l, \tau_X, \tau_Y)=I(\bm{Y}_n^{(l, \tau_Y)}; X_{n+1}|\bm{X}_n^{(k, \tau_X)})\)</span></li>
 <li>设置源-目标延迟: 其实刚刚的那个公式还是经过简化的..., 还有一个源-目标延迟可供设置. 这个延迟<span class="arithmatex">\(u\)</span>表示源变量的历史状态和目标变量的未来状态之间的延迟. 例如在某些物理系统或者生物系统中, 某一过程的变化不会立即影响另一个过程, 而是需要经过一段时间. <span class="arithmatex">\(T_{Y\rightarrow X}(k, l, \tau_X, \tau_Y, u)=I(\bm{Y}_{n+1-u}^{(l, \tau_Y)}; X_{n+1}|\bm{X}_n^{(k, \tau_X)})\)</span></li>
 </ol>
+<h2 id="_5">条件传递熵</h2>
+<p>条件传递熵回答了这样一个问题: 在考虑目标变量<span class="arithmatex">\(X\)</span>的过去状态<span class="arithmatex">\(\bm{X}_n^{(k)}\)</span>和另一个过程<span class="arithmatex">\(X\)</span>的观测<span class="arithmatex">\(Z_n\)</span>的情况下, 源变量<span class="arithmatex">\(Y_n\)</span>中有多少信息能够传递给目标变量<span class="arithmatex">\(X\)</span>的未来状态<span class="arithmatex">\(X_{n+1}\)</span>.</p>
+<p>其公式为<span class="arithmatex">\(T_{Y\rightarrow X|Z}=\lim_{k\rightarrow \infty}I(Y_n;X_{n+1}|\bm{X}_n^{(k)}, Z_n)\)</span>. 有限嵌入的公式为<span class="arithmatex">\(T_{Y\rightarrow X|Z}(k)=I(Y_n;X_{n+1}|\bm{X}_n^{(k)}, Z_n)\)</span>. 概率表示为<span class="arithmatex">\(T_{Y \to X | Z}(k) = &lt;\log_2 \frac{p(x_{n+1} \mid x_n^{(k)}, y_n, z_n)}{p(x_{n+1} \mid x_n^{(k)}, z_n)}&gt;\)</span>, <span class="arithmatex">\(t_{Y \to X | Z}(k) = \log_2 \frac{p(x_{n+1} \mid x_n^{(k)}, y_n, z_n)}{p(x_{n+1} \mid x_n^{(k)}, z_n)}\)</span>. 同样的, 也可以添加一众延迟等参数...</p>
+<h3 id="_6">额外条件的影响</h3>
+<p>引入条件<span class="arithmatex">\(Z\)</span>产生的影响主要有:</p>
+<ul>
+<li></li>
+</ul>
 
 
 
