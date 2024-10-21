@@ -23,7 +23,7 @@
     - [x] [自组织](/information-theory/self-organisation)
     - [x] [信息处理](/information-theory/information-processing)
     - [x] [信息存储](/information-theory/information-storage)
-    - [ ] [信息传递](/information-theory/information-transfer)
+    - [x] [信息传递](/information-theory/information-transfer)
 - [ ] 版本控制
     - [x] [区域和状态](/version-control/area-and-status)
     - [x] [添加和提交](/version-control/add-and-commit)
