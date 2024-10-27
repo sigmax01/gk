@@ -64,6 +64,8 @@ comments: true
 |第七周|[应用开发](/database/app-dev)|
 |第八周|[规范化](/database/normalization)|
 |第九周|[事务](/database/transaction)|
+|第十周|[存储与索引](database/storage-indexing)|
+|第十一周|[查询处理](database/query-processing)|
 
 ### 学习资源
 

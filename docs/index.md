@@ -14,6 +14,8 @@
     - [x] [应用开发](database/app-dev)
     - [x] [规范化](database/normalization)
     - [x] [事务](/database/transaction)
+    - [ ] [存储与索引](/database/storage-indexing)
+    - [ ] [查询处理](/database/query-processing)
 - [ ] [信息论](/information-theory/index)
     - [x] [不确定性和熵](information-theory/uncertainty-and-entropy)
     - [x] [什么是信息](information-theory/what-is-information)
@@ -24,6 +26,7 @@
     - [x] [信息处理](/information-theory/information-processing)
     - [x] [信息存储](/information-theory/information-storage)
     - [x] [信息传递](/information-theory/information-transfer)
+    - [ ] [有效网络推断](/information-theory/effective-network-inference)
 - [ ] 版本控制
     - [x] [区域和状态](/version-control/area-and-status)
     - [x] [添加和提交](/version-control/add-and-commit)

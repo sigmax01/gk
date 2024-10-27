@@ -63,6 +63,7 @@ comments: true
 |第九周|[信息处理](/information-theory/information-processing)|
 |第十周|[信息存储](/information-theory/information-storage)|
 |第十一周|[信息传递](/information-theory/information-transfer)|
+|第十二周|[有效网络推断](/information-theory/effective-network-inference)|
 
 ### 备注
 
