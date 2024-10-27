@@ -12,13 +12,13 @@
         <meta name="author" content="ricolxwz">
       
       
-        <link rel="canonical" href="https://gk.ricolxwz.de/database/relational-algebra/">
+        <link rel="canonical" href="https://gk.ricolxwz.de/database/storage-indexing/">
       
       
-        <link rel="prev" href="../relational-model/">
+        <link rel="prev" href="../transaction/">
       
       
-        <link rel="next" href="../sql/">
+        <link rel="next" href="../query-processing/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>数据库:关系代数 - 基石库</title>
+        <title>数据库:存储与索引 - 基石库</title>
       
     
     
@@ -100,11 +100,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#_1" class="md-skip">
-          跳转至
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -156,7 +151,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              数据库:关系代数
+              数据库:存储与索引
             
           </span>
         </div>
@@ -219,7 +214,7 @@
           </li>
         
           <li class="md-select__item">
-            <a href="../../en/database/relational-algebra/" hreflang="en" class="md-select__link">
+            <a href="../../en/database/storage-indexing/" hreflang="en" class="md-select__link">
               English
             </a>
           </li>
@@ -650,28 +645,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    关系代数
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../relational-algebra/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -680,129 +657,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      运算符
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="运算符">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      选择条件
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      笛卡尔积
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="笛卡尔积">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#条件连接" class="md-nav__link">
-    <span class="md-ellipsis">
-      条件连接
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="条件连接">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      等值连接
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="等值连接">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      自然连接
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      集合
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      重命名
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#RA在RDBMS中的角色" class="md-nav__link">
-    <span class="md-ellipsis">
-      RA在RDBMS中的角色
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -938,10 +792,17 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../storage-indexing/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -950,6 +811,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -1648,119 +1510,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      运算符
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="运算符">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      选择条件
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      笛卡尔积
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="笛卡尔积">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#条件连接" class="md-nav__link">
-    <span class="md-ellipsis">
-      条件连接
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="条件连接">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      等值连接
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="等值连接">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      自然连接
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      集合
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      重命名
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#RA在RDBMS中的角色" class="md-nav__link">
-    <span class="md-ellipsis">
-      RA在RDBMS中的角色
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1776,7 +1525,7 @@
                   
 
   
-    <a href="https://github.com/ricolxwz/gk/edit/master/docs/database/relational-algebra.md" title="编辑此页" class="md-content__button md-icon">
+    <a href="https://github.com/ricolxwz/gk/edit/master/docs/database/storage-indexing.md" title="编辑此页" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1785,724 +1534,16 @@
     
       
     
-    <a href="https://github.com/ricolxwz/gk/raw/master/docs/database/relational-algebra.md" title="查看本页的源代码" class="md-content__button md-icon">
+    <a href="https://github.com/ricolxwz/gk/raw/master/docs/database/storage-indexing.md" title="查看本页的源代码" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-  <h1>关系代数</h1>
+  <h1>存储与索引</h1>
 
-<p>关系代数(Relational Algebra)是一种基于集合论的数学理论, 用于对关系数据库中的数据进行建模和查询. 它由埃德加·F·科德(Edgar F. Codd)提出, 提供了一套运算符, 这些运算符可以对一个或者多个关系进行操作, 生成新的关系作为结果. </p>
-<h2 id="_1">运算符</h2>
-<p>关系代数的运算符包括:</p>
-<ul>
-<li>一元运算符, Unary Operator<ul>
-<li>选择(σ): 从关系中选择符合条件的元组</li>
-<li>投影(π): 从关系中选择某些列</li>
-<li>重命名(ρ): 重命名属性或者关系</li>
-</ul>
-</li>
-<li>二元运算符, Binary Operator<ul>
-<li>连接操作符 <ul>
-<li>笛卡尔积(×): 将两个关系中所有元组组合起来, 形成一个新的关系</li>
-<li>连接(⋈): 将两个关系中匹配的元组组合起来, 通常会基于共同的属性进行匹配</li>
-</ul>
-</li>
-<li>集合操作符<ul>
-<li>并(∪): 返回关系A和B中所有元素的并集, 包含A和B中所有的元素, 不重复</li>
-<li>交(∩): 返回关系A和B中同时存在的元组</li>
-<li>差(-): 返回只在关系A中存在而不在关系B中存在的元组</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>这些运算符可以组合使用, 以表达更加复杂的查询. 关系代数描述了得到答案的详细步骤, 因此它是一种过程式语言. 元组演算相比之下是一种声明式语言, 描述的是最终状态的结果. SQL是声明式的. </p>
-<p>其实, 只有6种基本运算符, 分别是σ, π, ×, ∪, -, ρ. 其他的都是衍生的运算符, 如⋈Θ, 其实可以表示为R ⋈Θ S = σΘ(R×S)...</p>
-<h3 id="_2">选择条件</h3>
-<p>在数据查询和筛选中, 选择条件通常是由许多个条件组合而成的布尔表达式. 这些条件用于过滤数据集, 以便根据特定的标准选择数据. 每个术语可以是以下两种形式之一: </p>
-<ul>
-<li>属性和常量之间的比较: <code>attribute op constant</code></li>
-<li>属性之间的比较: <code>attribute1 op attribute2</code></li>
-</ul>
-<p>可用的运算符包括:</p>
-<ul>
-<li><code>&lt;</code>: 小于</li>
-<li><code>&gt;</code>: 大于</li>
-<li><code>&lt;=</code>: 小于或等于 </li>
-<li><code>&gt;=</code>: 大于或等于 </li>
-<li><code>≠</code>: 不等于</li>
-<li><code>=</code>: 等于</li>
-</ul>
-<p>选择条件可以通过布尔运算符进行组合, 以便形成更加复杂的查询条件:</p>
-<ul>
-<li><code>^</code>: AND</li>
-<li><code>∨</code>: OR</li>
-</ul>
-<h3 id="_3">笛卡尔积</h3>
-<p>笛卡尔积, 又可以叫作Cartesian Product. 可以被表示为RxS = {ts|t∈R∧s∈S}. 也就是说, R中的每一个元组都会和S中的每一个元组配对. 如<a href="https://img.ricolxwz.io/41fb587e0c524889d69f3d1782c3f266.png">图</a>.</p>
-<details class="example" open="open">
-<summary>例子</summary>
-<p>现在, 有两张表:</p>
-<table>
-<thead>
-<tr>
-<th>EmpID</th>
-<th>EmpName</th>
-<th>DeptID</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>Alice</td>
-<td>10</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Bob</td>
-<td>20</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Charlie</td>
-<td>10</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>DeptID</th>
-<th>DeptName</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>10</td>
-<td>HR</td>
-</tr>
-<tr>
-<td>20</td>
-<td>Engineering</td>
-</tr>
-</tbody>
-</table>
-<p>对这两张表进行笛卡尔积操作Employees×Departments, 得到的表为:</p>
-<table>
-<thead>
-<tr>
-<th>EmpID</th>
-<th>EmpName</th>
-<th>DeptID</th>
-<th>DeptID</th>
-<th>DeptName</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>Alice</td>
-<td>10</td>
-<td>10</td>
-<td>HR</td>
-</tr>
-<tr>
-<td>1</td>
-<td>Alice</td>
-<td>10</td>
-<td>20</td>
-<td>Engineering</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Bob</td>
-<td>20</td>
-<td>10</td>
-<td>HR</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Bob</td>
-<td>20</td>
-<td>20</td>
-<td>Engineering</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Charlie</td>
-<td>10</td>
-<td>10</td>
-<td>HR</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Charlie</td>
-<td>10</td>
-<td>20</td>
-<td>Engineering</td>
-</tr>
-</tbody>
-</table>
-</details>
-<h4 id="条件连接">条件连接</h4>
-<p>条件连接, 又叫作Θ连接. 是在笛卡尔积的基础上再加上一个选择运算符. R ⋈Θ S = σΘ (R×S). 如<a href="https://img.ricolxwz.io/bd426ebd66d36ac36fefbdf04429db34.png">图</a>.</p>
-<details class="tip" open="open">
-<summary>Tip</summary>
-<p>条件连接有四种类型: </p>
-<ul>
-<li>内连接</li>
-<li>左外连接</li>
-<li>右外连接</li>
-<li>全外连接</li>
-</ul>
-<p>如<a href="https://img.ricolxwz.io/544a3baef5ea8d499660dacdd610aa38.png">图</a>.</p>
-<p>默认的条件连接为内连接.</p>
-<details class="example" open="open">
-<summary>例子</summary>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">内连接</label><label for="__tabbed_1_2">左外连接</label><label for="__tabbed_1_3">右外连接</label><label for="__tabbed_1_4">全外连接</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p>现在有两张表A和B.</p>
-<table>
-<thead>
-<tr>
-<th>CustomerID</th>
-<th>CustomerName</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>Alice</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Bob</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Charlie</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>OrderID</th>
-<th>CustomerID</th>
-<th>Product</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>101</td>
-<td>1</td>
-<td>Laptop</td>
-</tr>
-<tr>
-<td>102</td>
-<td>2</td>
-<td>Smartphone</td>
-</tr>
-<tr>
-<td>103</td>
-<td>4</td>
-<td>Tablet</td>
-</tr>
-</tbody>
-</table>
-<p>他们的内连接<code>INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID</code>是:</p>
-<table>
-<thead>
-<tr>
-<th>CustomerID</th>
-<th>CustomerName</th>
-<th>CustomerID</th>
-<th>OrderID</th>
-<th>Product</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>Alice</td>
-<td>1</td>
-<td>101</td>
-<td>Laptop</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Bob</td>
-<td>2</td>
-<td>102</td>
-<td>Smartphone</td>
-</tr>
-</tbody>
-</table>
-<p>可以看到, 结果表中的元组必须严格符合内连接的定义.</p>
-</div>
-<div class="tabbed-block">
-<p>现在有两张表A和B.</p>
-<table>
-<thead>
-<tr>
-<th>CustomerID</th>
-<th>CustomerName</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>Alice</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Bob</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Charlie</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>OrderID</th>
-<th>CustomerID</th>
-<th>Product</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>101</td>
-<td>1</td>
-<td>Laptop</td>
-</tr>
-<tr>
-<td>102</td>
-<td>2</td>
-<td>Smartphone</td>
-</tr>
-<tr>
-<td>103</td>
-<td>4</td>
-<td>Tablet</td>
-</tr>
-</tbody>
-</table>
-<p>他们的左外连接<code>LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID</code>是:</p>
-<table>
-<thead>
-<tr>
-<th>CustomerID</th>
-<th>CustomerName</th>
-<th>CustomerID</th>
-<th>OrderID</th>
-<th>Product</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>Alice</td>
-<td>1</td>
-<td>101</td>
-<td>Laptop</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Bob</td>
-<td>2</td>
-<td>102</td>
-<td>Smartphone</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Charlie</td>
-<td>NULL</td>
-<td>NULL</td>
-<td>NULL</td>
-</tr>
-</tbody>
-</table>
-<p>可以看到, 在包含内连接那些元组的基础上, 还包含来自A中<code>CustomerID</code>在B中<code>CustomerID</code>找不到的元组, 找不到所有的属性填充为<code>NULL</code>.</p>
-</div>
-<div class="tabbed-block">
-<p>现在有两张表A和B.</p>
-<table>
-<thead>
-<tr>
-<th>CustomerID</th>
-<th>CustomerName</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>Alice</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Bob</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Charlie</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>OrderID</th>
-<th>CustomerID</th>
-<th>Product</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>101</td>
-<td>1</td>
-<td>Laptop</td>
-</tr>
-<tr>
-<td>102</td>
-<td>2</td>
-<td>Smartphone</td>
-</tr>
-<tr>
-<td>103</td>
-<td>4</td>
-<td>Tablet</td>
-</tr>
-</tbody>
-</table>
-<p>他们的右外连接是:</p>
-<table>
-<thead>
-<tr>
-<th>CustomerID</th>
-<th>CustomerName</th>
-<th>CustomerID</th>
-<th>OrderID</th>
-<th>Product</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>Alice</td>
-<td>1</td>
-<td>101</td>
-<td>Laptop</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Bob</td>
-<td>2</td>
-<td>102</td>
-<td>Smartphone</td>
-</tr>
-<tr>
-<td>NULL</td>
-<td>NULL</td>
-<td>4</td>
-<td>103</td>
-<td>Tablet</td>
-</tr>
-</tbody>
-</table>
-<p>可以看到, 在包含内连接那些元组的基础上, 还包含来自B中<code>CustomerID</code>在A中<code>CustomerID</code>找不到的元组, 找不到所有的属性填充为<code>NULL</code>.</p>
-</div>
-<div class="tabbed-block">
-<p>现在有两张表A和B.</p>
-<table>
-<thead>
-<tr>
-<th>CustomerID</th>
-<th>CustomerName</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>Alice</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Bob</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Charlie</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>OrderID</th>
-<th>CustomerID</th>
-<th>Product</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>101</td>
-<td>1</td>
-<td>Laptop</td>
-</tr>
-<tr>
-<td>102</td>
-<td>2</td>
-<td>Smartphone</td>
-</tr>
-<tr>
-<td>103</td>
-<td>4</td>
-<td>Tablet</td>
-</tr>
-</tbody>
-</table>
-<p>他们的全外连接是:</p>
-<table>
-<thead>
-<tr>
-<th>CustomerID</th>
-<th>CustomerName</th>
-<th>CustomerID</th>
-<th>OrderID</th>
-<th>Product</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>Alice</td>
-<td>1</td>
-<td>101</td>
-<td>Laptop</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Bob</td>
-<td>2</td>
-<td>102</td>
-<td>Smartphone</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Charlie</td>
-<td>NULL</td>
-<td>NULL</td>
-<td>NULL</td>
-</tr>
-<tr>
-<td>NULL</td>
-<td>NULL</td>
-<td>4</td>
-<td>103</td>
-<td>Tablet</td>
-</tr>
-</tbody>
-</table>
-<p>可以看到, 在包含内连接那些元组的基础上, 还包含来自A中<code>CustomerID</code>在B中<code>CustomerID</code>找不到的元组, 找不到所有的属性填充为<code>NULL</code>. 还包含来自B中<code>CustomerID</code>在A中<code>CustomerID</code>找不到的元组, 找不到所有的属性填充为<code>NULL</code>.</p>
-</div>
-</div>
-</div>
-</details>
-</details>
-<h5 id="_4">等值连接</h5>
-<p>等值连接, Equi-Join是一种条件连接的特殊情况, 它在条件连接的基础之上, 又明确了条件中必须只含有等于号.</p>
-<details class="example" open="open">
-<summary>例子</summary>
-<p>现在, 有两张表:</p>
-<table>
-<thead>
-<tr>
-<th>EmpID</th>
-<th>EmpName</th>
-<th>DeptID</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>Alice</td>
-<td>10</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Bob</td>
-<td>20</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Charlie</td>
-<td>10</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>DeptID</th>
-<th>DeptName</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>10</td>
-<td>HR</td>
-</tr>
-<tr>
-<td>20</td>
-<td>Engineering</td>
-</tr>
-</tbody>
-</table>
-<p>对两张表进行等值连接: Employees⋈(Employees.DeptID=Departments.DeptID)​Departments, 得到的表为:</p>
-<table>
-<thead>
-<tr>
-<th>EmpID</th>
-<th>EmpName</th>
-<th>DeptID</th>
-<th>DeptID</th>
-<th>DeptName</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>Alice</td>
-<td>10</td>
-<td>10</td>
-<td>HR</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Charlie</td>
-<td>10</td>
-<td>10</td>
-<td>HR</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Bob</td>
-<td>20</td>
-<td>20</td>
-<td>Engineering</td>
-</tr>
-</tbody>
-</table>
-</details>
-<h6 id="_5">自然连接</h6>
-<p>自然连接, Natural Join是一种等值连接的特殊情况, 它在等值连接的基础之上, 又明确了对于所有的名字相同的属性都进行等值连接, 并且只保留其中的一列. </p>
-<details class="example" open="open">
-<summary>例子</summary>
-<p>现在, 有两张表:</p>
-<table>
-<thead>
-<tr>
-<th>EmpID</th>
-<th>EmpName</th>
-<th>DeptID</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>Alice</td>
-<td>10</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Bob</td>
-<td>20</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Charlie</td>
-<td>10</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>DeptID</th>
-<th>DeptName</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>10</td>
-<td>HR</td>
-</tr>
-<tr>
-<td>20</td>
-<td>Engineering</td>
-</tr>
-</tbody>
-</table>
-<p>对两张表进行自然连接: Employees⋈​Departments, 得到的表为:</p>
-<table>
-<thead>
-<tr>
-<th>EmpID</th>
-<th>EmpName</th>
-<th>DeptID</th>
-<th>DeptName</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>Alice</td>
-<td>10</td>
-<td>HR</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Charlie</td>
-<td>10</td>
-<td>HR</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Bob</td>
-<td>20</td>
-<td>Engineering</td>
-</tr>
-</tbody>
-</table>
-<p>另外还有例子, 如<a href="https://img.ricolxwz.io/5f27225a266af62d76910969c2f42ce4.png">图</a>.</p>
-</details>
-<h3 id="_6">集合</h3>
-<p>集合操作和笛卡尔积等连接操作有很大区别. 集合操作要求两个参与的关系必须有相同的结构, 即类的数量和类型必须相同. 以Union集合操作为例, 结果表的结构和原始表的结构相同, 列的数量和类型都保持一致, 结果集合的行数是两个集合中所有行的总和(去除重复行后); 笛卡尔积的结果表的结构是两个原始表的结构的组合, 列的数量是两个原始表的列数的总和(不考虑自然连接), 结果表的行数是两个原始表的行数的乘积.</p>
-<p>举一个例子, 如<a href="https://img.ricolxwz.io/56e947249dad059e89bf9fca117c7c88.png">图</a>.</p>
-<h3 id="_7">重命名</h3>
-<p>重命名操作不会修改原始表, 而是产生一个新的表或者关系的"副本", 该副本具有新的名称/或属性名, 原始表的名称和属性名不会因为重命名操作而发生改变.</p>
-<details class="example" open="open">
-<summary>例子</summary>
-<p>假设我们有一个关系 employee, 它的属性有 empid, name, age, department. 如果我们使用重命名操作ρemp_info​(employee), 那么这个操作的结果是将 employee 这个关系命名为 emp_info, 但它的属性名保持不变. 结果可以表示为emp_info(empid, name, age, department). </p>
-<p>再举一个例子, 如果我们使用带有属性名和表名的重名名操作ρemp_info​(eid,ename,eage,dept)(employee), 么这个操作不仅将 employee 这个关系命名为 emp_info, 而且还将它的属性名称分别重命名为 eid, ename, eage, 和 dept. 结果可以表示为: emp_info(eid, ename, eage, dept)</p>
-</details>
-<h2 id="RA在RDBMS中的角色">RA在RDBMS中的角色</h2>
-<ol>
-<li>用户发出一个声明式的查询, 也就是我们常写的SQL语句</li>
-<li>SQL查询被解析器解析, 转为关系代数表达式</li>
-<li>查询优化器对关系代数表达器进行优化, 寻找逻辑上等价但是更有效率的表达方式</li>
-<li>优化后的关系代数表达式被转换为查询执行计划, 这是一种低层次的描述, 说明如何具体执行查询</li>
-<li>查询执行计划被转换为可执行代码</li>
-<li>最后生成的代码在数据库引擎中执行, 以实际获取查询结果</li>
-</ol>
-<p>如<a href="https://img.ricolxwz.io/79349016c11055718d8ce3bc39138192.png">图</a>.</p>
+
 
 
 
@@ -2525,7 +1566,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年10月9日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年10月27日</span>
   </span>
 
     
@@ -2535,7 +1576,7 @@
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年8月21日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年10月27日</span>
   </span>
 
     
@@ -2569,60 +1610,6 @@
 
 
 
-
-  <h2 id="__comments">评论</h2>
-  <script src="https://giscus.app/client.js"
-        data-repo="sigmax01/gk"
-        data-repo-id="R_kgDOMZ6IeA"
-        data-category="Announcements"
-        data-category-id="DIC_kwDOMZ6IeM4ChF-C"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="preferred_color_scheme"
-        data-lang="zh-CN"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async>
-</script>
-
-  <!-- Synchronize Giscus theme with palette -->
-  <script>
-    var giscus = document.querySelector("script[src*=giscus]")
-
-    // Set palette on initial load
-    var palette = __md_get("__palette")
-    if (palette && typeof palette.color === "object") {
-      var theme = palette.color.scheme === "slate"
-        ? "transparent_dark"
-        : "light"
-
-      // Instruct Giscus to set theme
-      giscus.setAttribute("data-theme", theme) 
-    }
-
-    // Register event handlers after documented loaded
-    document.addEventListener("DOMContentLoaded", function() {
-      var ref = document.querySelector("[data-md-component=palette]")
-      ref.addEventListener("change", function() {
-        var palette = __md_get("__palette")
-        if (palette && typeof palette.color === "object") {
-          var theme = palette.color.scheme === "slate"
-            ? "transparent_dark"
-            : "light"
-
-          // Instruct Giscus to change theme
-          var frame = document.querySelector(".giscus-frame")
-          frame.contentWindow.postMessage(
-            { giscus: { setConfig: { theme } } },
-            "https://giscus.app"
-          )
-        }
-      })
-    })
-  </script>
 
                 
 
