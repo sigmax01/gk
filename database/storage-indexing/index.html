@@ -902,6 +902,24 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据传输的关键优化方法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      廉价磁盘冗余阵列
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1676,6 +1694,24 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据传输的关键优化方法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      廉价磁盘冗余阵列
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1747,6 +1783,22 @@
 <p>因此, 在这个特定的操作中, 使用MRU的策略会更好, 因为它比LRU导致的页面置换更少.</p>
 </details>
 <h3 id="_5">平均故障时间</h3>
+<p>平均故障时间, Mean Time To Failure, MTTF是一个统计值, 用来描述硬盘在出现故障前的平均运行时间. 根据硬盘型号的不同, MTTF通常在一百万小时, 约114年到250万小时, 约285年之间. 硬盘随时会发生故障, 因此需要定时备份和使用RAID配置来防止数据丢失.</p>
+<details class="example" open="open">
+<summary>例子</summary>
+<p>在实际中, 当有大量硬盘的时候, MTTF可以帮助估算故障的频率. 例如, 如果MTTF为一百万小时且有一万个硬盘, 那么每小时可能会有一个硬盘发生故障, 如果硬盘数量减少到1000个, 那么在相同MTTF下, 每1000小时可能会有一个硬盘发生故障.</p>
+</details>
+<h3 id="_6">数据传输的关键优化方法</h3>
+<p>物理传输可以通过一些方法进行优化:</p>
+<ul>
+<li>块传输: 通过以固定大小的块为单位进行数据传输, 从而减少单个数据传输的开销</li>
+<li>基于柱面访问: 这种方法减少了磁头移动的距离, 通过优先访问同一个柱面上的数据, 可以减少磁头在磁盘表面移动的次数</li>
+<li>多磁盘: 使用多个磁盘并行操作来增加数据的吞吐量</li>
+<li>磁盘调度: 通过优化磁盘的读写请求顺序来减少磁头移动, 常见的调度算法有先来先服务, FCFS; 最短寻道时间优先, SSTF等</li>
+<li>预取/双缓冲: 在需要时提前读取数据到内存或者使用双缓冲技术以减少等待时间, 确保磁盘在一个任务完成时可以立即开始下一个任务</li>
+</ul>
+<h3 id="_7">廉价磁盘冗余阵列</h3>
+<p>廉价磁盘冗余阵列, Redundant Array of Inexpensive Disks, RAID, 是一种磁盘组织技术, 将大量磁盘抽象成一个逻辑盘. 它的优点包括高容量, 高速和高可靠性. 不同的RAID方案通过<a href="https://blog.csdn.net/jlds123/article/details/11813313">磁盘条带化(striping)</a>和奇偶检验位的组合来以较低的成本实现冗余, <a href="https://blog.csdn.net/tototuzuoquan/article/details/108914078">不同的RAID级别</a>在成本, 性能和可靠性方面具有不同的特点.</p>
 
 
 
