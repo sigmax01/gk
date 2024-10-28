@@ -931,7 +931,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#occupancy" class="md-nav__link">
     <span class="md-ellipsis">
       填充因子
     </span>
@@ -959,7 +959,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       访问路径
     </span>
@@ -969,7 +969,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     <span class="md-ellipsis">
       线性扫描
     </span>
@@ -978,7 +978,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     <span class="md-ellipsis">
       二分查找
     </span>
@@ -987,7 +987,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     <span class="md-ellipsis">
       索引扫描
     </span>
@@ -1807,7 +1807,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#occupancy" class="md-nav__link">
     <span class="md-ellipsis">
       填充因子
     </span>
@@ -1835,7 +1835,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       访问路径
     </span>
@@ -1845,7 +1845,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     <span class="md-ellipsis">
       线性扫描
     </span>
@@ -1854,7 +1854,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     <span class="md-ellipsis">
       二分查找
     </span>
@@ -1863,7 +1863,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     <span class="md-ellipsis">
       索引扫描
     </span>
@@ -1978,7 +1978,7 @@
 <p>假设我们在一张关系中由2000000条记录, 每个记录的大小是200bytes(如<a href="https://img.ricolxwz.io/bfe6c446313ac27bd671dc451cf181e4.png">图</a>). 每页的大小为4k bytes, 其中250字节用于页头和记录指针数组, 所以实际可用于存储记录的字节数为3846字节. 每条记录为200字节, 所以每页可以容纳3846/200=19条记录(取整, 不能存放部分记录, 如<a href="https://img.ricolxwz.io/608fa18ec145304fce55fc0ad2d53bbb.png">图</a>所示, 剩余46bytes). 那么, 所需要的页数为2000000/19=105264页(向上取整, 因为需要完整存储所有记录, 最后一个页面包含3个记录, 如<a href="https://img.ricolxwz.io/7517093961f7a252d10d2321aa4d002c.png">图</a>所示). </p>
 <p>需要的大小是2000000*200=400000000bytes. 而实际给出的大小是105264*4096=431161344bytes. 所以有(431161344-400000000)/400000000=7.79%的overhead.</p>
 </details>
-<h4 id="_9">填充因子</h4>
+<h4 id="occupancy">填充因子</h4>
 <p>填充因子, occupancy. 我们用一个例子来解释. 假设每个数据页的大小为4KB, 4096字节. 每个页有250字节用于页头和记录指针数组, 这些空间用于存储元数据, 所以实际可用的空间为3846字节. 假设填充因子设置为80%, 这意味着我们希望每个页的80%空间用于存储数据, 剩下的20%空间预留为空闲, 用于将来插入新数据时候的扩展, 80%的填充因子意味着在3846字节中, 我们会使用3846*0.8=3076字节来存储数据, 剩下的3846*0.2=770字节被保留下来.</p>
 <p>设置occupancy小于100%能够为未来地插入和更新预留了足够地空间, 有助于提高写操作的效率, 并降低索引树的高度增长和系统碎片化. 因此, 设定较低的填充因子是一种权衡性能和空间利用率的做法, 以提高数据库整体的操作效率.</p>
 <details class="example" open="open">
@@ -1993,7 +1993,7 @@
 <li>索引: 为表中的一个或者多个字段创建索引, 以便加快基于这些字段的搜索. 索引类似于一本书的目录, 通过索引可以快速定位到特定记录. 更新操作相对高效, 因为不需要重新排列整个表的数据</li>
 </ul>
 <p>这和我们<a href="#访问路径">下一小节</a>要将的内容有关.</p>
-<h2 id="_10">访问路径</h2>
+<h2 id="_9">访问路径</h2>
 <p>访问路径, 即DBMS如何检索记录的方式, 它由<a href="#file-organisation">文件组织</a>和算法(如下所示)组成, 不同的文件组织都需要用到不同的算法来访问. </p>
 <ul>
 <li>线性扫描: 对于无序文件来说, 从头到尾注意扫描所有记录, 直到找到目标记录</li>
@@ -2005,7 +2005,7 @@
 <p>物理数据独立性: 在执行SQL语句地时候, 选择地访问路径不会影响语句的语义, 即查询的结果不会改变. 例如对于<code>SELECT * FROM Student WHERE sid = 5309650</code>这个查询, 无论使用线性扫描, 二分查找, 还是索引扫描, 结果都是相同的.</p>
 <p>尽管访问路径的选择不影响查询的语义, 但是它对查询的执行时间有很大影响. 不同的访问路径可能导致查询的执行效率差异极大, 进而影响数据库的性能. 因此, 合理选择访问路径对于提高查询速度非常重要.</p>
 </details>
-<h3 id="_11">线性扫描</h3>
+<h3 id="_10">线性扫描</h3>
 <p>无序文件是一种最简单的文件组织, 包含的记录没有特定的顺序, 通常存储在堆中. 这种文件组织的访问方法是线性扫描. 平均来讲文件中一半的页都会被扫到, 但是在最坏情况下整个文件都会被读取.</p>
 <p>对于每一个数据页, 将页加载到主内存中(一次IO的成本), 然后检查页中的每个记录是否匹配查询条件. </p>
 <details class="example" open="open">
@@ -2016,14 +2016,14 @@
 <li>范围查询(<code>SELECT * FROM Relation WHERE attribute1 BETWEEN 100 AND 119</code>). 这个需要查询所有页中的记录, 需要140351次IO</li>
 </ul>
 </details>
-<h3 id="_12">二分查找</h3>
+<h3 id="_11">二分查找</h3>
 <p>排序文件根据一些属性对记录进行排序. 对它进行访问的方法是二分法.</p>
 <details class="example" open="open">
 <summary>例子</summary>
 <p>假设我们现在要搜索特定岁数的人群, 记录已经根据年龄排序., 如<a href="https://img.ricolxwz.io/ea0472938a468cab0508149685108c39.png">图</a>所示. 最坏情况下, IO成本是log_2(B)加上任何包含被检索记录的额外页数(B是文件的总页数), 例如, 如果B=140351页, 那么检索包含表中第一个记录的页的IO成本为log_2(140351). </p>
 </details>
 <p>当然, 二分查找也有缺点, 那就是在插入记录的时候维护排序的成本非常高: 在插入新的数据后, 需要移动后续记录为新纪录腾出空间. 所以, 一般商业DBMS很少纯粹地使用排序文件, 而是使用索引组织文件.</p>
-<h3 id="_13">索引扫描</h3>
+<h3 id="_12">索引扫描</h3>
 <p>索引是一种将搜索键映射到数据库表中记录集合的数据结构. 搜索键可以是字段的任意子集, 并不一定是关系的键. 索引的主要作用是加速数据查找和检索操作, 通常比线性扫描快得多. </p>
 <p>典型的索引类型有:</p>
 <ul>
@@ -2038,6 +2038,35 @@
 </ul>
 <p>虽然索引扫描存在上述缺点, 但是其带来的性能提升远大于其劣势. 因此, 索引在商业DBMS中被广泛应用, 被认为是DBMS中用于提升性能的最重要功能之一.</p>
 <h2 id="b">B+树索引</h2>
+<p>主要思想是通过维护一个<strong>逻辑</strong>排序的文件组织, 文件的页在<strong>物理</strong>上没有连续存储. 实现B+树索引主要分为3步:</p>
+<ol>
+<li>
+<p>创建一个逻辑排序文件</p>
+<details class="example" open="open">
+<summary>例子</summary>
+<p>假设一个表存储在一个包含140351个页面的数据文件中, 每个页面的搜索键为<code>tuplekey</code>. 每个页面的记录在物理上是按照<code>tuplekey</code>排序的, 这确保了页面内部的数据有序. 页面之间是逻辑排序的, 这意味着页面i中的所有记录的<code>tuplekey</code>都小于页面i+1中的记录. 但是, 这些页面的磁盘上可能并不是连续存储的, 即物理位置上不一定紧邻, 这种物理上的非连续存储并不会影响逻辑上的有序性. </p>
+<p>我们将这样的文件称为逻辑排序文件. 该表就存储在这样一个逻辑排序文件中, 包含140351个页面, 每个页面都有一个搜索键<code>tuplekey</code>作为这个页面的唯一标识.</p>
+</details>
+</li>
+<li>
+<p>创建索引条目</p>
+<p>为逻辑排序文件的每个页面都创建一个索引条目, 每个索引条目包含两个部分:</p>
+<ul>
+<li>搜索键: 用于确定页面的顺序</li>
+<li>行指针: 指向对应的数据页, 32bit</li>
+</ul>
+<p>可见<a href="https://img.ricolxwz.io/39aa033f274d3513b425d203cd3ce8ad.png">示意图</a>.</p>
+</li>
+<li>
+<p>创建索引页</p>
+<p>和数据页不同, 存放索引的页面叫做索引页. </p>
+<details class="example" open="open">
+<summary>例子</summary>
+<p>假设每个索引页的总可用空间是3846字节(其中保留了250字节). 因此, 每个索引页最多可以存放3846/8=480条索引. 假设页面的<a href="#occupancy">填充因子</a>为75%, 则每个索引页的平均条目数为480*75%=360. 由于索引条目总数等于数据页的数量140351, 每页存放360条, 所以需要的索引页数为140351/360=390.  </p>
+<p>我们甚至可以将这390个索引页再搞一个逻辑排序文件, 并在其上递归构建索引, 从而实现更高效的查找, 类似套娃🪆的操作.</p>
+</details>
+</li>
+</ol>
 
 
 
