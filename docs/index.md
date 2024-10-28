@@ -2,6 +2,12 @@
 
 欢迎来到基础知石仓库.
 
+## 联动
+
+- [Python](https://py.ricolxwz.de)
+- [机器学习](https://ml.ricolxwz.de)
+- [杂七杂八档案室](https://misc.ricolxwz.de)
+
 ## 进度
 
 - [ ] [数据库](/database/index)
