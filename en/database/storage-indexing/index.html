@@ -2082,6 +2082,22 @@
 </details>
 </li>
 </ol>
+<hr />
+<details class="example" open="open">
+<summary>例子</summary>
+<p>分析一下<code>SELECT * FROM Relation WHERE tuplekey=715</code>背后的IO次数.</p>
+<ol>
+<li>将顶级索引页载入内存, 1*IO</li>
+<li>找到第二层索引的索引页</li>
+<li>将第二层索引的索引页载入内存, 1*IO</li>
+<li>找到第三层索引的索引页</li>
+<li>将第三层索引的索引页载入内存, 1*IO</li>
+<li>找到对应的数据页</li>
+<li>将数据页载入内存, 1*IO</li>
+<li>检查数据页中的每条记录是否和要求相符</li>
+</ol>
+<p>总共4次IO, 如果使用无序文件组织的话, 平均需要70176次IO操作, 可以看到巨大提升.</p>
+</details>
 
 
 
