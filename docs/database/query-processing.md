@@ -21,12 +21,18 @@ comments: false
 
 ???+ example "例子"
 
-    例如考虑一下的查询: "找到在悉尼有客户存款的银行的资产和名称". 数据库中包含三个表, 分别是`Deposit`, `Customer`, `Branch`, 每个表的结构如下:
+   === "例子1"
 
-    - `Deposit`: 包含`branchname`, `account#`, `customername`和`balance`
-    - `Customer`: 包含`customername`, `street`和`customercity`
-    - `Branch`: 包含`branchname`, `assets`, `branchcity`
+       例如考虑以下的查询: "找到在悉尼有客户存款的银行的资产和名称". 数据库中包含三个表, 分别是`Deposit`, `Customer`, `Branch`, 每个表的结构如下:
 
-    上述给定查询的关系表达式为: π Branchname,Assets (σ Customercity='Sydney'(Customer⋈Deposit⋈Branch)). 上述三个表的自然连接可能产生一个非常大的关系, 无法放到内存中. 在这里, 我们其实只需要一些有用的`Cusomtercity`为`Sydney`的起始元组, 并且, 查询的最终需求是`Branchname`和`Assets`, 这意味着早较早阶段就应该丢弃其他不需要的字段. 
+       - `Deposit`: 包含`branchname`, `account#`, `customername`和`balance`
+       - `Customer`: 包含`customername`, `street`和`customercity`
+       - `Branch`: 包含`branchname`, `assets`, `branchcity`
 
-    如上述的表达式可以修改为π Branchname,Assets ((π customername (σ Customercity='Sydney' (Customer)))⋈Deposit⋈π branchname,assets (Branch)). 首先从`Customer`表中筛选出`CustomerCity='Sydney'`的记录, 然后只丢弃不需要的`street`和`customercity`字段. 
+       上述给定查询的关系表达式为: π Branchname,Assets (σ Customercity='Sydney'(Customer⋈Deposit⋈Branch)). 上述三个表的自然连接可能产生一个非常大的关系, 无法放到内存中. 在这里, 我们其实只需要一些有用的`Cusomtercity`为`Sydney`的起始元组, 并且, 查询的最终需求是`Branchname`和`Assets`, 这意味着早较早阶段就应该丢弃其他不需要的字段. 
+
+       如上述的表达式可以修改为π Branchname,Assets ((π customername (σ Customercity='Sydney' (Customer)))⋈Deposit⋈π branchname,assets (Branch)). 首先从`Customer`表中筛选出`CustomerCity='Sydney'`的记录, 然后只丢弃不需要的`street`和`customercity`字段. 
+
+   === "例子2"
+   
+      考虑以下的查询: "找到在悉尼有客户存款找过$500的银行的资产和名称". 
