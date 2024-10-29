@@ -10,7 +10,7 @@
 
 ## 进度
 
-- [ ] [数据库](/database/index)
+- [ ] [数据库](/database/)
     - [x] [数据模型](database/conceptual-model)
     - [x] [关系模型](database/conceptual-model)
     - [x] [关系代数](database/relational-algebra)
@@ -22,7 +22,7 @@
     - [x] [事务](/database/transaction)
     - [x] [存储与索引](/database/storage-indexing)
     - [ ] [查询处理](/database/query-processing)
-- [ ] [信息论](/information-theory/index)
+- [ ] [信息论](/information-theory/)
     - [x] [不确定性和熵](information-theory/uncertainty-and-entropy)
     - [x] [什么是信息](information-theory/what-is-information)
     - [x] [JIDT](information-theory/jidt)
