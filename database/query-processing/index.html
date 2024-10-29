@@ -100,6 +100,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -823,6 +828,17 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    查询处理
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -832,6 +848,32 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      查询处理流程
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1510,6 +1552,23 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      查询处理流程
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1543,7 +1602,17 @@
 
   <h1>查询处理</h1>
 
-
+<h2 id="_1">查询处理流程</h2>
+<p>查询处理流程可以简单的分为:</p>
+<ol>
+<li>语义检查和查询重写: 检查查询语句是否有语法错误或者语义问题. 然后将SQL查询转换为<a href="/database/relational-algebra">关系代数表达式</a>, 可以被表示为一颗表达式树(expression tree), 如<a href="https://img.ricolxwz.io/a99283244cfa79f7c7629924cc0cff5d.png">图</a>所示. 最后将<a href="/database/advanced-sql/#view">视图</a>替换为实际的子查询, 以便进一步处理</li>
+<li>查询优化: 在所有等价的查询计划中, 选择成本最低的计划: <ol>
+<li>在关系代数层面使用启发式方法(对表达式树进行重新排列操作, 以减少中间结果的大小, 减少临时数据的存储和计算量)进行优化</li>
+<li>基于成本估算(最小化磁盘IO次数)选择合适的查询执行策略</li>
+</ol>
+</li>
+<li>执行查询: 根据最优查询执行策略执行</li>
+</ol>
 
 
 
