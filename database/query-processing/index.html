@@ -1678,15 +1678,21 @@
 <p>我们可以将任何元组演算表达式(如SQL)转换为等价的代数表达式. 在转换为代数表达式的过程中, 需要进行启发式优化, 这个优化通常聚焦于一元操作(如选择, 投影), 因为这些操作往往可以在早期阶段就过滤掉大量数据, 使得每一步的中间结果尽量小, 中间结果小, IO操作就越少, 从而提高执行效率.</p>
 <details class="example" open="open">
 <summary>例子</summary>
-<p>例如考虑一下的查询: "找到在悉尼有客户存款的银行的资产和名称". 数据库中包含三个表, 分别是<code>Deposit</code>, <code>Customer</code>, <code>Branch</code>, 每个表的结构如下:</p>
-<ul>
-<li><code>Deposit</code>: 包含<code>branchname</code>, <code>account#</code>, <code>customername</code>和<code>balance</code></li>
-<li><code>Customer</code>: 包含<code>customername</code>, <code>street</code>和<code>customercity</code></li>
-<li><code>Branch</code>: 包含<code>branchname</code>, <code>assets</code>, <code>branchcity</code></li>
-</ul>
-<p>上述给定查询的关系表达式为: π Branchname,Assets (σ Customercity='Sydney'(Customer⋈Deposit⋈Branch)). 上述三个表的自然连接可能产生一个非常大的关系, 无法放到内存中. 在这里, 我们其实只需要一些有用的<code>Cusomtercity</code>为<code>Sydney</code>的起始元组, 并且, 查询的最终需求是<code>Branchname</code>和<code>Assets</code>, 这意味着早较早阶段就应该丢弃其他不需要的字段. </p>
-<p>如上述的表达式可以修改为π Branchname,Assets ((π customername (σ Customercity='Sydney' (Customer)))⋈Deposit⋈π branchname,assets (Branch)). 首先从<code>Customer</code>表中筛选出<code>CustomerCity='Sydney'</code>的记录, 然后只丢弃不需要的<code>street</code>和<code>customercity</code>字段. </p>
 </details>
+<p>=== "例子1"</p>
+<div class="highlight"><pre><span></span><code>   例如考虑以下的查询: &quot;找到在悉尼有客户存款的银行的资产和名称&quot;. 数据库中包含三个表, 分别是`Deposit`, `Customer`, `Branch`, 每个表的结构如下:
+
+   - `Deposit`: 包含`branchname`, `account#`, `customername`和`balance`
+   - `Customer`: 包含`customername`, `street`和`customercity`
+   - `Branch`: 包含`branchname`, `assets`, `branchcity`
+
+   上述给定查询的关系表达式为: π Branchname,Assets (σ Customercity=&#39;Sydney&#39;(Customer⋈Deposit⋈Branch)). 上述三个表的自然连接可能产生一个非常大的关系, 无法放到内存中. 在这里, 我们其实只需要一些有用的`Cusomtercity`为`Sydney`的起始元组, 并且, 查询的最终需求是`Branchname`和`Assets`, 这意味着早较早阶段就应该丢弃其他不需要的字段.
+
+   如上述的表达式可以修改为π Branchname,Assets ((π customername (σ Customercity=&#39;Sydney&#39; (Customer)))⋈Deposit⋈π branchname,assets (Branch)). 首先从`Customer`表中筛选出`CustomerCity=&#39;Sydney&#39;`的记录, 然后只丢弃不需要的`street`和`customercity`字段.
+</code></pre></div>
+<p>=== "例子2"</p>
+<div class="highlight"><pre><span></span><code>  考虑以下的查询: &quot;找到在悉尼有客户存款找过$500的银行的资产和名称&quot;.
+</code></pre></div>
 
 
 
