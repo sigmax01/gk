@@ -20,7 +20,7 @@
     - [x] [应用开发](database/app-dev)
     - [x] [规范化](database/normalization)
     - [x] [事务](/database/transaction)
-    - [ ] [存储与索引](/database/storage-indexing)
+    - [x] [存储与索引](/database/storage-indexing)
     - [ ] [查询处理](/database/query-processing)
 - [ ] [信息论](/information-theory/index)
     - [x] [不确定性和熵](information-theory/uncertainty-and-entropy)
