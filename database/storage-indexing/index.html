@@ -1007,6 +1007,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="B+树索引">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      复合索引
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1883,6 +1898,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="B+树索引">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      复合索引
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -2102,6 +2132,22 @@
 <summary>注意</summary>
 <p>对于范围搜索来说, 现有的索引无法起作用. 如<code>SELECT * FROM Relation WHERE attribute1 BETWEEN 100 AND 119;</code>, 为了找到符合条件的数据, 仍然需要顺序检查每一个数据页, 导致总共需要140351次IO.</p>
 </details>
+<h3 id="_13">复合索引</h3>
+<p>复合索引是指用于索引的搜索键由多个属性构成. </p>
+<details class="example" open="open">
+<summary>例子</summary>
+<p>例如, <code>(age, salary)</code>表示首先按照<code>age</code>排序, 然后在相同<code>age</code>的记录中按照<code>salary</code>排序. 注意, <code>(age, salary)</code>和<code>(salary, age)</code>的排序顺序不同, 因此这两个复合键生成的索引页不同, 无法相互替代. </p>
+<p>给定一个<code>(age, salary)</code>的复合索引, 下面是各种查询条件的适用性情况:</p>
+<ul>
+<li><code>age = 22</code>: ✅, 因为<code>age</code>是索引的第一个字段</li>
+<li><code>age &gt;= 22</code>: ✅, 因为索引可以帮助找到<code>age</code>大于等于某个值的范围</li>
+<li><code>age = 22 AND salary = 2000</code>: ✅, 复合索引的顺序</li>
+<li><code>age = 22 AND salary &gt;= 2000</code>: ✅, 复合索引的顺序</li>
+<li><code>salary = 2000</code>: ❌, 因为索引首先按照<code>age</code>排序, 没有按照<code>salary</code>排序</li>
+<li><code>salary &gt;= 2000</code>: ❌, 因为<code>salary</code>不是第一个索引字段</li>
+</ul>
+<p>所以说, 复合索引的字段顺序会影响查询的适用性, 只有符合字段顺序的查询才能使用索引进行优化, 而其他不符合顺序的查询则无法利用该索引.</p>
+</details>
 
 
 
@@ -2124,7 +2170,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年10月28日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年10月29日</span>
   </span>
 
     
