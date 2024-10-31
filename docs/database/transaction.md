@@ -305,7 +305,7 @@ SET TRANSACTION ISOLATION LEVEL
 
 ???+ example "例子"
 
-    如[图](https://img.ricolxwz.io/1fa98acec9bd743e46f0ac84189b5bf8.png)是两个航空公司中介试图预约同一个作为的过程, 展示了在不恰当释放锁的情况下, 调度可能导致错误结果.
+    如[图](https://img.ricolxwz.io/1fa98acec9bd743e46f0ac84189b5bf8.png)是两个航空公司中介试图预约同一个座位的过程, 展示了在不恰当释放锁的情况下, 调度可能导致错误结果.
 
     1. T1开始, 锁定资源X, 读取X的值, 并立即释放锁
     2. T2开始, 锁定资源X, 读取X的值, 并立即释放锁
