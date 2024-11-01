@@ -73,6 +73,13 @@ comments: true
 - [A First Course in Database Systems](https://drive.google.com/file/d/1EwY5MhTM2Q9PtkOMcraBgI5Zt-ps6SYW/view?usp=sharing)
 - [Database Systems: An Application-Oriented Approach](https://archive.org/details/databasesystemsa0002kife)
 
+### 考试
+
+题型: 
+
+- 3个MCQ, 6分
+- 9个简答题, 44分
+
 ### 备注
 
 - 该课程对出席率没有要求
