@@ -24,7 +24,7 @@ comments: true
 
 这些运算符可以组合使用, 以表达更加复杂的查询. 关系代数描述了得到答案的详细步骤, 因此它是一种过程式语言. 元组演算相比之下是一种声明式语言, 描述的是最终状态的结果. SQL是声明式的. 
 
-其实, 只有6种基本运算符, 分别是σ, π, ×, ∪, -, ρ. 其他的都是衍生的运算符, 如⋈Θ, 其实可以表示为R ⋈Θ S = σΘ(R×S)...
+其实, 只有6种基本运算符, 分别是σ, π, ×, ∪, -, ρ. 其他的都是衍生的运算符, 如⋈~Θ~, 其实可以表示为R⋈~Θ~S = σ~Θ~(R×S)...
 
 ### 选择条件
 
@@ -79,7 +79,7 @@ comments: true
 
 #### 条件连接 {#条件连接}
 
-条件连接, 又叫作Θ连接. 是在笛卡尔积的基础上再加上一个选择运算符. R ⋈Θ S = σΘ (R×S). 如[图](https://img.ricolxwz.io/bd426ebd66d36ac36fefbdf04429db34.png).
+条件连接, 又叫作Θ连接. 是在笛卡尔积的基础上再加上一个选择运算符. R⋈~Θ~S=σ~Θ~(R×S). 如[图](https://img.ricolxwz.io/bd426ebd66d36ac36fefbdf04429db34.png).
 
 ???+ tip "Tip"
 
@@ -219,7 +219,7 @@ comments: true
     | 10     | HR          |
     | 20     | Engineering |
 
-    对两张表进行等值连接: Employees⋈(Employees.DeptID=Departments.DeptID)​Departments, 得到的表为:
+    对两张表进行等值连接: Employees⋈~(Employees.DeptID=Departments.DeptID)~​Departments, 得到的表为:
 
     | EmpID | EmpName | DeptID | DeptID | DeptName    |
     |-------|---------|--------------------|----------------------|-------------|
