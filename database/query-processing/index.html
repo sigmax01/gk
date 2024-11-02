@@ -889,12 +889,27 @@
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="逻辑查询计划优化">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       等价代数表达式转化规则
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      物理查询计划优化
     </span>
   </a>
   
@@ -1624,12 +1639,27 @@
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="逻辑查询计划优化">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       等价代数表达式转化规则
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      物理查询计划优化
     </span>
   </a>
   
@@ -1727,7 +1757,7 @@
 </div>
 </div>
 </details>
-<h4 id="_4">等价代数表达式转化规则</h4>
+<h5 id="_4">等价代数表达式转化规则</h5>
 <ul>
 <li>交换律: R1⋈R2=R2⋈R1</li>
 <li>结合律: (R1⋈R2)⋈R3=R1⋈(R2⋈R3)</li>
@@ -1748,6 +1778,7 @@
 <p>根据选择的级联, 有Π<sub>Branchname,Assets</sub>(σ<sub>Customercity=Sydney</sub>(σ<sub>Balance&gt;500</sub>(Customer⋈Deposit))⋈Branch)</p>
 <p>使用两次选择对连接的分配性, 有Π<sub>Branchname,Assets</sub>(σ<sub>Customercity=Sydney</sub>(Customer)⋈σ<sub>Balance&gt;500</sub>(Deposit)⋈Branch)</p>
 </details>
+<h4 id="_5">物理查询计划优化</h4>
 
 
 
