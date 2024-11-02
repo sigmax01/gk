@@ -891,6 +891,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      等价代数表达式转化规则
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1617,6 +1626,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      等价代数表达式转化规则
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1687,14 +1705,48 @@
 <li><code>Customer</code>: 包含<code>customername</code>, <code>street</code>和<code>customercity</code></li>
 <li><code>Branch</code>: 包含<code>branchname</code>, <code>assets</code>, <code>branchcity</code></li>
 </ul>
-<p>上述给定查询的关系表达式为: π<sub>Branchname,Assets</sub>(σ<sub>Customercity=Sydney</sub>(Customer⋈Deposit⋈Branch)). 上述三个表的自然连接可能产生一个非常大的关系, 无法放到内存中. 在这里, 我们其实只需要一些有用的<code>Cusomtercity</code>为<code>Sydney</code>的起始元组, 并且, 查询的最终需求是<code>Branchname</code>和<code>Assets</code>, 这意味着早较早阶段就应该丢弃其他不需要的字段. </p>
-<p>如上述的表达式可以修改为π<sub>Branchname,Assets</sub>((π<sub>customername</sub>(σ<sub>Customercity=Sydney</sub>(Customer)))⋈Deposit⋈π<sub>branchname,assets</sub>(Branch)). 首先从<code>Customer</code>表中筛选出<code>CustomerCity='Sydney'</code>的记录, 然后只丢弃不需要的<code>street</code>和<code>customercity</code>字段. </p>
+<p>上述给定查询的关系表达式为: π<sub>Branchname,Assets</sub>(σ<sub>Customercity=Sydney</sub>(Customer⋈Deposit⋈Branch)). 上述三个表的自然连接可能产生一个非常大的关系, 无法放到内存中. 在这里, 我们其实只需要一些有用的<code>Cusomtercity</code>为<code>Sydney</code>的起始元组.</p>
+<p>如上述的表达式可以修改为π<sub>Branchname,Assets</sub>((σ<sub>Customercity=Sydney</sub>(Customer))⋈Deposit⋈Branch).</p>
+<p>此外, 应该尽早丢弃不必要的属性, 即尽早执行投影. 一个启发是我们应该移除掉所有的不在剩余操作中起作用的属性. </p>
+<p>如上面的表达式中, σ<sub>Customercity=Sydney</sub>(Customer)⋈Deposit这个操作产生的属性中, 只有<code>branchname</code>是有用的属性, 所以应该提前进行投影, 修改后的代数表达式是Π<sub>Branchname,Assets</sub>(Π<sub>Branchname</sub>(σ<sub>Customercity=Sydney</sub>(Customer)⋈Deposit)⋈Branch)</p>
+<p>我们能做得更好吗? 😅 可以的! 注意到, 在连接<code>Branch</code>表的时候, <code>branchcity</code>这个属性是不用的, 我们要把它提前移除, 修改之后的表达式是Π<sub>Branchname</sub>(σ<sub>Customercity=Sydney</sub>(Customer)⋈Deposit)⋈Π<sub>Branchname,Assets</sub>(Branch)</p>
 </div>
 <div class="tabbed-block">
-<p>考虑以下的查询: "找到在悉尼有客户存款找过$500的银行的资产和名称". </p>
+<ul>
+<li><code>Deposit</code>: 包含<code>branchname</code>, <code>account#</code>, <code>customername</code>和<code>balance</code></li>
+<li><code>Customer</code>: 包含<code>customername</code>, <code>street</code>和<code>customercity</code></li>
+<li><code>Branch</code>: 包含<code>branchname</code>, <code>assets</code>, <code>branchcity</code></li>
+</ul>
+<p>考虑以下的查询: "找到在悉尼有客户存款找过$500的银行的资产和名称". 对于这个查询, 最初给出的表达式是Π<sub>Branchname,Assets</sub> (σ<sub>Customercity=Sydney∧Balance&gt;500</sub>(Customer⋈Deposit⋈Branch)). 注意, 我们无法仅对<code>Customer</code>表进行筛选操作, 因为<code>Balance</code>是<code>Deposit</code>表的属性. </p>
+<p>需要在<code>Customer</code>表和<code>Deposit</code>表进行连接之后, 再进行选择操作. 因此, 正确的表达式应该是: Π<sub>Branchname,Assets</sub>(σ<sub>Customercity=Sydney∧Balance&gt;500</sub>((Customer⋈Deposit)⋈Branch)).</p>
+<p>我们可以做得更好吗? 答案是肯定的. </p>
+<p>首先, 我们能把选择语句拆分成两个部分: Π<sub>Branchname,Assets</sub>(σ<sub>Customercity=Sydney</sub>(σ<sub>Balance&gt;500</sub>(Customer⋈Deposit))⋈Branch)</p>
+<p>然后, 可以在连接之前先应用筛选条件: Π<sub>Branchname,Assets</sub>(σ<sub>Customercity=Sydney</sub>(Customer)⋈σ<sub>Balance&gt;500</sub>(Deposit)⋈Branch)</p>
+<p>这样能够进一步减少中间的数据规模. </p>
 </div>
 </div>
 </div>
+</details>
+<h4 id="_4">等价代数表达式转化规则</h4>
+<ul>
+<li>交换律: R1⋈R2=R2⋈R1</li>
+<li>结合律: (R1⋈R2)⋈R3=R1⋈(R2⋈R3)</li>
+<li>投影的级联: 如果B1, ..., Bn是A1, ..., An的子集, 那么Π<sub>B1,...,Bn</sub>(Π<sub>A1,...,An</sub>(R))=Π<sub>B1,...,Bn</sub>(R)</li>
+<li>选择的级联: σ<sub>θ1</sub>(σ<sub>θ2</sub>(R))=σ<sub>θ2</sub>(σ<sub>θ1</sub>(R))=σ<sub>θ1∧θ2</sub>(R)</li>
+<li>选择对连接的分配性: σ<sub>θ</sub>(R1⋈R2)=(σ<sub>θ</sub>(R1))⋈R2, 当θ只涉及R1的属性时</li>
+</ul>
+<details class="example" open="open">
+<summary>例子</summary>
+<p>考虑如下的关系: </p>
+<ul>
+<li><code>Deposit</code>: 包含<code>branchname</code>, <code>account#</code>, <code>customername</code>和<code>balance</code></li>
+<li><code>Customer</code>: 包含<code>customername</code>, <code>street</code>和<code>customercity</code></li>
+<li><code>Branch</code>: 包含<code>branchname</code>, <code>assets</code>, <code>branchcity</code></li>
+</ul>
+<p>考虑以下的查询: "找到在悉尼有客户存款找过$500的银行的资产和名称". 对于这个查询, 最初给出的表达式是Π<sub>Branchname,Assets</sub> (σ<sub>Customercity=Sydney∧Balance&gt;500</sub>(Customer⋈Deposit⋈Branch)). 注意, 我们无法仅对<code>Customer</code>表进行筛选操作, 因为<code>Balance</code>是<code>Deposit</code>表的属性. </p>
+<p>根据选择对连接的分配性, 有Π<sub>Branchname,Assets</sub>(σ<sub>Customercity=Sydney∧Balance&gt;500</sub>((Customer⋈Deposit)⋈Branch)).</p>
+<p>根据选择的级联, 有Π<sub>Branchname,Assets</sub>(σ<sub>Customercity=Sydney</sub>(σ<sub>Balance&gt;500</sub>(Customer⋈Deposit))⋈Branch)</p>
+<p>使用两次选择对连接的分配性, 有Π<sub>Branchname,Assets</sub>(σ<sub>Customercity=Sydney</sub>(Customer)⋈σ<sub>Balance&gt;500</sub>(Deposit)⋈Branch)</p>
 </details>
 
 
