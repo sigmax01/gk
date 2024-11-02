@@ -21,7 +21,7 @@
     - [x] [规范化](database/normalization)
     - [x] [事务](/database/transaction)
     - [x] [存储与索引](/database/storage-indexing)
-    - [ ] [查询处理](/database/query-processing)
+    - [x] [查询处理](/database/query-processing)
 - [ ] [信息论](/information-theory/)
     - [x] [不确定性和熵](information-theory/uncertainty-and-entropy)
     - [x] [什么是信息](information-theory/what-is-information)
