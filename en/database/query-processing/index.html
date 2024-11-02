@@ -932,6 +932,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="优化连接操作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      嵌套循环连接
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      块嵌套循环连接
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      索引嵌套循环连接
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1706,6 +1739,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="优化连接操作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      嵌套循环连接
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      块嵌套循环连接
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      索引嵌套循环连接
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1847,6 +1913,89 @@
 <li>索引嵌套循环连接: Index-nested loop join</li>
 </ul>
 <p>根据IO来选择合适的实现算法.</p>
+<details class="example" open="open">
+<summary>例子</summary>
+<p>假设:</p>
+<ul>
+<li><code>Student</code>: 包括了学生的基本信息, <code>sid</code>, <code>name</code>, <code>gender</code>, <code>country</code></li>
+<li>
+<p><code>Enrolled</code>: 包括了学生的选课记录, <code>sid</code>, <code>uos_code</code>, <code>semester</code></p>
+</li>
+<li>
+<p><code>|R|</code>: 表示关系<code>R</code>中元组的数量, 这里假设<code>|R|=1000</code></p>
+</li>
+<li>
+<p><code>|S|</code>: 表示关系<code>|S|</code>中的元组数量, 这里假设<code>|S|=1000</code></p>
+</li>
+<li>
+<p><code>b_R</code>: 表示<code>Student</code>表的页数, 这里假设<code>b_R=100</code></p>
+</li>
+<li><code>b_S</code>: 表示<code>Enrolled</code>表的页数, 这里假设<code>b_S=400</code></li>
+</ul>
+<p>我们要执行的操作是Student⨝Enrolled. 也就是基于<code>sid</code>对两个表进行连接.</p>
+</details>
+<h6 id="_8">嵌套循环连接</h6>
+<p>循环嵌套连接可以用伪代码表示为:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>for each page BR of R do
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    for each tuple r in BR do
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        for each page BS of S do
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>            for each tuple s in BS do
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>                if θ(r,s)=true then add &lt;r,s&gt; to the result
+</code></pre></div>
+<p>即, 对于R中的每一个元组, 我们要扫描整一个S表. 这样做的好处是不需要任何索引, 可以被用于任何形式的条件连接. 缺点就是非常的消耗计算资源.</p>
+<ul>
+<li>来自于<code>R</code>的IO: 读取<code>b_R</code>个表到内存</li>
+<li>来自于<code>S</code>的IO: 对于每一个<code>R</code>中的元组, 都要读取<code>S</code>的所有表, 所以是<code>|R|*b_S</code></li>
+</ul>
+<p>所以, 总的消耗是<code>b_R+|R|*b_S</code>.</p>
+<details class="example" open="open">
+<summary>例子</summary>
+<p>上述的例子中, 如果<code>Student</code>位于外层, 则复杂度为100+1000*400=400100次IO. 如果<code>Enrolled</code>位于外层, 则复杂度为400+10000*100h=10004000次IO. </p>
+</details>
+<h6 id="_9">块嵌套循环连接</h6>
+<p>块嵌套循环连接可以用伪代码表示为:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>for each page BR of R do
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    for each page BS of S do
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        for each tuple r in BR do
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>            for each tuple s in BS do
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>                if θ(r,s)=true then add &lt;r,s&gt; to the result
+</code></pre></div>
+<p>可以看到, 只是两条语句对换了一下位置. 对于每一个R页面, 遍历S中的每一个页面, 在内存中读取R中每一个元组, 和S中的每一个元组匹配. </p>
+<ul>
+<li>来自于<code>R</code>的IO: <code>b_R</code>, 即<code>R</code>表的每个页面只需要读取一次</li>
+<li>来自于<code>S</code>的IO: <code>b_R*b_S</code>, 因为每个<code>R</code>的页面都要读取<code>S</code>的所有页面</li>
+</ul>
+<p>所以总的IO成本是: <code>b_R+b_R*b_S</code>.</p>
+<details class="example" open="open">
+<summary>例子</summary>
+<p>上述的例子中, 如果<code>Student</code>位于外层, 则复杂度为100+100*400=40100次IO. 如果<code>Enrolled</code>位于外层, 则复杂度为400+400*100=40400次IO.</p>
+</details>
+<h6 id="_10">索引嵌套循环连接</h6>
+<p>索引嵌套循环连接可以用伪代码表示为:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>for each page BR of R do
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    for each tuple r in BR do
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>        for each tuple s in idx(r) do
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>            add &lt;r,s&gt; to result
+</code></pre></div>
+<p>要使用索引嵌套循环嵌套连接, 必须满足以下条件:</p>
+<ul>
+<li>连接必须是等值连接或者自然连接</li>
+<li>内表的连接属性上有索引</li>
+</ul>
+<p>假设S表的连接属性, 如<code>sid</code>有索引<code>idx(sid)</code>. 对于R表的每个页面, 对于页面的每个元组, 使用索引<code>idx(sid)</code>查找满足连接条件的元组, 加入结果. </p>
+<ul>
+<li>来自于<code>R</code>的IO: <code>b_R</code></li>
+<li>来自于<code>S</code>的IO: <code>|R|*c</code>, <code>c</code>是对<code>S</code>表的索引进行遍历和查找的平均成本(包含索引访问和匹配元组读取)</li>
+</ul>
+<details class="example" open="open">
+<summary>例子</summary>
+<ul>
+<li><code>c_1=4</code>表示对<code>S</code>使用索引查找的平均成本</li>
+<li><code>c_2=3</code>表示对<code>R</code>使用索引查找的平均成本</li>
+</ul>
+<p>上述的例子中, 如果<code>S</code>表有索引的时候, 则复杂度为100+1000*4=4400次IO. 如果<code>R</code>表有索引的时候, 则复杂度为400+10000*3=30400次IO.</p>
+</details>
+<p>通常情况下, 我们会选择元组较少的表作为外表, 这样可以减少索引查找的次数, 进而降低IO成本. 在本例中, 使用<code>S</code>表的索引会比使用<code>R</code>表的效率更高, 因为<code>R</code>表较小, 查找次数少.</p>
 
 
 
