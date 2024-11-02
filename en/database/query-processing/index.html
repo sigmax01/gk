@@ -967,6 +967,30 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      优化排序操作
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="优化排序操作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      外部合并排序
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1774,6 +1798,30 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      优化排序操作
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="优化排序操作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      外部合并排序
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1996,6 +2044,15 @@
 <p>上述的例子中, 如果<code>S</code>表有索引的时候, 则复杂度为100+1000*4=4400次IO. 如果<code>R</code>表有索引的时候, 则复杂度为400+10000*3=30400次IO.</p>
 </details>
 <p>通常情况下, 我们会选择元组较少的表作为外表, 这样可以减少索引查找的次数, 进而降低IO成本. 在本例中, 使用<code>S</code>表的索引会比使用<code>R</code>表的效率更高, 因为<code>R</code>表较小, 查找次数少.</p>
+<h5 id="_11">优化排序操作</h5>
+<p>在SQL查询中, 可以通过<code>ORDER BY</code>关键字得到经过排序的输出. 一些SQL操作如<code>JOIN</code>, <code>GROUP BY</code>, <code>DISTINCT</code>, <code>UNION</code>, <code>DIFFERENCE</code>等在输入是排序的情况下执行效率更高. </p>
+<details class="example" open="open">
+<summary>例子</summary>
+<p>例如, 投影操作, 考虑以下的SQL操作<code>SELECT DISTINCT sid, bid FROM Reserves</code>. 在默认情况下, 为了确保返回的结果中每个<code>sid, bid</code>组合都是唯一的, 如果文件未排序, 则去重操作可能需要将每个记录与文件中的所有其他值逐一比较, 从而增加了时间和资源消耗o</p>
+</details>
+<p>Sort-Merge Join是实现连接操作的又一种方法, 在进行连接操作的时候, 将两张表按照连接属性排序, 然后通过线性扫描匹配对应的值. 在这种Join算法中, 最昂贵的部分是对输入的两张表进行排序. </p>
+<p>对于小的, 能够装入内存的表, 可以使用QuickSort等排序算法, 这种算法在内存中排序时效率较高. 但是对于大型数据库, 这种方法不可行. 例如, 在4GB内存中对10GB的数据无法进行排序. 这个使用, 我们通常采用的是External Merge-Sort算法, 即外部合并排序.</p>
+<h6 id="_12">外部合并排序</h6>
 
 
 
