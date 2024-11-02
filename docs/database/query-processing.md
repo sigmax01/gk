@@ -110,3 +110,94 @@ comments: false
 - 索引嵌套循环连接: Index-nested loop join
 
 根据IO来选择合适的实现算法.
+
+???+ example "例子"
+
+    假设:
+
+    - `Student`: 包括了学生的基本信息, `sid`, `name`, `gender`, `country`
+    - `Enrolled`: 包括了学生的选课记录, `sid`, `uos_code`, `semester`
+
+    - `|R|`: 表示关系`R`中元组的数量, 这里假设`|R|=1000`
+    - `|S|`: 表示关系`|S|`中的元组数量, 这里假设`|S|=1000`
+
+    - `b_R`: 表示`Student`表的页数, 这里假设`b_R=100`
+    - `b_S`: 表示`Enrolled`表的页数, 这里假设`b_S=400`
+
+    我们要执行的操作是Student⨝Enrolled. 也就是基于`sid`对两个表进行连接.
+
+###### 嵌套循环连接
+
+循环嵌套连接可以用伪代码表示为:
+
+```
+for each page BR of R do
+    for each tuple r in BR do
+        for each page BS of S do
+            for each tuple s in BS do
+                if θ(r,s)=true then add <r,s> to the result
+```
+
+即, 对于R中的每一个元组, 我们要扫描整一个S表. 这样做的好处是不需要任何索引, 可以被用于任何形式的条件连接. 缺点就是非常的消耗计算资源.
+
+- 来自于`R`的IO: 读取`b_R`个表到内存
+- 来自于`S`的IO: 对于每一个`R`中的元组, 都要读取`S`的所有表, 所以是`|R|*b_S`
+
+所以, 总的消耗是`b_R+|R|*b_S`.
+
+???+ example "例子"
+
+    上述的例子中, 如果`Student`位于外层, 则复杂度为100+1000\*400=400100次IO. 如果`Enrolled`位于外层, 则复杂度为400+10000\*100h=10004000次IO. 
+
+###### 块嵌套循环连接
+
+块嵌套循环连接可以用伪代码表示为:
+
+```
+for each page BR of R do
+    for each page BS of S do
+        for each tuple r in BR do
+            for each tuple s in BS do
+                if θ(r,s)=true then add <r,s> to the result
+``` 
+
+可以看到, 只是两条语句对换了一下位置. 对于每一个R页面, 遍历S中的每一个页面, 在内存中读取R中每一个元组, 和S中的每一个元组匹配. 
+
+- 来自于`R`的IO: `b_R`, 即`R`表的每个页面只需要读取一次
+- 来自于`S`的IO: `b_R*b_S`, 因为每个`R`的页面都要读取`S`的所有页面
+
+所以总的IO成本是: `b_R+b_R*b_S`.
+
+???+ example "例子"
+
+    上述的例子中, 如果`Student`位于外层, 则复杂度为100+100\*400=40100次IO. 如果`Enrolled`位于外层, 则复杂度为400+400\*100=40400次IO.
+
+###### 索引嵌套循环连接
+
+索引嵌套循环连接可以用伪代码表示为:
+
+```
+for each page BR of R do
+    for each tuple r in BR do
+        for each tuple s in idx(r) do
+            add <r,s> to result
+```
+
+要使用索引嵌套循环嵌套连接, 必须满足以下条件:
+
+- 连接必须是等值连接或者自然连接
+- 内表的连接属性上有索引
+
+假设S表的连接属性, 如`sid`有索引`idx(sid)`. 对于R表的每个页面, 对于页面的每个元组, 使用索引`idx(sid)`查找满足连接条件的元组, 加入结果. 
+
+- 来自于`R`的IO: `b_R`
+- 来自于`S`的IO: `|R|*c`, `c`是对`S`表的索引进行遍历和查找的平均成本(包含索引访问和匹配元组读取)
+
+???+ example "例子"
+
+    - `c_1=4`表示对`S`使用索引查找的平均成本
+    - `c_2=3`表示对`R`使用索引查找的平均成本
+
+    上述的例子中, 如果`S`表有索引的时候, 则复杂度为100+1000\*4=4400次IO. 如果`R`表有索引的时候, 则复杂度为400+10000\*3=30400次IO.
+
+通常情况下, 我们会选择元组较少的表作为外表, 这样可以减少索引查找的次数, 进而降低IO成本. 在本例中, 使用`S`表的索引会比使用`R`表的效率更高, 因为`R`表较小, 查找次数少.
