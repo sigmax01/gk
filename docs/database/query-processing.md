@@ -57,7 +57,7 @@ comments: false
 
         这样能够进一步减少中间的数据规模. 
 
-#### 等价代数表达式转化规则
+##### 等价代数表达式转化规则
 
 - 交换律: R1⋈R2=R2⋈R1
 - 结合律: (R1⋈R2)⋈R3=R1⋈(R2⋈R3)
@@ -80,3 +80,6 @@ comments: false
     根据选择的级联, 有Π~Branchname,Assets~(σ~Customercity=Sydney~(σ~Balance>500~(Customer⋈Deposit))⋈Branch)
 
     使用两次选择对连接的分配性, 有Π~Branchname,Assets~(σ~Customercity=Sydney~(Customer)⋈σ~Balance>500~(Deposit)⋈Branch)
+
+#### 物理查询计划优化
+
