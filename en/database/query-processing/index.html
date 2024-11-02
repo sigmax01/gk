@@ -1687,8 +1687,8 @@
 <li><code>Customer</code>: 包含<code>customername</code>, <code>street</code>和<code>customercity</code></li>
 <li><code>Branch</code>: 包含<code>branchname</code>, <code>assets</code>, <code>branchcity</code></li>
 </ul>
-<p>上述给定查询的关系表达式为: π Branchname,Assets (σ Customercity='Sydney'(Customer⋈Deposit⋈Branch)). 上述三个表的自然连接可能产生一个非常大的关系, 无法放到内存中. 在这里, 我们其实只需要一些有用的<code>Cusomtercity</code>为<code>Sydney</code>的起始元组, 并且, 查询的最终需求是<code>Branchname</code>和<code>Assets</code>, 这意味着早较早阶段就应该丢弃其他不需要的字段. </p>
-<p>如上述的表达式可以修改为π Branchname,Assets ((π customername (σ Customercity='Sydney' (Customer)))⋈Deposit⋈π branchname,assets (Branch)). 首先从<code>Customer</code>表中筛选出<code>CustomerCity='Sydney'</code>的记录, 然后只丢弃不需要的<code>street</code>和<code>customercity</code>字段. </p>
+<p>上述给定查询的关系表达式为: π<sub>Branchname,Assets</sub>(σ<sub>Customercity=Sydney</sub>(Customer⋈Deposit⋈Branch)). 上述三个表的自然连接可能产生一个非常大的关系, 无法放到内存中. 在这里, 我们其实只需要一些有用的<code>Cusomtercity</code>为<code>Sydney</code>的起始元组, 并且, 查询的最终需求是<code>Branchname</code>和<code>Assets</code>, 这意味着早较早阶段就应该丢弃其他不需要的字段. </p>
+<p>如上述的表达式可以修改为π<sub>Branchname,Assets</sub>((π<sub>customername</sub>(σ<sub>Customercity=Sydney</sub>(Customer)))⋈Deposit⋈π<sub>branchname,assets</sub>(Branch)). 首先从<code>Customer</code>表中筛选出<code>CustomerCity='Sydney'</code>的记录, 然后只丢弃不需要的<code>street</code>和<code>customercity</code>字段. </p>
 </div>
 <div class="tabbed-block">
 <p>考虑以下的查询: "找到在悉尼有客户存款找过$500的银行的资产和名称". </p>
@@ -1718,7 +1718,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年11月1日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年11月2日</span>
   </span>
 
     
