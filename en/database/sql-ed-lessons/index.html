@@ -1562,6 +1562,41 @@
 </div>
 </div>
 </details>
+<ul>
+<li>范围条件判断, <code>BETWEEN</code>, <code>IN</code>, <code>=</code>, <code>&gt;</code>, <code>&gt;=</code>, <code>&lt;</code>, <code>&lt;=</code></li>
+</ul>
+<details class="example" open="open">
+<summary>例子</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">案例1</label><label for="__tabbed_2_2">案例2</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">Enrolled</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">grade</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;CR&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;D&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;HD&#39;</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">FROM</span><span class="w"> </span><span class="n">Student</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="k">BETWEEN</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="mi">25</span><span class="p">;</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</details>
+</li>
+<li>
+<p>逻辑连接, <code>OR</code>, <code>AND</code></p>
+<details class="example" open="open">
+<summary>例子</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">Student</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="p">(</span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">19</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">)</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="p">(</span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">19</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Bondi&#39;</span><span class="p">)</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="p">(</span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Newtown&#39;</span><span class="p">)</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="p">(</span><span class="n">address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Newtown&#39;</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Bondi&#39;</span><span class="p">);</span>
+</code></pre></div>
+</details>
 </li>
 </ul>
 
