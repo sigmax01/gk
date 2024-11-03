@@ -11,6 +11,7 @@
 ## 进度
 
 - [x] [数据库](/database/)
+    - [ ] [考点](/database/exam)
     - [x] [数据模型](database/conceptual-model)
     - [x] [关系模型](database/conceptual-model)
     - [x] [关系代数](database/relational-algebra)
