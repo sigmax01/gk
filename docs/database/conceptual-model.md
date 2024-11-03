@@ -7,7 +7,6 @@ comments: true
 
     - 中科大数据库系统概论PPT: [http://staff.ustc.edu.cn/~huangzhy/Course/files/DB2022/chp1-1.pdf](http://staff.ustc.edu.cn/~huangzhy/Course/files/DB2022/chp1-1.pdf)
     - 数据库系统概论(第5版): [https://github.com/tomtang110/comp9311/blob/master/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA(%E7%AC%AC5%E7%89%88).pdf](https://github.com/tomtang110/comp9311/blob/master/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA(%E7%AC%AC5%E7%89%88).pdf)
-    - 默认省略例子框
 
 数据模型是一种对现实世界数据特征的抽象, 是数据库系统的核心和基础. 由于计算机不可能直接处理现实世界中的数据, 也就是首先要数字化, 把显示世界中具体的人, 物, 活动, 概念用数据模型这个工具来抽象, 表示和处理. 通俗的讲, 数据模型就是现实世界的模拟.
 

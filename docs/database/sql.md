@@ -3,19 +3,6 @@ title: 数据库:SQL
 comments: true
 ---
 
-???+ info "信息"
-
-    省略所有的例子边框.
-
-???+ quote "考察"
-
-    - Formulate basic SQL queries
-        - SFW query
-        - Join query
-        - Set operations
-    - Know how SQL relates to the relational algebra
-        - Write equivalent relational algrbra expression for SQL queries
-
 [关系代数](/database/relational-algebra)是一种理论基础的过程式的查询语言, 可能比较难以理解并且不是专家的话使用起来非常困难. 这个时候, SQL来了, 它是一种高阶的声明式的查询语句, 即它只描述我们感兴趣的数据, 而不是怎么取到它. 它基于SEQUEL, 作为IBM公司的查询语句在1970年中期发明. SQL在内部会将查询语句映射到相应的关系代数表达式, 见[结构图](/database/relational-algebra/#RA在RDBMS中的角色).
 
 ## SQL构成
