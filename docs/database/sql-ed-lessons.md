@@ -36,3 +36,35 @@ comments: true
                 country char(2) not null references Country(short_code)
             );
             ```
+- 范围条件判断, `BETWEEN`, `IN`, `=`, `>`, `>=`, `<`, `<=`
+
+    ???+ example "例子"
+
+        === "案例1"
+
+            ```sql
+            SELECT *
+                FROM Enrolled
+            WHERE grade IN ('CR', 'D', 'HD');
+            ```
+
+        === "案例2"
+
+            ```sql
+            SELECT *
+            FROM Student
+            WHERE age BETWEEN 20 and 25;
+            ```
+
+- 逻辑连接, `OR`, `AND`
+
+    ???+ example "例子"
+
+        ```sql
+        SELECT *
+            FROM Student
+        WHERE (age = 19 OR age = 20)
+            AND (age = 19 OR address = 'Bondi')
+            AND (age = 20 OR address = 'Newtown')
+            AND (address = 'Newtown' OR address = 'Bondi');
+        ```
