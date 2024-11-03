@@ -14,3 +14,7 @@ comments: true
     - [weak entity & strong entity](/database/conceptual-model/#强弱实体型)
     - [isA relationship](/database/conceptual-model/#泛化反泛化)
     - [aggregation](/database/conceptual-model/#aggregation)
+- ERD转换为RM
+    - [map constraints](/database/relational-model/#map-constraints)
+    - [map weak & strong entity](/database/relational-model/#map-weakstrongentity)
+    - [map isA](/database/relational-model/#map-isa)
