@@ -166,6 +166,7 @@ nav:
     - index.md
   - 数据库:
     - 绪论: database/index.md
+    - 考点: database/exam.md
     - 数据模型: database/conceptual-model.md
     - 关系模型: database/relational-model.md
     - 关系代数: database/relational-algebra.md
