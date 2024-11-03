@@ -85,3 +85,7 @@ SQL语句中, `UNION`, `INTERSECT`, `EXCEPT`对应的是集合操作中的∪, �
     - 在`R EXCEPT ALL S`的结果中会出现max(0, m-n)次
 
 例子如[图1](https://img.ricolxwz.io/4ed0a2e07f06c175ee79d5858f3bca9a.png), [图2](https://img.ricolxwz.io/ffa4171300b7c1ba9b17000bf4a96476.png).
+
+## ED-Lessons专题
+
+请见[这里](/database/sql-ed-lessons)
