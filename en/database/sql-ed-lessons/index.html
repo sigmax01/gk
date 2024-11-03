@@ -12,13 +12,9 @@
         <meta name="author" content="ricolxwz">
       
       
-        <link rel="canonical" href="https://gk.ricolxwz.de/en/database/sql/">
+        <link rel="canonical" href="https://gk.ricolxwz.de/en/database/sql-ed-lessons/">
       
       
-        <link rel="prev" href="../relational-algebra/">
-      
-      
-        <link rel="next" href="../integrity-constraints/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -26,7 +22,7 @@
     
     
       
-        <title>数据库:SQL - 基石库</title>
+        <title>数据库:SQL课程 - 基石库</title>
       
     
     
@@ -100,11 +96,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#sql" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -156,7 +147,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              数据库:SQL
+              数据库:SQL课程
             
           </span>
         </div>
@@ -213,7 +204,7 @@
       <ul class="md-select__list">
         
           <li class="md-select__item">
-            <a href="../../../database/sql/" hreflang="zh" class="md-select__link">
+            <a href="../../../database/sql-ed-lessons/" hreflang="zh" class="md-select__link">
               中文
             </a>
           </li>
@@ -312,12 +303,10 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="../" class="md-tabs__link">
           
   
@@ -527,8 +516,6 @@
       
   
   
-    
-  
   
   
     
@@ -563,17 +550,16 @@
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
         
           
           
@@ -589,13 +575,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             数据库
@@ -671,28 +657,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    SQL
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../sql/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -701,117 +669,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#sql" class="md-nav__link">
-    <span class="md-ellipsis">
-      SQL构成
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sql_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      基础SQL查询
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="基础SQL查询">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      关键字
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#select-from-where-sfw" class="md-nav__link">
-    <span class="md-ellipsis">
-      Select-From-Where (SFW) 查询
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      连接查询
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="连接查询">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      隐式连接
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      显式连接
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#set-operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      集合操作
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ed-lessons" class="md-nav__link">
-    <span class="md-ellipsis">
-      ED-Lessons专题
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1636,107 +1493,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#sql" class="md-nav__link">
-    <span class="md-ellipsis">
-      SQL构成
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sql_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      基础SQL查询
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="基础SQL查询">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      关键字
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#select-from-where-sfw" class="md-nav__link">
-    <span class="md-ellipsis">
-      Select-From-Where (SFW) 查询
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      连接查询
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="连接查询">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      隐式连接
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      显式连接
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#set-operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      集合操作
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ed-lessons" class="md-nav__link">
-    <span class="md-ellipsis">
-      ED-Lessons专题
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1752,7 +1508,7 @@
                   
 
   
-    <a href="https://github.com/ricolxwz/gk/edit/master/docs/database/sql.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/ricolxwz/gk/edit/master/docs/database/sql-ed-lessons.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1761,86 +1517,53 @@
     
       
     
-    <a href="https://github.com/ricolxwz/gk/raw/master/docs/database/sql.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/ricolxwz/gk/raw/master/docs/database/sql-ed-lessons.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-  <h1>SQL</h1>
+  <h1>数据库:SQL课程</h1>
 
-<p><a href="/database/relational-algebra">关系代数</a>是一种理论基础的过程式的查询语言, 可能比较难以理解并且不是专家的话使用起来非常困难. 这个时候, SQL来了, 它是一种高阶的声明式的查询语句, 即它只描述我们感兴趣的数据, 而不是怎么取到它. 它基于SEQUEL, 作为IBM公司的查询语句在1970年中期发明. SQL在内部会将查询语句映射到相应的关系代数表达式, 见<a href="/database/relational-algebra/#RA在RDBMS中的角色">结构图</a>.</p>
-<h2 id="sql">SQL构成</h2>
-<p>数据库管理系统(DBMS)中的操作通常分为三大类: </p>
 <ul>
-<li>数据定义语言, DDL, 主要用于定义和管理数据库结构, 常见的操作包括<code>CREATE</code>, <code>ALTER</code>, <code>DROP</code>等等...</li>
-<li>数据操作语言, DML, 主要用于查询和修改数据库中的数据, 常见的操作包括<code>SELECT</code>, <code>INSERT</code>等等...</li>
-<li>数据控制语言, DCL, 主要用于控制对数据库的访问权限, 常见的操作包括<code>GRANT</code>, <code>REVOKE</code>等等...</li>
-</ul>
-<p>DDL, DML和DCL都是SQL的子集或组成部分.</p>
-<h2 id="sql_1">基础SQL查询</h2>
-<h3 id="_1">关键字</h3>
-<p>基础SQL查询的常用关键字有:</p>
-<ul>
-<li><code>SELECT</code>: 列出所有从查询中返回的列</li>
-<li><code>FROM</code>: 指明查询数据的来源的表</li>
-<li><code>WHERE</code>: 指明包含在查询结果中元组的条件</li>
-<li><code>ORDER BY</code>: 指明查询结果的排序</li>
-</ul>
-<h3 id="select-from-where-sfw">Select-From-Where (SFW) 查询</h3>
-<p>SFW查询的格式为:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">&lt;</span><span class="n">attributes</span><span class="o">&gt;</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="o">&lt;</span><span class="n">one</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="k">more</span><span class="w"> </span><span class="n">tables</span><span class="o">&gt;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="o">&lt;</span><span class="n">conditions</span><span class="o">&gt;</span>
+<li>不要用<code>"</code>, 双引号在SQL中有不同的含义</li>
+<li>在单引号里面是大小写敏感的, 但是SQL的关键字本身是不敏感的</li>
+<li>对于<code>count</code>函数, 如果传入的参数是<code>*</code>, 则统计该表的总行数(不管有没有缺失值), 如果传入的参数是某一个属性名, 则统计的是该属性中除去缺失值之外的个数, <code>MAX</code>, <code>AVG</code>等会自动忽略缺失值</li>
+<li><code>INSERT INTO &lt;table&gt; VALUES &lt;values&gt;</code>, <code>UPDATE &lt;table&gt; SET &lt;values&gt; WHERE &lt;conditions&gt;</code>, <code>DELETE FROM &lt;table&gt; WHERE &lt;conditions&gt;</code></li>
+<li>
+<p><code>CREATE TABLE &lt;table&gt; (&lt;attr1&gt;, &lt;type1&gt;, ...)</code>, 注意<code>PRIMARY KEY</code>, <code>NOT NULL</code>, <code>DEFAULT &lt;default_value&gt;</code>, <code>references &lt;table&gt;(&lt;attr&gt;)</code>的使用, 以及<code>DROP TABLE</code></p>
+<details class="example" open="open">
+<summary>例子</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">案例1</label><label for="__tabbed_1_2">案例2</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">Person</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="n">license</span><span class="w"> </span><span class="nb">integer</span><span class="w"> </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="p">,</span><span class="w"> </span><span class="c1">-- 不要漏逗号</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">);</span><span class="w"> </span><span class="c1">-- 不要漏分号</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">Car</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="n">regno</span><span class="w"> </span><span class="nb">char</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="w"> </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="p">,</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="n">model</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="n">driver</span><span class="w"> </span><span class="nb">integer</span><span class="w"> </span><span class="k">references</span><span class="w"> </span><span class="n">person</span><span class="p">(</span><span class="n">license</span><span class="p">)</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="p">);</span>
 </code></pre></div>
-<ul>
-<li>列出所有学生的姓名: <code>SELECT name FORM Student</code></li>
-<li>列出所有中国学生的名字: <code>SELECT name FROM Student WHERE country="CN"</code></li>
-<li>列出所有的属性: <code>SELECT * FROM Student</code></li>
-</ul>
-<p>SFW查询语句背后执行的是下列关系代数表达式: <code>πA1,A2,...,An(σΘ(R1×R2×...×Rm))</code>.</p>
-<ul>
-<li><code>SELECT</code>对应的是投影π</li>
-<li><code>FROM</code>对应的是笛卡尔积R1×R2×...×Rm</li>
-<li><code>WHERE</code>对应的是选择σ</li>
-</ul>
-<details class="tip" open="open">
-<summary>Tip</summary>
-<ul>
-<li>SQL语句对大小写不敏感</li>
-<li>对于字符串使用单引号</li>
-<li>字符串对大小写是敏感的</li>
-<li>SFW返回的结果也是关系/表</li>
-<li>SFW返回的结果表中可以包含重复元组, 事实上, RDBMS在任何表中都可以允许存在重复值的. SFW返回的结果会保留原始数据中重复的元组, 如果要使返回的表中不含有任何的重复元组的话, 可以使用<code>DISTINCT</code>命令, 如<code>SELECT DISTINCT country FROM Student</code></li>
-<li>可以包含算数运算, 如<code>SELECT uos_code, title, points*2 FROM UnitOsStudy</code></li>
-<li><code>WHERE</code>语句后面包含条件, 可以使用逻辑运算符, 如<code>&gt;</code>, <code>AND</code>等</li>
-<li>SQL包含了一个字符串匹配机制, 类似于正则表达式. 我们可以使用<code>LIKE</code>来实现字符串的匹配. 如列出所有包含<code>COMP</code>的课程<code>SELECT title FROM UnitOfStudy WHERE uos_code LIKE 'COMP%'</code>. <code>%</code>表示匹配任何子字符串, <code>_</code>表示匹配任何单字符</li>
-<li>SQL支持不少的字符串操作, 如<code>||</code>表示拼接字符串, 可以将字符串从大写转化为小写, 取出字符串长度, 切片等等</li>
-<li>SQL支持对属性进行重命名, 注意, 这只是对结果表生效, 无法改变原表的属性名称. 使用<code>AS</code>来实现. 如<code>SELECT a.uos_code AS course_code, a.credit_points FROM UnitOfStudy a WHERE a.uos = 'COMP5318'</code></li>
-<li>SQL支持对某一列进行排序, 使用<code>ORDER BY</code>语句.. 如<code>SELECT name FROM Student WHERE country='CN' ORDER BY name</code>. 注意有两个方向, 一个是<code>ASC</code>, 表示升序(默认), 一个是<code>DESC</code>, 表示降序. 可以在<code>ORDER BY</code>语句后面声明是降序还是升序, 如<code>ORDER BY country DESC, name ASC</code></li>
-<li>SQL支持使用表的别名, 如<code>SELECT L.name, M.name FROM Lecturer L, Lecturer M, L.manager = M.empid</code>, 在这种情况下, <code>L</code>和<code>M</code>表示的其实是同一张表, 可以将其想象为<code>Lecturer</code>表的不同的两份副本</li>
-<li><code>FROM</code>子句如果不加任何<code>JOIN</code>的话默认使用的是笛卡尔积</li>
-</ul>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">Studio</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="n">studio_id</span><span class="w"> </span><span class="nb">integer</span><span class="w"> </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="p">,</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="p">,</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="n">address</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="n">country</span><span class="w"> </span><span class="nb">char</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="k">references</span><span class="w"> </span><span class="n">Country</span><span class="p">(</span><span class="n">short_code</span><span class="p">)</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">);</span>
+</code></pre></div>
+</div>
+</div>
+</div>
 </details>
-<h2 id="_2">连接查询</h2>
-<p>连接在SQL语句中分为隐式连接和显式连接. </p>
-<h3 id="_3">隐式连接</h3>
-<p>隐式连接使用到的是<code>FROM</code>和<code>WHERE</code>语句, <code>FROM</code>语句用于列出参与到查询中的表, 对应的是笛卡尔积中的表, 连接的条件在<code>WHERE</code>语句中列出. 如选出Student表和UnitOfStudy的笛卡尔积: <code>SELECT * FROM Student, UnitOfStudy</code>. 如<a href="https://img.ricolxwz.io/109682364bd058e45fc66e1c06fa8291.png">图</a>.</p>
-<h3 id="_4">显式连接</h3>
-<p>默认连接用到的是内连接, 关于四种连接的区别, 请见<a href="/database/relational-algebra/#条件连接">这里</a>. 显式连接用到的是<code>FROM</code>, <code>JOIN</code>和<code>ON</code>关键字.</p>
-<h2 id="set-operations">集合操作</h2>
-<p>SQL语句中, <code>UNION</code>, <code>INTERSECT</code>, <code>EXCEPT</code>对应的是集合操作中的∪, ∩和−. </p>
-<details class="tip" open="open">
-<summary>Tip</summary>
-<p>要注意的是, 上述这几种操作会自动去除重复, 内部的原理是在操作之前会消除掉输入表的重复行, 然后再做集合操作. 如, 假设一个元组在R中出现了3次, 在S中出现了1次, 那么R-S这个操作之后的结果中将不含有这个元组. 若要保留所有的重复行, 则分别需要用到<code>UNION ALL</code>, <code>INTERSECT ALL</code>和<code>EXCEPT ALL</code>. 如, 假设一个元组在R中出现了m次, 在S中出现了n次, 那么:</p>
-<ul>
-<li>在<code>R UNION ALL S</code>的结果中会出现m+n次</li>
-<li>在<code>R INTERSECT ALL S</code>的结果中会出现min(m, n)次</li>
-<li>在<code>R EXCEPT ALL S</code>的结果中会出现max(0, m-n)次</li>
+</li>
 </ul>
-</details>
-<p>例子如<a href="https://img.ricolxwz.io/4ed0a2e07f06c175ee79d5858f3bca9a.png">图1</a>, <a href="https://img.ricolxwz.io/ffa4171300b7c1ba9b17000bf4a96476.png">图2</a>.</p>
-<h2 id="ed-lessons">ED-Lessons专题</h2>
-<p>请见<a href="/database/sql-ed-lessons">这里</a></p>
 
 
 
@@ -1873,7 +1596,7 @@
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年8月22日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年11月3日</span>
   </span>
 
     
