@@ -18,3 +18,4 @@ comments: true
     - [map constraints](/database/relational-model/#map-constraints)
     - [map weak & strong entity](/database/relational-model/#map-weakstrongentity)
     - [map isA](/database/relational-model/#map-isa)
+    - [map aggregation](/database/relational-model/#map-aggregation)

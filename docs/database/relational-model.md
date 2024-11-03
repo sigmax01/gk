@@ -310,6 +310,6 @@ RDBMS在默认情况下允许用`null`表示缺失/不相关. 对于某一些应
 
 映射isA结构的时候, 子类的外键是超类(高层次的, 抽象的类)的主键. 如[图](https://img.ricolxwz.io/e24aee851049a321ea87670a3368daf6.png)
 
-### 映射聚合
+### 映射聚合 {#map-aggregation}
 
 聚合之后的新的实体型的键和另一个参与聚合关系的实体的键构成了聚合关系的键和外键. 如[图](https://img.ricolxwz.io/e5f435a531088490c3c6c0eb1ce55426.png).
