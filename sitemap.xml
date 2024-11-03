@@ -43,6 +43,13 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://gk.ricolxwz.de/en/database/conceptual-model/"/>
     </url>
     <url>
+        <loc>https://gk.ricolxwz.de/database/exam/</loc>
+        <lastmod>2024-11-03</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://gk.ricolxwz.de/database/exam/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://gk.ricolxwz.de/en/database/exam/"/>
+    </url>
+    <url>
         <loc>https://gk.ricolxwz.de/database/integrity-constraints/</loc>
         <lastmod>2024-11-03</lastmod>
         <changefreq>daily</changefreq>
@@ -279,6 +286,13 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://gk.ricolxwz.de/en/database/conceptual-model/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://gk.ricolxwz.de/database/conceptual-model/"/>
+    </url>
+    <url>
+        <loc>https://gk.ricolxwz.de/en/database/exam/</loc>
+        <lastmod>2024-11-03</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://gk.ricolxwz.de/en/database/exam/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://gk.ricolxwz.de/database/exam/"/>
     </url>
     <url>
         <loc>https://gk.ricolxwz.de/en/database/integrity-constraints/</loc>
