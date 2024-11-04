@@ -1653,6 +1653,12 @@
 </li>
 <li>
 <p>优化连接操作, 计算IO次数</p>
+<p>要点:</p>
+<ul>
+<li>嵌套循环连接: b_R+|R|*b_S, R是外表, |R|是R元组的数量, b是页数</li>
+<li>块嵌套循环连接: b_R+b_R*b_S, R是外表, b是页数</li>
+<li>索引嵌套循环连接: b_R+|R|*c, R是外表, c是对S表索引的平均成本</li>
+</ul>
 <p>相关知识点:</p>
 <ul>
 <li><a href="/database/query-processing/#nested-loop-join">nested loop join</a></li>
