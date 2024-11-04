@@ -100,6 +100,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -615,6 +620,17 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    考点
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -624,6 +640,86 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据模型
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      关系模型
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      关系代数
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      规范化
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      事务
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      存储与索引
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      查询处理
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1533,6 +1629,77 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据模型
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      关系模型
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      关系代数
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      规范化
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      事务
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      存储与索引
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      查询处理
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1567,9 +1734,7 @@
   <h1>考点</h1>
 
 <p>个人认为的大题考点, 由于小题占比过小不提供, 并且, <strong>只写重点, 不写非常基础的东西</strong>.</p>
-<ul>
-<li>
-<p>画ERD</p>
+<h2 id="_1">数据模型</h2>
 <p>要点:</p>
 <ul>
 <li>如何表示属性, 包括它的主键(实线), 外键(虚线); 复合属性(多个椭圆连接到一个大椭圆); 区分符(虚线); 派生属性(虚线椭圆); 多值属性(双椭圆形)</li>
@@ -1596,9 +1761,7 @@
 <li><a href="/database/conceptual-model/#泛化反泛化">isA relationship</a></li>
 <li><a href="/database/conceptual-model/#aggregation">aggregation</a></li>
 </ul>
-</li>
-<li>
-<p>ERD转换为RM</p>
+<h2 id="_2">关系模型</h2>
 <p>要点:</p>
 <ul>
 <li>如何映射没有任何约束的关系: 关系集独立建表, 两个实体集的主键的组合称为该新表的主键, 同时也是该新表的外键, 需要用箭头指到相应的实体集的主键, 如<a href="https://img.ricolxwz.io/f7a07b8706af6f4dab96d5a946ee93a2.png">图</a></li>
@@ -1620,9 +1783,7 @@
 <li><a href="/database/relational-model/#map-isa">map isA</a></li>
 <li><a href="/database/relational-model/#map-aggregation">map aggregation</a></li>
 </ul>
-</li>
-<li>
-<p>写关系代数</p>
+<h2 id="_3">关系代数</h2>
 <p>相关知识点:</p>
 <ul>
 <li><a href="/database/relational-algebra/#operator">operator</a>, unary operator, binary operator, 特别注意选择条件操作符AND<code>^</code>, OR<code>∨</code></li>
@@ -1630,9 +1791,13 @@
 <li><a href="/database/relational-algebra/#set">union</a></li>
 <li><a href="/database/query-processing/#logical-query-optimization">logical query optimization</a>, 主要思想就是使中间的结果尽量小</li>
 </ul>
-</li>
-<li>
-<p>确定调度是否冲突可串行化</p>
+<h2 id="_4">规范化</h2>
+<p>相关知识点:</p>
+<ul>
+<li><a href="/database/normalization/#functional-dependency-closure">functional dependencies closure</a></li>
+<li><a href="/database/normalization/#属性闭包">attributes closure</a></li>
+</ul>
+<h2 id="_5">事务</h2>
 <p>相关知识点:</p>
 <ul>
 <li><a href="/database/transaction/#acid">ACID</a></li>
@@ -1642,17 +1807,26 @@
 <li><a href="/database/transaction/#conflicts">type of conflicts</a></li>
 <li><a href="/database/transaction/#冲突可串行化调度">conflict serializability</a></li>
 </ul>
-</li>
-<li>
-<p>计算函数依赖闭包, 属性闭包, 并根据结果判断是否为超键或者候选键</p>
+<h2 id="_6">存储与索引</h2>
+<p>要点:</p>
+<ul>
+<li>阻塞因子: 块大小/记录大小, 若&lt;1, 则发生"记录跨块"</li>
+<li>LRU和MRU算法: LRU, 替换掉最久未使用的数据块; MRU, 替换掉最近使用的数据块</li>
+<li>文件和页面: 一张表对应一个文件, 一个文件对应数个页面, 一个页面对应一个或多个块. 若一个页面为4k, 页头固定250字节元数据, occupancy为80%, 则每页有(4k-250)*0.8=3076字节来存储数据, 设每个记录的大小为200字节, 则向下取整后可以存储15条数据. 假设该文件有2000000条记录, 则总共需要的页数为2000000/15向上取整为133334页. 实际占用空间为4k*133334=546136064字节, overhead为(546136064-400000000)/400000000=36.53%</li>
+<li>三种文件组织: 无序文件, 排序文件, 索引文件</li>
+<li>访问路径: 线性扫描(很慢, 基本要扫描一半的页), 二分扫描(维护成本很高), 索引扫描</li>
+<li>B+树: 假设表存储在140351个页面的文件中, 页面按照逻辑排序(物理上不一定连续), 索引条目由搜索键和行指针构成, 共8字节. 假设每页的总可用空间为3846字节, 填充因子为75%, 则向下取整后可以存放360条索引. 最底层索引总共需要140351个, 所以需要的索引页数向上取整后为390页. 对于这个390页索引页, 在它的基础上继续套娃建立索引, 那么需要390/360向上取整2页来存放, 继续套娃, 最顶层只需要1页. 所以索引页的总数为393. 相对于140351个数据页, 仅仅增加了0.2%的需求. 在查询的时候, 只需要存放3个索引页和1个数据页入内存, 也就是4次IO</li>
+</ul>
 <p>相关知识点:</p>
 <ul>
-<li><a href="/database/normalization/#functional-dependency-closure">functional dependencies closure</a></li>
-<li><a href="/database/normalization/#属性闭包">attributes closure</a></li>
+<li><a href="/database/storage-indexing/#blocking-factor">block factor</a></li>
+<li><a href="/database/storage-indexing/#buffer-management">LRU &amp; MRU</a></li>
+<li><a href="/database/storage-indexing/#organization-storage">file &amp; page</a></li>
+<li><a href="/database/storage-indexing/#file-organisation">file organisation</a></li>
+<li><a href="/database/storage-indexing/#access-path">access path</a></li>
+<li><a href="/database/storage-indexing/#bp-tree">B+ tree</a></li>
 </ul>
-</li>
-<li>
-<p>优化连接操作, 计算IO次数</p>
+<h2 id="_7">查询处理</h2>
 <p>要点:</p>
 <ul>
 <li>嵌套循环连接: b_R+|R|*b_S, R是外表, |R|是R元组的数量, b是页数</li>
@@ -1664,8 +1838,6 @@
 <li><a href="/database/query-processing/#nested-loop-join">nested loop join</a></li>
 <li><a href="/database/query-processing/#block-nested-loop-join">block nested loop join</a></li>
 <li><a href="/database/query-processing/#index-nested-loop-join">index nested loop join</a></li>
-</ul>
-</li>
 </ul>
 
 
