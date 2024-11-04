@@ -958,7 +958,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#nested-loop-join" class="md-nav__link">
     <span class="md-ellipsis">
       嵌套循环连接
     </span>
@@ -967,7 +967,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#block-nested-loop-join" class="md-nav__link">
     <span class="md-ellipsis">
       块嵌套循环连接
     </span>
@@ -976,7 +976,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#index-nested-loop-join" class="md-nav__link">
     <span class="md-ellipsis">
       索引嵌套循环连接
     </span>
@@ -990,7 +990,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       优化排序操作
     </span>
@@ -1000,7 +1000,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       外部合并排序
     </span>
@@ -1024,7 +1024,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       评估策略
     </span>
@@ -1792,7 +1792,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#nested-loop-join" class="md-nav__link">
     <span class="md-ellipsis">
       嵌套循环连接
     </span>
@@ -1801,7 +1801,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#block-nested-loop-join" class="md-nav__link">
     <span class="md-ellipsis">
       块嵌套循环连接
     </span>
@@ -1810,7 +1810,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#index-nested-loop-join" class="md-nav__link">
     <span class="md-ellipsis">
       索引嵌套循环连接
     </span>
@@ -1824,7 +1824,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       优化排序操作
     </span>
@@ -1834,7 +1834,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       外部合并排序
     </span>
@@ -1858,7 +1858,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       评估策略
     </span>
@@ -2011,7 +2011,7 @@
 </ul>
 <p>我们要执行的操作是Student⨝Enrolled. 也就是基于<code>sid</code>对两个表进行连接.</p>
 </details>
-<h5 id="_7">嵌套循环连接</h5>
+<h5 id="nested-loop-join">嵌套循环连接</h5>
 <p>循环嵌套连接可以用伪代码表示为:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>for each page BR of R do
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    for each tuple r in BR do
@@ -2029,7 +2029,7 @@
 <summary>例子</summary>
 <p>上述的例子中, 如果<code>Student</code>位于外层, 则复杂度为100+1000*400=400100次IO. 如果<code>Enrolled</code>位于外层, 则复杂度为400+10000*100h=10004000次IO. </p>
 </details>
-<h5 id="_8">块嵌套循环连接</h5>
+<h5 id="block-nested-loop-join">块嵌套循环连接</h5>
 <p>块嵌套循环连接可以用伪代码表示为:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>for each page BR of R do
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    for each page BS of S do
@@ -2047,7 +2047,7 @@
 <summary>例子</summary>
 <p>上述的例子中, 如果<code>Student</code>位于外层, 则复杂度为100+100*400=40100次IO. 如果<code>Enrolled</code>位于外层, 则复杂度为400+400*100=40400次IO.</p>
 </details>
-<h5 id="_9">索引嵌套循环连接</h5>
+<h5 id="index-nested-loop-join">索引嵌套循环连接</h5>
 <p>索引嵌套循环连接可以用伪代码表示为:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>for each page BR of R do
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    for each tuple r in BR do
@@ -2073,7 +2073,7 @@
 <p>上述的例子中, 如果<code>S</code>表有索引的时候, 则复杂度为100+1000*4=4400次IO. 如果<code>R</code>表有索引的时候, 则复杂度为400+10000*3=30400次IO.</p>
 </details>
 <p>通常情况下, 我们会选择元组较少的表作为外表, 这样可以减少索引查找的次数, 进而降低IO成本. 在本例中, 使用<code>S</code>表的索引会比使用<code>R</code>表的效率更高, 因为<code>R</code>表较小, 查找次数少.</p>
-<h4 id="_10">优化排序操作</h4>
+<h4 id="_7">优化排序操作</h4>
 <p>在SQL查询中, 可以通过<code>ORDER BY</code>关键字得到经过排序的输出. 一些SQL操作如<code>JOIN</code>, <code>GROUP BY</code>, <code>DISTINCT</code>, <code>UNION</code>, <code>DIFFERENCE</code>等在输入是排序的情况下执行效率更高. </p>
 <details class="example" open="open">
 <summary>例子</summary>
@@ -2081,7 +2081,7 @@
 </details>
 <p>Sort-Merge Join是实现连接操作的又一种方法, 在进行连接操作的时候, 将两张表按照连接属性排序, 然后通过线性扫描匹配对应的值. 在这种Join算法中, 最昂贵的部分是对输入的两张表进行排序. </p>
 <p>对于小的, 能够装入内存的表, 可以使用QuickSort等排序算法, 这种算法在内存中排序时效率较高. 但是对于大型数据库, 这种方法不可行. 例如, 在4GB内存中对10GB的数据无法进行排序. 这个使用, 我们通常采用的是External Merge-Sort算法, 即外部合并排序.</p>
-<h5 id="_11">外部合并排序</h5>
+<h5 id="_8">外部合并排序</h5>
 <p>用B表示内存的大小, 用N表示文件的大小(单位都是页), 外部合并排序主要分为三步:</p>
 <ol>
 <li>
@@ -2107,7 +2107,7 @@
 <p>每次合并后, 数量减少到原来的(B-1)分之一. 如果<span class="arithmatex">\(m\geq B\)</span>, 则说明需要多次合并. 合并的次数公式为<span class="arithmatex">\(\lceil \log_{(B-1)}(N/B)\rceil+1\)</span>(包括初始的排序)</p>
 </li>
 </ol>
-<h2 id="_12">评估策略</h2>
+<h2 id="_9">评估策略</h2>
 <p>两种数据库操作评估的策略:</p>
 <ul>
 <li>物化: Materialization, 也称为"set-at-a-time"方式, 在这种策略下, 数据库会一次完成一个操作, 并将操作结果存储到一个临时关系中, 供后续操作使用, 每个操作的输出都会被写入磁盘, 接下来的操作会从磁盘中读取这些数据, 这种方式的优势在于操作的独立性, 每个操作完成之后都有中间存储, 但是缺点是频繁的读写, 性能可能较低</li>

@@ -1631,6 +1631,35 @@
 <li><a href="/database/query-processing/#logical-query-optimization">logical query optimization</a>, 主要思想就是使中间的结果尽量小</li>
 </ul>
 </li>
+<li>
+<p>确定调度是否冲突可串行化</p>
+<p>相关知识点:</p>
+<ul>
+<li><a href="/database/transaction/#acid">ACID</a></li>
+<li><a href="/database/transaction/#调度">serial/nonserial schedule; serializable/nonserializable schedule</a></li>
+<li><a href="/database/transaction/#problems">problems without isolation</a></li>
+<li><a href="/database/transaction/#隔离级别">levels of isolation</a></li>
+<li><a href="/database/transaction/#conflicts">type of conflicts</a></li>
+<li><a href="/database/transaction/#冲突可串行化调度">conflict serializability</a></li>
+</ul>
+</li>
+<li>
+<p>计算函数依赖闭包, 属性闭包, 并根据结果判断是否为超键或者候选键</p>
+<p>相关知识点:</p>
+<ul>
+<li><a href="/database/normalization/#functional-dependency-closure">functional dependencies closure</a></li>
+<li><a href="/database/normalization/#属性闭包">attributes closure</a></li>
+</ul>
+</li>
+<li>
+<p>优化连接操作, 计算IO次数</p>
+<p>相关知识点:</p>
+<ul>
+<li><a href="/database/query-processing/#nested-loop-join">nested loop join</a></li>
+<li><a href="/database/query-processing/#block-nested-loop-join">block nested loop join</a></li>
+<li><a href="/database/query-processing/#index-nested-loop-join">index nested loop join</a></li>
+</ul>
+</li>
 </ul>
 
 
