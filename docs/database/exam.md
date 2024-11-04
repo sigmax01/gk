@@ -64,3 +64,29 @@ comments: true
     - [join](/database/relational-algebra/#join), 搞懂笛卡尔积, 条件连接, 等值连接, 自然连接的层级关系, 特别注意条件连接中的内连接, 左外连接, 右外连接, 全连接的区别
     - [union](/database/relational-algebra/#set)
     - [logical query optimization](/database/query-processing/#logical-query-optimization), 主要思想就是使中间的结果尽量小
+
+- 确定调度是否冲突可串行化
+
+	相关知识点:
+
+	- [ACID](/database/transaction/#acid)
+	- [serial/nonserial schedule; serializable/nonserializable schedule](/database/transaction/#调度)
+	- [problems without isolation](/database/transaction/#problems)
+	- [levels of isolation](/database/transaction/#隔离级别)
+	- [type of conflicts](/database/transaction/#conflicts)
+	- [conflict serializability](/database/transaction/#冲突可串行化调度)
+
+- 计算函数依赖闭包, 属性闭包, 并根据结果判断是否为超键或者候选键
+
+	相关知识点:
+
+	- [functional dependencies closure](/database/normalization/#functional-dependency-closure)
+	- [attributes closure](/database/normalization/#属性闭包)
+
+- 优化连接操作, 计算IO次数
+
+	相关知识点:
+
+	- [nested loop join](/database/query-processing/#nested-loop-join)
+	- [block nested loop join](/database/query-processing/#block-nested-loop-join)
+	- [index nested loop join](/database/query-processing/#index-nested-loop-join)

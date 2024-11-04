@@ -87,7 +87,7 @@ Armstrong公理是函数依赖推理规则的基础, 它主要包含三个公理
     1. 根据增广性, 有Name, Category → Color, Category
     2. 根据传递性, Color, Category → Price, 所以Name, Category → Price
 
-### 函数依赖闭包
+### 函数依赖闭包 {#functional-dependency-closure}
 
 能从函数依赖集F中推导出的所有函数依赖组成的集合, 成为F的闭包. 计算闭包方法如下:
 
