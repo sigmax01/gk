@@ -55,3 +55,12 @@ comments: true
     - [map weak & strong entity](/database/relational-model/#map-weakstrongentity)
     - [map isA](/database/relational-model/#map-isa)
     - [map aggregation](/database/relational-model/#map-aggregation)
+
+- 写关系代数
+
+    相关知识点:
+
+    - [operator](/database/relational-algebra/#operator), unary operator, binary operator, 特别注意选择条件操作符AND`^`, OR`∨`
+    - [join](/database/relational-algebra/#join), 搞懂笛卡尔积, 条件连接, 等值连接, 自然连接的层级关系, 特别注意条件连接中的内连接, 左外连接, 右外连接, 全连接的区别
+    - [union](/database/relational-algebra/#set)
+    - [logical query optimization](/database/query-processing/#logical-query-optimization), 主要思想就是使中间的结果尽量小
