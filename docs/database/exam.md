@@ -74,6 +74,10 @@ comments: true
 
 ## 事务
 
+要点: 
+
+- ACID: 
+
 相关知识点:
 
 - [ACID](/database/transaction/#acid)
