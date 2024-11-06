@@ -76,7 +76,12 @@ comments: true
 
 要点: 
 
-- ACID: 
+- ACID: Atomocity, Consistency, Isolation, Durability. 原子性; 事务开始和结束之后, 一致性没有被破坏; 并发调度的结果和串行调度的结果相同; 事务结束后, 数据能够persist
+- 事务怎么用SQL写: `COMMIT`和`ROLLBACK`的使用
+- 串行调度和可串行化调度: 串行调度是事务按照串行顺序执行的调度, 可串行化调度是调度进行转换后等价于可串行调度
+- 三种问题: lost update, temporary update, incorrect summary. 事务B覆盖了事务A的更新; 读取了回滚前的数据; 在进行aggregation的时候读取了部分数据
+- 隔离等级: read uncommited; read committed, repeatable read, serializable; 特别注意第三个, 其他事务只能看到事务提交之前的数据, 后三种隔离分别能解决temporary update, incorrect summary, lost update问题
+- 冲突等价调度: 每一对冲突的操作在两个调度中都相同, 则它们冲突等价. 可以通过调换不冲突操作的顺序确定两个调度是否冲突等价, 如果一个调度冲突等价于一个串行调度, 则为冲突可串行化调度. 可以使用优先图来判断, 每个事务都是一个节点, 若一对冲突操作中事务A在事务B前面, 则从事务A到事务B有一条有向边. 若不存在环, 则调度就是冲突可串行化的
 
 相关知识点:
 
