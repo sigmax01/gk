@@ -694,7 +694,7 @@
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      规范化
+      完整性约束
     </span>
   </a>
   
@@ -703,7 +703,7 @@
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      事务
+      规范化
     </span>
   </a>
   
@@ -712,7 +712,7 @@
         <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
-      存储与索引
+      事务
     </span>
   </a>
   
@@ -720,6 +720,15 @@
       
         <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      存储与索引
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       查询处理
     </span>
@@ -1675,7 +1684,7 @@
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      规范化
+      完整性约束
     </span>
   </a>
   
@@ -1684,7 +1693,7 @@
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      事务
+      规范化
     </span>
   </a>
   
@@ -1693,7 +1702,7 @@
         <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
-      存储与索引
+      事务
     </span>
   </a>
   
@@ -1701,6 +1710,15 @@
       
         <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      存储与索引
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       查询处理
     </span>
@@ -1801,7 +1819,9 @@
 <li><a href="/database/relational-algebra/#set">union</a></li>
 <li><a href="/database/query-processing/#logical-query-optimization">logical query optimization</a>, 主要思想就是使中间的结果尽量小</li>
 </ul>
-<h2 id="_4">规范化</h2>
+<h2 id="_4">完整性约束</h2>
+<p>要点:</p>
+<h2 id="_5">规范化</h2>
 <p>要点:</p>
 <ul>
 <li>三种异常: update anomaly, delete anomaly, insert anomaly. must update all records; will remove that room if every one drops that uos; can not reserve a room before student choosing</li>
@@ -1813,13 +1833,15 @@
 <li>第二范式: 没有部分依赖, 必须完全依赖于主键</li>
 <li>第三范式: 非主属性不能依赖于其他非主属性</li>
 <li>Boye-Codd范式: 依赖的左侧必须是超键, 也就是说左侧不能是非主属性</li>
+<li>第四范式: 用来处理多值依赖, 如名字和专业, 名字和语言</li>
+<li>分解: 第一步, 检查分解后的属性闭包是否和原始闭包相等, 如三个属性A, B, C, 函数依赖为A -&gt; B, B -&gt; C, A -&gt; C, 分解为(B, C), (A, B), 由于分解后的属性闭包为B -&gt; C, A -&gt; B, 利用传递依赖A -&gt; C, 所以和原始的闭包相等; 第二步, 检查是否是无损连接, 它两的交集是否能推出其中的任意一个表. 如第一个表(A, B), 第二个表(B, C), 由于它们的交集B能够推出(B, C), 所以是无损连接</li>
 </ul>
 <p>相关知识点:</p>
 <ul>
 <li><a href="/database/normalization/#functional-dependency-closure">functional dependencies closure</a></li>
 <li><a href="/database/normalization/#属性闭包">attributes closure</a></li>
 </ul>
-<h2 id="_5">事务</h2>
+<h2 id="_6">事务</h2>
 <p>要点: </p>
 <ul>
 <li>ACID: Atomocity, Consistency, Isolation, Durability. 原子性; 事务开始和结束之后, 一致性没有被破坏; 并发调度的结果和串行调度的结果相同; 事务结束后, 数据能够persist</li>
@@ -1839,7 +1861,7 @@
 <li><a href="/database/transaction/#conflicts">type of conflicts</a></li>
 <li><a href="/database/transaction/#冲突可串行化调度">conflict serializability</a></li>
 </ul>
-<h2 id="_6">存储与索引</h2>
+<h2 id="_7">存储与索引</h2>
 <p>要点:</p>
 <ul>
 <li>阻塞因子: 块大小/记录大小, 若&lt;1, 则发生"记录跨块"</li>
@@ -1859,7 +1881,7 @@
 <li><a href="/database/storage-indexing/#access-path">access path</a></li>
 <li><a href="/database/storage-indexing/#bp-tree">B+ tree</a></li>
 </ul>
-<h2 id="_7">查询处理</h2>
+<h2 id="_8">查询处理</h2>
 <p>要点:</p>
 <ul>
 <li>嵌套循环连接: b_R+|R|*b_S, R是外表, |R|是R元组的数量, b是页数</li>
