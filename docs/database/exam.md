@@ -56,9 +56,29 @@ comments: true
 - [map isA](/database/relational-model/#map-isa)
 - [map aggregation](/database/relational-model/#map-aggregation)
 
+## 高级SQL
+
+要点:
+
+- 三值逻辑
+	- `OR`:
+		- `(unknown OR true) = true`
+		- `(unknown OR false) = unknown`
+		- `(unknown OR unknown) = unknown`
+	- `AND`:
+		- `(true AND unknown) = unknown`
+		- `(false AND unknown) = false`
+		- `(unknown AND unknown) = unknown`
+	- `NOT`:
+		- `(NOT unknown) = unknown`
+- 空值
+	- 任何含有`NULL`的表达式的结果是`NULL`
+    - 任何含有`NULL`的比较的结果是`unkown`
+    - 如果`WHERE`表达式的结果是`unkown`, 则会被当作`false`处理	
+
 ## 关系代数
 
-相关知识点:
+要点:
 
 - [operator](/database/relational-algebra/#operator), unary operator, binary operator, 特别注意选择条件操作符AND`^`, OR`∨`
 - [join](/database/relational-algebra/#join), 搞懂笛卡尔积, 条件连接, 等值连接, 自然连接的层级关系, 特别注意条件连接中的内连接, 左外连接, 右外连接, 全连接的区别
