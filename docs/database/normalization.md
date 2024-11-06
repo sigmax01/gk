@@ -63,7 +63,7 @@ comments: true
 Armstrong公理是函数依赖推理规则的基础, 它主要包含三个公理.
 
 - 自反性: reflexivity, 如果B ⊆ A, A → B; 当右侧的属性出现在左侧, 那么称之为一个平凡函数依赖; 例如cpoints, uos_name → uos_name, 因为uos_name已经出现在左侧
-- 增广性: augentation, 如果A → B, 那么对于任何属性集C, AC → BC; 例如cpoints → wload推导出cpoints, uos_name → wload, uos_name, 即在两侧同时增加uos_name
+- 增广性: augmentation, 如果A → B, 那么对于任何属性集C, AC → BC; 例如cpoints → wload推导出cpoints, uos_name → wload, uos_name, 即在两侧同时增加uos_name
 - 传递性: transitivity, 如果A → B且B → C, 那么A → C; 例如uos_code → cpoints和cpoints → wload推导出uos_code → wload
 
 ???+ example "例子"

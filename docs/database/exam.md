@@ -70,7 +70,14 @@ comments: true
 要点:
 
 - 三种异常: update anomaly, delete anomaly, insert anomaly. must update all records; will remove that room if every one drops that uos; can not reserve a room before student choosing
-- 函数依赖: 
+- 函数依赖: 一对一的关系, 使用armstrong公理, reflexivity, augmentation, transitivity, 特别注意reflexitivity, 如果右侧的属性包含在左侧中, 则称为"trivial functional dependency", 反之为"non-trivial functional dependency", 会使用该公理推导出函数依赖闭包
+- 非主属性和主属性: 若属性不是候选键的一部分, 则为非主属性, 反之为主属性
+- 完全/部分函数依赖: 若有X -> Y, 但是X的一部分无法推导出Y, 则为完全函数依赖, 反之为部分函数依赖
+- 属性闭包: 用于判断是否为超键和候选键, 如果闭包的结果包含所有的属性, 则为超键, 如果与此同时, 其任何真子集都不是超键, 则它为候选键
+- 第一范式: 每个字段为不可再分的原子值
+- 第二范式: 没有部分依赖, 必须完全依赖于主键
+- 第三范式: 非主属性不能依赖于其他非主属性
+- Boye-Codd范式: 依赖的左侧必须是超键, 也就是说左侧不能是非主属性
 
 相关知识点:
 
