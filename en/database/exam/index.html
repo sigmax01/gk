@@ -1821,6 +1821,12 @@
 </ul>
 <h2 id="_4">完整性约束</h2>
 <p>要点:</p>
+<ul>
+<li>完整性约束: 不是所有时刻都会满足完整性约束, 可能在事务执行的过程中不满足. 在执行完整性约束修改/添加命令的时候, 如果数据库的状态满足该约束, 则顺利添加; 若不满足, 则命令会被拒绝.</li>
+<li>域约束: <code>DEFAULT</code>, <code>NOT NULl</code>, <code>NULL</code>, 可以使用<code>CREATE DOMAIN</code>创建自定义域</li>
+<li>键约束: <code>PRIMARY KEY</code>, <code>UNIQUE</code>, 主键默认是<code>NOT NULL</code>, <code>UNIQUE</code></li>
+<li>外键约束: 外键不能出现悬空引用. 可以选择的行为有<code>NO ACTION</code>, <code>CASCADE</code>, <code>SET NULL</code>, <code>SET DEFAULT</code>, 设置在<code>FOREIGN KEY ... REFERENCES ...</code>之后</li>
+</ul>
 <h2 id="_5">规范化</h2>
 <p>要点:</p>
 <ul>
