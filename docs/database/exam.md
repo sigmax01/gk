@@ -73,6 +73,10 @@ comments: true
 - 域约束: `DEFAULT`, `NOT NULl`, `NULL`, 可以使用`CREATE DOMAIN`创建自定义域
 - 键约束: `PRIMARY KEY`, `UNIQUE`, 主键默认是`NOT NULL`, `UNIQUE`
 - 外键约束: 外键不能出现悬空引用. 可以选择的行为有`NO ACTION`, `CASCADE`, `SET NULL`, `SET DEFAULT`, 设置在`FOREIGN KEY ... REFERENCES ...`之后
+- 语义约束: 和域约束最明显的区别就是语义约束是附在属性定义后的(有一个逗号), 而域约束和属性定义是在同一行上的
+- 约束检查时间: 想象一个开关, 打开是`DEFERABLE`, 关闭是`NO DEFERABLE`(默认), 开了之后还可以选择一开始是否推迟, `INITIALLY DEFERED`还是一开始不推迟`INITIALLY IMMEDIATE`, 选择了一开始的状态之后, 分别可以进一步选择在执行的时候是否推迟, 分别是`SET CONSTRAINTS IMMEDIATE`还是`SET CONSTRAINTS DEFERRED`
+- 断言: 这个期中考考了. 看那个[航海俱乐部的例子](/database/integrity-constraints/#assertion).
+- 触发器: 由事件, 条件, 行动组成. 分为行级触发器和语句级触发器, 如果你的语句更新了多行数据, 那么行级触发器针对每行都会触发一次, 而语句级触发器是执行多少SQL语句执行几次触发器, 写法分别是`FOR EACH ROW`, `FOR EACH STATEMENT`. 触发器的写法为`CREATE TRIGER <triger_name> BEFORE/AFTER INSERT/UPDATE/DELETE (OF <attribute>) ON <table>`, `OF <attribute>`的写法只有`UPDATE`能用
 
 ## 规范化
 
