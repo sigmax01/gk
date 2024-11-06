@@ -683,6 +683,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      高级SQL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       关系代数
@@ -1673,6 +1682,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      高级SQL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       关系代数
@@ -1811,8 +1829,37 @@
 <li><a href="/database/relational-model/#map-isa">map isA</a></li>
 <li><a href="/database/relational-model/#map-aggregation">map aggregation</a></li>
 </ul>
+<h2 id="sql">高级SQL</h2>
+<p>要点:</p>
+<ul>
+<li>三值逻辑<ul>
+<li><code>OR</code>:<ul>
+<li><code>(unknown OR true) = true</code></li>
+<li><code>(unknown OR false) = unknown</code></li>
+<li><code>(unknown OR unknown) = unknown</code></li>
+</ul>
+</li>
+<li><code>AND</code>:<ul>
+<li><code>(true AND unknown) = unknown</code></li>
+<li><code>(false AND unknown) = false</code></li>
+<li><code>(unknown AND unknown) = unknown</code></li>
+</ul>
+</li>
+<li><code>NOT</code>:<ul>
+<li><code>(NOT unknown) = unknown</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>空值<ul>
+<li>任何含有<code>NULL</code>的表达式的结果是<code>NULL</code></li>
+<li>任何含有<code>NULL</code>的比较的结果是<code>unkown</code></li>
+<li>如果<code>WHERE</code>表达式的结果是<code>unkown</code>, 则会被当作<code>false</code>处理  </li>
+</ul>
+</li>
+</ul>
 <h2 id="_3">关系代数</h2>
-<p>相关知识点:</p>
+<p>要点:</p>
 <ul>
 <li><a href="/database/relational-algebra/#operator">operator</a>, unary operator, binary operator, 特别注意选择条件操作符AND<code>^</code>, OR<code>∨</code></li>
 <li><a href="/database/relational-algebra/#join">join</a>, 搞懂笛卡尔积, 条件连接, 等值连接, 自然连接的层级关系, 特别注意条件连接中的内连接, 左外连接, 右外连接, 全连接的区别</li>
