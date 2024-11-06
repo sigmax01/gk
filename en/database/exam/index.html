@@ -1826,6 +1826,10 @@
 <li>域约束: <code>DEFAULT</code>, <code>NOT NULl</code>, <code>NULL</code>, 可以使用<code>CREATE DOMAIN</code>创建自定义域</li>
 <li>键约束: <code>PRIMARY KEY</code>, <code>UNIQUE</code>, 主键默认是<code>NOT NULL</code>, <code>UNIQUE</code></li>
 <li>外键约束: 外键不能出现悬空引用. 可以选择的行为有<code>NO ACTION</code>, <code>CASCADE</code>, <code>SET NULL</code>, <code>SET DEFAULT</code>, 设置在<code>FOREIGN KEY ... REFERENCES ...</code>之后</li>
+<li>语义约束: 和域约束最明显的区别就是语义约束是附在属性定义后的(有一个逗号), 而域约束和属性定义是在同一行上的</li>
+<li>约束检查时间: 想象一个开关, 打开是<code>DEFERABLE</code>, 关闭是<code>NO DEFERABLE</code>(默认), 开了之后还可以选择一开始是否推迟, <code>INITIALLY DEFERED</code>还是一开始不推迟<code>INITIALLY IMMEDIATE</code>, 选择了一开始的状态之后, 分别可以进一步选择在执行的时候是否推迟, 分别是<code>SET CONSTRAINTS IMMEDIATE</code>还是<code>SET CONSTRAINTS DEFERRED</code></li>
+<li>断言: 这个期中考考了. 看那个<a href="/database/integrity-constraints/#assertion">航海俱乐部的例子</a>.</li>
+<li>触发器: 由事件, 条件, 行动组成. 分为行级触发器和语句级触发器, 如果你的语句更新了多行数据, 那么行级触发器针对每行都会触发一次, 而语句级触发器是执行多少SQL语句执行几次触发器, 写法分别是<code>FOR EACH ROW</code>, <code>FOR EACH STATEMENT</code>. 触发器的写法为<code>CREATE TRIGER &lt;triger_name&gt; BEFORE/AFTER INSERT/UPDATE/DELETE (OF &lt;attribute&gt;) ON &lt;table&gt;</code>, <code>OF &lt;attribute&gt;</code>的写法只有<code>UPDATE</code>能用</li>
 </ul>
 <h2 id="_5">规范化</h2>
 <p>要点:</p>
