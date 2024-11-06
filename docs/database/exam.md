@@ -65,6 +65,12 @@ comments: true
 - [union](/database/relational-algebra/#set)
 - [logical query optimization](/database/query-processing/#logical-query-optimization), 主要思想就是使中间的结果尽量小
 
+## 完整性约束
+
+要点:
+
+
+
 ## 规范化
 
 要点:
@@ -78,6 +84,8 @@ comments: true
 - 第二范式: 没有部分依赖, 必须完全依赖于主键
 - 第三范式: 非主属性不能依赖于其他非主属性
 - Boye-Codd范式: 依赖的左侧必须是超键, 也就是说左侧不能是非主属性
+- 第四范式: 用来处理多值依赖, 如名字和专业, 名字和语言
+- 分解: 第一步, 检查分解后的属性闭包是否和原始闭包相等, 如三个属性A, B, C, 函数依赖为A -> B, B -> C, A -> C, 分解为(B, C), (A, B), 由于分解后的属性闭包为B -> C, A -> B, 利用传递依赖A -> C, 所以和原始的闭包相等; 第二步, 检查是否是无损连接, 它两的交集是否能推出其中的任意一个表. 如第一个表(A, B), 第二个表(B, C), 由于它们的交集B能够推出(B, C), 所以是无损连接
 
 相关知识点:
 
