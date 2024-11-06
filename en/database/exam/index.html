@@ -1802,6 +1802,11 @@
 <li><a href="/database/query-processing/#logical-query-optimization">logical query optimization</a>, 主要思想就是使中间的结果尽量小</li>
 </ul>
 <h2 id="_4">规范化</h2>
+<p>要点:</p>
+<ul>
+<li>三种异常: update anomaly, delete anomaly, insert anomaly. must update all records; will remove that room if every one drops that uos; can not reserve a room before student choosing</li>
+<li>函数依赖: </li>
+</ul>
 <p>相关知识点:</p>
 <ul>
 <li><a href="/database/normalization/#functional-dependency-closure">functional dependencies closure</a></li>
@@ -1815,7 +1820,8 @@
 <li>串行调度和可串行化调度: 串行调度是事务按照串行顺序执行的调度, 可串行化调度是调度进行转换后等价于可串行调度</li>
 <li>三种问题: lost update, temporary update, incorrect summary. 事务B覆盖了事务A的更新; 读取了回滚前的数据; 在进行aggregation的时候读取了部分数据</li>
 <li>隔离等级: read uncommited; read committed, repeatable read, serializable; 特别注意第三个, 其他事务只能看到事务提交之前的数据, 后三种隔离分别能解决temporary update, incorrect summary, lost update问题</li>
-<li>冲突等价调度: 每一对冲突的操作在两个调度中都相同, 则它们冲突等价. 可以通过调换不冲突操作的顺序确定两个调度是否冲突等价, 如果一个调度冲突等价于一个串行调度, 则为冲突可串行化调度. 可以使用优先图来判断, 每个事务都是一个节点, 若一对冲突操作中事务A在事务B前面, 则从事务A到事务B有一条有向边. 若不存在环, 则调度就是冲突可串行化的</li>
+<li>冲突等价调度: 每一对冲突的操作在两个调度中都相同, 则它们冲突等价. 可以通过调换不冲突操作的顺序确定两个调度是否冲突等价, 如果一个调度冲突等价于一个串行调度, 则为冲突可串行化调度. 可以使用优先图来判断, 每个事务都是一个节点, 若一对冲突操作中事务A在事务B前面, 则从事务A到事务B有一条有向边. 若不存在环, 则调度就是冲突可串行化的. 冲突可串行化一定可串行化, 但是可串行化不一定冲突可串行化. </li>
+<li>优先图转为串行化方案: 必须保持原有的方向性, 没有箭头的可以调换顺序</li>
 </ul>
 <p>相关知识点:</p>
 <ul>
