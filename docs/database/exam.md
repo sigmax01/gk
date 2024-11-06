@@ -69,7 +69,10 @@ comments: true
 
 要点:
 
-
+- 完整性约束: 不是所有时刻都会满足完整性约束, 可能在事务执行的过程中不满足. 在执行完整性约束修改/添加命令的时候, 如果数据库的状态满足该约束, 则顺利添加; 若不满足, 则命令会被拒绝.
+- 域约束: `DEFAULT`, `NOT NULl`, `NULL`, 可以使用`CREATE DOMAIN`创建自定义域
+- 键约束: `PRIMARY KEY`, `UNIQUE`, 主键默认是`NOT NULL`, `UNIQUE`
+- 外键约束: 外键不能出现悬空引用. 可以选择的行为有`NO ACTION`, `CASCADE`, `SET NULL`, `SET DEFAULT`, 设置在`FOREIGN KEY ... REFERENCES ...`之后
 
 ## 规范化
 
