@@ -117,6 +117,16 @@ comments: true
 - [functional dependencies closure](/database/normalization/#functional-dependency-closure)
 - [attributes closure](/database/normalization/#属性闭包)
 
+怎么做判断是否为候选键的题: 
+
+1. 判断它是否是超键: 通过Armstrong公理不断推出属性闭包, 如果该闭包中包含所有的属性, 则为超键
+2. 判断它的真子集是否为超键: 写出它的真子集, 分别对这些真子集使用Armstrong公理写出属性闭包, 如果闭包中包含所有的属性, 则为超键, 只要有一个真子集是超键, 则原属性组合就不是候选键
+
+怎么做MVD和4NF的题:
+
+1. 如何检查是不是MVD: 如[图](https://img.ricolxwz.io/ef967f1ab99097e46abaf33cfec9cc6d.png), 对于任意两个UoS是COMP9120的记录, 存在另外两个UoS是9120的记录, 使得Textbook相同的情况下Tutor不同, Tutor相同的情况下Textbook不同. (然后还可以插入一条新的记录, 比如插入一个老师Lijun C, 则应该有两条记录, 对应两种Textbook)
+2. 如何判断是否处于4NF: 满足下列条件中的任意一条 a. **所有**的多值依赖都是平凡多值依赖(Y ⊆ X或X ∪ Y = R, 特别注意第二个条件); b. **所有**的多值依赖中左侧是超键
+
 ## 事务
 
 要点: 
