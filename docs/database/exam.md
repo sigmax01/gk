@@ -95,7 +95,7 @@ comments: true
 - 外键约束: 外键不能出现悬空引用. 可以选择的行为有`NO ACTION`, `CASCADE`, `SET NULL`, `SET DEFAULT`, 设置在`FOREIGN KEY ... REFERENCES ...`之后
 - 语义约束: 和域约束最明显的区别就是语义约束是附在属性定义后的(有一个逗号), 而域约束和属性定义是在同一行上的
 - 约束检查时间: 想象一个开关, 打开是`DEFERABLE`, 关闭是`NO DEFERABLE`(默认), 开了之后还可以选择一开始是否推迟, `INITIALLY DEFERED`还是一开始不推迟`INITIALLY IMMEDIATE`, 选择了一开始的状态之后, 分别可以进一步选择在执行的时候是否推迟, 分别是`SET CONSTRAINTS IMMEDIATE`还是`SET CONSTRAINTS DEFERRED`
-- 断言: 这个期中考考了. 看那个[航海俱乐部的例子](/database/integrity-constraints/#assertion).
+- 断言: 这个期中考考了. 看那个[航海俱乐部的例子](/database/integrity-constraints/#assertion). 貌似还挺重要的, 格式为`CREATE ASSERTION <assertion_name> CHECK NOT EXIST (<select clause>)`
 - 触发器: 由事件, 条件, 行动组成. 分为行级触发器和语句级触发器, 如果你的语句更新了多行数据, 那么行级触发器针对每行都会触发一次, 而语句级触发器是执行多少SQL语句执行几次触发器, 写法分别是`FOR EACH ROW`, `FOR EACH STATEMENT`. 触发器的写法为`CREATE TRIGER <triger_name> BEFORE/AFTER INSERT/UPDATE/DELETE (OF <attribute>) ON <table>`, `OF <attribute>`的写法只有`UPDATE`能用
 
 ## 规范化
@@ -130,6 +130,7 @@ comments: true
 - 隔离等级: read uncommited; read committed, repeatable read, serializable; 特别注意第三个, 其他事务只能看到事务提交之前的数据, 后三种隔离分别能解决temporary update, incorrect summary, lost update问题
 - 冲突等价调度: 每一对冲突的操作在两个调度中都相同, 则它们冲突等价. 可以通过调换不冲突操作的顺序确定两个调度是否冲突等价, 如果一个调度冲突等价于一个串行调度, 则为冲突可串行化调度. 可以使用优先图来判断, 每个事务都是一个节点, 若一对冲突操作中事务A在事务B前面, 则从事务A到事务B有一条有向边. 若不存在环, 则调度就是冲突可串行化的. 冲突可串行化一定可串行化, 但是可串行化不一定冲突可串行化. 
 - 优先图转为串行化方案: 必须保持原有的方向性, 没有箭头的可以调换顺序
+- `UPDATE ... WHERE ...`这个语句包含了两个步骤, 首先根据条件读取, READ, 然后写入, WRITE; 普通的`SELECT`语句只有READ(幻灯片p34)
 
 相关知识点:
 
@@ -139,6 +140,14 @@ comments: true
 - [levels of isolation](/database/transaction/#隔离级别)
 - [type of conflicts](/database/transaction/#conflicts)
 - [conflict serializability](/database/transaction/#冲突可串行化调度)
+
+怎么做冲突可串行化的题:
+
+1. 找到存在冲突的操作, 要求是不同的事务, 同一个数据, 其中一个操作是写
+2. 确定没对冲突的顺序, 是谁在前面, 谁在后面
+3. 事务体现为一个节点, 顺序体现为箭头的方向
+4. 如果图是无环的, 则说明是冲突可串行化的
+5. 若为冲突可串行化, 根据优先图, 可以调换两者之间不存在箭头的事务的顺序, 得到数个串行化调度
 
 ## 存储与索引
 
