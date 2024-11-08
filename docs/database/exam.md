@@ -232,6 +232,11 @@ comments: true
 
 ## 模拟考试参考
 
+- 10
+
+	- There are 5 conflicts in this case. R3 -> W1, W1 -> R2, R1 -> W3, R2 -> W3, W1 -> W3, so we have 3 -> 1, 1 -> 2, 1 -> 3, 2 -> 3, note that we have 3 -> 1 and 1 -> 3, so it's not conflict serializable
+	- There are 2 conflicts in this case. R1 -> W3, W3 -> R2, R3 -> W1, W1 -> R2, so we have 1 -> 3, 3 -> 2, 3 -> 1, 1 -> 2, note that we have 1 -> 3 and 3 -> 1, so it's not conflict serializable
+
 - 11
 
 	**Let's assume that Employe is the outer table**
