@@ -230,7 +230,33 @@ comments: true
 
 	The storage can be used in a page: (8192-300)\*0.9=7102.8 bytes. The table needs 2000000\*(4+10+6+15+4)=78000000 bytes. 78000000/7102.8=10981.58, so we need 10982 pages to store the entire inventory table, the total space needed 10982\*8192=89964544 bytes, overhead is (89964544-78000000)/78000000=15.33%. The time for loading each page is 200 milliseconds, so we need 200*10982=2196400 milliseconds to scan the entire table. The search key takes (10+4) bytes, so the index entry takes 14+4=18 bytes, we can store 7102.8/18=394.6 which is 394 records in one page, so we need 2000000/394=5076.14 which is 5077 pages to store all the indices. We need 5077/394=12.89 which is 13 pages to store the bottom index pages, we need 1 page at root level. So the B+ tree looks like this: 1 page at top, 13 pages in between, 5077 pages at the bottom and there are 10982 leaf nodes. For a single query, we need 4 IOs(let's assume that one page = one IO, which is default in this course), so it takes 4\*200=800 milliseconds to reach the specific leaf nodes. 
 
-## 模拟考试参考
+## Practice Final Exam
+
+- 8
+
+	Let's assume that:
+
+	- Cursor_no: A
+	- Sec_no: B
+	- Offering_dept: C
+	- Credit_hours: D
+	- Course_level: E
+	- Instructor_id: F
+	- Semester: G
+	- Year: H
+	- Days_hours: I
+	- Room_no: J
+	- No_of_students: K
+
+	we have the following functional dependencies: 
+	
+	- A -> CDE
+	- ABGH -> IJKF
+	- JIGH -> FAB
+
+	a) Let's verify if JIGH is a candidate key. (JIGH)+=FABCDEJIGH=FABCDEJIGHK=R, so it's a super key. Obviously, J, I, G, H, JI, JG, JH, IG, IH, GH is not a super key, so JIGH is a candidate key. Let's verify if ABGH is a candidate key. (ABGH)+=ABCDEHIJKFG=R, so it's a superkey. Obviously, A, B, G, H, AB, AG, AH, BG, BH, GH is not a super key, so ABGH is a candidate key.
+
+	b) R is not in BCNF because in FD A -> CDE, A is not a super key. So we can decompose it into R1(A, C, D, E) and R2(A, B, G, H, J, I, F). It's a lossless decomposition because the intersection of R1 and R2 A is a candidate key of R1. Also, It preserves the FDs. Since we have A -> CDE in R1 and ABGH -> IJKF, JIGH -> FAB in R2.
 
 - 10
 
