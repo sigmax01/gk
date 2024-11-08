@@ -216,8 +216,8 @@ comments: true
 	- Not examinable 
 	- BCNF, LHS must be superkey, A -> B, A is not a superkey (you can verify it using attribute closure), so it violates BCNF
 - Q4
-	- T1, r(x_1), w(x_1); T2, r(x_1), w(x_1); There are two possible anomalies, lost update, T2 reads x_1 before T1 writes to x_1; temporary read, T2 reads x_1 but T1 rollbacks later. the correct result is $1500, the result of lost update is $2500, the result of temporary update is $2000, suppose the initial fund is $2000
-    - T1, r(x_1), w(x_1); T3, r(x_1), w(x_1), r(x_2), w(x_2), lost update, T3 read x_1 before T1 write to x_1. The amount of 201 would be $1700 which is incorrect. We can use the exclusive lock, T1 first gets the lock, T3 keeps waiting until T1 releases the lock
+	- T1, r(x_1), w(x_1); T2, r(x_1), w(x_1); There are two possible anomalies, lost update, T2 reads x_1 before T1 writes to x_1; temporary read, T2 reads x_1 but T1 rollbacks later. the correct result is \$1500, the result of lost update is \$2500, the result of temporary update is \$2000, suppose the initial fund is \$2000
+    - T1, r(x_1), w(x_1); T3, r(x_1), w(x_1), r(x_2), w(x_2), lost update, T3 read x_1 before T1 write to x_1. The amount of 201 would be \$1700 which is incorrect. We can use the exclusive lock, T1 first gets the lock, T3 keeps waiting until T1 releases the lock
 	- Dirty reads == temporary reads, the other two are not examinable. The isolation level is serializable. 
 	- Deak lock occurs when two resources waiting for each other to release their locks. Possible scenario: T1 gets lock on 201, T3 gets lock on 203. Suppose T1 needs to update some status of 203, T1 needs lock of 203, T3 needs lock of 201, it's a deadlock
 	- Share lock can be held by multiple transactions at the same time while exclusive lock is not. We can attach exclusive lock on T1 and T2 to prevent anomalies, because they need to write on the same data, which will potentially cause lost update or temporary read
