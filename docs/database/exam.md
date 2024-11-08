@@ -330,7 +330,7 @@ comments: true
 	**Let's assume that Employee is the outer table**
 
 	- Nested Loop Join: b_R+(|R|\*b_S), so it's 200+(2000\*500)=1000200 times IO
-	- Block-nested loop Join: b_R+(b_R\*b_S), so it's 200+(200\*200)=100200 times IO
+	- Block-nested loop Join: b_R+(b_R\*b_S), so it's 200+(200\*500)=100200 times IO
 	- Index-nested loop join: let's assume that the average cost of indexing is 3 times. b_R+(|R|\times c), so it's 200+(2000\*3)=6200 times IO
 
 	Same for Department as outer table
