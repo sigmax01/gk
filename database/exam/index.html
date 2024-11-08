@@ -732,7 +732,7 @@ Bilibili:
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#relational-model" class="md-nav__link">
     <span class="md-ellipsis">
       关系模型
     </span>
@@ -750,7 +750,7 @@ Bilibili:
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       关系代数
     </span>
@@ -759,7 +759,7 @@ Bilibili:
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       完整性约束
     </span>
@@ -768,7 +768,7 @@ Bilibili:
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       规范化
     </span>
@@ -777,7 +777,7 @@ Bilibili:
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       事务
     </span>
@@ -786,7 +786,7 @@ Bilibili:
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       存储与索引
     </span>
@@ -795,7 +795,7 @@ Bilibili:
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       查询处理
     </span>
@@ -1749,7 +1749,7 @@ Bilibili:
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#relational-model" class="md-nav__link">
     <span class="md-ellipsis">
       关系模型
     </span>
@@ -1767,7 +1767,7 @@ Bilibili:
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       关系代数
     </span>
@@ -1776,7 +1776,7 @@ Bilibili:
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       完整性约束
     </span>
@@ -1785,7 +1785,7 @@ Bilibili:
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       规范化
     </span>
@@ -1794,7 +1794,7 @@ Bilibili:
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       事务
     </span>
@@ -1803,7 +1803,7 @@ Bilibili:
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       存储与索引
     </span>
@@ -1812,7 +1812,7 @@ Bilibili:
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       查询处理
     </span>
@@ -1900,7 +1900,7 @@ Bilibili:
 <li><a href="/database/conceptual-model/#泛化反泛化">isA relationship</a></li>
 <li><a href="/database/conceptual-model/#aggregation">aggregation</a></li>
 </ul>
-<h2 id="_2">关系模型</h2>
+<h2 id="relational-model">关系模型</h2>
 <p>要点:</p>
 <ul>
 <li>如何映射没有任何约束的关系: 关系集独立建表, 两个实体集的主键的组合称为该新表的主键, 同时也是该新表的外键, 需要用箭头指到相应的实体集的主键, 如<a href="https://img.ricolxwz.io/f7a07b8706af6f4dab96d5a946ee93a2.png">图</a></li>
@@ -1951,7 +1951,7 @@ Bilibili:
 </ul>
 </li>
 </ul>
-<h2 id="_3">关系代数</h2>
+<h2 id="_2">关系代数</h2>
 <p>要点:</p>
 <ul>
 <li><a href="/database/relational-algebra/#operator">operator</a>, unary operator, binary operator, 特别注意选择条件操作符AND<code>^</code>, OR<code>∨</code></li>
@@ -1959,7 +1959,7 @@ Bilibili:
 <li><a href="/database/relational-algebra/#set">union</a></li>
 <li><a href="/database/query-processing/#logical-query-optimization">logical query optimization</a>, 主要思想就是使中间的结果尽量小</li>
 </ul>
-<h2 id="_4">完整性约束</h2>
+<h2 id="_3">完整性约束</h2>
 <p>要点:</p>
 <ul>
 <li>完整性约束: 不是所有时刻都会满足完整性约束, 可能在事务执行的过程中不满足. 在执行完整性约束修改/添加命令的时候, 如果数据库的状态满足该约束, 则顺利添加; 若不满足, 则命令会被拒绝.</li>
@@ -1971,7 +1971,7 @@ Bilibili:
 <li>断言: 这个期中考考了. 看那个<a href="/database/integrity-constraints/#assertion">航海俱乐部的例子</a>. 貌似还挺重要的, 格式为<code>CREATE ASSERTION &lt;assertion_name&gt; CHECK NOT EXIST (&lt;select clause&gt;)</code></li>
 <li>触发器: 由事件, 条件, 行动组成. 分为行级触发器和语句级触发器, 如果你的语句更新了多行数据, 那么行级触发器针对每行都会触发一次, 而语句级触发器是执行多少SQL语句执行几次触发器, 写法分别是<code>FOR EACH ROW</code>, <code>FOR EACH STATEMENT</code>. 触发器的写法为<code>CREATE TRIGER &lt;triger_name&gt; BEFORE/AFTER INSERT/UPDATE/DELETE (OF &lt;attribute&gt;) ON &lt;table&gt;</code>, <code>OF &lt;attribute&gt;</code>的写法只有<code>UPDATE</code>能用</li>
 </ul>
-<h2 id="_5">规范化</h2>
+<h2 id="_4">规范化</h2>
 <p>要点:</p>
 <ul>
 <li>三种异常: update anomaly, delete anomaly, insert anomaly. must update all records; will remove that room if every one drops that uos; can not reserve a room before student choosing</li>
@@ -2008,7 +2008,7 @@ Bilibili:
 <li>执行分解: 如<a href="https://img.ricolxwz.io/ba06d45ab84b9af2868b8fd73170af4b.png">图</a></li>
 <li>检查分解: a. 检查分解后的函数依赖闭包是否和原始闭包相同或者函数依赖和原始函数依赖相同, 如<a href="https://img.ricolxwz.io/180a82391d7abd8b74382f665b8a260e.png">图</a>; b. 检查无损连接, 交集是否能够推出其中任意一个表, 即交集的属性至少是任意一个表的键</li>
 </ol>
-<h2 id="_6">事务</h2>
+<h2 id="_5">事务</h2>
 <p>要点: </p>
 <ul>
 <li>ACID: Atomocity, Consistency, Isolation, Durability. 原子性; 事务开始和结束之后, 一致性没有被破坏; 并发调度的结果和串行调度的结果相同; 事务结束后, 数据能够persist</li>
@@ -2038,7 +2038,7 @@ Bilibili:
 <li>如果图是无环的, 则说明是冲突可串行化的</li>
 <li>若为冲突可串行化, 根据precedence graph, 可以调换两者之间不存在箭头的事务的顺序, 得到数个串行化调度</li>
 </ol>
-<h2 id="_7">存储与索引</h2>
+<h2 id="_6">存储与索引</h2>
 <p>要点:</p>
 <ul>
 <li>阻塞因子: 块大小/记录大小, 若&lt;1, 则发生"记录跨块"</li>
@@ -2058,7 +2058,7 @@ Bilibili:
 <li><a href="/database/storage-indexing/#access-path">access path</a></li>
 <li><a href="/database/storage-indexing/#bp-tree">B+ tree</a></li>
 </ul>
-<h2 id="_8">查询处理</h2>
+<h2 id="_7">查询处理</h2>
 <p>要点:</p>
 <ul>
 <li>嵌套循环连接: b_R+|R|*b_S, R是外表, |R|是R元组的数量, b是block数量</li>
@@ -2134,6 +2134,13 @@ Bilibili:
 <p>b) R is not in BCNF because in FD A -&gt; CDE, A is not a super key. So we can decompose it into R1(A, C, D, E) and R2(A, B, G, H, J, I, F). It's a lossless decomposition because the intersection of R1 and R2 A is a candidate key of R1. Also, It preserves the FDs. Since we have A -&gt; CDE in R1 and ABGH -&gt; IJKF, JIGH -&gt; FAB in R2.</p>
 </li>
 <li>
+<p>9</p>
+<ul>
+<li>The equivalent SQL command for this is <code>SELECT customer_name FROM customer WHERE customer_city = 'Sydney'</code>, it can be converted to relational algebra as follows: π<sub>customer_name</sub>(σ<sub>customer_city='Sydney'</sub>(customer))</li>
+<li>The equivalent SQL command for this is <code>SELECT customer_name FROM borower</code></li>
+</ul>
+</li>
+<li>
 <p>10</p>
 <ul>
 <li>There are 5 conflicts in this case. R3 -&gt; W1, W1 -&gt; R2, R1 -&gt; W3, R2 -&gt; W3, W1 -&gt; W3, so we have 3 -&gt; 1, 1 -&gt; 2, 1 -&gt; 3, 2 -&gt; 3, note that we have 3 -&gt; 1 and 1 -&gt; 3, so it's not conflict serializable</li>
@@ -2142,7 +2149,7 @@ Bilibili:
 </li>
 <li>
 <p>11</p>
-<p><strong>Let's assume that Employe is the outer table</strong></p>
+<p><strong>Let's assume that Employee is the outer table</strong></p>
 <ul>
 <li>Nested Loop Join: b_R+(|R|*b_S), so it's 200+(2000*500)=1000200 times IO</li>
 <li>Block-nested loop Join: b_R+(b_R*b_S), so it's 200+(200*200)=100200 times IO</li>
