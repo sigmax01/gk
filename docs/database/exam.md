@@ -31,7 +31,7 @@ comments: true
 - [isA relationship](/database/conceptual-model/#泛化反泛化)
 - [aggregation](/database/conceptual-model/#aggregation)
 
-## 关系模型
+## 关系模型 {#relational-model}
 
 要点:
 
@@ -258,6 +258,11 @@ comments: true
 
 	b) R is not in BCNF because in FD A -> CDE, A is not a super key. So we can decompose it into R1(A, C, D, E) and R2(A, B, G, H, J, I, F). It's a lossless decomposition because the intersection of R1 and R2 A is a candidate key of R1. Also, It preserves the FDs. Since we have A -> CDE in R1 and ABGH -> IJKF, JIGH -> FAB in R2.
 
+- 9
+
+	- The equivalent SQL command for this is `SELECT customer_name FROM customer WHERE customer_city = 'Sydney'`, it can be converted to relational algebra as follows: π~customer_name~(σ~customer_city='Sydney'~(customer))
+	- The equivalent SQL command for this is `SELECT customer_name FROM borower`
+
 - 10
 
 	- There are 5 conflicts in this case. R3 -> W1, W1 -> R2, R1 -> W3, R2 -> W3, W1 -> W3, so we have 3 -> 1, 1 -> 2, 1 -> 3, 2 -> 3, note that we have 3 -> 1 and 1 -> 3, so it's not conflict serializable
@@ -265,7 +270,7 @@ comments: true
 
 - 11
 
-	**Let's assume that Employe is the outer table**
+	**Let's assume that Employee is the outer table**
 
 	- Nested Loop Join: b_R+(|R|\*b_S), so it's 200+(2000\*500)=1000200 times IO
 	- Block-nested loop Join: b_R+(b_R\*b_S), so it's 200+(200\*200)=100200 times IO
