@@ -251,7 +251,7 @@ comments: true
 
 - 7
 
-	- 
+	- (a)
 
 		```sql
 		SELECT branch_name 
@@ -261,7 +261,7 @@ comments: true
   		);
   		```
 
-	- 
+	- (b)
 
 		```sql
 		SELECT depositor.customer_name, AVG(account.balance)
@@ -278,7 +278,7 @@ comments: true
 		GROUP BY depositor.customer_name;
 		```
   
-    - 
+    - (c)
 
 		```sql
 		SELECT depositor.customer_name
