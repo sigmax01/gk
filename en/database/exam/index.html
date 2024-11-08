@@ -743,6 +743,15 @@ Bilibili:
         <li class="md-nav__item">
   <a href="#sql" class="md-nav__link">
     <span class="md-ellipsis">
+      SQL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sql_1" class="md-nav__link">
+    <span class="md-ellipsis">
       高级SQL
     </span>
   </a>
@@ -1760,6 +1769,15 @@ Bilibili:
         <li class="md-nav__item">
   <a href="#sql" class="md-nav__link">
     <span class="md-ellipsis">
+      SQL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sql_1" class="md-nav__link">
+    <span class="md-ellipsis">
       高级SQL
     </span>
   </a>
@@ -1922,7 +1940,27 @@ Bilibili:
 <li><a href="/database/relational-model/#map-isa">map isA</a></li>
 <li><a href="/database/relational-model/#map-aggregation">map aggregation</a></li>
 </ul>
-<h2 id="sql">高级SQL</h2>
+<h2 id="sql">SQL</h2>
+<p>要点:</p>
+<ul>
+<li>连接语句<ul>
+<li>笛卡尔积: <code>FROM &lt;table1&gt;, &lt;table2&gt;</code></li>
+<li>条件连接/等值连接: <code>FROM &lt;table1&gt; INNER/LEFT OUTER/RIGHT OUTER/FULL OUTER JOIN &lt;table2&gt; ON &lt;condition&gt;</code>, 只写一个JOIN默认是内连接</li>
+<li>自然连接: <code>FROM &lt;table1&gt; NATURAL JOIN &lt;table2&gt;</code></li>
+</ul>
+</li>
+<li>条件语句<ul>
+<li>整体框架: <code>WHERE &lt;condition1&gt; AND/OR &lt;condition2&gt;</code></li>
+<li>条件: 可以是普通的大于等于小于某个值, 也可以和嵌套查询返回的结果比较, 常用的有<code>v NOT EXIST</code>, <code>NOT IN</code>, <code>v op ALL</code>, <code>v op SOME</code></li>
+</ul>
+</li>
+<li>分组语句<ul>
+<li>整体框架: <code>GROUP BY &lt;group&gt; HAVING &lt;condition&gt;</code></li>
+</ul>
+</li>
+</ul>
+<p>执行的顺序为连接 -&gt; 筛选(WHERE) -&gt; 分组 -&gt; 过滤(HAVING) -&gt; 排序 -&gt; 选择.</p>
+<h2 id="sql_1">高级SQL</h2>
 <p>要点:</p>
 <ul>
 <li>三值逻辑<ul>
@@ -1958,6 +1996,7 @@ Bilibili:
 <li><a href="/database/relational-algebra/#join">join</a>, 搞懂笛卡尔积, 条件连接, 等值连接, 自然连接的层级关系, 特别注意条件连接中的内连接, 左外连接, 右外连接, 全连接的区别</li>
 <li><a href="/database/relational-algebra/#set">union</a></li>
 <li><a href="/database/query-processing/#logical-query-optimization">logical query optimization</a>, 主要思想就是使中间的结果尽量小</li>
+<li><strong>特别注意差</strong>: 这个考的可能性很高, 因为在PPT和模拟考都出现了, 对应的是SQL语句条件判断的嵌套中的<code>v NOT IN</code>语句, 可以改写为π<sub>attribute</sub>-π<sub>attribute</sub></li>
 </ul>
 <h2 id="_3">完整性约束</h2>
 <p>要点:</p>
@@ -2109,6 +2148,43 @@ Bilibili:
 <h2 id="practice-final-exam">Practice Final Exam</h2>
 <ul>
 <li>
+<p>7</p>
+<ul>
+<li>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">branch_name</span><span class="w"> </span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">FROM</span><span class="w"> </span><span class="n">branch</span><span class="w"> </span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">assets</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="k">SOME</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">assets</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">branch</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">branch_city</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Gold Coast&#39;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">);</span>
+</code></pre></div>
+</li>
+<li>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">depositor</span><span class="p">.</span><span class="n">customer_name</span><span class="p">,</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">account</span><span class="p">.</span><span class="n">balance</span><span class="p">)</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">FROM</span><span class="w"> </span><span class="n">account</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">JOIN</span><span class="w"> </span><span class="n">depositor</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">account</span><span class="p">.</span><span class="n">account_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">depositor</span><span class="p">.</span><span class="n">account_number</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">depositor</span><span class="p">.</span><span class="n">customer_name</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">customer</span><span class="p">.</span><span class="n">customer_name</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">customer</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="k">JOIN</span><span class="w"> </span><span class="n">depositor</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">customer</span><span class="p">.</span><span class="n">customer_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">depositor</span><span class="p">.</span><span class="n">customer_name</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">customer</span><span class="p">.</span><span class="n">customer_street</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Johnson&#39;</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">customer</span><span class="p">.</span><span class="n">customer_name</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="k">HAVING</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">depositor</span><span class="p">.</span><span class="n">account_number</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">3</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="p">)</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">depositor</span><span class="p">.</span><span class="n">customer_name</span><span class="p">;</span>
+</code></pre></div>
+</li>
+<li>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">depositor</span><span class="p">.</span><span class="n">customer_name</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">FROM</span><span class="w"> </span><span class="n">depositor</span><span class="w"> </span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">JOIN</span><span class="w"> </span><span class="n">borrower</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">borrower</span><span class="p">.</span><span class="n">customer_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">depositor</span><span class="p">.</span><span class="n">customer_name</span><span class="w"> </span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">borrower</span><span class="p">.</span><span class="n">loan_number</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">loan_number</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">loan</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">branch_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Darling Harbour&#39;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">);</span>
+</code></pre></div>
+</li>
+</ul>
+</li>
+<li>
 <p>8</p>
 <p>Let's assume that:</p>
 <ul>
@@ -2137,7 +2213,7 @@ Bilibili:
 <p>9</p>
 <ul>
 <li>The equivalent SQL command for this is <code>SELECT customer_name FROM customer WHERE customer_city = 'Sydney'</code>, it can be converted to relational algebra as follows: π<sub>customer_name</sub>(σ<sub>customer_city='Sydney'</sub>(customer))</li>
-<li>The equivalent SQL command for this is <code>SELECT customer_name FROM borower</code></li>
+<li>The equivalent SQL command for this is <code>SELECT borrower.customer_name FROM borrower JOIN loan ON borrower.loan_number = loan.loan_number WHERE loan.branch_name = 'Redfern' AND customer_name NOT IN (SELECT customer_name FROM depositor)</code>, it can be converted to relational algebra as follows: π<sub>customer_name</sub>(σ<sub>branch_name='Redfern'</sub>(borrower⋈<sub>loan_number</sub>loan))-π<sub>customer_name</sub>(depositor)</li>
 </ul>
 </li>
 <li>
