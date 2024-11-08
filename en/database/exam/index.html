@@ -1965,6 +1965,13 @@ Bilibili:
 <li>如何检查是不是MVD: 如<a href="https://img.ricolxwz.io/ef967f1ab99097e46abaf33cfec9cc6d.png">图</a>, 对于任意两个UoS是COMP9120的记录, 存在另外两个UoS是9120的记录, 使得Textbook相同的情况下Tutor不同, Tutor相同的情况下Textbook不同. (然后还可以插入一条新的记录, 比如插入一个老师Lijun C, 则应该有两条记录, 对应两种Textbook)</li>
 <li>如何判断是否处于4NF: 满足下列条件中的任意一条 a. <strong>所有</strong>的多值依赖都是平凡多值依赖(Y ⊆ X或X ∪ Y = R, 特别注意第二个条件); b. <strong>所有</strong>的多值依赖中左侧是超键</li>
 </ol>
+<p>怎么做范式的题:</p>
+<ol>
+<li>弄清楚2NF, 3NF, BCNF的概念, 分别是没有部分依赖, 非主属性不能依赖其他非主属性, 左侧是超键</li>
+<li>对于BCNF, 它可能会先给出很多函数依赖, 然后让你判断这些函数依赖是否符合BCNF, 那么判断的方法就是对于这些函数依赖的左侧, 用属性闭包判断其是否为超键, 如果是所有函数依赖的左侧都是超键, 则说明表符合BCNF</li>
+<li>执行分解: 如<a href="https://img.ricolxwz.io/ba06d45ab84b9af2868b8fd73170af4b.png">图</a></li>
+<li>检查分解: a. 检查分解后的属性闭包是否和原始闭包相同; b. 检查无损连接, 交集是否能够推出其中任意一个表</li>
+</ol>
 <h2 id="_6">事务</h2>
 <p>要点: </p>
 <ul>
@@ -2051,7 +2058,7 @@ Bilibili:
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年11月7日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年11月8日</span>
   </span>
 
     
