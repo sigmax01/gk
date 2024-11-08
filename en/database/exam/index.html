@@ -2151,6 +2151,7 @@ Bilibili:
 <p>7</p>
 <ul>
 <li>
+<p>(a)</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">branch_name</span><span class="w"> </span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">FROM</span><span class="w"> </span><span class="n">branch</span><span class="w"> </span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">assets</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="k">SOME</span><span class="w"> </span><span class="p">(</span>
@@ -2159,6 +2160,7 @@ Bilibili:
 </code></pre></div>
 </li>
 <li>
+<p>(b)</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">depositor</span><span class="p">.</span><span class="n">customer_name</span><span class="p">,</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">account</span><span class="p">.</span><span class="n">balance</span><span class="p">)</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">FROM</span><span class="w"> </span><span class="n">account</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">JOIN</span><span class="w"> </span><span class="n">depositor</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">account</span><span class="p">.</span><span class="n">account_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">depositor</span><span class="p">.</span><span class="n">account_number</span>
@@ -2174,6 +2176,7 @@ Bilibili:
 </code></pre></div>
 </li>
 <li>
+<p>(c)</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">depositor</span><span class="p">.</span><span class="n">customer_name</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">FROM</span><span class="w"> </span><span class="n">depositor</span><span class="w"> </span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">JOIN</span><span class="w"> </span><span class="n">borrower</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">borrower</span><span class="p">.</span><span class="n">customer_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">depositor</span><span class="p">.</span><span class="n">customer_name</span><span class="w"> </span>
