@@ -227,6 +227,7 @@ comments: true
 	- Not examinable 
 	- T1, r(x_1), w(x_1); T3, r(x_1), w(x_1), r(x_2), w(x_2). There are three conflicts here: T1 r(x_1) and T3 w(x_1); T1 w(x_1) and T3 r(x_1). T1 w(x_1) and T3 w(x_1). There exists a circle in the precedence graph, so it's not conflict serializable.
 - Q5
+
 	The storage can be used in a page: (8192-300)\*0.9=7102.8 bytes. The table needs 2000000\*(4+10+6+15+4)=78000000 bytes. 78000000/7102.8=10981.58, so we need 10982 pages to store the entire inventory table, the total space needed 10982\*8192=89964544 bytes, overhead is (89964544-78000000)/78000000=15.33%. The time for loading each page is 200 milliseconds, so we need 200*10982=2196400 milliseconds to scan the entire table. The search key takes (10+4) bytes, so the index entry takes 14+4=18 bytes, we can store 7102.8/18=394.6 which is 394 records in one page, so we need 2000000/394=5076.14 which is 5077 pages to store all the indices. We need 5077/394=12.89 which is 13 pages to store the bottom index pages, we need 1 page at root level. So the B+ tree looks like this: 1 page at top, 13 pages in between, 5077 pages at the bottom and there are 10982 leaf nodes. For a single query, we need 4 IOs(let's assume that one page = one IO, which is default in this course), so it takes 4\*200=800 milliseconds to reach the specific leaf nodes. 
 
 ## 模拟考试参考
@@ -234,7 +235,9 @@ comments: true
 - 11
 
 	**Let's assume that Employe is the outer table**
+
 	- Nested Loop Join: b_R+(|R|\*b_S), so it's 200+(2000\*500)=1000200 times IO
 	- Block-nested loop Join: b_R+(b_R\*b_S), so it's 200+(200\*200)=100200 times IO
 	- Index-nested loop join: let's assume that the average cost of indexing is 3 times. b_R+(|R|\times c), so it's 200+(2000\*3)=6200 times IO
+
 	Same for Department as outer table
