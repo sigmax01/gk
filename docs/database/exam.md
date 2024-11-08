@@ -54,6 +54,22 @@ comments: true
 - [map isA](/database/relational-model/#map-isa)
 - [map aggregation](/database/relational-model/#map-aggregation)
 
+## SQL
+
+要点:
+
+- 连接语句
+	- 笛卡尔积: `FROM <table1>, <table2>`
+	- 条件连接/等值连接: `FROM <table1> INNER/LEFT OUTER/RIGHT OUTER/FULL OUTER JOIN <table2> ON <condition>`, 只写一个JOIN默认是内连接
+	- 自然连接: `FROM <table1> NATURAL JOIN <table2>`
+- 条件语句
+	- 整体框架: `WHERE <condition1> AND/OR <condition2>`
+	- 条件: 可以是普通的大于等于小于某个值, 也可以和嵌套查询返回的结果比较, 常用的有`v NOT EXIST`, `NOT IN`, `v op ALL`, `v op SOME`
+- 分组语句
+	- 整体框架: `GROUP BY <group> HAVING <condition>`
+
+执行的顺序为连接 -> 筛选(WHERE) -> 分组 -> 过滤(HAVING) -> 排序 -> 选择.
+
 ## 高级SQL
 
 要点:
@@ -82,6 +98,7 @@ comments: true
 - [join](/database/relational-algebra/#join), 搞懂笛卡尔积, 条件连接, 等值连接, 自然连接的层级关系, 特别注意条件连接中的内连接, 左外连接, 右外连接, 全连接的区别
 - [union](/database/relational-algebra/#set)
 - [logical query optimization](/database/query-processing/#logical-query-optimization), 主要思想就是使中间的结果尽量小
+- **特别注意差**: 这个考的可能性很高, 因为在PPT和模拟考都出现了, 对应的是SQL语句条件判断的嵌套中的`v NOT IN`语句, 可以改写为π~attribute~-π~attribute~
 
 ## 完整性约束
 
@@ -232,6 +249,46 @@ comments: true
 
 ## Practice Final Exam
 
+- 7
+
+	- 
+
+		```sql
+		SELECT branch_name 
+  		FROM branch 
+  		WHERE assets >= SOME (
+  			SELECT assets FROM branch WHERE branch_city = 'Gold Coast'
+  		);
+  		```
+
+	- 
+
+		```sql
+		SELECT depositor.customer_name, AVG(account.balance)
+		FROM account
+		JOIN depositor ON account.account_number = depositor.account_number
+		WHERE depositor.customer_name IN (
+			SELECT customer.customer_name
+			FROM customer
+			JOIN depositor ON customer.customer_name = depositor.customer_name
+			WHERE customer.customer_street = 'Johnson'
+			GROUP BY customer.customer_name
+			HAVING COUNT(depositor.account_number) >= 3
+		)
+		GROUP BY depositor.customer_name;
+		```
+  
+    - 
+
+		```sql
+		SELECT depositor.customer_name
+  		FROM depositor 
+  		JOIN borrower ON borrower.customer_name = depositor.customer_name 
+  		WHERE borrower.loan_number IN (
+  			SELECT loan_number FROM loan WHERE branch_name = 'Darling Harbour'
+  		);
+		```
+
 - 8
 
 	Let's assume that:
@@ -261,7 +318,7 @@ comments: true
 - 9
 
 	- The equivalent SQL command for this is `SELECT customer_name FROM customer WHERE customer_city = 'Sydney'`, it can be converted to relational algebra as follows: π~customer_name~(σ~customer_city='Sydney'~(customer))
-	- The equivalent SQL command for this is `SELECT customer_name FROM borower`
+	- The equivalent SQL command for this is `SELECT borrower.customer_name FROM borrower JOIN loan ON borrower.loan_number = loan.loan_number WHERE loan.branch_name = 'Redfern' AND customer_name NOT IN (SELECT customer_name FROM depositor)`, it can be converted to relational algebra as follows: π~customer_name~(σ~branch_name='Redfern'~(borrower⋈~loan_number~loan))-π~customer_name~(depositor)
 
 - 10
 
