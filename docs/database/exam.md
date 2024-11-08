@@ -145,6 +145,7 @@ comments: true
 - 隔离等级: read uncommited; read committed, repeatable read, serializable; 特别注意第三个, 其他事务只能看到事务提交之前的数据, 后三种隔离分别能解决temporary update, incorrect summary, lost update问题
 - 冲突等价调度: 每一对冲突的操作在两个调度中都相同, 则它们冲突等价. 可以通过调换不冲突操作的顺序确定两个调度是否冲突等价, 如果一个调度冲突等价于一个串行调度, 则为冲突可串行化调度. 可以使用优先图来判断, 每个事务都是一个节点, 若一对冲突操作中事务A在事务B前面, 则从事务A到事务B有一条有向边. 若不存在环, 则调度就是冲突可串行化的. 冲突可串行化一定可串行化, 但是可串行化不一定冲突可串行化. 
 - 优先图转为串行化方案: 必须保持原有的方向性, 没有箭头的可以调换顺序
+- 锁: 使用二阶段锁, 如果有写, 要用exclusive lock, 如果只有读, 只用shared lock就行. shared lock可以由多个事务持有, 但是exclusive lock在某个时刻只能由一个事务持有. 分为两个阶段, growing phase和shrinking phase, 前者只获得锁不释放锁; 后者只释放锁不获得锁
 - `UPDATE ... WHERE ...`这个语句包含了两个步骤, 首先根据条件读取, READ, 然后写入, WRITE; 普通的`SELECT`语句只有READ(幻灯片p34)
 
 相关知识点:
@@ -162,7 +163,7 @@ comments: true
 2. 确定没对冲突的顺序, 是谁在前面, 谁在后面
 3. 事务体现为一个节点, 顺序体现为箭头的方向
 4. 如果图是无环的, 则说明是冲突可串行化的
-5. 若为冲突可串行化, 根据优先图, 可以调换两者之间不存在箭头的事务的顺序, 得到数个串行化调度
+5. 若为冲突可串行化, 根据precedence graph, 可以调换两者之间不存在箭头的事务的顺序, 得到数个串行化调度
 
 ## 存储与索引
 
@@ -173,7 +174,7 @@ comments: true
 - 文件和页面: 一张表对应一个文件, 一个文件对应数个页面, 一个页面对应一个或多个块. 若一个页面为4k, 页头固定250字节元数据, occupancy为80%, 则每页有(4k-250)*0.8=3076字节来存储数据, 设每个记录的大小为200字节, 则向下取整后可以存储15条数据. 假设该文件有2000000条记录, 则总共需要的页数为2000000/15向上取整为133334页. 实际占用空间为4k\*133334=546136064字节, overhead为(546136064-400000000)/400000000=36.53%
 - 三种文件组织: 无序文件, 排序文件, 索引文件
 - 访问路径: 线性扫描(很慢, 基本要扫描一半的页), 二分扫描(维护成本很高), 索引扫描
-- B+树: 假设表存储在140351个页面的文件中, 页面按照逻辑排序(物理上不一定连续), 索引条目由搜索键和行指针构成, 共8字节. 假设每页的总可用空间为3846字节, 填充因子为75%, 则向下取整后可以存放360条索引. 最底层索引总共需要140351个, 所以需要的索引页数向上取整后为390页. 对于这个390页索引页, 在它的基础上继续套娃建立索引, 那么需要390/360向上取整2页来存放, 继续套娃, 最顶层只需要1页. 所以索引页的总数为393. 相对于140351个数据页, 仅仅增加了0.2%的需求. 在查询的时候, 只需要存放3个索引页和1个数据页入内存, 也就是4次IO
+- B+树: 假设表存储在140351个页面的文件中, 页面按照逻辑排序(物理上不一定连续), 索引条目由搜索键和行指针构成, 共8字节. 假设每页的总可用空间为3846字节, 填充因子为75%, 则向下取整后可以存放360条索引. 最底层索引总共需要140351个, 所以需要的索引页数向上取整后为390页. 对于这个390页索引页, 在它的基础上继续套娃建立索引, 那么需要390/360向上取整2页来存放, 继续套娃, 最顶层只需要1页. 所以索引页的总数为393. 相对于140351个数据页, 仅仅增加了0.2%的需求. 在查询的时候, 只需要存放3个索引页和1个数据页入内存, 也就是4次IO. B+树的最底层是数据页.
 - 复合索引: 用于索引的键由多个属性构成, 要特别注意排序的顺序, 如先按照age排序, 然后按照salary排序, 那么就要先搜索age, 再搜索salary, 不能跳过age搜索salary
 
 相关知识点:
@@ -200,3 +201,30 @@ comments: true
 - [nested loop join](/database/query-processing/#nested-loop-join)
 - [block nested loop join](/database/query-processing/#block-nested-loop-join)
 - [index nested loop join](/database/query-processing/#index-nested-loop-join)
+
+## ED - Revision参考
+
+- Q2
+	- ABCDEFGHIJ
+	- Since both A and I are not superkey and AI is a superkey, AI is a candidate key
+	- HI, AI
+	- ABCDEFGH
+	- B is not a prime key, since it's not part of any candidate key (HI, AI)
+	- Not examinable
+	- The intersection of these three relations is none, and none is not the key of any relations
+	- 3NF, non-prime attribute can not depends on non-prime attribute, so B -> D violates 3NF
+	- Not examinable 
+	- BCNF, LHS must be superkey, A -> B, A is not a superkey (you can verify it using attribute closure), so it violates BCNF
+- Q4
+	- T1, r(x_1), w(x_1); T2, r(x_1), w(x_1); There are two possible anomalies, lost update, T2 reads x_1 before T1 writes to x_1; temporary read, T2 reads x_1 but T1 rollbacks later. the correct result is $1500, the result of lost update is $2500, the result of temporary update is $2000, suppose the initial fund is $2000
+    - T1, r(x_1), w(x_1); T3, r(x_1), w(x_1), r(x_2), w(x_2), lost update, T3 read x_1 before T1 write to x_1. The amount of 201 would be $1700 which is incorrect. We can use the exclusive lock, T1 first gets the lock, T3 keeps waiting until T1 releases the lock
+	- Dirty reads == temporary reads, the other two are not examinable. The isolation level is serializable. 
+	- Deak lock occurs when two resources waiting for each other to release their locks. Possible scenario: T1 gets lock on 201, T3 gets lock on 203. Suppose T1 needs to update some status of 203, T1 needs lock of 203, T3 needs lock of 201, it's a deadlock
+	- Share lock can be held by multiple transactions at the same time while exclusive lock is not. We can attach exclusive lock on T1 and T2 to prevent anomalies, because they need to write on the same data, which will potentially cause lost update or temporary read
+	- COMMIT is used to commit a transaction, ROLLBACK is used to undo the transaction, revert back to the original state. It will lead to temporary read.
+	- 2PL: 2 phase locking, as its name suggests, has two phases, growing phase and shrinking phase, during growing phase, a transaction does not release any locks but acquire locks; during shrinking phase,  a transaction does not acquire any locks but release locks. This will ensure transaction always be executed after other transactions release the desired lock
+	- Not examinable
+	- Not examinable 
+	- T1, r(x_1), w(x_1); T3, r(x_1), w(x_1), r(x_2), w(x_2). There are three conflicts here: T1 r(x_1) and T3 w(x_1); T1 w(x_1) and T3 r(x_1). T1 w(x_1) and T3 w(x_1). There exists a circle in the precedence graph, so it's not conflict serializable.
+- Q5
+	The storage can be used in a page: (8192-300)\*0.9=7102.8 bytes. The table needs 2000000\*(4+10+6+15+4)=78000000 bytes. 78000000/7102.8=10981.58, so we need 10982 pages to store the entire inventory table, the total space needed 10982\*8192=89964544 bytes, overhead is (89964544-78000000)/78000000=15.33%. The time for loading each page is 200 milliseconds, so we need 200*10982=2196400 milliseconds to scan the entire table. The search key takes (10+4) bytes, so the index entry takes 14+4=18 bytes, we can store 7102.8/18=394.6 which is 394 records in one page, so we need 2000000/394=5076.14 which is 5077 pages to store all the indices. We need 5077/394=12.89 which is 13 pages to store the bottom index pages, we need 1 page at root level. So the B+ tree looks like this: 1 page at top, 13 pages in between, 5077 pages at the bottom and there are 10982 leaf nodes. For a single query, we need 4 IOs, so it takes 4\*200=800 milliseconds to reach the specific leaf nodes. 
