@@ -813,9 +813,9 @@ Bilibili:
 </li>
       
         <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#practice-final-exam" class="md-nav__link">
     <span class="md-ellipsis">
-      模拟考试参考
+      Practice Final Exam
     </span>
   </a>
   
@@ -1830,9 +1830,9 @@ Bilibili:
 </li>
       
         <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#practice-final-exam" class="md-nav__link">
     <span class="md-ellipsis">
-      模拟考试参考
+      Practice Final Exam
     </span>
   </a>
   
@@ -2106,8 +2106,33 @@ Bilibili:
 <p>The storage can be used in a page: (8192-300)*0.9=7102.8 bytes. The table needs 2000000*(4+10+6+15+4)=78000000 bytes. 78000000/7102.8=10981.58, so we need 10982 pages to store the entire inventory table, the total space needed 10982*8192=89964544 bytes, overhead is (89964544-78000000)/78000000=15.33%. The time for loading each page is 200 milliseconds, so we need 200*10982=2196400 milliseconds to scan the entire table. The search key takes (10+4) bytes, so the index entry takes 14+4=18 bytes, we can store 7102.8/18=394.6 which is 394 records in one page, so we need 2000000/394=5076.14 which is 5077 pages to store all the indices. We need 5077/394=12.89 which is 13 pages to store the bottom index pages, we need 1 page at root level. So the B+ tree looks like this: 1 page at top, 13 pages in between, 5077 pages at the bottom and there are 10982 leaf nodes. For a single query, we need 4 IOs(let's assume that one page = one IO, which is default in this course), so it takes 4*200=800 milliseconds to reach the specific leaf nodes. </p>
 </li>
 </ul>
-<h2 id="_9">模拟考试参考</h2>
+<h2 id="practice-final-exam">Practice Final Exam</h2>
 <ul>
+<li>
+<p>8</p>
+<p>Let's assume that:</p>
+<ul>
+<li>Cursor_no: A</li>
+<li>Sec_no: B</li>
+<li>Offering_dept: C</li>
+<li>Credit_hours: D</li>
+<li>Course_level: E</li>
+<li>Instructor_id: F</li>
+<li>Semester: G</li>
+<li>Year: H</li>
+<li>Days_hours: I</li>
+<li>Room_no: J</li>
+<li>No_of_students: K</li>
+</ul>
+<p>we have the following functional dependencies: </p>
+<ul>
+<li>A -&gt; CDE</li>
+<li>ABGH -&gt; IJKF</li>
+<li>JIGH -&gt; FAB</li>
+</ul>
+<p>a) Let's verify if JIGH is a candidate key. (JIGH)+=FABCDEJIGH=FABCDEJIGHK=R, so it's a super key. Obviously, J, I, G, H, JI, JG, JH, IG, IH, GH is not a super key, so JIGH is a candidate key. Let's verify if ABGH is a candidate key. (ABGH)+=ABCDEHIJKFG=R, so it's a superkey. Obviously, A, B, G, H, AB, AG, AH, BG, BH, GH is not a super key, so ABGH is a candidate key.</p>
+<p>b) R is not in BCNF because in FD A -&gt; CDE, A is not a super key. So we can decompose it into R1(A, C, D, E) and R2(A, B, G, H, J, I, F). It's a lossless decomposition because the intersection of R1 and R2 A is a candidate key of R1. Also, It preserves the FDs. Since we have A -&gt; CDE in R1 and ABGH -&gt; IJKF, JIGH -&gt; FAB in R2.</p>
+</li>
 <li>
 <p>10</p>
 <ul>
