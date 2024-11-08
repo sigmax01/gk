@@ -2109,6 +2109,13 @@ Bilibili:
 <h2 id="_9">模拟考试参考</h2>
 <ul>
 <li>
+<p>10</p>
+<ul>
+<li>There are 5 conflicts in this case. R3 -&gt; W1, W1 -&gt; R2, R1 -&gt; W3, R2 -&gt; W3, W1 -&gt; W3, so we have 3 -&gt; 1, 1 -&gt; 2, 1 -&gt; 3, 2 -&gt; 3, note that we have 3 -&gt; 1 and 1 -&gt; 3, so it's not conflict serializable</li>
+<li>There are 2 conflicts in this case. R1 -&gt; W3, W3 -&gt; R2, R3 -&gt; W1, W1 -&gt; R2, so we have 1 -&gt; 3, 3 -&gt; 2, 3 -&gt; 1, 1 -&gt; 2, note that we have 1 -&gt; 3 and 3 -&gt; 1, so it's not conflict serializable</li>
+</ul>
+</li>
+<li>
 <p>11</p>
 <p><strong>Let's assume that Employe is the outer table</strong></p>
 <ul>
