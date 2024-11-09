@@ -251,43 +251,37 @@ comments: true
 
 - 7
 
-	- (a)
+	```sql
+	SELECT branch_name 
+	FROM branch 
+	WHERE assets >= SOME (
+		SELECT assets FROM branch WHERE branch_city = 'Gold Coast'
+	);
+	```
 
-		```sql
-		SELECT branch_name 
-  		FROM branch 
-  		WHERE assets >= SOME (
-  			SELECT assets FROM branch WHERE branch_city = 'Gold Coast'
-  		);
-  		```
+	```sql
+	SELECT depositor.customer_name, AVG(account.balance)
+	FROM account
+	JOIN depositor ON account.account_number = depositor.account_number
+	WHERE depositor.customer_name IN (
+		SELECT customer.customer_name
+		FROM customer
+		JOIN depositor ON customer.customer_name = depositor.customer_name
+		WHERE customer.customer_street = 'Johnson'
+		GROUP BY customer.customer_name
+		HAVING COUNT(depositor.account_number) >= 3
+	)
+	GROUP BY depositor.customer_name;
+	```
 
-	- (b)
-
-		```sql
-		SELECT depositor.customer_name, AVG(account.balance)
-		FROM account
-		JOIN depositor ON account.account_number = depositor.account_number
-		WHERE depositor.customer_name IN (
-			SELECT customer.customer_name
-			FROM customer
-			JOIN depositor ON customer.customer_name = depositor.customer_name
-			WHERE customer.customer_street = 'Johnson'
-			GROUP BY customer.customer_name
-			HAVING COUNT(depositor.account_number) >= 3
-		)
-		GROUP BY depositor.customer_name;
-		```
-  
-    - (c)
-
-		```sql
-		SELECT depositor.customer_name
-  		FROM depositor 
-  		JOIN borrower ON borrower.customer_name = depositor.customer_name 
-  		WHERE borrower.loan_number IN (
-  			SELECT loan_number FROM loan WHERE branch_name = 'Darling Harbour'
-  		);
-		```
+	```sql
+	SELECT depositor.customer_name
+	FROM depositor 
+	JOIN borrower ON borrower.customer_name = depositor.customer_name 
+	WHERE borrower.loan_number IN (
+		SELECT loan_number FROM loan WHERE branch_name = 'Darling Harbour'
+	);
+	```
 
 - 8
 
