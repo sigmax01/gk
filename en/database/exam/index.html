@@ -2176,7 +2176,7 @@ Bilibili:
 <li>Plays(id, instrid) PK=(id, instrid) FK=(id -&gt; Musicians, instrid -&gt; Instrument)</li>
 <li>Instrument(instrid, dname, key) PK=(instrid)</li>
 <li>Perform(id, songid) PK=(id, songid) FK=(id -&gt; Musicians, songid -&gt; Songs)</li>
-<li>Songs(songid, title, suthor) PK=(songid) FK=(alnumIdentifier -&gt; Album)</li>
+<li>Songs(songid, title, suthor, albumIdentifier) PK=(songid) FK=(albumIdentifier -&gt; Album)</li>
 </ul>
 </li>
 <li>
