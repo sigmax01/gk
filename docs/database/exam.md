@@ -355,3 +355,11 @@ comments: true
 	- Index-nested loop join: let's assume that the average cost of indexing is 3 times. b_R+(|R|\times c), so it's 200+(2000\*3)=6200 times IO
 
 	Same for Department as outer table
+
+- 12
+
+	Not very sure, but:
+
+	<figure markdown='1'>
+	![](https://img.ricolxwz.io/ddd0159a2b9fe0a0231d30ae468ad372.png){ loading=lazy width='500' }
+	</figure>
