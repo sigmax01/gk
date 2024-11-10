@@ -262,7 +262,7 @@ comments: true
 - 2: a; natural join it's another type of equi-join, it will automatically select the attribute; b: it's teaches.ID; c: where is where clause? d: you have to write ON clause if you use inner join
 - 3: b; the correct answer is `PRIMARY KEY (a, b)`
 - 4: a
-- 5: a
+- 5: c
 
 - 6
 
