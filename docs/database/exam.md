@@ -257,6 +257,18 @@ comments: true
 
 ## Practice Final Exam
 
+- 6
+
+	- Place(address) PK=(address)
+	- Telephone(phone_no, address) PK=(phone_no) FK=(address -> Place)
+	- Lives(phone_no, id) PK=(phone_no, id) FK=(phone_no -> Telephone, id -> Musicians)
+	- Musicians(id, name) PK=(id)
+	- Album(albumIdentifier, copyrightDate, title) PK=(albumIdentifier) FK=(id -> Musicians)
+	- Plays(id, instrid) PK=(id, instrid) FK=(id -> Musicians, instrid -> Instrument)
+	- Instrument(instrid, dname, key) PK=(instrid)
+	- Perform(id, songid) PK=(id, songid) FK=(id -> Musicians, songid -> Songs)
+	- Songs(songid, title, suthor) PK=(songid) FK=(alnumIdentifier -> Album)
+
 - 7
 
 	```sql
