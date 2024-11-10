@@ -334,7 +334,7 @@ comments: true
 
 	a) Let's verify if JIGH is a candidate key. (JIGH)+=FABCDEJIGH=FABCDEJIGHK=R, so it's a super key. Obviously, J, I, G, H, JI, JG, JH, IG, IH, GH is not a super key, so JIGH is a candidate key. Let's verify if ABGH is a candidate key. (ABGH)+=ABCDEHIJKFG=R, so it's a superkey. Obviously, A, B, G, H, AB, AG, AH, BG, BH, GH is not a super key, so ABGH is a candidate key.
 
-	b) R is not in BCNF because in FD A -> CDE, A is not a super key. So we can decompose it into R1(A, C, D, E) and R2(A, B, G, H, J, I, F). It's a lossless decomposition because the intersection of R1 and R2 A is a candidate key of R1. Also, It preserves the FDs. Since we have A -> CDE in R1 and ABGH -> IJKF, JIGH -> FAB in R2.
+	b) R is not in BCNF because in FD A -> CDE, A is not a super key. So we can decompose it into R1(A, C, D, E) and R2(A, B, G, H, J, I, F, K). It's a lossless decomposition because the intersection of R1 and R2 A is a candidate key of R1. Also, It preserves the FDs. Since we have A -> CDE in R1 and ABGH -> IJKF, JIGH -> FAB in R2.
 
 - 9
 
