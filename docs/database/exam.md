@@ -12,6 +12,7 @@ comments: true
 - 如何表示实体, 包括强实体(矩形), 弱实体(双矩形). 
 - 如何表示关系, 包括普通的实体之间的关系(菱形), 强弱实体之间的关系(双菱形)
 - 如何表示isA关系(三角形)
+- isA关系中的重叠约束和覆盖约束, overlap constraints包括disjoint还有overlapping(分别表示一个实体只能属于其中一个低层实体集, 一个实体集可以属于多个低层实体集). covering constraints包括partial和total(分别表示一个实体不必属于任何一个底层实体集, 一个实体至少属于一个底层实体集)
 
 注意点:
 
@@ -256,6 +257,12 @@ comments: true
 	The storage can be used in a page: (8192-300)\*0.9=7102.8 bytes. The table needs 2000000\*(4+10+6+15+4)=78000000 bytes. 78000000/7102.8=10981.58, so we need 10982 pages to store the entire inventory table, the total space needed 10982\*8192=89964544 bytes, overhead is (89964544-78000000)/78000000=15.33%. The time for loading each page is 200 milliseconds, so we need 200*10982=2196400 milliseconds to scan the entire table. The search key takes (10+4) bytes, so the index entry takes 14+4=18 bytes, we can store 7102.8/18=394.6 which is 394 records in one page, so we need 2000000/394=5076.14 which is 5077 pages to store all the indices. We need 5077/394=12.89 which is 13 pages to store the bottom index pages, we need 1 page at root level. So the B+ tree looks like this: 1 page at top, 13 pages in between, 5077 pages at the bottom and there are 10982 leaf nodes. For a single query, we need 4 IOs(let's assume that one page = one IO, which is default in this course), so it takes 4\*200=800 milliseconds to reach the specific leaf nodes. 
 
 ## Practice Final Exam
+
+- 1: a, because attributes that do not appear in group by clause can not be used directly in select/having clause
+- 2: a; natural join it's another type of equi-join, it will automatically select the attribute; b: it's teaches.ID; c: where is where clause? d: you have to write ON clause if you use inner join
+- 3: b; the correct answer is `PRIMARY KEY (a, b)`
+- 4: a
+- 5: a
 
 - 6
 
