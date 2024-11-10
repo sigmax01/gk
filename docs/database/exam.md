@@ -41,6 +41,7 @@ comments: true
 - 如何映射双侧有键约束, 其中一侧还有参与约束的关系: 在上面双侧键约束的基础上, 往一侧的实体集的外键上加一个非空约束, 如[图](https://img.ricolxwz.io/fca7486e063b1bc75f1ef25d31873e46.png)
 - 如何映射强弱实体关系: 如[图](https://img.ricolxwz.io/ec2b4323b6856140eea624640c405c24.png)
 - 如何映射isA关系: 如[图](https://img.ricolxwz.io/e24aee851049a321ea87670a3368daf6.png)
+- 如何映射聚合: 如[图](https://img.ricolxwz.io/e5f435a531088490c3c6c0eb1ce55426.png)
 
 注意点:
 
