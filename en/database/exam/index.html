@@ -2158,6 +2158,20 @@ Bilibili:
 <h2 id="practice-final-exam">Practice Final Exam</h2>
 <ul>
 <li>
+<p>6</p>
+<ul>
+<li>Place(address) PK=(address)</li>
+<li>Telephone(phone_no, address) PK=(phone_no) FK=(address -&gt; Place)</li>
+<li>Lives(phone_no, id) PK=(phone_no, id) FK=(phone_no -&gt; Telephone, id -&gt; Musicians)</li>
+<li>Musicians(id, name) PK=(id)</li>
+<li>Album(albumIdentifier, copyrightDate, title) PK=(albumIdentifier) FK=(id -&gt; Musicians)</li>
+<li>Plays(id, instrid) PK=(id, instrid) FK=(id -&gt; Musicians, instrid -&gt; Instrument)</li>
+<li>Instrument(instrid, dname, key) PK=(instrid)</li>
+<li>Perform(id, songid) PK=(id, songid) FK=(id -&gt; Musicians, songid -&gt; Songs)</li>
+<li>Songs(songid, title, suthor) PK=(songid) FK=(alnumIdentifier -&gt; Album)</li>
+</ul>
+</li>
+<li>
 <p>7</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">branch_name</span><span class="w"> </span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">FROM</span><span class="w"> </span><span class="n">branch</span><span class="w"> </span>
