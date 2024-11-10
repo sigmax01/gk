@@ -274,7 +274,7 @@ comments: true
 	- Plays(id, instrid) PK=(id, instrid) FK=(id -> Musicians, instrid -> Instrument)
 	- Instrument(instrid, dname, key) PK=(instrid)
 	- Perform(id, songid) PK=(id, songid) FK=(id -> Musicians, songid -> Songs)
-	- Songs(songid, title, suthor) PK=(songid) FK=(alnumIdentifier -> Album)
+	- Songs(songid, title, suthor, albumIdentifier) PK=(songid) FK=(albumIdentifier -> Album)
 
 - 7
 
