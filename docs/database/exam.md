@@ -63,10 +63,12 @@ comments: true
 	- 条件连接/等值连接: `FROM <table1> INNER/LEFT OUTER/RIGHT OUTER/FULL OUTER JOIN <table2> ON <condition>`, 只写一个JOIN默认是内连接
 	- 自然连接: `FROM <table1> NATURAL JOIN <table2>`
 - 条件语句
-	- 整体框架: `WHERE <condition1> AND/OR <condition2>`
+	- 整体框架: `WHERE <condition1> AND/OR/LIKE <condition2>`. 模糊搜索的wildcard为%, 单个字符占位符是_
 	- 条件: 可以是普通的大于等于小于某个值, 也可以和嵌套查询返回的结果比较, 常用的有`v NOT EXIST`, `NOT IN`, `v op ALL`, `v op SOME`
 - 分组语句
-	- 整体框架: `GROUP BY <group> HAVING <condition>`
+	- 整体框架: `GROUP BY <group> HAVING <condition>`, 注意, 在`SELECT`和`HAVING`子句中的属性如果不是`GROUP BY`中的属性, 则必须包含在聚合函数中
+- 排序语句
+	- 整体框架: `ORDER BY <attr> DESC, <attr> ASC`, 默认是升序
 
 执行的顺序为连接 -> 筛选(WHERE) -> 分组 -> 过滤(HAVING) -> 排序 -> 选择.
 
@@ -112,6 +114,11 @@ comments: true
 - 约束检查时间: 想象一个开关, 打开是`DEFERABLE`, 关闭是`NO DEFERABLE`(默认), 开了之后还可以选择一开始是否推迟, `INITIALLY DEFERED`还是一开始不推迟`INITIALLY IMMEDIATE`, 选择了一开始的状态之后, 分别可以进一步选择在执行的时候是否推迟, 分别是`SET CONSTRAINTS IMMEDIATE`还是`SET CONSTRAINTS DEFERRED`
 - 断言: 这个期中考考了. 看那个[航海俱乐部的例子](/database/integrity-constraints/#assertion). 貌似还挺重要的, 格式为`CREATE ASSERTION <assertion_name> CHECK NOT EXIST (<select clause>)`
 - 触发器: 由事件, 条件, 行动组成. 分为行级触发器和语句级触发器, 如果你的语句更新了多行数据, 那么行级触发器针对每行都会触发一次, 而语句级触发器是执行多少SQL语句执行几次触发器, 写法分别是`FOR EACH ROW`, `FOR EACH STATEMENT`. 触发器的写法为`CREATE TRIGER <triger_name> BEFORE/AFTER INSERT/UPDATE/DELETE (OF <attribute>) ON <table>`, `OF <attribute>`的写法只有`UPDATE`能用
+
+怎么做断言类的题:
+
+- 什么时候用断言: 涉及到两张表
+- 整体框架`CREATE ASSERTION <assertion_name> CHECK <condition>)`
 
 ## 规范化
 
