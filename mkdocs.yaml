@@ -8,7 +8,7 @@ copyright: <p xmlns:cc="http://creativecommons.org/ns#" >版权所有 &copy 2024
 site_description: 一个基础知石仓库
 theme:
   name: material
-  logo_light_mode: https://cdn.jsdelivr.net/gh/sigmax0124/logo@master/favion-big-mc-212121-000000-1.svg 
+  logo_light_mode: https://cdn.jsdelivr.net/gh/sigmax0124/logo@master/favion-big-mc-212121-000000-1.svg
   logo_dark_mode: https://cdn.jsdelivr.net/gh/sigmax0124/logo@master/favion-big-mc-000000-212121-1.svg
   language: zh
   custom_dir: overrides
@@ -51,7 +51,7 @@ theme:
       accent: indigo
       toggle:
         icon: material/brightness-4
-        name: Switch to system preference 
+        name: Switch to system preference
   icon:
     annotation: material/star-four-points-circle
     repo: fontawesome/brands/github
@@ -67,7 +67,7 @@ theme:
     #   danger: octicons/zap-16
     #   bug: octicons/bug-16
     #   example: octicons/beaker-16
-    #   quote: octicons/quote-16 
+    #   quote: octicons/quote-16
 extra:
   social:
     - icon: fontawesome/mug-hot-solid
@@ -97,7 +97,7 @@ extra:
   #   property: G-BXRC9P41CL
 extra_css:
   - https://unpkg.com/katex@0/dist/katex.min.css
-  - stylesheets/extra.css
+  - https://ml.ricolxwz.de/stylesheets/extra.css
 extra_javascript:
   - javascripts/favicon.js
   - javascripts/katex.js
@@ -168,42 +168,42 @@ plugins:
       enabled: !ENV [CI, false]
 nav:
   - 开始:
-    - index.md
+      - index.md
   - 数据库:
-    - 绪论: database/index.md
-    - 考点: database/exam.md
-    - 数据模型: database/conceptual-model.md
-    - 关系模型: database/relational-model.md
-    - 关系代数: database/relational-algebra.md
-    - SQL: database/sql.md
-    - 完整性约束: database/integrity-constraints.md
-    - 高级SQL: database/advanced-sql.md
-    - 应用开发: database/app-dev.md
-    - 规范化: database/normalization.md
-    - 事务: database/transaction.md
-    - 存储与索引: database/storage-indexing.md
-    - 查询处理: database/query-processing.md
+      - 绪论: database/index.md
+      - 考点: database/exam.md
+      - 数据模型: database/conceptual-model.md
+      - 关系模型: database/relational-model.md
+      - 关系代数: database/relational-algebra.md
+      - SQL: database/sql.md
+      - 完整性约束: database/integrity-constraints.md
+      - 高级SQL: database/advanced-sql.md
+      - 应用开发: database/app-dev.md
+      - 规范化: database/normalization.md
+      - 事务: database/transaction.md
+      - 存储与索引: database/storage-indexing.md
+      - 查询处理: database/query-processing.md
   - 信息论:
-    - 绪论: information-theory/index.md
-    - 不确定性和熵: information-theory/uncertainty-and-entropy.md
-    - 什么是信息: information-theory/what-is-information.md
-    - JIDT: information-theory/jidt.md
-    - 估计器: information-theory/estimator.md
-    - 统计显著性: information-theory/statistical-significance.md
-    - 自组织: information-theory/self-organisation.md
-    - 信息处理: information-theory/information-processing.md
-    - 信息存储: information-theory/information-storage.md
-    - 信息传递: information-theory/information-transfer.md
-    - 有效网络推断: information-theory/effective-network-inference.md
+      - 绪论: information-theory/index.md
+      - 不确定性和熵: information-theory/uncertainty-and-entropy.md
+      - 什么是信息: information-theory/what-is-information.md
+      - JIDT: information-theory/jidt.md
+      - 估计器: information-theory/estimator.md
+      - 统计显著性: information-theory/statistical-significance.md
+      - 自组织: information-theory/self-organisation.md
+      - 信息处理: information-theory/information-processing.md
+      - 信息存储: information-theory/information-storage.md
+      - 信息传递: information-theory/information-transfer.md
+      - 有效网络推断: information-theory/effective-network-inference.md
   - 版本控制:
-    - 区域和状态: version-control/area-and-status.md
-    - 添加和提交: version-control/add-and-commit.md
-    - 回退: version-control/revert.md
-    - 配置: version-control/config.md
-    - 账户: version-control/account.md
+      - 区域和状态: version-control/area-and-status.md
+      - 添加和提交: version-control/add-and-commit.md
+      - 回退: version-control/revert.md
+      - 配置: version-control/config.md
+      - 账户: version-control/account.md
   - 容器:
-    - dockerfile: containerization/dockerfile.md
+      - dockerfile: containerization/dockerfile.md
   - k8s:
-    - 架构: k8s/architecture.md
-    - 命令: k8s/command.md
-    - 示例: k8s/example.md
+      - 架构: k8s/architecture.md
+      - 命令: k8s/command.md
+      - 示例: k8s/example.md
