@@ -92,9 +92,9 @@ extra:
     - name: English
       link: /en/
       lang: en
-  # analytics:
-  #   provider: google
-  #   property: G-BXRC9P41CL
+  analytics:
+    provider: google
+    property: G-BXRC9P41CL
 extra_css:
   - https://unpkg.com/katex@0/dist/katex.min.css
   - https://ml.ricolxwz.de/stylesheets/extra.css
@@ -103,7 +103,7 @@ extra_javascript:
   - javascripts/katex.js
   - https://unpkg.com/katex@0/dist/katex.min.js
   - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
-  - javascripts/analysis.js
+  # - javascripts/analysis.js
 markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
